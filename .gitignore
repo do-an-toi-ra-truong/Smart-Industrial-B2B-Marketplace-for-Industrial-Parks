@@ -1,0 +1,104 @@
+﻿############################
+# OS
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Node / React / Frontend
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+dist/
+build/
+.next/
+out/
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+############################
+# Java / Spring Boot
+############################
+target/
+*.log
+logs/
+*.jar
+.classpath
+.project
+.factorypath
+
+############################
+# IDE - VS Code
+############################
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+.vscode/keybindings.json
+.vscode/tasks.json
+
+############################
+# IDE - IntelliJ IDEA
+############################
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+############################
+# Maven / Gradle
+############################
+.mvn/wrapper/maven-wrapper.jar
+.gradle/
+
+############################
+# Database / Secrets
+############################
+*.sql
+*.db
+*.sqlite
+
+############################
+# Uploads / Generated files
+############################
+uploads/
+tmp/
+
+############################
+# Coverage / test
+############################
+.nyc_output/
+
+############################
+# Build / Cache (Frontend)
+############################
+.cache/
+.astro/
+.next/
+
+############################
+# Other Editors
+############################
+*.swp
+*.swo
+*.sublime-workspace
+.DS_Store
+.AppleDouble
+.TemporaryItems
+$RECYCLE.BIN/
+
+############################
+# Secrets / Local Config
+############################
+.env.vaulte / Test
+############################
+coverage/
