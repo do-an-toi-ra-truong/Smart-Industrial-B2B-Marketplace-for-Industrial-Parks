@@ -152,4 +152,3 @@ Giảng viên Ung Văn Giàu - Project Manager
 - Không push node_modules, target, .env lên GitHub  
 - Tuân thủ Git workflow và team convention  
 - Mọi thay đổi lớn cần thông qua Pull Request  
-test
