@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 Nguyên tắc cốt lõi
+## 🎯 Nguyên tắc cốt
 
 ```
 Một người = Một branch = Một nhiệm vụ
