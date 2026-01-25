@@ -1,155 +1,144 @@
 ﻿# Smart Industrial B2B Marketplace for Industrial Parks
 
-## 1. Giới thiệu dự án
-Dự án xây dựng **nền tảng thương mại điện tử B2B** kết nối các doanh nghiệp trong khu công nghiệp (KCN), cho phép doanh nghiệp đăng tải sản phẩm/dịch vụ, tìm kiếm nhà cung cấp, gửi yêu cầu báo giá (RFQ) và đặt hàng trực tuyến.
+## 📌 Giới thiệu dự án
 
-Hệ thống hướng đến việc **tự động hóa – minh bạch hóa quy trình giao dịch**, đồng thời hỗ trợ **ban quản lý KCN** trong việc quản lý thông tin doanh nghiệp và tổng hợp dữ liệu phục vụ phát triển **Smart City**.
+Dự án xây dựng **nền tảng thương mại điện tử B2B** kết nối các doanh nghiệp trong khu công nghiệp (KCN). Cho phép doanh nghiệp:
 
----
+- Đăng tải sản phẩm/dịch vụ
+- Tìm kiếm nhà cung cấp
+- Gửi yêu cầu báo giá (RFQ)
+- Đặt hàng trực tuyến
 
-## 2. Mục tiêu
-- Xây dựng sàn B2B dùng chung cho các doanh nghiệp trong KCN  
-- Giảm thời gian tìm kiếm nhà cung cấp và báo giá thủ công  
-- Minh bạch hóa và số hóa quy trình giao dịch B2B  
-- Cung cấp dữ liệu phục vụ Smart Economy & Smart Governance  
+Hệ thống hướng đến **tự động hóa – minh bạch hóa quy trình giao dịch** và hỗ trợ **ban quản lý KCN** trong quản lý thông tin doanh nghiệp phục vụ phát triển **Smart City**.
 
 ---
 
-## 3. Đối tượng sử dụng
-- Doanh nghiệp trong khu công nghiệp  
-- Nhà cung cấp nguyên vật liệu, thiết bị, dịch vụ  
-- Ban quản lý khu công nghiệp (Admin)  
+## 🎯 Mục tiêu
+
+- ✅ Xây dựng sàn B2B dùng chung cho các doanh nghiệp trong KCN
+- ✅ Giảm thời gian tìm kiếm nhà cung cấp và báo giá thủ công
+- ✅ Minh bạch hóa và số hóa quy trình giao dịch B2B
+- ✅ Cung cấp dữ liệu phục vụ Smart Economy & Smart Governance
 
 ---
 
-## 4. Công nghệ sử dụng
+## 👥 Đối tượng sử dụng
+
+- **Doanh nghiệp** trong khu công nghiệp
+- **Nhà cung cấp** nguyên vật liệu, thiết bị, dịch vụ
+- **Ban quản lý KCN** (Admin)
+
+---
+
+## 🛠️ Công nghệ sử dụng
 
 ### Frontend
-- React + TypeScript  
-- RESTful API  
-- UI Template (Admin Dashboard)  
+
+- React + TypeScript
+- RESTful API
+- UI Template (AdminLTE 4.0)
 
 ### Backend
-- Java Spring Boot  
-- Spring Data JPA  
-- RESTful API  
-- MySQL  
 
-### Công cụ & DevOps
-- GitHub (quản lý source code)  
-- Git Flow (main / develop / feature)  
-- VS Code / IntelliJ IDEA  
-- Postman  
+- Java Spring Boot
+- Spring Data JPA
+- RESTful API
+- MySQL
 
----
+### DevOps & Tools
 
-## 5. Cấu trúc thư mục
-
-project-root/  
-├── frontend/ (React TypeScript)  
-│   ├── src/  
-│   ├── public/  
-│   └── package.json  
-│  
-├── backend/ (Spring Boot)  
-│   ├── src/main/java  
-│   ├── src/main/resources  
-│   └── pom.xml  
-│  
-├── .gitignore  
-└── README.md  
+- GitHub (quản lý source code)
+- Git Flow (main / develop / feature)
+- VS Code / IntelliJ IDEA
+- Postman (API testing)
 
 ---
 
-## 6. Cách chạy dự án (Run Project)
+## 📖 Table of Contents
 
-### 6.1. Yêu cầu môi trường
-- Node.js >= 18  
-- Java JDK >= 17  
-- MySQL >= 8.0  
-- Maven  
-
----
-
-### 6.2. Chạy Backend (Spring Boot)
-
-Di chuyển vào thư mục backend (bash):  
-cd backend  
-
-Cấu hình database trong file `application.properties` hoặc `application.yml`:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/b2b_ecommerce  
-spring.datasource.username=root  
-spring.datasource.password=your_password  
-
-Chạy project backend (bash):  
-mvn spring-boot:run  
-
-Backend chạy tại:  
-http://localhost:8080  
+| Phần                                   | Mục đích                                   | Đối tượng                 |
+| -------------------------------------- | ------------------------------------------ | ------------------------- |
+| **[INSTALL.md](INSTALL.md)**           | Hướng dẫn cài đặt & chạy dự án             | Thành viên mới, developer |
+| **[CONTRIBUTING.md](CONTRIBUTING.md)** | Quy tắc làm việc, code style, commit rules | Tất cả thành viên         |
+| **[GitChecklist.md](GitChecklist.md)** | Checklist thao tác Git từng bước           | Tất cả thành viên         |
 
 ---
 
-### 6.3. Chạy Frontend (React)
+## 📂 Cấu trúc thư mục
 
-Di chuyển vào thư mục frontend (bash):  
-cd frontend  
-
-Cài đặt thư viện (bash):  
-npm install  
-
-Chạy project frontend (bash):  
-npm start  
-
-Frontend chạy tại:  
-http://localhost:3000  
-
----
-
-## 7. Quy trình làm việc nhóm (Git Workflow)
-
-- main: nhánh ổn định, dùng để demo / bảo vệ  
-- develop: nhánh phát triển chính  
-- feature/*: mỗi chức năng một nhánh  
-
-### Luồng làm việc
-1. Tạo branch từ develop  
-2. Code → commit  
-3. Push branch → tạo Pull Request  
-4. Review → merge vào develop  
-5. Merge develop → main khi chuẩn bị demo hoặc bảo vệ  
+```
+project-root/
+├── Back_End/
+│   └── sping_e_commerce/
+│       └── ecommerce-api/          # Java Spring Boot API
+│           ├── src/
+│           ├── pom.xml
+│           └── mvnw
+│
+├── Front_End/
+│   ├── Front_End_Admin_seller/     # Admin Dashboard (AdminLTE)
+│   │   └── AdminLTE-4.0.0-rc4/
+│   └── Front_End_Buyer/            # Buyer UI
+│       └── index.html
+│
+├── README.md                        # (File này)
+├── INSTALL.md                       # Hướng dẫn cài đặt
+├── CONTRIBUTING.md                  # Quy tắc làm việc
+├── GitChecklist.md                  # Checklist Git
+└── .gitignore
+```
 
 ---
 
-## 8. Quy ước commit message
+## 👨‍💻 Thành viên nhóm
 
-Cấu trúc commit:  
-type: mô tả ngắn  
-
-Các type sử dụng:
-- feat: thêm chức năng mới  
-- fix: sửa lỗi  
-- ui: cập nhật giao diện  
-- refactor: tối ưu code  
-- docs: cập nhật tài liệu  
-
-Ví dụ:
-- feat: implement user management module  
-- ui: design admin dashboard layout  
+| Tên                          | Vai trò            |
+| ---------------------------- | ------------------ |
+| Nguyễn Phước Ân Điển         | Frontend / Backend |
+| Dương Tấn Phát               | Frontend / Backend |
+| Vũ Quang Huy                 | Frontend / Backend |
+| **Giảng viên:** Ung Văn Giàu | Project Manager    |
 
 ---
 
-## 9. Thành viên nhóm
-- Nguyễn Phước Ân Điển – Frontend / Backend 
-- Dương Tấn Phát – Frontend / Backend  
-- Vũ Quang Huy – Frontend / Backend 
+## 🚀 Quick Start
 
-Giảng viên Ung Văn Giàu - Project Manager
+### Dành cho thành viên mới:
+
+1. Đọc file **[INSTALL.md](INSTALL.md)** để cài đặt môi trường
+2. Đọc file **[CONTRIBUTING.md](CONTRIBUTING.md)** để hiểu quy tắc làm việc
+3. Dùng **[GitChecklist.md](GitChecklist.md)** như một checklist khi làm việc với Git
+
+### Chạy dự án:
+
+```bash
+# Backend
+cd Back_End/sping_e_commerce/ecommerce-api
+mvn spring-boot:run          # http://localhost:8080
+
+# Frontend
+cd Front_End/Front_End_Admin_seller/AdminLTE-4.0.0-rc4
+npm install
+npm start                     # http://localhost:3000
+```
+
+Xem chi tiết tại **[INSTALL.md](INSTALL.md)**.
 
 ---
 
-## 10. Ghi chú
-- Không push node_modules, target, .env lên GitHub  
-- Tuân thủ Git workflow và team convention  
-- Mọi thay đổi lớn cần thông qua Pull Request  
-test credential
+## ⚠️ Ghi chú quan trọng
+
+- ❌ **Không push** lên GitHub: `node_modules/`, `target/`, `.env`, mật khẩu database
+- 📋 **Luôn pull code** mới nhất từ `develop` trước khi bắt đầu làm việc
+- 🔀 **Không code trực tiếp** trên `main` hoặc `develop` – tạo feature branch
+- 📝 **Mọi thay đổi** lớn cần thông qua Pull Request (PR)
+
+Xem thêm: [Git Workflow Overview](CONTRIBUTING.md#3-git-workflow-sử-dụng-trong-dự-án)
+
+---
+
+## 📞 Hỗ trợ & Báo lỗi
+
+- Sử dụng **GitHub Issues** để báo lỗi hoặc đề xuất cải tiến
+- Liên hệ trưởng nhóm nếu gặp vấn đề trong quá trình cài đặt
+- Mô tả rõ vấn đề và cách tái hiện lỗi

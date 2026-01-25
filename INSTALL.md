@@ -1,93 +1,143 @@
 ﻿# INSTALLATION GUIDE
 
-## 1. Mục đích
-Tài liệu này hướng dẫn cài đặt môi trường và chạy dự án **Smart Industrial B2B Marketplace for Industrial Parks** trên máy cá nhân dành cho các thành viên trong nhóm phát triển.
+Hướng dẫn cài đặt môi trường và chạy dự án **Smart Industrial B2B Marketplace for Industrial Parks** trên máy cá nhân.
 
 ---
 
-## 2. Yêu cầu hệ thống
+## 📋 Yêu cầu hệ thống
 
-### 2.1. Phần mềm cần cài đặt
-- Node.js phiên bản 18 trở lên  
-- Java Development Kit (JDK) phiên bản 17 trở lên  
-- MySQL phiên bản 8.0 trở lên  
-- Maven  
-- Git  
+### Phần mềm bắt buộc
 
-### 2.2. Công cụ khuyến nghị
-- Visual Studio Code (Frontend)  
-- IntelliJ IDEA (Backend)  
-- Postman (Test API)  
+- **Node.js** >= 18
+- **Java JDK** >= 17
+- **MySQL** >= 8.0
+- **Maven**
+- **Git**
 
----
+### Công cụ khuyến nghị
 
-## 3. Clone source code từ GitHub
-
-Clone repository về máy (bash):  
-git clone https://github.com/username/repository-name.git  
-
-Di chuyển vào thư mục project (bash):  
-cd repository-name  
-
-Chuyển sang nhánh develop để làm việc (bash):  
-git checkout develop  
+- **Visual Studio Code** (Frontend development)
+- **IntelliJ IDEA** (Backend development)
+- **Postman** (API testing)
 
 ---
 
-## 4. Cài đặt và chạy Backend (Spring Boot)
+## 🔄 Clone repository
 
-Di chuyển vào thư mục backend (bash):  
-cd backend  
-
-### 4.1. Cấu hình cơ sở dữ liệu
-Mở file application.properties hoặc application.yml và cấu hình:
-
-spring.datasource.url=jdbc:mysql://localhost:3306/b2b_ecommerce  
-spring.datasource.username=root  
-spring.datasource.password=your_password  
-
-Lưu ý:  
-- Database b2b_ecommerce cần được tạo trước trong MySQL  
-- Không commit file cấu hình chứa mật khẩu lên GitHub  
-
-### 4.2. Chạy backend
-Chạy Spring Boot application (bash):  
-mvn spring-boot:run  
-
-Sau khi chạy thành công, backend hoạt động tại:  
-http://localhost:8080  
+```bash
+git clone https://github.com/username/repository-name.git
+cd repository-name
+git checkout develop
+```
 
 ---
 
-## 5. Cài đặt và chạy Frontend (React)
+## 🔧 Cài đặt Backend (Spring Boot)
 
-Quay lại thư mục gốc và vào frontend (bash):  
-cd frontend  
+### Bước 1: Di chuyển vào thư mục Backend
 
-Cài đặt các thư viện cần thiết (bash):  
-npm install  
+```bash
+cd Back_End/sping_e_commerce/ecommerce-api
+```
 
-Chạy ứng dụng frontend (bash):  
-npm start  
+### Bước 2: Cấu hình Database
 
-Frontend chạy tại:  
-http://localhost:3000  
+Mở file `src/main/resources/application.properties` hoặc `application.yml`:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/b2b_ecommerce
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.hibernate.ddl-auto=update
+```
+
+**Lưu ý:**
+
+- Tạo database `b2b_ecommerce` trong MySQL trước
+- ⚠️ Không commit file này nếu chứa mật khẩu thực
+
+### Bước 3: Chạy Backend
+
+```bash
+mvn clean install
+mvn spring-boot:run
+```
+
+✅ Backend sẽ chạy tại: **http://localhost:8080**
 
 ---
 
-## 6. Kiểm tra hệ thống
-- Truy cập frontend tại trình duyệt  
-- Gọi thử API bằng Postman  
-- Kiểm tra kết nối frontend ↔ backend  
+## 💻 Cài đặt Frontend (React)
+
+### Bước 1: Di chuyển vào thư mục Frontend
+
+```bash
+cd Front_End/Front_End_Admin_seller/AdminLTE-4.0.0-rc4
+```
+
+### Bước 2: Cài đặt Dependencies
+
+```bash
+npm install
+```
+
+### Bước 3: Chạy Frontend
+
+```bash
+npm start
+```
+
+✅ Frontend sẽ chạy tại: **http://localhost:3000**
 
 ---
 
-## 7. Lưu ý quan trọng
-- Không push thư mục node_modules và target lên GitHub  
-- Không chia sẻ file .env hoặc mật khẩu database  
-- Luôn pull code mới nhất từ nhánh develop trước khi làm việc  
+## ✅ Kiểm tra hệ thống
+
+- [ ] Truy cập **http://localhost:3000** – Frontend tải bình thường
+- [ ] Truy cập **http://localhost:8080** – Backend API phản hồi
+- [ ] Dùng **Postman** gọi API test (vd: `GET /api/users`)
+- [ ] Kiểm tra kết nối frontend ↔ backend trong browser console
 
 ---
 
-## 8. Hỗ trợ
-Nếu gặp lỗi trong quá trình cài đặt, vui lòng liên hệ trưởng nhóm hoặc tạo issue trên GitHub repository.
+## 🐛 Troubleshooting
+
+### Frontend không tải
+
+```bash
+# Xóa node_modules và cài lại
+rm -rf node_modules package-lock.json
+npm install
+npm start
+```
+
+### Backend lỗi kết nối Database
+
+- Kiểm tra MySQL đang chạy: `mysql -u root -p`
+- Kiểm tra `application.properties`: username, password, database name
+- Tạo database: `CREATE DATABASE b2b_ecommerce;`
+
+### Port 3000 / 8080 đang bị sử dụng
+
+```bash
+# Đổi port trong .env hoặc config
+# Frontend: thêm PORT=3001 trước npm start
+# Backend: chỉnh server.port=8081 trong application.properties
+```
+
+---
+
+## ⚠️ Ghi chú quan trọng
+
+- ❌ Không push: `node_modules/`, `target/`, `.env`, mật khẩu database
+- 📝 Luôn pull code mới nhất trước khi làm việc: `git pull origin develop`
+- 🔐 Bảo mật: Không share mật khẩu database, không commit credentials
+
+---
+
+## 📞 Cần giúp?
+
+- Tạo **GitHub Issue** để báo lỗi cụ thể
+- Liên hệ trưởng nhóm nếu gặp vấn đề môi trường
+- Xem [CONTRIBUTING.md](CONTRIBUTING.md) để hiểu quy tắc làm việc
