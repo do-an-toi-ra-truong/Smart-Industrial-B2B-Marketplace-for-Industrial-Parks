@@ -8,7 +8,7 @@ Hướng dẫn cài đặt môi trường và chạy dự án **Smart Industrial
 
 ### Phần mềm bắt buộc
 
-- **Node.js** >= 18
+- **Node.js** >= v24
 - **Java JDK** >= 17
 - **MySQL** >= 8.0
 - **Maven**
