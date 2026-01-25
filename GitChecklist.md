@@ -213,7 +213,7 @@ git pull origin develop
 
 ---
 
-## 🚨 GỨP LẠI NHANH
+## 🚨 Tóm tắt
 
 ### Setup lần đầu:
 
