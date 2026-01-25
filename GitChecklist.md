@@ -255,3 +255,31 @@ git pull
 - **Quy tắc & Code Style:** [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Hướng dẫn cài đặt:** [INSTALL.md](INSTALL.md)
 - **Tổng quan dự án:** [README.md](README.md)
+
+## ⚠️ CHÚ Ý: KHÔNG merge local trước PR
+
+**❌ Sai (KHÔNG NÊN):**
+```bash
+# Code ở feature branch
+git checkout develop
+git merge feature/login-page  # ⚠️ Merge local
+
+# Sau đó push feature
+git checkout feature/login-page
+git push origin feature/login-page
+```
+
+**✅ Đúng (NÊN):**
+```bash
+# Code ở feature branch
+# Test code (không merge develop)
+npm start
+
+# Push feature lên GitHub
+git push -u origin feature/login-page
+
+# Tạo PR trên GitHub để merge
+# GitHub sẽ tự động merge nếu không conflict
+```
+
+**Lý do:** Nếu PR bị reject, bạn không cần revert `develop` local.
