@@ -1,109 +1,79 @@
-﻿# CONTRIBUTING GUIDE
+﻿# Contributing Guide
 
-## 1. Mục đích
-Tài liệu này quy định **quy trình và nguyên tắc làm việc nhóm** nhằm đảm bảo dự án được phát triển thống nhất, dễ bảo trì và hạn chế xung đột source code.
-
----
-
-## 2. Quy tắc chung
-- Mọi thành viên phải tuân thủ Git workflow của nhóm  
-- Không push code trực tiếp lên nhánh main và develop  
-- Mỗi chức năng phải được phát triển trên một nhánh riêng  
-- Mọi thay đổi quan trọng phải thông qua Pull Request  
+## 1. Purpose
+This document defines **rules and standards for contributing** to the project.
+All members are expected to follow these guidelines to ensure code quality and team efficiency.
 
 ---
 
-## 3. Git Workflow sử dụng trong dự án
-
-### 3.1. Các nhánh chính
-- main: nhánh ổn định, dùng cho demo và bảo vệ đồ án  
-- develop: nhánh phát triển chính  
-- feature/*: nhánh phát triển chức năng  
-
----
-
-## 4. Quy trình làm việc chuẩn
-
-### Bước 1: Cập nhật code mới nhất
-Chuyển về develop và pull code (bash):  
-git checkout develop  
-git pull  
-
-### Bước 2: Tạo nhánh feature
-Tạo nhánh mới cho chức năng đang làm (bash):  
-git checkout -b feature/ten-chuc-nang  
-
-Ví dụ:  
-feature/login  
-feature/user-management  
+## 2. General Rules
+- Do not push directly to `main` or `develop`
+- Every feature or fix must be developed in a separate branch
+- All changes must go through Pull Request
+- Respect existing code ownership and communicate before major changes
 
 ---
 
-### Bước 3: Commit code
-Sau khi hoàn thành một phần công việc:
+## 3. Branch Strategy
+- main: stable branch for demo / final submission
+- develop: main development branch
+- feature/*: feature or task-specific branches
 
-Thêm file vào staging (bash):  
-git add .  
-
-Commit code (bash):  
-git commit -m "feat: implement login feature"  
-
----
-
-### Bước 4: Push và tạo Pull Request
-Push branch lên GitHub (bash):  
-git push origin feature/ten-chuc-nang  
-
-Tạo Pull Request từ feature branch vào develop trên GitHub.
+Branch naming:
+- feature/login
+- feature/rfq-management
+- feature/admin-dashboard
 
 ---
 
-## 5. Quy ước commit message
+## 4. Commit Convention
 
-Cấu trúc commit:  
-type: mô tả ngắn gọn  
+### Commit Message Format
+type: short description
 
-Các type được sử dụng:
-- feat: thêm chức năng mới  
-- fix: sửa lỗi  
-- ui: thay đổi giao diện  
-- refactor: tối ưu hoặc tổ chức lại code  
-- docs: cập nhật tài liệu  
+### Allowed Types
+- feat: new feature
+- fix: bug fix
+- ui: UI changes
+- refactor: code optimization or restructuring
+- docs: documentation updates
 
-Ví dụ:
-- feat: add RFQ creation API  
-- ui: update admin dashboard layout  
-
----
-
-## 6. Quy định về Pull Request
-Mỗi Pull Request cần:
-- Mô tả ngắn gọn chức năng đã thực hiện  
-- Đảm bảo code không bị lỗi  
-- Không chứa file bị ignore (.env, node_modules, target, …)  
+### Examples
+- feat: implement RFQ creation API
+- fix: resolve null pointer in order service
+- ui: update admin dashboard layout
 
 ---
 
-## 7. Phân công và phối hợp
-- Không chỉnh sửa code của thành viên khác khi chưa trao đổi  
-- Thông báo cho nhóm khi làm các thay đổi ảnh hưởng lớn  
-- Ưu tiên giao tiếp qua nhóm chat hoặc GitHub Issues  
+## 5. Pull Request Rules
+Each Pull Request must:
+- Target `develop` branch
+- Have a clear title and description
+- Explain:
+  - What was implemented
+  - Which parts are affected
+  - Any important notes for reviewers
+- Contain only related changes (no mixed tasks)
+
+Do not merge Pull Requests without permission.
 
 ---
 
-## 8. Code Style & Chất lượng
-- Viết code rõ ràng, dễ đọc  
-- Đặt tên biến, hàm có ý nghĩa  
-- Hạn chế hard-code  
-- Comment các đoạn logic quan trọng  
+## 6. Code Style & Quality
+- Write clean, readable, and maintainable code
+- Use meaningful variable and method names
+- Avoid hard-coded values
+- Comment complex or non-obvious logic
+- Ensure code builds and runs before committing
 
 ---
 
-## 9. Báo lỗi và đề xuất
-- Sử dụng GitHub Issues để báo lỗi hoặc đề xuất cải tiến  
-- Mô tả rõ vấn đề và cách tái hiện lỗi  
+## 7. Communication & Coordination
+- Use GitHub Issues for bugs and feature requests
+- Inform the team before making changes that affect multiple modules
+- Coordinate through team chat when necessary
 
 ---
 
-## 10. Cam kết
-Mỗi thành viên khi tham gia dự án đồng ý tuân thủ các quy định trong tài liệu này nhằm đảm bảo tiến độ và chất lượng đồ án.
+## 8. Agreement
+By contributing to this project, each member agrees to follow the rules defined in this document.
