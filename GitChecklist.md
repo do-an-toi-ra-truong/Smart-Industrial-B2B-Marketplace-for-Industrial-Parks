@@ -48,14 +48,7 @@ git pull origin main
 
 Khi chuẩn bị demo hoặc bảo vệ đồ án, thực hiện các bước sau:
 
-### Bước 1: Kiểm tra develop đã up-to-date
-
-```bash
-git checkout develop
-git pull origin develop
-```
-
-### Bước 2: Tạo PR từ develop vào main
+### Bước 1: Tạo PR từ develop vào main (Github)
 
 1. Trên GitHub, vào tab **Pull Requests**
 2. Click **New Pull Request**
@@ -65,19 +58,24 @@ git pull origin develop
 4. Điền tiêu đề: `chore: merge develop to main for demo`
 5. Click **Create Pull Request**
 
-### Bước 3: Review & Merge
+### Bước 2: Review & Merge (Github)
 
 1. Assign reviewer (hoặc team lead)
 2. Đợi approve
 3. Click **Merge Pull Request**
-4. Chọn **Create a merge commit**
-5. Xoá branch develop sau merge (tuỳ chọn)
 
-✅ Nhánh `main` giờ đã sẵn sàng cho demo!
+### Bước 3: Update nhánh main trên máy cá nhân để demo (Local)
+
+```bash
+git checkout main
+git pull origin main
+```
+
+✅ Nhánh `main` giờ đã sẵn sàng cho demo trên máy của bạn!
 
 ---
 
-## 📅 MỖI NGÀY TRƯỚC KHI BẮT ĐẦU CODE
+## 📅 MỖI NGÀY TRƯỚC KHI BẮT ĐẦU CODE (Local)
 
 ### Bước 1: Kiểm tra nhánh hiện tại
 
@@ -87,14 +85,14 @@ git branch
 
 ✅ Phải thấy `* develop` (hoặc tên nhánh khác nếu đang làm feature)
 
-### Bước 2: Cập nhật code mới nhất từ develop
+### Bước 2: Cập nhật code mới nhất từ develop (nếu quên thì Ctrl+F Scenario 2)
 
 ```bash
 git checkout develop
 git pull origin develop
 ```
 
-### Bước 3: Tạo nhánh feature mới
+### Bước 3: Tạo nhánh feature mới (nếu quên và lỡ commit lên develop thì Ctrl+F Lỗi 6)
 
 ```bash
 git checkout -b feature/<tên-chức-năng>
@@ -112,7 +110,7 @@ git checkout -b feature/api-authentication
 
 ---
 
-## 💻 TRONG QUÁ TRÌNH LÀMVỊỆC
+## 💻 TRONG QUÁ TRÌNH LÀM VIỆC (Local)
 
 ### Bước 1: Code & kiểm tra
 
@@ -153,7 +151,7 @@ git push -u origin feature/<tên-nhánh>
 
 ---
 
-## 🔀 TẠO PULL REQUEST (GitHub Web)
+## 🔀 TẠO PULL REQUEST (GitHub)
 
 ### Trên GitHub Web:
 
@@ -216,7 +214,7 @@ git push
 
 ## ✅ SAU KHI MERGE THÀNH CÔNG
 
-### Bước 1: Dọn dẹp branch trên máy
+### Bước 1: Dọn dẹp branch trên máy 
 
 ```bash
 git branch -d feature/<tên>
@@ -330,7 +328,7 @@ git push -u origin feature/login-page
 
 ---
 
-## 📦 GIT STASH - Cất giữ tạm thời thay đổi
+## 📦 GIT STASH - Cất giữ tạm thời những thay đổi
 
 ### Khi nào dùng Stash:
 
@@ -346,10 +344,11 @@ git push -u origin feature/login-page
 **Ví dụ:**
 
 ```bash
-git stash push -m "feat: login form - WIP"
+git stash push -m "feat: login form - WIP" 
 git stash push -m "fix: API validation - paused"
 git stash push -m "ui: dashboard - need review"
 ```
+WIP là Work In Progress
 
 ### Các lệnh cơ bản:
 
