@@ -1000,8 +1000,64 @@ Có error?
 
 ---
 
-### 📚 Tham khảo thêm
+## 🚨 Lỗi 6: Code lộn vào develop và lỡ commit (❌ Phổ biến nhất)
 
-- **Git Stash khi conflict:** [GIT STASH - Scenario 6](#scenario-6-stash-conflict)
-- **Pull + Rebase strategy:** [GIT WORKFLOW](#-git-workflow)
-- **Cấu hình Git global:** Terminal PowerShell → `git config --global`
+**Tình huống:**
+
+- Bạn quên tạo feature branch
+- Code trực tiếp trên `develop`
+- Đã commit: `git commit -m "feat: login page"`
+- Chưa push lên GitHub
+
+**Nguyên nhân:**
+
+- Quên bước tạo `feature/*` branch
+- Hoặc switch nhầm branch, rồi code mất tiêu chí
+
+**Cách xử lý**
+
+```bash
+# Bước 1: Kiểm tra đang ở develop
+git branch
+# Output: * develop
+
+# Bước 2: Xem commit vừa làm
+git log --oneline -3
+# abc1234 feat: login page          ← Commit sai ⚠️
+# def5678 docs: update readme
+# ghi9012 chore: initial setup
+
+# Bước 3: Reset soft - xóa commit nhưng giữ code trong Staging Area
+git reset --soft HEAD~1
+# ⚠️ Ý nghĩa: Quay lại 1 commit trước
+# - Commit bị xóa ✅
+# - Code vẫn lưu (trong Staging Area) ✅
+# Nếu có 2 commit sai: git reset --soft HEAD~2
+# Nếu có 3 commit sai: git reset --soft HEAD~3
+
+# Bước 4: Tạo feature branch (code vẫn trong Staging Area)
+git checkout -b feature/login-page
+# Vì code đã add staging area nên khi chuyển nhánh thì code sẽ chuyển qua nhánh đó
+# ✅ Code vẫn nguyên vẹn, sẵn sàng commit
+
+# Bước 5: Commit và push trên feature branch
+git commit -m "feat: login page"
+git push -u origin feature/login-page #Push feature lên GitHub
+
+# Bước 7: Quay lại develop (lúc này đã sạch)
+git checkout develop
+# ✅ Develop đã tự động sạch (vì reset soft rồi checkout)
+
+# Kiểm tra
+git log --oneline -3
+# def5678 docs: update readme       ← Commit sai đã bị xóa ✅
+# ghi9012 chore: initial setup
+```
+
+✅ **Xong!** Giờ:
+- `develop` ở local đã sạch
+- `feature/login-page` có code của bạn
+- Tạo PR trên GitHub: `develop ← feature/login-page`
+
+---
+
