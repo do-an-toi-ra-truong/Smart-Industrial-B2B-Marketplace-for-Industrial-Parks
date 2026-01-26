@@ -1006,14 +1006,14 @@ Có error?
 - Bạn quên tạo feature branch
 - Code trực tiếp trên `develop`
 - Đã commit: `git commit -m "feat: login page"`
-- Chưa push lên GitHub (hoặc đã push)
+- Chưa push lên GitHub
 
 **Nguyên nhân:**
 
 - Quên bước tạo `feature/*` branch
 - Hoặc switch nhầm branch, rồi code mất tiêu chí
 
-**Cách xử lý (✅ ĐÚNG) - Trường hợp chưa push:**
+**Cách xử lý**
 
 ```bash
 # Bước 1: Kiểm tra đang ở develop
@@ -1026,26 +1026,26 @@ git log --oneline -3
 # def5678 docs: update readme
 # ghi9012 chore: initial setup
 
-# Bước 3: Tạo feature branch mới từ commit hiện tại
-git checkout -b feature/login-page
-# ✅ Feature branch có commit sai (đây là cái bạn muốn)
-
-# Bước 4: Push feature lên GitHub
-git push -u origin feature/login-page
-# ✅ GitHub sẽ hiện "Compare & pull request"
-
-# Bước 5: Quay lại develop
-git checkout develop
-
-# Bước 6: Xóa commit sai trên develop (reset về trước)
-git reset --hard HEAD~1
+# Bước 3: Reset soft - xóa commit nhưng giữ code trong Staging Area
+git reset --soft HEAD~1
 # ⚠️ Ý nghĩa: Quay lại 1 commit trước
-# Nếu có 2 commit sai: git reset --hard HEAD~2
-# Nếu có 3 commit sai: git reset --hard HEAD~3
+# - Commit bị xóa ✅
+# - Code vẫn lưu (trong Staging Area) ✅
+# Nếu có 2 commit sai: git reset --soft HEAD~2
+# Nếu có 3 commit sai: git reset --soft HEAD~3
 
-# Bước 7: Pull develop mới từ GitHub
-git pull origin develop
-# ✅ Develop local giờ trùng với origin/develop (sạch)
+# Bước 4: Tạo feature branch (code vẫn trong Staging Area)
+git checkout -b feature/login-page
+# Vì code đã add staging area nên khi chuyển nhánh thì code sẽ chuyển qua nhánh đó
+# ✅ Code vẫn nguyên vẹn, sẵn sàng commit
+
+# Bước 5: Commit và push trên feature branch
+git commit -m "feat: login page"
+git push -u origin feature/login-page #Push feature lên GitHub
+
+# Bước 7: Quay lại develop (lúc này đã sạch)
+git checkout develop
+# ✅ Develop đã tự động sạch (vì reset soft rồi checkout)
 
 # Kiểm tra
 git log --oneline -3
