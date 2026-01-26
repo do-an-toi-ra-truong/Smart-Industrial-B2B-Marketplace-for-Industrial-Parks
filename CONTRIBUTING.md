@@ -18,9 +18,9 @@ Quy tắc & tiêu chuẩn làm việc cho tất cả thành viên dự án.
 
 ### Các nhánh chính
 
-- **main**: nhánh ổn định, dùng cho demo & bảo vệ đồ án
-- **develop**: nhánh phát triển chính
-- **feature/\***: mỗi chức năng một nhánh tạo từ develop
+- **main ← develop** (chỉ merge khi demo/bảo vệ đồ án)
+- **develop ← feature/** (nhánh phát triển chính, default branch)
+- **feature/** (tạo feature từ develop, PR → merge vào develop)
 
 ### Luồng cơ bản
 

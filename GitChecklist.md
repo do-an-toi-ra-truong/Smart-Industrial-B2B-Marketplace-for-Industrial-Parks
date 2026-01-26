@@ -34,7 +34,46 @@ git checkout develop
 git pull
 ```
 
+### Bước 3: Lấy nhánh main về (nếu cần demo)
+
+```bash
+git pull origin main
+```
+
 ✅ Xong setup!
+
+---
+
+## 📋 Chuẩn bị trước khi demo
+
+Khi chuẩn bị demo hoặc bảo vệ đồ án, thực hiện các bước sau:
+
+### Bước 1: Kiểm tra develop đã up-to-date
+
+```bash
+git checkout develop
+git pull origin develop
+```
+
+### Bước 2: Tạo PR từ develop vào main
+
+1. Trên GitHub, vào tab **Pull Requests**
+2. Click **New Pull Request**
+3. Chọn:
+   - **Base branch**: `main`
+   - **Compare branch**: `develop`
+4. Điền tiêu đề: `chore: merge develop to main for demo`
+5. Click **Create Pull Request**
+
+### Bước 3: Review & Merge
+
+1. Assign reviewer (hoặc team lead)
+2. Đợi approve
+3. Click **Merge Pull Request**
+4. Chọn **Create a merge commit**
+5. Xoá branch develop sau merge (tuỳ chọn)
+
+✅ Nhánh `main` giờ đã sẵn sàng cho demo!
 
 ---
 
@@ -259,7 +298,7 @@ git pull
 
 ---
 
-## ⚠️ CHÚ Ý: KHÔNG merge local trước PR
+## ⚠️ CHÚ Ý: KHÔNG merge feature mới vào develop ở local, push fearture lên github rồi tạo PR để merge với origin/develop
 
 **❌ Sai (KHÔNG NÊN):**
 
@@ -664,3 +703,305 @@ Cần switch branch / pull / quay lại?
              git commit -m "..."
              git push
 ```
+
+---
+
+## ⚠️ Các lỗi Git thường gặp khi làm việc với branch được bảo vệ (Bài học thực tế)
+
+Repository sử dụng **Git Flow** với **branch protection** trên `main` và `develop`. Thành viên **không được push trực tiếp** vào hai nhánh này, bắt buộc phải tạo `feature/*` → PR → Review → Merge.
+
+### 🚨 Lỗi 1: "rejected... branch is under protection" khi push
+
+**Tình huống:**
+
+```bash
+git push origin develop
+# ERROR: [remote rejected] develop (protected branch hook declined)
+```
+
+**Nguyên nhân:**
+
+- `develop` có branch protection bật
+- Bạn cố push trực tiếp mà không qua PR
+
+**Cách xử lý (✅ ĐÚNG):**
+
+```bash
+# ❌ KHÔNG push trực tiếp
+git push origin develop
+
+# ✅ ĐÚNG - Tạo feature branch
+git checkout -b feature/your-feature
+git add .
+git commit -m "feat: your feature"
+git push -u origin feature/your-feature
+
+# Rồi tạo PR trên GitHub
+# Base: develop ← Compare: feature/your-feature
+```
+
+---
+
+### 🚨 Lỗi 2: VS Code "Publish Branch" báo lỗi "Pull first"
+
+**Tình huống:**
+
+- Bạn code trên `feature/login-page`
+- Click **Publish Branch** trên VS Code
+- Báo lỗi: `failed to push some refs to 'origin'`
+
+**Nguyên nhân:**
+
+- Remote branch `feature/login-page` đã tồn tại với commit khác
+- Có thể người khác push trước, hoặc push từ máy khác
+- Git yêu cầu pull trước để merge
+
+**Cách xử lý (✅ ĐÚNG):**
+
+```bash
+# 1. Pull branch feature từ remote
+git pull origin feature/login-page
+
+# 2. Nếu có conflict, sửa trong VS Code
+# - Chọn "Accept Incoming" hoặc "Accept Current"
+# - git add .
+
+# 3. Commit merge
+git commit -m "merge: resolve remote conflicts"
+
+# 4. Push lại
+git push origin feature/login-page
+
+# 5. Hoặc dùng VS Code Source Control → ... → Pull
+```
+
+**Cách tránh lỗi này:**
+
+```bash
+# Cấu hình default push strategy
+git config --global push.default current
+
+# Ý nghĩa:
+# - Mỗi khi push, git tự động tạo tracking branch remote
+# - Tránh nhầm lẫn push sai branch
+```
+
+---
+
+### 🚨 Lỗi 3: "non-fast-forward" reject khi push
+
+**Tình huống:**
+
+```bash
+git push origin feature/user-profile
+# ERROR: failed to push some refs to 'origin'
+# hint: Updates were rejected because the tip of your current branch is behind
+# hint: its remote counterpart.
+```
+
+**Nguyên nhân:**
+
+- Remote branch có commit mà local branch không có
+- Thường do push từ máy/người khác trước
+
+**Cách xử lý (✅ ĐÚNG):**
+
+```bash
+# Cách 1: Pull trước (an toàn nhất)
+git pull origin feature/user-profile
+git push origin feature/user-profile
+
+# Cách 2: Fetch + Rebase (nếu muốn history sạch)
+git fetch origin
+git rebase origin/feature/user-profile
+git push origin feature/user-profile
+```
+
+**⚠️ NGUY HIỂM - KHÔNG NÊN:**
+
+```bash
+# ❌ Force push (ngoại trừ owner / test lúc clone)
+git push --force origin feature/user-profile
+# → Có thể xóa commit của người khác!
+```
+
+---
+
+### 🚨 Lỗi 4: VS Code dùng Git khác PowerShell (Windows-specific)
+
+**Tình huống:**
+
+- Terminal PowerShell chạy lệnh git OK
+- VS Code Source Control báo lỗi ngược lại
+- Hoặc VS Code không nhận git commands
+
+**Nguyên nhân (Windows):**
+
+- Windows có thể cài Git 2 chỗ:
+  - `C:\Program Files\Git\bin\git.exe` (Git cho PowerShell)
+  - `C:\Program Files\Git for Windows\cmd\git.exe` (Git khác)
+- VS Code dùng Git binary khác PowerShell
+
+**Cách xử lý (✅ ĐÚNG):**
+
+```bash
+# 1. Kiểm tra Git path
+which git
+# Output: C:\Program Files\Git\bin\git
+
+# 2. Cấu hình VS Code dùng Git path này
+# Mở VS Code Settings (Ctrl+,)
+# Tìm: "git.path"
+# Nhập: "C:\Program Files\Git\bin\git.exe"
+
+# 3. Reload VS Code (Ctrl+Shift+P → Reload Window)
+```
+
+**Nếu vẫn lỗi:**
+
+```bash
+# Cài đặt lại Git for Windows
+# Tải từ: https://git-scm.com/download/win
+# Hoặc dùng Chocolatey: choco install git
+```
+
+---
+
+### 🚨 Lỗi 5: Push feature/* thành công nhưng PR vẫn không cho merge
+
+**Tình huống:**
+
+- Push `feature/payment` lên GitHub thành công
+- Tạo PR: develop ← feature/payment
+- GitHub báo: **"This branch cannot be merged"**
+
+**Nguyên nhân:**
+
+- Branch có conflict với develop
+- Hoặc branch chưa pass CI/CD checks
+- Hoặc yêu cầu reviewer chưa approve
+
+**Cách xử lý (✅ ĐÚNG):**
+
+```bash
+# 1. Kiểm tra conflict
+# GitHub sẽ báo "This branch has conflicts that must be resolved"
+
+# 2. Resolve conflict ở local
+git checkout feature/payment
+git pull origin develop
+# → Sẽ báo conflict nếu có
+
+# 3. Sửa conflict trong file
+# - Mở file, edit conflict markers
+# git add .
+# git commit -m "merge: resolve develop conflicts"
+# git push origin feature/payment
+
+# 4. Kiểm tra CI/CD checks
+# - GitHub Actions sẽ chạy lại
+# - Đợi tất cả test pass (xanh)
+
+# 5. Yêu cầu reviewer
+# - Thêm comment: @reviewer "Ready for review"
+# - Hoặc assign lại reviewer nếu cần
+```
+
+---
+
+### ✅ Checklist: Chuẩn bị Push Feature Branch
+
+**Trước khi push:**
+
+- [ ] Bạn đang ở branch `feature/*` (check: `git branch`)
+- [ ] Code đã test trên local, không có lỗi
+- [ ] Commit message tuân thủ format: `type: description`
+- [ ] Không commit file bị ignore (`.env`, `node_modules/`)
+
+**Khi push:**
+
+```bash
+# Bước 1: Kiểm tra branch
+git branch
+# Output: * feature/your-feature
+
+# Bước 2: Pull develop mới nhất
+git checkout develop
+git pull origin develop
+
+# Bước 3: Quay lại feature, merge develop (nếu cần)
+git checkout feature/your-feature
+git pull origin develop  # Pull develop vào feature
+# Nếu conflict, sửa + add + commit
+
+# Bước 4: Push feature
+git push -u origin feature/your-feature
+```
+
+**Sau khi push:**
+
+- [ ] GitHub sẽ hiện "Compare & pull request" → Click
+- [ ] Chọn base: `develop`, compare: `feature/your-feature`
+- [ ] Điền title + description rõ ràng
+- [ ] Assign 1-2 reviewers
+- [ ] Đợi CI/CD checks pass (xanh)
+- [ ] Đợi reviewer approve
+
+---
+
+### ⚠️ Khi nào được phép Force Push?
+
+**Chỉ được phép khi:**
+
+- ✅ Branch `feature/*` chỉ của bạn (chưa ai else push)
+- ✅ Branch chưa có PR được merge
+- ✅ Bạn là owner repository
+
+**Lệnh force push:**
+
+```bash
+# ⚠️ NGUY HIỂM - Xóa commit remote
+git push --force origin feature/your-feature
+
+# ✅ AN TOÀN HƠN - Chỉ push nếu local ahead
+git push --force-with-lease origin feature/your-feature
+```
+
+**Cách tránh cần force push:**
+
+```bash
+# Thay vì reset, tạo branch mới sạch
+git checkout -b feature/your-feature-v2
+git cherry-pick commit-hash-1
+git cherry-pick commit-hash-2
+git push -u origin feature/your-feature-v2
+
+# Xóa branch cũ
+git branch -D feature/your-feature
+git push origin --delete feature/your-feature
+```
+
+---
+
+### 🎯 Flowchart: Cách xử lý khi push bị reject
+
+```
+git push origin feature/branch
+      ↓
+Có error?
+    ├─ "protected branch" → ✅ Đúng, tạo PR qua GitHub
+    ├─ "non-fast-forward" → ✅ git pull + git push
+    ├─ "Pull first" → ✅ git pull origin feature/branch
+    ├─ "force push needed" → ⚠️ Chi hỏi trưởng nhóm trước
+    │
+    └─ Thành công → GitHub sẽ báo "Compare & pull request"
+                     → Tạo PR để merge vào develop
+```
+
+---
+
+### 📚 Tham khảo thêm
+
+- **Git Stash khi conflict:** [GIT STASH - Scenario 6](#scenario-6-stash-conflict)
+- **Pull + Rebase strategy:** [GIT WORKFLOW](#-git-workflow)
+- **Cấu hình Git global:** Terminal PowerShell → `git config --global`
