@@ -1,109 +1,191 @@
 ﻿# CONTRIBUTING GUIDE
 
-## 1. Mục đích
-Tài liệu này quy định **quy trình và nguyên tắc làm việc nhóm** nhằm đảm bảo dự án được phát triển thống nhất, dễ bảo trì và hạn chế xung đột source code.
+Quy tắc & tiêu chuẩn làm việc cho tất cả thành viên dự án.
 
 ---
 
-## 2. Quy tắc chung
-- Mọi thành viên phải tuân thủ Git workflow của nhóm  
-- Không push code trực tiếp lên nhánh main và develop  
-- Mỗi chức năng phải được phát triển trên một nhánh riêng  
-- Mọi thay đổi quan trọng phải thông qua Pull Request  
+## 1. Nguyên tắc chung
+
+- ✅ Mọi thành viên tuân thủ Git workflow
+- ✅ Mọi thay đổi quan trọng thông qua Pull Request (PR)
+- ❌ Không push trực tiếp lên `main` hoặc `develop`
+- ❌ Không force push
+- ❌ Mỗi branch chỉ làm một nhiệm vụ
 
 ---
 
-## 3. Git Workflow sử dụng trong dự án
+## 2. Git Workflow
 
-### 3.1. Các nhánh chính
-- main: nhánh ổn định, dùng cho demo và bảo vệ đồ án  
-- develop: nhánh phát triển chính  
-- feature/*: nhánh phát triển chức năng  
+### Các nhánh chính
 
----
+- **main ← develop** (chỉ merge khi demo/bảo vệ đồ án)
+- **develop ← feature/** (nhánh phát triển chính, default branch)
+- **feature/** (tạo feature từ develop, PR → merge vào develop)
 
-## 4. Quy trình làm việc chuẩn
+### Luồng cơ bản
 
-### Bước 1: Cập nhật code mới nhất
-Chuyển về develop và pull code (bash):  
-git checkout develop  
-git pull  
+```
+develop → feature/ten-chuc-nang → Pull Request → Review → develop → main
+```
 
-### Bước 2: Tạo nhánh feature
-Tạo nhánh mới cho chức năng đang làm (bash):  
-git checkout -b feature/ten-chuc-nang  
-
-Ví dụ:  
-feature/login  
-feature/user-management  
+**Chi tiết từng bước:** Xem [GitChecklist.md](GitChecklist.md)
 
 ---
 
-### Bước 3: Commit code
-Sau khi hoàn thành một phần công việc:
+## 3. Quy ước Commit Message
 
-Thêm file vào staging (bash):  
-git add .  
+**Cấu trúc:**
 
-Commit code (bash):  
-git commit -m "feat: implement login feature"  
+```
+type: mô tả ngắn gọn
+```
 
----
+**Các loại (type) được sử dụng:**
 
-### Bước 4: Push và tạo Pull Request
-Push branch lên GitHub (bash):  
-git push origin feature/ten-chuc-nang  
+- `feat` – Thêm chức năng mới
+- `fix` – Sửa lỗi
+- `ui` – Thay đổi giao diện
+- `refactor` – Tối ưu / tổ chức lại code
+- `docs` – Cập nhật tài liệu
+- `test` – Thêm/cập nhật test
 
-Tạo Pull Request từ feature branch vào develop trên GitHub.
+**Ví dụ:**
 
----
+```
+feat: implement user authentication API
+fix: resolve login validation error
+ui: redesign product card component
+refactor: extract utility functions
+docs: update API documentation
+```
 
-## 5. Quy ước commit message
+**Lưu ý:**
 
-Cấu trúc commit:  
-type: mô tả ngắn gọn  
-
-Các type được sử dụng:
-- feat: thêm chức năng mới  
-- fix: sửa lỗi  
-- ui: thay đổi giao diện  
-- refactor: tối ưu hoặc tổ chức lại code  
-- docs: cập nhật tài liệu  
-
-Ví dụ:
-- feat: add RFQ creation API  
-- ui: update admin dashboard layout  
+- Mô tả ngắn gọn, rõ ý (< 50 ký tự)
+- Không viết quá dài một dòng commit
+- Commit liên quan đến một chức năng cụ thể
 
 ---
 
-## 6. Quy định về Pull Request
-Mỗi Pull Request cần:
-- Mô tả ngắn gọn chức năng đã thực hiện  
-- Đảm bảo code không bị lỗi  
-- Không chứa file bị ignore (.env, node_modules, target, …)  
+## 4. Pull Request (PR)
+
+### Yêu cầu bắt buộc
+
+- [ ] **Tiêu đề rõ ràng** – mô tả chức năng đã làm
+- [ ] **Mô tả chi tiết** – phần hệ thống bị ảnh hưởng
+- [ ] **Code đã test** – không có lỗi hiển thị
+- [ ] **Không chứa file bị ignore** – `.env`, `node_modules/`, `target/`, v.v.
+- [ ] **1-2 reviewer** – ít nhất một người review trước merge
+
+### Mẫu mô tả PR
+
+```markdown
+## 📝 Mô tả
+
+Chức năng được thêm / vấn đề được sửa.
+
+## 🔍 Kiểm tra
+
+- [ ] Chạy test thành công
+- [ ] Không có console error/warning
+- [ ] Đã test trên múi trình duyệt
+
+## 📋 Liên kết
+
+Liên kết issue hoặc ticket liên quan (nếu có).
+```
+
+### Quy trình review
+
+1. Tạo PR từ branch feature vào develop
+2. Assign reviewer
+3. Đợi review comment
+4. Sửa code nếu có yêu cầu → push tiếp
+5. Approve → merge khi ready
 
 ---
 
-## 7. Phân công và phối hợp
-- Không chỉnh sửa code của thành viên khác khi chưa trao đổi  
-- Thông báo cho nhóm khi làm các thay đổi ảnh hưởng lớn  
-- Ưu tiên giao tiếp qua nhóm chat hoặc GitHub Issues  
+## 5. Code Style & Chất lượng
+
+### Frontend (React + TypeScript)
+
+- ✅ Sử dụng **TypeScript** cho type safety
+- ✅ Tuân thủ **ESLint** config của dự án
+- ✅ Component names: PascalCase (vd: `UserCard.tsx`)
+- ✅ Function names: camelCase (vd: `getUserData()`)
+- ✅ Không hard-code giá trị – dùng config/constants
+- ✅ Comment component phức tạp
+
+**Ví dụ cấu trúc component:**
+
+```typescript
+/**
+ * UserCard - Hiển thị thông tin người dùng
+ * @param {User} user - Dữ liệu người dùng
+ */
+export const UserCard: React.FC<{ user: User }> = ({ user }) => {
+  return <div>{user.name}</div>;
+};
+```
+
+### Backend (Spring Boot + Java)
+
+- ✅ Tuân thủ **Java naming conventions**
+- ✅ Class names: PascalCase
+- ✅ Method names: camelCase
+- ✅ Không magic numbers – dùng constants
+- ✅ Comment business logic phức tạp
+- ✅ Viết unit tests cho service layer
 
 ---
 
-## 8. Code Style & Chất lượng
-- Viết code rõ ràng, dễ đọc  
-- Đặt tên biến, hàm có ý nghĩa  
-- Hạn chế hard-code  
-- Comment các đoạn logic quan trọng  
+## 6. Phối hợp nhóm
+
+- 📢 **Thông báo** khi làm các thay đổi ảnh hưởng lớn
+- 💬 **Trao đổi** trước qua chat/Discord nếu cần
+- 👥 **Không chỉnh sửa** code của thành viên khác khi chưa xin phép
+- 🔔 **Notify** reviewer qua comment nếu PR bị stuck
 
 ---
 
-## 9. Báo lỗi và đề xuất
-- Sử dụng GitHub Issues để báo lỗi hoặc đề xuất cải tiến  
-- Mô tả rõ vấn đề và cách tái hiện lỗi  
+## 7. Báo lỗi & Đề xuất
+
+### Sử dụng GitHub Issues
+
+1. Mô tả **rõ ràng** vấn đề (title + description)
+2. **Cách tái hiện** lỗi (reproduction steps)
+3. **Expected vs Actual** behavior
+4. **Attachment** (screenshot, log, etc.)
+
+**Ví dụ:**
+
+```
+Title: Login form không submit khi password chứa ký tự đặc biệt
+
+Description:
+- Mô tả chi tiết vấn đề
+- Step to reproduce:
+  1. Vào trang login
+  2. Nhập password với "@#$"
+  3. Click submit
+
+Expected: Form submit thành công
+Actual: Submit button disabled
+```
 
 ---
 
-## 10. Cam kết
-Mỗi thành viên khi tham gia dự án đồng ý tuân thủ các quy định trong tài liệu này nhằm đảm bảo tiến độ và chất lượng đồ án.
+## ⚠️ Ghi chú quan trọng
+
+- 📦 Không push `node_modules/`, `target/`, `.env` lên GitHub
+- 🔐 Không commit credentials, API keys, passwords
+- 📝 Luôn cập nhật `.gitignore` khi thêm thư mục mới
+- 🔄 Luôn pull develop trước khi tạo feature branch
+
+---
+
+## 📚 Tài liệu thêm
+
+- **Setup chi tiết:** [INSTALL.md](INSTALL.md)
+- **Checklist thao tác Git:** [GitChecklist.md](GitChecklist.md)
+- **README Overview:** [README.md](README.md)
