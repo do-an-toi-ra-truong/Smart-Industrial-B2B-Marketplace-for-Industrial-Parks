@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AdminLTE v4 | Disputes & Returns</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="preload" href="../src/css/adminlte.css" as="style" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../src/css/adminlte.css" />
+</head>
+<body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
+    <div class="app-wrapper">
+        
+        <nav class="app-header navbar navbar-expand bg-body">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button"><i
+                                class="bi bi-list"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" data-widget="navbar-search" href="#" role="button"><i
+                                class="bi bi-search"></i></a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-bs-toggle="dropdown" href="#">
+                            <i class="bi bi-bell-fill"></i>
+                            <span class="navbar-badge badge text-bg-warning">15</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+                            <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+                            <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown user-menu">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img src="../src/assets/images/user2-160x160.jpg" class="user-image rounded-circle shadow"
+                                alt="User Image" />
+                            <span class="d-none d-md-inline">Alexander Pierce</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <div class="sidebar-brand">
+                <a href="./index.html" class="brand-link">
+                    <img src="../src/assets/images/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image opacity-75 shadow" />
+                    <span class="brand-text fw-light">AdminLTE 4</span>
+                </a>
+            </div>
+            <div class="sidebar-wrapper">
+                <nav class="mt-2">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation" id="navigation">
+                        
+                        <li class="nav-header">ORDER MANAGEMENT</li>
+                        <li class="nav-item"><a href="./company-orders.html" class="nav-link"><i class="nav-icon bi bi-layers-fill"></i><p>Master Order List</p></a></li>
+                        <li class="nav-item"><a href="./rfq-monitor.html" class="nav-link"><i class="nav-icon bi bi-eye-fill"></i><p>Monitor Active RFQs</p></a></li>
+
+                        <li class="nav-header">ADMIN OVERSIGHT</li>
+                        <li class="nav-item"><a href="./order-approvals.html" class="nav-link"><i class="nav-icon bi bi-check-circle-fill"></i><p>Approval Queue</p></a></li>
+                        <li class="nav-item"><a href="./disputes.html" class="nav-link active"><i class="nav-icon bi bi-exclamation-triangle-fill text-warning"></i><p>Disputes & Returns</p></a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="app-main">
+            <div class="app-content-header">
+                <div class="container-fluid">
+                    <div class="row"><div class="col-sm-6"><h3 class="mb-0">Disputes & Returns</h3></div></div>
+                </div>
+            </div>
+
+            <div class="app-content">
+                <div class="container-fluid">
+                    
+                    <div class="alert alert-secondary text-dark border-secondary">
+                        <i class="bi bi-info-circle-fill text-primary me-2"></i>
+                        <strong>Oversight View:</strong> This is a read-only monitoring dashboard. Procurement and Sales staff are currently managing these ongoing disputes with the vendors/clients.
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><h3 class="card-title">Active Order Issues</h3></div>
+                        <div class="card-body p-0">
+                            <table class="table table-hover align-middle text-center">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-start">Order ID</th>
+                                        <th>Type</th>
+                                        <th>Handled By (Staff)</th>
+                                        <th>Issue Description</th>
+                                        <th>Status</th>
+                                        <th>Value (VND)</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start fw-bold">#PO-2024-045</td>
+                                        <td><span class="badge text-bg-secondary">Buying (RTV)</span></td>
+                                        <td>Nguyen Van A</td>
+                                        <td>Damaged goods upon delivery (rusted pipes).</td>
+                                        <td><span class="badge text-bg-warning">In Negotiation</span></td>
+                                        <td>45,000,000 ₫</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-dark view-dispute-btn" 
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#disputeModal"
+                                                data-id="#PO-2024-045"
+                                                data-type="Buying (Return to Vendor)"
+                                                data-issue="Rusted pipes received. Photos attached."
+                                                data-status="Negotiating Refund">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start fw-bold">#SO-1088</td>
+                                        <td><span class="badge text-bg-info text-dark">Selling (RMA)</span></td>
+                                        <td>Le Thi B</td>
+                                        <td>Client reporting incorrect specifications.</td>
+                                        <td><span class="badge text-bg-danger">Return Pending</span></td>
+                                        <td>120,500,000 ₫</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-dark view-dispute-btn" 
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#disputeModal"
+                                                data-id="#SO-1088"
+                                                data-type="Selling (Return Authorization)"
+                                                data-issue="Client claims dimensions are off by 2mm."
+                                                data-status="Waiting for Return Shipment">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        
+        <footer class="app-footer">
+            <div class="float-end d-none d-sm-inline">Order Management Module</div>
+            <strong>Copyright &copy; 2025 <a href="#" class="text-decoration-none">MyCompany</a>.</strong> All rights reserved.
+        </footer>
+    </div>
+
+    <div class="modal fade" id="disputeModal" tabindex="-1" aria-labelledby="disputeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="disputeModalLabel">Dispute Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 border-end">
+                            <h6 class="fw-bold text-primary">Issue Summary</h6>
+                            <table class="table table-sm table-borderless">
+                                <tr>
+                                    <td class="text-muted">Order ID:</td>
+                                    <td class="fw-bold" id="modal-id">...</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Type:</td>
+                                    <td id="modal-type">...</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-muted">Current Status:</td>
+                                    <td><span class="badge bg-warning text-dark" id="modal-status">...</span></td>
+                                </tr>
+                            </table>
+                            <div class="alert alert-light border">
+                                <strong>Description:</strong>
+                                <p class="mb-0 small" id="modal-issue">...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="fw-bold text-primary">Evidence & Logs</h6>
+                            <div class="d-flex gap-2 mb-3">
+                                <div class="bg-secondary bg-opacity-25 d-flex align-items-center justify-content-center rounded" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-image fs-4 text-muted"></i>
+                                </div>
+                                <div class="bg-secondary bg-opacity-25 d-flex align-items-center justify-content-center rounded" style="width: 80px; height: 80px;">
+                                    <i class="bi bi-file-earmark-pdf fs-4 text-muted"></i>
+                                </div>
+                            </div>
+                            <h6 class="fw-bold text-primary mt-3">Staff Notes</h6>
+                            <div class="bg-light p-2 rounded small text-muted">
+                                <i class="bi bi-person-circle"></i> <strong>Staff:</strong> "I have contacted the other party. They agreed to partial refund." <br>
+                                <span class="text-secondary" style="font-size: 0.8em;">Today at 10:30 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"><i class="bi bi-chat-dots"></i> Message Staff</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="../src/js/adminlte.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Sidebar Scroll
+            const sidebarWrapper = document.querySelector('.sidebar-wrapper');
+            if (sidebarWrapper && OverlayScrollbarsGlobal?.OverlayScrollbars !== undefined) {
+                OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+                    scrollbars: { theme: 'os-theme-light', autoHide: 'leave', clickScroll: true },
+                });
+            }
+
+            // Modal Data Injection Logic
+            const disputeModal = document.getElementById('disputeModal');
+            if (disputeModal) {
+                disputeModal.addEventListener('show.bs.modal', event => {
+                    // Button that triggered the modal
+                    const button = event.relatedTarget;
+                    
+                    // Extract info from data-* attributes
+                    const id = button.getAttribute('data-id');
+                    const type = button.getAttribute('data-type');
+                    const issue = button.getAttribute('data-issue');
+                    const status = button.getAttribute('data-status');
+
+                    // Update the modal's content.
+                    disputeModal.querySelector('#modal-id').textContent = id;
+                    disputeModal.querySelector('#modal-type').textContent = type;
+                    disputeModal.querySelector('#modal-issue').textContent = issue;
+                    disputeModal.querySelector('#modal-status').textContent = status;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
