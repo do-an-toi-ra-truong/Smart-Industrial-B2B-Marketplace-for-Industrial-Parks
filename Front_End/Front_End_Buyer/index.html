@@ -913,999 +913,758 @@
   </header>
 
   <main class="main">
-
-    <!-- Hero Section -->
-    <section class="ecommerce-hero-2 hero section" id="hero">
-      <div class="container">
-        <div class="hero-slider swiper init-swiper" data-aos="fade-up">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 800,
-              "autoplay": {
-                "delay": 5000
-              },
-              "effect": "fade",
-              "fadeEffect": {
-                "crossFade": true
-              },
-              "navigation": {
-                "nextEl": ".swiper-button-next",
-                "prevEl": ".swiper-button-prev"
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-            <!-- New Collection Slide -->
-            <div class="swiper-slide slide-new">
-              <div class="row align-items-center">
-                <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
-                  <div class="slide-content">
-                    <span class="slide-badge">New Arrivals</span>
-                    <h1>Discover Our <span>Latest</span> Collection</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus. Vivamus magna
-                      justo, lacinia eget consectetur sed, convallis at tellus.</p>
-                    <div class="slide-cta">
-                      <a href="#" class="btn btn-shop">Shop New Arrivals <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
-                  <div class="product-showcase">
-                    <div class="product-grid">
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="product-image">
-                          <img src="./assets/images/product-1.webp" alt="New Product 1">
-                        </div>
-                        <div class="product-info">
-                          <h4>Modern Style</h4>
-                          <span class="price">$79.99</span>
-                        </div>
-                      </div>
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="product-image">
-                          <img src="./assets/images/product-2.webp" alt="New Product 2">
-                        </div>
-                        <div class="product-info">
-                          <h4>Casual Collection</h4>
-                          <span class="price">$64.99</span>
-                        </div>
-                      </div>
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="product-image">
-                          <img src="./assets/images/product-6.webp" alt="New Product 3">
-                        </div>
-                        <div class="product-info">
-                          <h4>Premium Design</h4>
-                          <span class="price">$89.99</span>
-                        </div>
-                      </div>
-                      <div class="product-item" data-aos="fade-up" data-aos-delay="600">
-                        <div class="product-image">
-                          <img src="./assets/images/product-7.webp" alt="New Product 4">
-                        </div>
-                        <div class="product-info">
-                          <h4>Elegant Series</h4>
-                          <span class="price">$74.99</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sale Products Slide -->
-            <div class="swiper-slide slide-sale">
-              <div class="row align-items-center">
-                <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
-                  <div class="slide-content">
-                    <span class="slide-badge">Limited Time</span>
-                    <h1>Season <span>Sale</span> Up To 50% Off</h1>
-                    <p>Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut libero malesuada feugiat.
-                      Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.</p>
-                    <div class="slide-cta">
-                      <a href="#" class="btn btn-shop">Shop Sale <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                    <div class="countdown-container">
-                      <div class="countdown-label">Offer ends in:</div>
-                      <div class="countdown d-flex" data-count="2025/6/15">
-                        <div>
-                          <h3 class="count-days"></h3>
-                          <h4>Days</h4>
-                        </div>
-                        <div>
-                          <h3 class="count-hours"></h3>
-                          <h4>Hours</h4>
-                        </div>
-                        <div>
-                          <h3 class="count-minutes"></h3>
-                          <h4>Minutes</h4>
-                        </div>
-                        <div>
-                          <h3 class="count-seconds"></h3>
-                          <h4>Seconds</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
-                  <div class="sale-showcase">
-                    <div class="main-product">
-                      <img src="./assets/images/product-8.webp" alt="Sale Product">
-                      <div class="discount-badge">
-                        <span class="percent">50%</span>
-                        <span class="text">OFF</span>
-                      </div>
-                    </div>
-                    <div class="floating-tag" data-aos="zoom-in" data-aos-delay="300">
-                      <div class="tag-content">
-                        <span class="tag-label">Best Seller</span>
-                        <span class="tag-price">
-                          <span class="old-price">$129.99</span>
-                          <span class="new-price">$64.99</span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Featured Products Slide -->
-            <div class="swiper-slide slide-featured">
-              <div class="row align-items-center">
-                <div class="col-lg-6 content-col" data-aos="fade-right" data-aos-delay="100">
-                  <div class="slide-content">
-                    <span class="slide-badge">Featured Collection</span>
-                    <h1>Premium <span>Quality</span> Products</h1>
-                    <p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec rutrum congue leo
-                      eget malesuada. Cras ultricies ligula sed magna dictum porta.</p>
-                    <div class="slide-cta">
-                      <a href="#" class="btn btn-shop">Explore Collection <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                    <div class="feature-list">
-                      <div class="feature-item">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Premium Materials</span>
-                      </div>
-                      <div class="feature-item">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Handcrafted Quality</span>
-                      </div>
-                      <div class="feature-item">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Lifetime Warranty</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 image-col" data-aos="fade-left" data-aos-delay="200">
-                  <div class="featured-showcase">
-                    <div class="featured-image">
-                      <img src="./assets/images/product-9.webp" alt="Featured Product">
-                      <div class="featured-badge">
-                        <i class="bi bi-star-fill"></i>
-                        <span>Featured</span>
-                      </div>
-                    </div>
-                    <div class="floating-review" data-aos="fade-up" data-aos-delay="300">
-                      <div class="review-stars">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                      <div class="review-text">
-                        "Exceptional quality and design"
-                      </div>
-                      <div class="review-author">
-                        - Satisfied Customer
-                      </div>
-                    </div>
+    <section id="hero" class="hero section p-0">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper bg-black">
+          <div class="swiper-slide">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920');"></div>
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-lg-7 col-md-9 hero-content">
+                  <span class="badge bg-primary rounded-pill mb-3 px-3 py-2">Vietnam's #1 B2B Platform</span>
+                  <h1 class="display-3 fw-bold text-white mb-4">Connect with Verified Industrial Suppliers</h1>
+                  <p class="lead text-white-50 mb-5 w-75">Access a network of 5,000+ audited factories in VSIP, Amata, and My Phuoc industrial zones.</p>
+                  <div class="d-flex gap-3">
+                    <a href="#company-results" class="btn btn-primary rounded-pill px-5 py-3 fw-bold">Find Suppliers</a>
+                    <a href="#" class="btn btn-outline-light rounded-pill px-5 py-3 fw-bold">Join as Supplier</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
-    </section><!-- /Hero Section -->
-
-    <!-- Promo Cards Section -->
-    <section id="promo-cards" class="promo-cards section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4">
-          <!-- Promo Card 1 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="promo-card card-1">
-              <div class="promo-content">
-                <p class="small-text">Etiam vel augue</p>
-                <h3 class="promo-title">Nullam quis ante</h3>
-                <p class="promo-description">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu in enim
-                  justo rhoncus ut.</p>
-                <a href="#" class="btn-shop">Shop Now</a>
-              </div>
-              <div class="promo-image">
-                <img src="./assets/images/product-1.webp" alt="Product" class="img-fluid">
-              </div>
-            </div>
-          </div>
-
-          <!-- Promo Card 2 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="promo-card card-2">
-              <div class="promo-content">
-                <p class="small-text">Maecenas tempus</p>
-                <h3 class="promo-title">Sed fringilla mauris</h3>
-                <p class="promo-description">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu in enim
-                  justo rhoncus ut.</p>
-                <a href="#" class="btn-shop">Shop Now</a>
-              </div>
-              <div class="promo-image">
-                <img src="./assets/images/product-2.webp" alt="Product" class="img-fluid">
-              </div>
-            </div>
-          </div>
-
-          <!-- Promo Card 3 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="promo-card card-3">
-              <div class="promo-content">
-                <p class="small-text">Aenean commodo</p>
-                <h3 class="promo-title">Fusce vulputate eleifend</h3>
-                <p class="promo-description">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu in enim
-                  justo rhoncus ut.</p>
-                <a href="#" class="btn-shop">Shop Now</a>
-              </div>
-              <div class="promo-image">
-                <img src="./assets/images/product-f-1.webp" alt="Product" class="img-fluid">
-              </div>
-            </div>
-          </div>
-
-          <!-- Promo Card 4 -->
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="promo-card card-4">
-              <div class="promo-content">
-                <p class="small-text">Pellentesque auctor</p>
-                <h3 class="promo-title">Vestibulum dapibus nunc</h3>
-                <p class="promo-description">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu in enim
-                  justo rhoncus ut.</p>
-                <a href="#" class="btn-shop">Shop Now</a>
-              </div>
-              <div class="promo-image">
-                <img src="./assets/images/product-m-1.webp" alt="Product" class="img-fluid">
+          <div class="swiper-slide">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1920');"></div>
+            <div class="container h-100">
+              <div class="row h-100 align-items-center">
+                <div class="col-lg-7 col-md-9 hero-content">
+                  <span class="badge bg-warning text-dark rounded-pill mb-3 px-3 py-2">Global Logistics</span>
+                  <h1 class="display-3 fw-bold text-white mb-4">Seamless Export from Vietnam to the World</h1>
+                  <p class="lead text-white-50 mb-5 w-75">Integrated logistics solutions, customs clearance, and freight forwarding for industrial goods.</p>
+                  <a href="#" class="btn btn-warning rounded-pill px-5 py-3 fw-bold text-dark">Explore Services</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
+        <div class="swiper-button-next text-white"></div>
+        <div class="swiper-button-prev text-white"></div>
+        <div class="swiper-pagination"></div>
       </div>
+    </section>
+    <!-- 4 Feature Industrial zones -->
+    <section id="zone-selection" class="section py-5 bg-white">
+      <div class="container" data-aos="fade-up">
 
-    </section><!-- /Promo Cards Section -->
+        <div class="text-center mb-5">
+          <h1 class="display-5 fw-bold mb-3">Explore Industrial Ecosystems</h1>
+          <p class="lead text-muted">Click on an Industrial Zone to view its verified suppliers and manufacturers.</p>
+        </div>
 
-    <!-- Category Cards Section -->
-    <section id="category-cards" class="category-cards section light-background">
+        <div class="row g-4 justify-content-center">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 shadow-sm zone-filter-card zone-btn" data-filter=".zone-vsip">
+              <div class="position-relative" style="height: 240px; overflow: hidden;">
+                <img src="./assets/images/kcnVsipBD.png" class="card-img-top w-100 h-100" style="object-fit: cover;"
+                  alt="VSIP">
+                <div class="position-absolute bottom-0 start-0 w-100 p-3"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <h3 class="text-white fw-bold mb-0">VSIP I & II</h3>
+                  <small class="text-white-50"><i class="bi bi-geo-alt"></i> Binh Duong</small>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text text-muted mb-3">
+                  The flagship 500-hectare industrial park in Thuan An; a high-tech model with modern infrastructure and
+                  100% occupancy.
+                </p>
+                <button class="btn btn-outline-primary rounded-pill px-4">View 4 Companies</button>
+              </div>
+            </div>
+          </div>
 
-        <div class="category-tabs">
-          <ul class="nav justify-content-center" id="category-cards-tabs" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="category-cards-men-tab" data-bs-toggle="tab"
-                data-bs-target="#category-cards-men-content" type="button" role="tab"
-                aria-controls="category-cards-men-content" aria-selected="false">SHOP MEN</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="category-cards-women-tab" data-bs-toggle="tab"
-                data-bs-target="#category-cards-women-content" type="button" role="tab"
-                aria-controls="category-cards-women-content" aria-selected="true">SHOP WOMEN</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="category-cards-accesoires-tab" data-bs-toggle="tab"
-                data-bs-target="#category-cards-accesoires-content" type="button" role="tab"
-                aria-controls="category-cards-accesoires-content" aria-selected="false">SHOP ACCESSOIRCES</button>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 shadow-sm zone-filter-card zone-btn" data-filter=".zone-myphuoc">
+              <div class="position-relative" style="height: 240px; overflow: hidden;">
+                <img src="./assets/images/kcnMyPhuoc.png" class="card-img-top w-100 h-100" style="object-fit: cover;"
+                  alt="My Phuoc">
+                <div class="position-absolute bottom-0 start-0 w-100 p-3"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <h3 class="text-white fw-bold mb-0">KCN My Phuoc</h3>
+                  <small class="text-white-50"><i class="bi bi-geo-alt"></i> Ben Cat</small>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text text-muted mb-3">
+                  A massive industrial-urban complex by Becamex IDC, integrating manufacturing with full residential and
+                  commercial amenities.
+                </p>
+                <button class="btn btn-outline-success rounded-pill px-4">View 4 Companies</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 shadow-sm zone-filter-card zone-btn" data-filter=".zone-amata">
+              <div class="position-relative" style="height: 240px; overflow: hidden;">
+                <img src="./assets/images/kcnAmataCity.png" class="card-img-top w-100 h-100" style="object-fit: cover;"
+                  alt="Amata">
+                <div class="position-absolute bottom-0 start-0 w-100 p-3"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <h3 class="text-white fw-bold mb-0">Amata City</h3>
+                  <small class="text-white-50"><i class="bi bi-geo-alt"></i> Dong Nai</small>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text text-muted mb-3">
+                  A premier Eco-Industrial Park in Dong Nai, offering international standards and strategic connectivity
+                  to major logistics hubs.
+                </p>
+                <button class="btn btn-outline-danger rounded-pill px-4">View 4 Companies</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 shadow-sm zone-filter-card zone-btn" data-filter=".zone-hp">
+              <div class="position-relative" style="height: 240px; overflow: hidden;">
+                <img src="./assets/images/kcnVsipHP.png" class="card-img-top w-100 h-100" style="object-fit: cover;"
+                  alt="VSIP">
+                <div class="position-absolute bottom-0 start-0 w-100 p-3"
+                  style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <h3 class="text-white fw-bold mb-0">VSIP Hai Phong</h3>
+                  <small class="text-white-50"><i class="bi bi-geo-alt"></i> Hai Phong</small>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <p class="card-text text-muted mb-3">
+                  A 1,600-hectare integrated township and park in the Dinh Vu - Cat Hai Economic Zone, optimized for
+                  global electronics and maritime trade.
+
+                </p>
+                <button class="btn btn-outline-primary rounded-pill px-4">View 4 Companies</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="company-results" class="section py-5 bg-white">
+      <div class="container" data-aos="fade-up">
+
+        <div class="d-flex align-items-center justify-content-between mb-4">
+          <div>
+            <h2 class="h3 fw-bold text-dark mb-1">Công ty theo Cụm KCN</h2>
+            <p class="text-muted mb-0">Doanh nghiệp uy tín được xác thực</p>
+          </div>
+        </div>
+
+        <!-- Sorting -->
+        <div class="product-filters isotope-filters mb-5">
+          <ul class="d-flex flex-wrap gap-2 list-unstyled align-items-center">
+            
+            <li data-filter="*" class="filter-active btn btn-light rounded-3 px-3 border">All</li>
+            <li data-filter=".zone-vsip" class="btn btn-light rounded-3 px-3 border">VSIP I & II</li>
+            <li data-filter=".zone-myphuoc" class="btn btn-light rounded-3 px-3 border">KCN My Phuoc</li>
+            <li data-filter=".zone-amata" class="btn btn-light rounded-3 px-3 border">AmataCity</li>
+            <li data-filter=".zone-hp" class="btn btn-light rounded-3 px-3 border">VSIP Hai Phong</li>
+
+            <li class="list-inline-item ms-auto">
+              <button class="btn btn-primary rounded-3 px-4 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#checklistModal">
+                <i class="bi bi-sliders"></i> Filter Options
+              </button>
             </li>
           </ul>
         </div>
 
-        <div class="tab-content" id="category-cards-tabContent">
-          <!-- Men's Categories -->
-          <div class="tab-pane fade" id="category-cards-men-content" role="tabpanel"
-            aria-labelledby="category-cards-men-tab">
-            <div class="row g-4">
-              <!-- Leather Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="category-card">
-                  <img src="./assets/images/product-m-11.webp" alt="Men's Leather" class="img-fluid"
-                    loading="lazy">
-                  <a href="#" class="category-link">
-                    LEATHER <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
+        <div class="row g-4 isotope-container" id="company-grid">
 
-              <!-- Denim Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="category-card">
-                  <img src="./assets/images/product-m-12.webp" alt="Men's Denim" class="img-fluid" loading="lazy">
-                  <a href="#" class="category-link">
-                    DENIM <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
+          <div class="col-md-6 col-lg-3 isotope-item zone-vsip">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1655876726270-2caec425d0cd?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Precision">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
               </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Cơ khí Precision</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> VSIP I, Binh Duong</div>
 
-              <!-- Swimwear Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="category-card">
-                  <img src="./assets/images/product-m-19.webp" alt="Men's Swimwear" class="img-fluid"
-                    loading="lazy">
-                  <a href="#" class="category-link">
-                    SWIMWEAR <i class="bi bi-arrow-right"></i>
-                  </a>
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 150 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 500+ SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.8 (124)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Women's Categories -->
-          <div class="tab-pane fade show active" id="category-cards-women-content" role="tabpanel"
-            aria-labelledby="category-cards-women-tab">
-            <div class="row g-4">
-              <!-- Dresses Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="category-card">
-                  <img src="./assets/images/product-f-11.webp" alt="Women's Dresses" class="img-fluid"
-                    loading="lazy">
-                  <a href="#" class="category-link">
-                    DRESSES <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
+          <div class="col-md-6 col-lg-3 isotope-item zone-vsip">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Chemicals">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
               </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Vietnam Parkerizing</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> VSIP I, Binh Duong</div>
 
-              <!-- Tops Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="category-card">
-                  <img src="./assets/images/product-f-18.webp" alt="Women's Tops" class="img-fluid" loading="lazy">
-                  <a href="#" class="category-link">
-                    TOPS <i class="bi bi-arrow-right"></i>
-                  </a>
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 200 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 50+ SP</div>
                 </div>
-              </div>
 
-              <!-- Accessories Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="category-card">
-                  <img src="./assets/images/product-f-13.webp" alt="Women's Accessories" class="img-fluid"
-                    loading="lazy">
-                  <a href="#" class="category-link">
-                    ACCESSORIES <i class="bi bi-arrow-right"></i>
-                  </a>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.5 (89)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Kid's Categories -->
-          <div class="tab-pane fade" id="category-cards-accesoires-content" role="tabpanel"
-            aria-labelledby="category-cards-accesoires-tab">
-            <div class="row g-4">
-              <!-- Boys Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="category-card">
-                  <img src="./assets/images/product-1.webp" alt="Boys Clothing" class="img-fluid" loading="lazy">
-                  <a href="#" class="category-link">
-                    BOYS <i class="bi bi-arrow-right"></i>
-                  </a>
-                </div>
+          <div class="col-md-6 col-lg-3 isotope-item zone-vsip">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Estec">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
               </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Estec Vina</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> VSIP II, Binh Duong</div>
 
-              <!-- Girls Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="category-card">
-                  <img src="./assets/images/product-2.webp" alt="Girls Clothing" class="img-fluid" loading="lazy">
-                  <a href="#" class="category-link">
-                    GIRLS <i class="bi bi-arrow-right"></i>
-                  </a>
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 320 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 1.2k SP</div>
                 </div>
-              </div>
 
-              <!-- Toys Category -->
-              <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="400">
-                <div class="category-card">
-                  <img src="./assets/images/product-3.webp" alt="Kids Toys" class="img-fluid" loading="lazy">
-                  <a href="#" class="category-link">
-                    TOYS <i class="bi bi-arrow-right"></i>
-                  </a>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.9 (210)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-vsip">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Esquel">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Esquel Garment</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> VSIP I, Binh Duong</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 1500 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 200 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.7 (156)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-myphuoc">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="TechVina">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">TechVina Electronics</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> My Phuoc 3</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 500 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 2k+ SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.9 (256)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-myphuoc">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Kumho">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Kumho Tire</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> My Phuoc 3</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 1000 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 50 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.6 (300)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-myphuoc">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1580983218765-f663bec07b37?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Tatung">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Tatung Vietnam</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> My Phuoc 2</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 400 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 300 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.5 (112)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-myphuoc">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Orion">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Orion Food Vina</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> My Phuoc 2</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 800 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 20 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.9 (500)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-amata">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Steel">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Thép Công nghiệp Việt</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> KCN Đồng Nai</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 250 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 40 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.6 (178)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-amata">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Schaeffler">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Schaeffler Vietnam</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> Amata, Dong Nai</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 600 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 5k+ SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.8 (210)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-amata">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Toshiba">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Toshiba Industrial</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> Amata, Dong Nai</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 450 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 100 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.7 (190)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-amata">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1532634996326-ad71d593922d?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Hyosung">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Hyosung Vietnam</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> Nhon Trach 5</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 1200 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 15 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.8 (310)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-hp">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1574689211272-bc14e289e223?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Chemicals">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Hóa chất Đông Nam Á</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> VSIP Hai Phong</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 180 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 30 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.7 (89)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-hp">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="LG">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">LG Electronics</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> Trang Due, Hai Phong</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 2000 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 500+ SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.9 (500)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-hp">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1558486012-817176f84c6d?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Bridgestone">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Bridgestone Tire</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> Dinh Vu, Hai Phong</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 900 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 60 SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.8 (220)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 isotope-item zone-hp">
+            <div class="card h-100 border rounded-3 shadow-sm hover-lift group">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1565514020176-0c223b4e5477?auto=format&fit=crop&q=80&w=400"
+                  class="card-img-top w-100 h-100 object-fit-cover" alt="Regina">
+                <div class="position-absolute top-0 end-0 m-2 px-2 py-1 bg-success text-white rounded small fw-bold"><i
+                    class="bi bi-check-circle-fill"></i> Verified</div>
+              </div>
+              <div class="card-body p-3">
+                <h6 class="card-title fw-bold text-dark mb-1">Regina Miracle</h6>
+                <div class="text-muted small mb-2"><i class="bi bi-geo-alt"></i> VSIP Hai Phong</div>
+
+                <div class="d-flex gap-3 mb-3 border-top border-bottom py-2 bg-light rounded px-2">
+                  <div class="small"><i class="bi bi-people-fill text-primary"></i> 1500 NV</div>
+                  <div class="small"><i class="bi bi-box-seam-fill text-primary"></i> 800+ SP</div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="small text-warning fw-bold"><i class="bi bi-star-fill"></i> 4.6 (150)</div>
+                  <a href="#" class="text-primary small fw-bold text-decoration-none">Chi tiết <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 d-md-none">
+          <button class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2">
+            Xem tất cả <i class="bi bi-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Checklist Modal -->
+    <div class="modal fade" id="checklistModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl"> <div class="modal-content rounded-4 border-0 shadow-lg">
+          
+          <div class="modal-header border-bottom-0 pb-0">
+            <div>
+              <h4 class="modal-title fw-bold">Find Your Supplier</h4>
+              <p class="text-muted small mb-0">Select criteria to refine your search results.</p>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body p-4">
+            <form id="filterForm">
+              
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                
+                <div class="col">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <h6 class="fw-bold mb-3 text-primary"><i class="bi bi-geo-alt-fill"></i> Province</h6>
+                    <div class="d-flex flex-column gap-2" style="max-height: 150px; overflow-y: auto;">
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".prov-binhduong" id="chk_bd"><label class="form-check-label" for="chk_bd">Bình Dương</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".prov-dongnai" id="chk_dn"><label class="form-check-label" for="chk_dn">Đồng Nai</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".prov-haiphong" id="chk_hp"><label class="form-check-label" for="chk_hp">Hải Phòng</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".prov-hcm" id="chk_hcm"><label class="form-check-label" for="chk_hcm">TP. Hồ Chí Minh</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".prov-bacninh" id="chk_bn"><label class="form-check-label" for="chk_bn">Bắc Ninh</label></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <h6 class="fw-bold mb-3 text-danger"><i class="bi bi-grid-fill"></i> Industry</h6>
+                    <div class="d-flex flex-column gap-2">
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cat-mech" id="chk_mech"><label class="form-check-label" for="chk_mech">Mechanical</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cat-elec" id="chk_elec"><label class="form-check-label" for="chk_elec">Electronics</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cat-chem" id="chk_chem"><label class="form-check-label" for="chk_chem">Chemicals</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cat-pack" id="chk_pack"><label class="form-check-label" for="chk_pack">Packaging</label></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <h6 class="fw-bold mb-3 text-success"><i class="bi bi-building-fill"></i> Business Type</h6>
+                    <div class="d-flex flex-column gap-2">
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".type-mfg" id="chk_mfg"><label class="form-check-label" for="chk_mfg">Manufacturer (Factory)</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".type-dist" id="chk_dist"><label class="form-check-label" for="chk_dist">Distributor / Trader</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".type-service" id="chk_serv"><label class="form-check-label" for="chk_serv">Service Provider</label></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <h6 class="fw-bold mb-3 text-dark"><i class="bi bi-box-fill"></i> Material</h6>
+                    <div class="d-flex flex-column gap-2">
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".mat-steel" id="mat1"><label class="form-check-label" for="mat1">Steel / Iron</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".mat-alum" id="mat2"><label class="form-check-label" for="mat2">Aluminum</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".mat-plas" id="mat3"><label class="form-check-label" for="mat3">Plastic / Rubber</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".mat-wood" id="mat4"><label class="form-check-label" for="mat4">Wood / Paper</label></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <h6 class="fw-bold mb-3 text-dark"><i class="bi bi-gear-wide-connected"></i> Process</h6>
+                    <div class="d-flex flex-column gap-2">
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".proc-cnc" id="proc1"><label class="form-check-label" for="proc1">CNC Machining</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".proc-mold" id="proc2"><label class="form-check-label" for="proc2">Injection Molding</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".proc-stamp" id="proc3"><label class="form-check-label" for="proc3">Stamping / Casting</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".proc-surf" id="proc4"><label class="form-check-label" for="proc4">Surface Treatment</label></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="p-3 bg-light rounded-3 h-100">
+                    <h6 class="fw-bold mb-3 text-dark"><i class="bi bi-award-fill"></i> Certification</h6>
+                    <div class="d-flex flex-column gap-2">
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cert-iso9" id="cert1"><label class="form-check-label" for="cert1">ISO 9001 (Quality)</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cert-iso14" id="cert2"><label class="form-check-label" for="cert2">ISO 14001 (Env)</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cert-fda" id="cert3"><label class="form-check-label" for="cert3">FDA / GMP</label></div>
+                      <div class="form-check"><input class="form-check-input filter-chk" type="checkbox" value=".cert-ce" id="cert4"><label class="form-check-label" for="cert4">CE / UL</label></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer border-top-0 pt-0 justify-content-between">
+            <button type="button" class="btn btn-outline-secondary" id="btnCancel" data-bs-dismiss="modal">
+              <i class="bi bi-x-circle"></i> Cancel
+            </button>
+            <div>
+              <button type="button" class="btn btn-link text-decoration-none text-muted me-2" id="btnReset">Clear All</button>
+              <button type="button" class="btn btn-primary px-4 rounded-3" id="applyFilters" data-bs-dismiss="modal">
+                <i class="bi bi-check2-circle"></i> Show Results
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Brands-running -->
+    <section id="brand-carousel" class="section py-5 bg-white border-top">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="section-header text-center mb-4">
+          <h4 class="fw-bold text-dark">Top Industrial Brands</h4>
+          <p class="text-muted small">Our most purchased partners and manufacturers.</p>
+        </div>
+
+        <div class="swiper brand-swiper">
+          <div class="swiper-wrapper align-items-center">
+            
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/boge-logo.png" class="img-fluid brand-img" alt="BOGE">
+            </div>
+            
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/leica-logo.png" class="img-fluid brand-img" alt="Leica">
+            </div>
+            
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/specim-logo.png" class="img-fluid brand-img" alt="Specim">
+            </div>
+            
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/smalley-logo.png" class="img-fluid brand-img" alt="Smalley">
+            </div>
+            
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/topsolid-logo.png" class="img-fluid brand-img" alt="TopSolid">
+            </div>
+            
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/turck-logo.png" class="img-fluid brand-img" alt="Turck">
+            </div>
+
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/evident-logo.png" class="img-fluid brand-img" alt="Evident">
+            </div>
+
+            <div class="swiper-slide d-flex justify-content-center">
+              <img src="./assets/images/lmao-logo.png" class="img-fluid brand-img" alt="Imao">
+            </div>
+
           </div>
         </div>
 
       </div>
-
-    </section><!-- /Category Cards Section -->
-
-    <!-- Best Sellers Section -->
-    <section id="best-sellers" class="best-sellers section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Best Sellers</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row g-4">
-          <!-- Product 1 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in">
-              <div class="product-image">
-                <img src="./assets/images/product-f-1.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-f-2.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Women's Fashion</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Tempor Incididunt</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">$129.00</div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.8 <span>(42)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 2 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="100">
-              <div class="product-image">
-                <img src="./assets/images/product-m-1.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-m-2.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-badge new">New</div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Men's Collection</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Elit Consectetur</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">$95.00</div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.6 <span>(28)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 3 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="200">
-              <div class="product-image">
-                <img src="./assets/images/product-f-3.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-f-4.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-badge sale">-25%</div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Accessories</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Adipiscing Magna</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">
-                    $75.00
-                    <span class="original-price">$99.00</span>
-                  </div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.9 <span>(56)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 4 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="300">
-              <div class="product-image">
-                <img src="./assets/images/product-m-3.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-m-4.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Footwear</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Labore Dolore</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">$145.00</div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.7 <span>(35)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 5 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="400">
-              <div class="product-image">
-                <img src="./assets/images/product-f-5.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-f-6.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Men's Fashion</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Magna Aliqua</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">$89.00</div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.5 <span>(23)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 6 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="500">
-              <div class="product-image">
-                <img src="./assets/images/product-m-5.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-m-6.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-badge sale">-15%</div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Women's Fashion</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Eiusmod Tempor</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">
-                    $110.00
-                    <span class="original-price">$129.00</span>
-                  </div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.8 <span>(47)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 7 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="600">
-              <div class="product-image">
-                <img src="./assets/images/product-f-7.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-f-8.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Accessories</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Incididunt Labore</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">$55.00</div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.6 <span>(31)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Product 8 -->
-          <div class="col-6 col-lg-3">
-            <div class="product-card" data-aos="zoom-in" data-aos-delay="700">
-              <div class="product-image">
-                <img src="./assets/images/product-m-7.webp" class="main-image img-fluid" alt="Product">
-                <img src="./assets/images/product-m-8.webp" class="hover-image img-fluid" alt="Product Variant">
-                <div class="product-overlay">
-                  <div class="product-actions">
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Quick View">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button type="button" class="action-btn" data-bs-toggle="tooltip" title="Add to Cart">
-                      <i class="bi bi-cart-plus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="product-badge new">New</div>
-              </div>
-              <div class="product-details">
-                <div class="product-category">Men's Fashion</div>
-                <h4 class="product-title"><a href="./pages/shop/product-details.html">Aliqua Magna</a></h4>
-                <div class="product-meta">
-                  <div class="product-price">$79.00</div>
-                  <div class="product-rating">
-                    <i class="bi bi-star-fill"></i>
-                    4.7 <span>(39)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Best Sellers Section -->
-
-    <!-- Product List Section -->
-    <section id="product-list" class="product-list section">
-
-      <div class="container isotope-layout" data-aos="fade-up" data-aos-delay="100" data-default-filter="*"
-        data-layout="masonry" data-sort="original-order">
-
-        <div class="row">
-          <div class="col-12">
-            <div class="product-filters isotope-filters mb-5 d-flex justify-content-center" data-aos="fade-up">
-              <ul class="d-flex flex-wrap gap-2 list-unstyled">
-                <li class="filter-active" data-filter="*">All</li>
-                <li data-filter=".filter-clothing">Clothing</li>
-                <li data-filter=".filter-accessories">Accessories</li>
-                <li data-filter=".filter-electronics">Electronics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="row product-container isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-          <!-- Product Item 1 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-clothing">
-            <div class="product-card">
-              <div class="product-image">
-                <span class="badge">Sale</span>
-                <img src="./assets/images/product-1.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-1-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Lorem ipsum dolor sit amet</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$89.99</span>
-                  <span class="old-price">$129.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-half"></i>
-                  <span>(24)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-          <!-- Product Item 2 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-electronics">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="./assets/images/product-2.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-2-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Consectetur adipiscing elit</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$249.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star"></i>
-                  <span>(18)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-          <!-- Product Item 3 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-accessories">
-            <div class="product-card">
-              <div class="product-image">
-                <span class="badge">New</span>
-                <img src="./assets/images/product-3.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-3-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Sed do eiusmod tempor</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$59.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star"></i>
-                  <i class="bi bi-star"></i>
-                  <span>(7)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-          <!-- Product Item 4 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-clothing">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="./assets/images/product-4.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-4-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Incididunt ut labore et dolore</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$79.99</span>
-                  <span class="old-price">$99.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <span>(32)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-          <!-- Product Item 5 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-electronics">
-            <div class="product-card">
-              <div class="product-image">
-                <span class="badge">Sale</span>
-                <img src="./assets/images/product-5.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-5-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Magna aliqua ut enim ad minim</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$199.99</span>
-                  <span class="old-price">$249.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-half"></i>
-                  <i class="bi bi-star"></i>
-                  <span>(15)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-          <!-- Product Item 6 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-accessories">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="./assets/images/product-6.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-6-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Veniam quis nostrud exercitation</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$45.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star"></i>
-                  <span>(21)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-          <!-- Product Item 7 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-clothing">
-            <div class="product-card">
-              <div class="product-image">
-                <span class="badge">New</span>
-                <img src="./assets/images/product-7.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-7-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Ullamco laboris nisi ut aliquip</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$69.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-half"></i>
-                  <i class="bi bi-star"></i>
-                  <span>(11)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-          <!-- Product Item 8 -->
-          <div class="col-md-6 col-lg-3 product-item isotope-item filter-electronics">
-            <div class="product-card">
-              <div class="product-image">
-                <img src="./assets/images/product-8.webp" alt="Product" class="img-fluid main-img">
-                <img src="./assets/images/product-8-variant.webp" alt="Product Hover" class="img-fluid hover-img">
-                <div class="product-overlay">
-                  <a href="./pages/shop/cart.html" class="btn-cart"><i class="bi bi-cart-plus"></i> Add to Cart</a>
-                  <div class="product-actions">
-                    <a href="#" class="action-btn"><i class="bi bi-heart"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-eye"></i></a>
-                    <a href="#" class="action-btn"><i class="bi bi-arrow-left-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <div class="product-info">
-                <h5 class="product-title"><a href="./pages/shop/product-details.html">Ex ea commodo consequat</a></h5>
-                <div class="product-price">
-                  <span class="current-price">$159.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <span>(29)</span>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Product Item -->
-
-        </div>
-
-        <div class="text-center mt-5" data-aos="fade-up">
-          <a href="./pages/shop/category.html" class="view-all-btn">View All Products <i class="bi bi-arrow-right"></i></a>
-        </div>
-
-      </div>
-
-    </section><!-- /Product List Section -->
-
+    </section>
   </main>
+
 
   <footer id="footer" class="footer light-background">
     <div class="footer-main">
@@ -2060,7 +1819,7 @@
   <script src="./assets/js/libs/glightbox.min.js"></script>
   <script src="./assets/js/libs/Drift.min.js"></script>
   <script src="./assets/js/libs/purecounter_vanilla.js"></script>
-
+  
   <!-- Main JS File -->
   <script src="./assets/js/custom/main.js"></script>
 
@@ -2074,4 +1833,3 @@
 </body>
 
 </html>
-

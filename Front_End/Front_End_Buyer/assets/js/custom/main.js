@@ -989,5 +989,172 @@
       faqItem.parentNode.classList.toggle('faq-active');
     });
   });
+  /**
+   * =======================================================
+   * CUSTOM HOME PAGE LOGIC
+   * (Isotope Filters, Zone Selection, Hero Slider, Brand Slider)
+   * =======================================================
+   */
+  window.addEventListener('load', () => {
+
+    // 1. Initialize Isotope for Company Grid
+    // Check if the element exists first to avoid errors on other pages
+    if (document.querySelector('#company-grid')) {
+      let iso = new Isotope('#company-grid', {
+        itemSelector: '.isotope-item',
+        layoutMode: 'masonry'
+      });
+
+      // LOGIC A: Handle the Big Image Cards (Zone Selection)
+      const zoneCards = document.querySelectorAll('.zone-btn');
+      const gridTitle = document.getElementById('grid-title');
+
+      zoneCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          // Visuals
+          zoneCards.forEach(b => b.classList.remove('border-primary', 'shadow-lg'));
+          this.classList.add('border-primary', 'shadow-lg');
+
+          // Filter
+          const filterValue = this.getAttribute('data-filter');
+          iso.arrange({
+            filter: filterValue
+          });
+
+          // Update Title
+          const zoneHeading = this.querySelector('h3');
+          if (zoneHeading && gridTitle) {
+            gridTitle.innerText = "Companies in " + zoneHeading.innerText;
+          }
+
+          // Sync Buttons
+          updateActiveButton(filterValue);
+
+          // Scroll
+          const resultsSection = document.getElementById('company-results');
+          if (resultsSection) {
+            resultsSection.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // LOGIC B: Handle Quick Filter Buttons
+      const filterButtons = document.querySelectorAll('.product-filters li[data-filter]');
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Visuals
+          filterButtons.forEach(b => b.classList.remove('filter-active', 'bg-primary', 'text-white'));
+          this.classList.add('filter-active', 'bg-primary', 'text-white');
+
+          // Filter
+          const filterValue = this.getAttribute('data-filter');
+          iso.arrange({
+            filter: filterValue
+          });
+
+          // Reset Big Cards
+          zoneCards.forEach(b => b.classList.remove('border-primary', 'shadow-lg'));
+        });
+      });
+
+      // LOGIC C: Handle Modal "Apply" Button
+      const applyBtn = document.getElementById('applyFilters');
+      if (applyBtn) {
+        applyBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.filter-chk:checked');
+          let filters = [];
+
+          checkboxes.forEach(chk => {
+            filters.push(chk.value);
+          });
+
+          let filterValue = filters.length > 0 ? filters.join(', ') : '*';
+
+          iso.arrange({
+            filter: filterValue
+          });
+
+          if (gridTitle) gridTitle.innerText = "Filtered Results";
+        });
+      }
+
+      // LOGIC D: Handle Modal "Reset" Button
+      const resetBtn = document.getElementById('resetFilters');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-chk').forEach(chk => chk.checked = false);
+          iso.arrange({
+            filter: '*'
+          });
+          if (gridTitle) gridTitle.innerText = "All Companies";
+        });
+      }
+
+      // Helper: Sync buttons
+      function updateActiveButton(filterValue) {
+        filterButtons.forEach(btn => {
+          btn.classList.remove('filter-active', 'bg-primary', 'text-white');
+          if (btn.getAttribute('data-filter') === filterValue) {
+            btn.classList.add('filter-active', 'bg-primary', 'text-white');
+          }
+        });
+      }
+    }
+
+    // 2. Initialize Hero Slider (Top)
+    if (document.querySelector('.hero-swiper')) {
+      new Swiper('.hero-swiper', {
+        loop: true,
+        speed: 1000,
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    }
+
+    // 3. Initialize Brand Carousel (Bottom)
+    if (document.querySelector('.brand-swiper')) {
+      new Swiper('.brand-swiper', {
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 2,
+        spaceBetween: 30,
+        breakpoints: {
+          576: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+          992: {
+            slidesPerView: 6,
+            spaceBetween: 60,
+          },
+        },
+      });
+    }
+
+  });
 
 })();
