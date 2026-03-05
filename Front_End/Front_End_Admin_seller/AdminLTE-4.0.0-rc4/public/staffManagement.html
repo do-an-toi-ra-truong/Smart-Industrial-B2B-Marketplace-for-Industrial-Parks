@@ -1,0 +1,1083 @@
+<!doctype html>
+<html lang="en">
+  <!--begin::Head-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AdminLTE v4 | Dashboard</title>
+    <!--begin::Accessibility Meta Tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#007bff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
+    <!--end::Accessibility Meta Tags-->
+    <!--begin::Primary Meta Tags-->
+    <meta name="title" content="AdminLTE v4 | Dashboard" />
+    <meta name="author" content="ColorlibHQ" />
+    <meta
+      name="description"
+      content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS. Fully accessible with WCAG 2.1 AA compliance."
+    />
+    <meta
+      name="keywords"
+      content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard, accessible admin panel, WCAG compliant"
+    />
+    <!--end::Primary Meta Tags-->
+    <!--begin::Accessibility Features-->
+    <!-- Skip links will be dynamically added by accessibility.js -->
+    <meta name="supported-color-schemes" content="light dark" />
+    <link rel="preload" href="../src/css/adminlte.css" as="style" />
+    <!--end::Accessibility Features-->
+    <!--begin::Fonts-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
+      integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media='all'"
+    />
+    <!--end::Fonts-->
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/styles/overlayscrollbars.min.css"
+      crossorigin="anonymous"
+    />
+    <!--end::Third Party Plugin(OverlayScrollbars)-->
+    <!--begin::Third Party Plugin(Bootstrap Icons)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      crossorigin="anonymous"
+    />
+    <!--end::Third Party Plugin(Bootstrap Icons)-->
+    <!--begin::Required Plugin(AdminLTE)-->
+    <link rel="stylesheet" href="../src/css/adminlte.css" />
+    <!--end::Required Plugin(AdminLTE)-->
+    <!-- apexcharts -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
+      integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0="
+      crossorigin="anonymous"
+    />
+    <!-- jsvectormap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/css/jsvectormap.min.css"
+      integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
+      crossorigin="anonymous"
+    />
+  </head>
+  <!--end::Head-->
+  <!--begin::Body-->
+  <body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
+    <!--begin::App Wrapper-->
+    <div class="app-wrapper">
+      <!--begin::Header-->
+      <nav class="app-header navbar navbar-expand bg-body">
+        <!--begin::Container-->
+        <div class="container-fluid">
+          <!--begin::Start Navbar Links-->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+                <i class="bi bi-list"></i>
+              </a>
+            </li>
+            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contact</a></li>
+          </ul>
+          <!--end::Start Navbar Links-->
+          <!--begin::End Navbar Links-->
+          <ul class="navbar-nav ms-auto">
+            <!--begin::Navbar Search-->
+            <li class="nav-item">
+              <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                <i class="bi bi-search"></i>
+              </a>
+            </li>
+            <!--end::Navbar Search-->
+            <!--begin::Messages Dropdown Menu-->
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-bs-toggle="dropdown" href="#">
+                <i class="bi bi-chat-text"></i>
+                <span class="navbar-badge badge text-bg-danger">3</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                <a href="#" class="dropdown-item">
+                  <!--begin::Message-->
+                  <div class="d-flex">
+                    <div class="flex-shrink-0">
+                      <img
+                        src="../src/assets/images/user1-128x128.jpg"
+                        alt="User Avatar"
+                        class="img-size-50 rounded-circle me-3"
+                      />
+                    </div>
+                    <div class="flex-grow-1">
+                      <h3 class="dropdown-item-title">
+                        Brad Diesel
+                        <span class="float-end fs-7 text-danger"
+                          ><i class="bi bi-star-fill"></i
+                        ></span>
+                      </h3>
+                      <p class="fs-7">Call me whenever you can...</p>
+                      <p class="fs-7 text-secondary">
+                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+                      </p>
+                    </div>
+                  </div>
+                  <!--end::Message-->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <!--begin::Message-->
+                  <div class="d-flex">
+                    <div class="flex-shrink-0">
+                      <img
+                        src="../src/assets/images/user8-128x128.jpg"
+                        alt="User Avatar"
+                        class="img-size-50 rounded-circle me-3"
+                      />
+                    </div>
+                    <div class="flex-grow-1">
+                      <h3 class="dropdown-item-title">
+                        John Pierce
+                        <span class="float-end fs-7 text-secondary">
+                          <i class="bi bi-star-fill"></i>
+                        </span>
+                      </h3>
+                      <p class="fs-7">I got your message bro</p>
+                      <p class="fs-7 text-secondary">
+                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+                      </p>
+                    </div>
+                  </div>
+                  <!--end::Message-->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <!--begin::Message-->
+                  <div class="d-flex">
+                    <div class="flex-shrink-0">
+                      <img
+                        src="../src/assets/images/user3-128x128.jpg"
+                        alt="User Avatar"
+                        class="img-size-50 rounded-circle me-3"
+                      />
+                    </div>
+                    <div class="flex-grow-1">
+                      <h3 class="dropdown-item-title">
+                        Nora Silvester
+                        <span class="float-end fs-7 text-warning">
+                          <i class="bi bi-star-fill"></i>
+                        </span>
+                      </h3>
+                      <p class="fs-7">The subject goes here</p>
+                      <p class="fs-7 text-secondary">
+                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
+                      </p>
+                    </div>
+                  </div>
+                  <!--end::Message-->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+              </div>
+            </li>
+            <!--end::Messages Dropdown Menu-->
+            <!--begin::Notifications Dropdown Menu-->
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-bs-toggle="dropdown" href="#">
+                <i class="bi bi-bell-fill"></i>
+                <span class="navbar-badge badge text-bg-warning">15</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="bi bi-envelope me-2"></i> 4 new messages
+                  <span class="float-end text-secondary fs-7">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="bi bi-people-fill me-2"></i> 8 friend requests
+                  <span class="float-end text-secondary fs-7">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="bi bi-file-earmark-fill me-2"></i> 3 new reports
+                  <span class="float-end text-secondary fs-7">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item dropdown-footer"> See All Notifications </a>
+              </div>
+            </li>
+            <!--end::Notifications Dropdown Menu-->
+            <!--begin::Fullscreen Toggle-->
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+                <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+                <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none"></i>
+              </a>
+            </li>
+            <!--end::Fullscreen Toggle-->
+            <!--begin::User Menu Dropdown-->
+            <li class="nav-item dropdown user-menu">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <img
+                  src="../src/assets/images/user2-160x160.jpg"
+                  class="user-image rounded-circle shadow"
+                  alt="User Image"
+                />
+                <span class="d-none d-md-inline">Alexander Pierce</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                <!--begin::User Image-->
+                <li class="user-header text-bg-primary">
+                  <img
+                    src="../src/assets/images/user2-160x160.jpg"
+                    class="rounded-circle shadow"
+                    alt="User Image"
+                  />
+                  <p>
+                    Alexander Pierce - Web Developer
+                    <small>Member since Nov. 2023</small>
+                  </p>
+                </li>
+                <!--end::User Image-->
+                <!--begin::Menu Body-->
+                <li class="user-body">
+                  <!--begin::Row-->
+                  <div class="row">
+                    <div class="col-4 text-center"><a href="#">Followers</a></div>
+                    <div class="col-4 text-center"><a href="#">Sales</a></div>
+                    <div class="col-4 text-center"><a href="#">Friends</a></div>
+                  </div>
+                  <!--end::Row-->
+                </li>
+                <!--end::Menu Body-->
+                <!--begin::Menu Footer-->
+                <li class="user-footer">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                </li>
+                <!--end::Menu Footer-->
+              </ul>
+            </li>
+            <!--end::User Menu Dropdown-->
+          </ul>
+          <!--end::End Navbar Links-->
+        </div>
+        <!--end::Container-->
+      </nav>
+      <!--end::Header-->
+      <!--begin::Sidebar-->
+      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+        <!--begin::Sidebar Brand-->
+        <div class="sidebar-brand">
+          <!--begin::Brand Link-->
+          <a href="./index.html" class="brand-link">
+            <!--begin::Brand Image-->
+            <img
+              src="../src/assets/images/AdminLTELogo.png"
+              alt="AdminLTE Logo"
+              class="brand-image opacity-75 shadow"
+            />
+            <!--end::Brand Image-->
+            <!--begin::Brand Text-->
+            <span class="brand-text fw-light">AdminLTE 4</span>
+            <!--end::Brand Text-->
+          </a>
+          <!--end::Brand Link-->
+        </div>
+        <div class="sidebar-wrapper">
+                <nav class="mt-2">
+                    <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation" id="navigation">
+
+                        <li class="nav-header">ORDER MANAGEMENT</li>
+                        
+                        <li class="nav-item">
+                            <a href="./staffManagement.html" class="nav-link active">
+                                <i class="nav-icon bi bi-layers-fill"></i>
+                                <p>User Management</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        <!--end::Sidebar Brand-->
+        <!--begin::Sidebar Wrapper-->
+        
+        <!--end::Sidebar Wrapper-->
+      </aside>
+      <!--end::Sidebar-->
+      <!--begin::App Main-->
+      <main class="main">
+        <div class="main-content page-users">
+          <div class="page-users users-lab">
+            <div class="users-lab-hero mb-3">
+              <div>
+                <h1 class="page-title mb-1">People Directory</h1>
+                <p class="users-page-subtitle">Manage member access, lifecycle status, and team distribution from one control surface.</p>
+              </div>
+              <div class="page-header-actions">
+                <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-download me-1"></i> Export</button>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                  <i class="bi bi-plus-lg me-1"></i> Add User
+                </button>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-xl-8">
+                <div class="card users-list-card">
+                  <div class="users-toolbar">
+                    <div class="users-toolbar-left">
+                      <div class="users-filter-tabs">
+                        <button class="users-filter-tab active" data-filter="all">All <span class="users-filter-count">248</span></button>
+                        <button class="users-filter-tab" data-filter="active">Active <span class="users-filter-count">186</span></button>
+                        <button class="users-filter-tab" data-filter="pending">Pending <span class="users-filter-count">24</span></button>
+                        <button class="users-filter-tab" data-filter="inactive">Inactive <span class="users-filter-count">38</span></button>
+                      </div>
+                    </div>
+
+                    <div class="users-toolbar-right">
+                      <div class="users-search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search users, email, role..." autocomplete="off">
+                      </div>
+
+                      <div class="dropdown">
+                        <button class="users-toolbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+                          <i class="bi bi-sliders"></i> Role
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                          <li><a class="dropdown-item" href="#">All Roles</a></li>
+                          <li><a class="dropdown-item" href="#">Admin</a></li>
+                          <li><a class="dropdown-item" href="#">Manager</a></li>
+                          <li><a class="dropdown-item" href="#">User</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="table-responsive users-table-wrap">
+                    <table class="table table-hover align-middle mb-0">
+                      <thead>
+                        <tr>
+                          <th class="users-th-check">
+                            <div class="form-check"><input class="form-check-input" type="checkbox" id="selectAll"></div>
+                          </th>
+                          <th>User</th>
+                          <th>Role</th>
+                          <th>Status</th>
+                          <th>Last Active</th>
+                          <th>Joined</th>
+                          <th class="users-th-actions">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-1.webp" alt="" class="users-avatar"><span class="users-avatar-status online"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">Sarah Johnson</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d1e0c1f0c0543070205031e02032d08150c001d0108430e0200">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role admin"><i class="bi bi-shield-check"></i> Admin</span></td>
+                          <td><span class="users-status active"><span class="users-status-dot"></span> Active</span></td>
+                          <td class="users-meta">Just now</td>
+                          <td class="users-meta">Jan 15, 2024</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Send Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-2.webp" alt="" class="users-avatar"><span class="users-avatar-status online"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">Michael Chen</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6cb88c5cec3c8e6c3dec7cbd6cac388c5c9cb">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role manager"><i class="bi bi-person-gear"></i> Manager</span></td>
+                          <td><span class="users-status active"><span class="users-status-dot"></span> Active</span></td>
+                          <td class="users-meta">5 min ago</td>
+                          <td class="users-meta">Feb 3, 2024</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Send Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-3.webp" alt="" class="users-avatar"><span class="users-avatar-status away"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">Emily Rodriguez</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="61040c080d184f13210419000c110d044f020e0c">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role user"><i class="bi bi-person"></i> User</span></td>
+                          <td><span class="users-status active"><span class="users-status-dot"></span> Active</span></td>
+                          <td class="users-meta">2 hours ago</td>
+                          <td class="users-meta">Mar 12, 2024</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Send Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-4.webp" alt="" class="users-avatar"><span class="users-avatar-status offline"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">David Kim</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b6f256062664b6e736a667b676e25686466">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role user"><i class="bi bi-person"></i> User</span></td>
+                          <td><span class="users-status inactive"><span class="users-status-dot"></span> Inactive</span></td>
+                          <td class="users-meta">3 days ago</td>
+                          <td class="users-meta">Jan 28, 2024</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Send Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-5.webp" alt="" class="users-avatar"><span class="users-avatar-status online"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">Jessica Taylor</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe94d08a9f8792918cbe9b869f938e929bd09d9193">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role manager"><i class="bi bi-person-gear"></i> Manager</span></td>
+                          <td><span class="users-status active"><span class="users-status-dot"></span> Active</span></td>
+                          <td class="users-meta">1 hour ago</td>
+                          <td class="users-meta">Dec 5, 2023</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Send Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-6.webp" alt="" class="users-avatar"><span class="users-avatar-status online"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">Robert Martinez</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c7b5e9aaa6b5b3aea9a2bd87a2bfa6aab7aba2e9a4a8aa">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role user"><i class="bi bi-person"></i> User</span></td>
+                          <td><span class="users-status active"><span class="users-status-dot"></span> Active</span></td>
+                          <td class="users-meta">30 min ago</td>
+                          <td class="users-meta">Apr 18, 2024</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Send Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-7.webp" alt="" class="users-avatar"><span class="users-avatar-status offline"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">Amanda Wilson</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9c887dec0c5dac6c7e9ccd1c8c4d9c5cc87cac6c4">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role user"><i class="bi bi-person"></i> User</span></td>
+                          <td><span class="users-status pending"><span class="users-status-dot"></span> Pending</span></td>
+                          <td class="users-meta">Never</td>
+                          <td class="users-meta">May 2, 2024</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Resend Invite</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="form-check"><input class="form-check-input" type="checkbox"></div>
+                          </td>
+                          <td>
+                            <div class="users-user">
+                              <div class="users-avatar-wrap"><img src="images/avatar-8.webp" alt="" class="users-avatar"><span class="users-avatar-status online"></span></div>
+                              <div class="users-user-info"><a href="users-view.html" class="users-user-name">Chris Thompson</a><span class="users-user-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="34571a405c5b5944475b5a74514c55594458511a575b59">[email�protected]</a></span></div>
+                            </div>
+                          </td>
+                          <td><span class="users-role admin"><i class="bi bi-shield-check"></i> Admin</span></td>
+                          <td><span class="users-status active"><span class="users-status-dot"></span> Active</span></td>
+                          <td class="users-meta">15 min ago</td>
+                          <td class="users-meta">Nov 20, 2023</td>
+                          <td>
+                            <div class="users-actions">
+                              <a href="users-view.html" class="users-action-btn" title="View"><i class="bi bi-eye"></i></a>
+                              <a href="users-edit.html" class="users-action-btn" title="Edit"><i class="bi bi-pencil"></i></a>
+                              <div class="dropdown">
+                                <button class="users-action-btn dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-envelope me-2"></i> Send Email</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="bi bi-key me-2"></i> Reset Password</a></li>
+                                  <li>
+                                    <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-trash me-2"></i> Delete</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="users-pagination">
+                    <div class="users-pagination-info">Showing <strong>1-8</strong> of <strong>248</strong> users</div>
+                    <nav>
+                      <ul class="pagination pagination-sm mb-0">
+                        <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">31</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xl-4">
+                <div class="card users-lab-card mb-3">
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">Directory Snapshot</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="users-lab-kpis">
+                      <div class="users-lab-kpi users-lab-kpi-total">
+                        <small>Total</small>
+                        <strong>248</strong>
+                        <span>+18 this month</span>
+                      </div>
+                      <div class="users-lab-kpi users-lab-kpi-active">
+                        <small>Active</small>
+                        <strong>186</strong>
+                        <span>75% engagement</span>
+                      </div>
+                      <div class="users-lab-kpi users-lab-kpi-pending">
+                        <small>Pending</small>
+                        <strong>24</strong>
+                        <span>Needs onboarding</span>
+                      </div>
+                      <div class="users-lab-kpi users-lab-kpi-inactive">
+                        <small>Inactive</small>
+                        <strong>38</strong>
+                        <span>Follow-up required</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card users-lab-card mb-3">
+                  <div class="card-header">
+                    <h5 class="card-title mb-0">Role Distribution</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="users-lab-role">
+                      <div class="users-lab-role-head"><span>Admin</span><strong>34</strong></div>
+                      <div class="progress">
+                        <div class="progress-bar bg-danger" style="width: 14%"></div>
+                      </div>
+                    </div>
+                    <div class="users-lab-role">
+                      <div class="users-lab-role-head"><span>Manager</span><strong>56</strong></div>
+                      <div class="progress">
+                        <div class="progress-bar bg-warning" style="width: 23%"></div>
+                      </div>
+                    </div>
+                    <div class="users-lab-role">
+                      <div class="users-lab-role-head"><span>User</span><strong>158</strong></div>
+                      <div class="progress">
+                        <div class="progress-bar bg-primary" style="width: 63%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card users-lab-card">
+                  <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="card-title mb-0">Recently Added</h5>
+                    <a href="#" class="users-lab-link">View all</a>
+                  </div>
+                  <div class="card-body">
+                    <div class="users-lab-recent-item">
+                      <img src="images/avatar-7.webp" alt="">
+                      <div>
+                        <strong>Amanda Wilson</strong>
+                        <span>Invited 2 hours ago</span>
+                      </div>
+                    </div>
+                    <div class="users-lab-recent-item">
+                      <img src="images/avatar-6.webp" alt="">
+                      <div>
+                        <strong>Robert Martinez</strong>
+                        <span>Joined today</span>
+                      </div>
+                    </div>
+                    <div class="users-lab-recent-item">
+                      <img src="images/avatar-3.webp" alt="">
+                      <div>
+                        <strong>Emily Rodriguez</strong>
+                        <span>Activated yesterday</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="addUserModal" tabindex="-1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Add New User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="row g-3">
+                        <div class="col-sm-6">
+                          <label class="form-label">First Name</label>
+                          <input type="text" class="form-control" placeholder="Enter first name">
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label">Last Name</label>
+                          <input type="text" class="form-control" placeholder="Enter last name">
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label">Email Address</label>
+                          <input type="email" class="form-control" placeholder="Enter email address">
+                        </div>
+                        <div class="col-12">
+                          <label class="form-label">Role</label>
+                          <select class="form-select">
+                            <option value="">Select role...</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="user">User</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label">Password</label>
+                          <input type="password" class="form-control" placeholder="Enter password">
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="form-label">Confirm Password</label>
+                          <input type="password" class="form-control" placeholder="Confirm password">
+                        </div>
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sendInvite" checked="">
+                            <label class="form-check-label" for="sendInvite">Send welcome email with login details</label>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add User</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="footer-links">
+              <a href="#">Docs</a>
+              <a href="#">Privacy</a>
+              <a href="#">Security</a>
+              <a href="#">Support</a>
+            </div>
+
+            <div class="footer-credits">
+              <div class="footer-copyright">
+                � 2026 <a href="#">NiceAdmin</a>
+              </div>
+              <div class="footer-copyright">
+                <div class="credits">
+                  <!-- All the links in the footer should remain intact. -->
+                  <!-- You can delete the links only if you purchased the pro version. -->
+                  <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                  <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flex-admin-bootstrap-template/ -->
+                  Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </main>
+      <!--end::App Main-->
+      <!--begin::Footer-->
+      <footer class="app-footer">
+        <!--begin::To the end-->
+        <div class="float-end d-none d-sm-inline">Anything you want</div>
+        <!--end::To the end-->
+        <!--begin::Copyright-->
+        <strong>
+          Copyright &copy; 2014-2025&nbsp;
+          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+        </strong>
+        All rights reserved.
+        <!--end::Copyright-->
+      </footer>
+      <!--end::Footer-->
+    </div>
+    <!--end::App Wrapper-->
+    <!--begin::Script-->
+    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
+    <script src="../src/js/adminlte.js"></script>
+    <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
+    <script>
+      const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
+      const Default = {
+        scrollbarTheme: 'os-theme-light',
+        scrollbarAutoHide: 'leave',
+        scrollbarClickScroll: true,
+      };
+      document.addEventListener('DOMContentLoaded', function () {
+        const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
+        if (sidebarWrapper && OverlayScrollbarsGlobal?.OverlayScrollbars !== undefined) {
+          OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+            scrollbars: {
+              theme: Default.scrollbarTheme,
+              autoHide: Default.scrollbarAutoHide,
+              clickScroll: Default.scrollbarClickScroll,
+            },
+          });
+        }
+      });
+    </script>
+    <!--end::OverlayScrollbars Configure-->
+    <!-- OPTIONAL SCRIPTS -->
+    <!-- sortablejs -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- sortablejs -->
+    <script>
+      new Sortable(document.querySelector('.connectedSortable'), {
+        group: 'shared',
+        handle: '.card-header',
+      });
+
+      const cardHeaders = document.querySelectorAll('.connectedSortable .card-header');
+      cardHeaders.forEach((cardHeader) => {
+        cardHeader.style.cursor = 'move';
+      });
+    </script>
+    <!-- apexcharts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.min.js"
+      integrity="sha256-+vh8GkaU7C9/wbSLIcwq82tQ2wTf44aOHA8HlBMwRI8="
+      crossorigin="anonymous"
+    ></script>
+    <!-- ChartJS -->
+    <script>
+      // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
+      // IT'S ALL JUST JUNK FOR DEMO
+      // ++++++++++++++++++++++++++++++++++++++++++
+
+      const sales_chart_options = {
+        series: [
+          {
+            name: 'Digital Goods',
+            data: [28, 48, 40, 19, 86, 27, 90],
+          },
+          {
+            name: 'Electronics',
+            data: [65, 59, 80, 81, 56, 55, 40],
+          },
+        ],
+        chart: {
+          height: 300,
+          type: 'area',
+          toolbar: {
+            show: false,
+          },
+        },
+        legend: {
+          show: false,
+        },
+        colors: ['#0d6efd', '#20c997'],
+        dataLabels: {
+          enabled: false,
+        },
+        stroke: {
+          curve: 'smooth',
+        },
+        xaxis: {
+          type: 'datetime',
+          categories: [
+            '2023-01-01',
+            '2023-02-01',
+            '2023-03-01',
+            '2023-04-01',
+            '2023-05-01',
+            '2023-06-01',
+            '2023-07-01',
+          ],
+        },
+        tooltip: {
+          x: {
+            format: 'MMMM yyyy',
+          },
+        },
+      };
+
+      const sales_chart = new ApexCharts(
+        document.querySelector('#revenue-chart'),
+        sales_chart_options,
+      );
+      sales_chart.render();
+    </script>
+    <!-- jsvectormap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
+      integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
+      integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY="
+      crossorigin="anonymous"
+    ></script>
+    <!-- jsvectormap -->
+    <script>
+      // World map by jsVectorMap
+      new jsVectorMap({
+        selector: '#world-map',
+        map: 'world',
+      });
+
+      // Sparkline charts
+      const option_sparkline1 = {
+        series: [
+          {
+            data: [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021],
+          },
+        ],
+        chart: {
+          type: 'area',
+          height: 50,
+          sparkline: {
+            enabled: true,
+          },
+        },
+        stroke: {
+          curve: 'straight',
+        },
+        fill: {
+          opacity: 0.3,
+        },
+        yaxis: {
+          min: 0,
+        },
+        colors: ['#DCE6EC'],
+      };
+
+      const sparkline1 = new ApexCharts(document.querySelector('#sparkline-1'), option_sparkline1);
+      sparkline1.render();
+
+      const option_sparkline2 = {
+        series: [
+          {
+            data: [515, 519, 520, 522, 652, 810, 370, 627, 319, 630, 921],
+          },
+        ],
+        chart: {
+          type: 'area',
+          height: 50,
+          sparkline: {
+            enabled: true,
+          },
+        },
+        stroke: {
+          curve: 'straight',
+        },
+        fill: {
+          opacity: 0.3,
+        },
+        yaxis: {
+          min: 0,
+        },
+        colors: ['#DCE6EC'],
+      };
+
+      const sparkline2 = new ApexCharts(document.querySelector('#sparkline-2'), option_sparkline2);
+      sparkline2.render();
+
+      const option_sparkline3 = {
+        series: [
+          {
+            data: [15, 19, 20, 22, 33, 27, 31, 27, 19, 30, 21],
+          },
+        ],
+        chart: {
+          type: 'area',
+          height: 50,
+          sparkline: {
+            enabled: true,
+          },
+        },
+        stroke: {
+          curve: 'straight',
+        },
+        fill: {
+          opacity: 0.3,
+        },
+        yaxis: {
+          min: 0,
+        },
+        colors: ['#DCE6EC'],
+      };
+
+      const sparkline3 = new ApexCharts(document.querySelector('#sparkline-3'), option_sparkline3);
+      sparkline3.render();
+    </script>
+    <!--end::Script-->
+  </body>
+  <!--end::Body-->
+</html>
+
+
+
