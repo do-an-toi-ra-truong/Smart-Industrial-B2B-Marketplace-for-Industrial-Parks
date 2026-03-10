@@ -81,7 +81,7 @@
 /* Layout Dimensions */
 :root {
   --header-height: 64px;
-  --sidebar-width: 280px;
+  --sidebar-width: 230px;
   --sidebar-collapsed-width: 70px;
   --footer-height: 64px;
 }
