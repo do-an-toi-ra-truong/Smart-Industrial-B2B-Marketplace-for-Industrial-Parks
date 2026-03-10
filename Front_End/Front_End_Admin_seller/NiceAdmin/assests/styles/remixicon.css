@@ -12,8 +12,8 @@
   font-family: "remixicon";
   src: url('remixicon.eot?t=1769486070745'); /* IE9*/
   src: url('remixicon.eot?t=1769486070745#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url("../fonts/remixicon.woff2") format("woff2"),
-  url("../fonts/remixicon.woff") format("woff"),
+  url("../libs/fonts/remixicon.woff2") format("woff2"),
+  url("../libs/fonts/remixicon.woff") format("woff"),
   url('remixicon.ttf?t=1769486070745') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
   url('remixicon.svg?t=1769486070745#remixicon') format('svg'); /* iOS 4.1- */
   font-display: swap;

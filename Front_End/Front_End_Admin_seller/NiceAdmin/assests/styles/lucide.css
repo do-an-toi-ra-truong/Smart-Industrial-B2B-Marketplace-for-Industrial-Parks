@@ -2,8 +2,8 @@
   font-family: "lucide";
   src: url('lucide.eot?t=1769165204291'); /* IE9*/
   src: url('lucide.eot?t=1769165204291#iefix') format('embedded-opentype') /* IE6-IE8 */,
-  url('../fonts/lucide.woff2') format('woff2'),
-  url('../fonts/lucide.woff') format('woff'),
+  url('../libs/fonts/lucide.woff2') format('woff2'),
+  url('../libs/fonts/lucide.woff') format('woff'),
   url('lucide.ttf?t=1769165204291') format('truetype'),
   url('lucide.svg?t=1769165204291') format('svg');
 }
