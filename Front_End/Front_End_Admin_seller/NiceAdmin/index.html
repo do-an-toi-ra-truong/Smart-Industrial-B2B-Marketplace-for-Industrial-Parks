@@ -933,11 +933,11 @@
       // Revenue vs Expenses Chart
       const revenueExpensesOptions = {
         series: [{
-          name: 'Revenue',
-          data: [28500, 32100, 29800, 35600, 31200, 38900, 34500, 41200, 37800, 44500, 40100, 48200]
+          name: 'RFQs Participated',
+          data: [12, 18, 15, 22, 28, 25]
         }, {
-          name: 'Expenses',
-          data: [12300, 14200, 13100, 15800, 14200, 16900, 15400, 18200, 16800, 19800, 18200, 21400]
+          name: 'Quotations Submitted',
+          data: [10, 15, 13, 19, 24, 22]
         }],
         chart: {
           type: 'area',
@@ -950,7 +950,7 @@
             enabled: false
           }
         },
-        colors: [successColor, dangerColor],
+        colors: [accentColor, successColor],
         dataLabels: {
           enabled: false
         },
@@ -968,7 +968,7 @@
           }
         },
         xaxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
           axisBorder: {
             show: false
           },
@@ -989,7 +989,7 @@
               fontSize: '12px'
             },
             formatter: function (value) {
-              return '$' + (value / 1000).toFixed(0) + 'k';
+              return Math.round(value);
             }
           }
         },
@@ -1020,7 +1020,7 @@
           intersect: false,
           y: {
             formatter: function (value) {
-              return '$' + value.toLocaleString();
+              return value.toLocaleString();
             }
           }
         }
