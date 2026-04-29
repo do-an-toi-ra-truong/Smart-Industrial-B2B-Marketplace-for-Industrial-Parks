@@ -15,7 +15,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="./assets/styles/bootstrap.min.css" rel="stylesheet">
@@ -25,602 +27,7 @@
   <link href="./assets/styles/phosphor-icons.css" rel="stylesheet">
   <link href="./assets/styles/style.css" rel="stylesheet">
   <link href="./assets/styles/main.css" rel="stylesheet">
-
-  <style>
-    /* ── Super Admin accent overrides ── */
-    :root {
-      --sa-primary: #4f46e5;
-      --sa-primary-rgb: 79,70,229;
-      --sa-accent: #7c3aed;
-      --sa-gold: #f59e0b;
-      --sa-success: #10b981;
-      --sa-danger: #ef4444;
-      --sa-warning: #f59e0b;
-      --sa-info: #3b82f6;
-    }
-
-    /* Role badge chip at top of sidebar */
-    .sa-role-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      background: linear-gradient(90deg, rgba(79,70,229,0.2), rgba(124,58,237,0.15));
-      border: 1px solid rgba(79,70,229,0.35);
-      border-radius: 20px;
-      padding: 3px 10px 3px 6px;
-      font-size: 10px;
-      font-weight: 700;
-      color: #a78bfa;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-    .sa-role-chip i { font-size: 10px; color: var(--sa-gold); }
-
-    /* Page header */
-    .page-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .page-header-left {}
-    .page-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--heading-color);
-      margin: 0 0 4px;
-    }
-    .page-breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    .page-breadcrumb a { color: var(--sa-primary); text-decoration: none; }
-    .page-breadcrumb i { font-size: 10px; }
-
-    /* Stat summary cards */
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .stat-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 20px 22px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      right: 0; height: 3px;
-      border-radius: 16px 16px 0 0;
-    }
-    .stat-card.primary::before { background: linear-gradient(90deg, var(--sa-primary), var(--sa-accent)); }
-    .stat-card.success::before { background: linear-gradient(90deg, #10b981, #34d399); }
-    .stat-card.warning::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-    .stat-card.info::before    { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-    .stat-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .stat-icon.primary { background: rgba(79,70,229,0.12); color: var(--sa-primary); }
-    .stat-icon.success { background: rgba(16,185,129,0.12); color: var(--sa-success); }
-    .stat-icon.warning { background: rgba(245,158,11,0.12); color: var(--sa-warning); }
-    .stat-icon.info    { background: rgba(59,130,246,0.12); color: var(--sa-info); }
-    .stat-info {}
-    .stat-value { font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; line-height: 1; margin-bottom: 3px; color: var(--heading-color); }
-    .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
-
-    /* Tabs */
-    .sa-tabs {
-      display: flex;
-      gap: 4px;
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 5px;
-      width: fit-content;
-      margin-bottom: 24px;
-    }
-    .sa-tab {
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--text-muted);
-      border: none;
-      background: none;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-family: inherit;
-    }
-    .sa-tab .tab-count {
-      background: var(--border-color);
-      border-radius: 20px;
-      padding: 1px 7px;
-      font-size: 11px;
-    }
-    .sa-tab.active {
-      background: var(--sa-primary);
-      color: #fff;
-    }
-    .sa-tab.active .tab-count {
-      background: rgba(255,255,255,0.25);
-    }
-    .sa-tab:not(.active):hover { background: var(--hover-bg, rgba(0,0,0,0.04)); color: var(--heading-color); }
-
-    /* Table card */
-    .table-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .table-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 22px;
-      border-bottom: 1px solid var(--border-color);
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .table-card-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--heading-color);
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .table-card-title i { color: var(--sa-primary); }
-    .table-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .search-input-sm {
-      padding: 8px 12px 8px 34px;
-      background: var(--input-bg, rgba(0,0,0,0.04));
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      font-size: 13px;
-      color: var(--text-color);
-      outline: none;
-      font-family: inherit;
-      width: 220px;
-      transition: border-color 0.2s;
-      position: relative;
-    }
-    .search-input-sm:focus { border-color: var(--sa-primary); }
-    .search-wrap { position: relative; }
-    .search-wrap i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 13px; pointer-events: none; }
-    .btn-sa-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      background: var(--sa-primary);
-      border: none;
-      border-radius: 9px;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-sa-primary:hover { background: var(--sa-primary-dark, #3730a3); transform: translateY(-1px); }
-    .btn-sa-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      background: transparent;
-      border: 1.5px solid var(--border-color);
-      border-radius: 9px;
-      color: var(--text-color);
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-sa-outline:hover { border-color: var(--sa-primary); color: var(--sa-primary); }
-
-    /* Data table */
-    .sa-table { width: 100%; border-collapse: collapse; }
-    .sa-table thead tr { background: var(--table-header-bg, rgba(0,0,0,0.03)); }
-    .sa-table th {
-      padding: 11px 16px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      text-align: left;
-      white-space: nowrap;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .sa-table th.check-col, .sa-table td.check-col { width: 40px; padding-right: 0; }
-    .sa-table td {
-      padding: 14px 16px;
-      font-size: 13.5px;
-      color: var(--text-color);
-      border-bottom: 1px solid var(--border-color);
-      vertical-align: middle;
-    }
-    .sa-table tbody tr:last-child td { border-bottom: none; }
-    .sa-table tbody tr { transition: background 0.15s; }
-    .sa-table tbody tr:hover { background: var(--row-hover, rgba(79,70,229,0.04)); }
-
-    /* User cell */
-    .user-cell { display: flex; align-items: center; gap: 11px; }
-    .user-avatar-sm {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .user-avatar-initials {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-    .user-name-sm { font-weight: 600; color: var(--heading-color); font-size: 13.5px; }
-    .user-email-sm { font-size: 12px; color: var(--text-muted); }
-
-    /* Status badges */
-    .badge-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 11.5px;
-      font-weight: 600;
-    }
-    .badge-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; }
-    .badge-status.active  { background: rgba(16,185,129,0.12); color: #059669; }
-    .badge-status.active::before { background: #10b981; }
-    .badge-status.pending { background: rgba(245,158,11,0.12); color: #d97706; }
-    .badge-status.pending::before { background: #f59e0b; box-shadow: 0 0 5px #f59e0b; animation: pulse 1.5s infinite; }
-    .badge-status.suspended { background: rgba(239,68,68,0.1); color: #dc2626; }
-    .badge-status.suspended::before { background: #ef4444; }
-    .badge-status.inactive { background: rgba(107,114,128,0.1); color: #6b7280; }
-    .badge-status.inactive::before { background: #9ca3af; }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity: 0.4; } }
-
-    /* Role badge */
-    .badge-role {
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 3px 9px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
-    .badge-role.super-admin { background: linear-gradient(90deg, rgba(79,70,229,0.15), rgba(124,58,237,0.12)); color: #7c3aed; border: 1px solid rgba(124,58,237,0.2); }
-    .badge-role.ip-admin    { background: rgba(59,130,246,0.1); color: #2563eb; border: 1px solid rgba(59,130,246,0.2); }
-    .badge-role.client      { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2); }
-
-    /* Row actions */
-    .row-actions { display: flex; align-items: center; gap: 4px; }
-    .row-action-btn {
-      width: 30px; height: 30px;
-      border-radius: 7px;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
-      transition: background 0.15s, color 0.15s;
-    }
-    .row-action-btn:hover { background: var(--hover-bg, rgba(0,0,0,0.07)); color: var(--heading-color); }
-    .row-action-btn.approve:hover { background: rgba(16,185,129,0.12); color: #059669; }
-    .row-action-btn.reject:hover  { background: rgba(239,68,68,0.1); color: #dc2626; }
-    .row-action-btn.edit:hover    { background: rgba(59,130,246,0.1); color: #2563eb; }
-
-    /* Approval spotlight */
-    .approval-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 24px;
-    }
-    .approval-card-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .approval-card-title {
-      font-family: 'Poppins'; font-size: 15px; font-weight: 600;
-      color: var(--heading-color); margin:0;
-      display:flex; align-items:center; gap:8px;
-    }
-    .approval-list { display: flex; flex-direction: column; gap: 12px; }
-    .approval-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 16px;
-      background: var(--hover-bg, rgba(0,0,0,0.025));
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      transition: border-color 0.2s;
-    }
-    .approval-item:hover { border-color: var(--sa-primary); }
-    .approval-item-avatar { width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0; }
-    .approval-item-info { flex: 1; }
-    .approval-item-name { font-weight: 600; font-size: 14px; color: var(--heading-color); }
-    .approval-item-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-    .approval-item-cluster {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: rgba(79,70,229,0.08);
-      border: 1px solid rgba(79,70,229,0.2);
-      border-radius: 6px;
-      padding: 1px 8px;
-      font-size: 11px; font-weight: 600; color: var(--sa-primary);
-      margin-top: 4px;
-    }
-    .approval-item-actions { display: flex; gap: 8px; flex-shrink: 0; }
-    .btn-approve {
-      padding: 6px 14px;
-      background: rgba(16,185,129,0.1);
-      border: 1px solid rgba(16,185,129,0.3);
-      border-radius: 8px;
-      color: #059669;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: inherit;
-      display: flex; align-items: center; gap: 5px;
-      transition: background 0.2s;
-    }
-    .btn-approve:hover { background: rgba(16,185,129,0.2); }
-    .btn-reject {
-      padding: 6px 14px;
-      background: rgba(239,68,68,0.08);
-      border: 1px solid rgba(239,68,68,0.25);
-      border-radius: 8px;
-      color: #dc2626;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: inherit;
-      display: flex; align-items: center; gap: 5px;
-      transition: background 0.2s;
-    }
-    .btn-reject:hover { background: rgba(239,68,68,0.15); }
-
-    /* Cluster sidebar list */
-    .cluster-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .cluster-card-header {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border-color);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .cluster-card-title {
-      font-family: 'Poppins'; font-size: 14px; font-weight: 600;
-      color: var(--heading-color); margin: 0;
-      display: flex; align-items: center; gap: 7px;
-    }
-    .cluster-list { padding: 10px 0; }
-    .cluster-item {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .cluster-item:hover { background: var(--hover-bg, rgba(0,0,0,0.04)); }
-    .cluster-item.active { background: rgba(79,70,229,0.07); }
-    .cluster-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink:0; }
-    .cluster-info { flex: 1; }
-    .cluster-name { font-size: 13px; font-weight: 600; color: var(--heading-color); }
-    .cluster-sub  { font-size: 11px; color: var(--text-muted); }
-    .cluster-count {
-      background: var(--border-color);
-      border-radius: 20px;
-      padding: 2px 8px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    /* Checkbox */
-    .sa-checkbox {
-      width: 15px; height: 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      accent-color: var(--sa-primary);
-    }
-
-    /* Pagination */
-    .table-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 22px;
-      border-top: 1px solid var(--border-color);
-      font-size: 13px;
-      color: var(--text-muted);
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .pagination-btns { display: flex; gap: 4px; }
-    .pg-btn {
-      width: 32px; height: 32px;
-      border-radius: 7px;
-      border: 1px solid var(--border-color);
-      background: transparent;
-      color: var(--text-color);
-      font-size: 13px;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.15s;
-      font-family: inherit;
-    }
-    .pg-btn.active { background: var(--sa-primary); border-color: var(--sa-primary); color: #fff; }
-    .pg-btn:not(.active):hover { border-color: var(--sa-primary); color: var(--sa-primary); }
-    .pg-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
-    /* Modal */
-    .sa-modal-overlay {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.25s;
-    }
-    .sa-modal-overlay.show { opacity: 1; pointer-events: all; }
-    .sa-modal {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      width: 100%; max-width: 520px;
-      padding: 32px;
-      transform: scale(0.92) translateY(20px);
-      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .sa-modal-overlay.show .sa-modal { transform: scale(1) translateY(0); }
-    .sa-modal-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 24px;
-    }
-    .sa-modal-title { font-family: 'Poppins'; font-size: 17px; font-weight: 700; color: var(--heading-color); margin: 0; }
-    .sa-modal-close {
-      width: 32px; height: 32px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      background: none;
-      cursor: pointer;
-      color: var(--text-muted);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px;
-      transition: background 0.15s;
-    }
-    .sa-modal-close:hover { background: var(--hover-bg); color: var(--heading-color); }
-    .form-group-modal { margin-bottom: 18px; }
-    .form-label-modal {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      margin-bottom: 7px;
-    }
-    .form-control-modal {
-      width: 100%;
-      padding: 10px 14px;
-      background: var(--input-bg, rgba(0,0,0,0.04));
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      font-size: 13.5px;
-      color: var(--text-color);
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-control-modal:focus { border-color: var(--sa-primary); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .sa-modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
-
-    /* Ribbon on pending rows */
-    .sa-table tbody tr.pending-row td:first-child { border-left: 3px solid var(--sa-warning); }
-    .sa-table tbody tr.pending-row { background: rgba(245,158,11,0.03); }
-
-    /* Permission tags */
-    .perm-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-    .perm-tag {
-      display: inline-flex; align-items: center; gap: 3px;
-      padding: 2px 8px;
-      background: rgba(79,70,229,0.08);
-      border: 1px solid rgba(79,70,229,0.15);
-      border-radius: 5px;
-      font-size: 10.5px;
-      font-weight: 600;
-      color: var(--sa-primary);
-    }
-
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    /* IP cluster pill in park header */
-    .park-header-row {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 16px;
-      background: linear-gradient(90deg, rgba(79,70,229,0.06), transparent);
-      border-radius: 10px;
-      margin-bottom: 8px;
-    }
-    .park-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-    .park-info-name { font-weight: 700; font-size: 14px; color: var(--heading-color); }
-    .park-info-sub  { font-size: 11px; color: var(--text-muted); }
-
-    /* Toast */
-    .sa-toast {
-      position: fixed;
-      bottom: 28px; right: 28px;
-      background: #1a1a2e;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px;
-      padding: 14px 20px;
-      display: flex; align-items: center; gap: 12px;
-      font-size: 13px;
-      color: #fff;
-      z-index: 99999;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      transform: translateY(80px);
-      opacity: 0;
-      transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
-      max-width: 340px;
-    }
-    .sa-toast.show { transform: translateY(0); opacity: 1; }
-    .sa-toast-icon { font-size: 18px; flex-shrink: 0; }
-    .sa-toast.success { border-color: rgba(16,185,129,0.4); }
-    .sa-toast.success .sa-toast-icon { color: #10b981; }
-    .sa-toast.danger .sa-toast-icon { color: #ef4444; }
-  </style>
+  <link href="./assets/styles/superAdmin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -657,13 +64,16 @@
       <div class="header-actions-desktop">
         <!-- Notifications -->
         <div class="header-action-wrap dropdown notification-dropdown">
-          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+            title="Notifications">
             <i class="bi bi-bell"></i>
             <span class="header-badge">3</span>
           </button>
           <div class="dropdown-menu dropdown-menu-end notification-menu">
             <div class="notification-header">
-              <div><h6>Notifications</h6><span>3 unread</span></div>
+              <div>
+                <h6>Notifications</h6><span>3 unread</span>
+              </div>
               <a href="#" data-notification-action="mark-all-read">Mark all read</a>
             </div>
             <div class="notification-list">
@@ -782,7 +192,7 @@
 
           <!-- Dashboard link (to catalog page) -->
           <li class="nav-item">
-            <a class="nav-link" href="super-admin-catalog.html">
+            <a class="nav-link" href="super-admin-dashboard.html">
               <span class="nav-icon"><i class="ph-light ph-squares-four"></i></span>
               <span class="nav-text">Dashboard</span>
             </a>
@@ -796,11 +206,16 @@
               <span class="nav-arrow"><i class="bi bi-chevron-right"></i></span>
             </a>
             <ul class="nav-submenu show">
-              <li><a class="nav-link active" href="super-admin-accounts.html#all-accounts"><span class="nav-dot"></span>All Accounts</a></li>
-              <li><a class="nav-link" href="super-admin-accounts.html#ip-admins"><span class="nav-dot"></span>IP Admins</a></li>
-              <li><a class="nav-link" href="super-admin-accounts.html#clients"><span class="nav-dot"></span>Clients</a></li>
-              <li><a class="nav-link" href="super-admin-accounts.html#approvals"><span class="nav-dot"></span>Pending Approvals <span class="nav-badge">3</span></a></li>
-              <li><a class="nav-link" href="super-admin-accounts.html#permissions"><span class="nav-dot"></span>Roles & Permissions</a></li>
+              <li><a class="nav-link active" href="super-admin-accounts.html#all-accounts"><span
+                    class="nav-dot"></span>All Accounts</a></li>
+              <li><a class="nav-link" href="super-admin-accounts.html#ip-admins"><span class="nav-dot"></span>IP
+                  Admins</a></li>
+              <li><a class="nav-link" href="super-admin-accounts.html#clients"><span class="nav-dot"></span>Clients</a>
+              </li>
+              <li><a class="nav-link" href="super-admin-accounts.html#approvals"><span class="nav-dot"></span>Pending
+                  Approvals <span class="nav-badge">3</span></a></li>
+              <li><a class="nav-link" href="super-admin-accounts.html#permissions"><span class="nav-dot"></span>Roles &
+                  Permissions</a></li>
             </ul>
           </li>
 
@@ -836,13 +251,15 @@
           <a href="profile.html" class="sidebar-account-main">
             <img src="./assets/images/profile-img.webp" alt="Super Admin" class="sidebar-account-avatar">
             <div class="sidebar-account-meta">
-              <div class="sidebar-account-name">System Admin</div>
-              <div class="sidebar-account-role">Super Administrator</div>
+              <div class="sidebar-account-name">Nguyen Thanh Tung</div>
+              <div class="sidebar-account-role">SIBMIP System Manager</div>
+              <span class="sa-role-chip"><i class="bi bi-shield-fill-check"></i>Super Admin</span>
             </div>
           </a>
           <div class="sidebar-account-actions">
             <a href="#" class="sidebar-account-action" title="Settings"><i class="bi bi-gear"></i></a>
-            <a href="super-admin-login.html" class="sidebar-account-action sidebar-account-logout" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
+            <a href="super-admin-login.html" class="sidebar-account-action sidebar-account-logout" title="Logout"><i
+                class="bi bi-box-arrow-right"></i></a>
           </div>
         </div>
         <div class="sidebar-footer-links">
@@ -859,450 +276,521 @@
        MAIN CONTENT
   ══════════════════════════════════════ -->
   <main class="main">
-
-    <!-- Page Header -->
-    <div class="page-header">
-      <div class="page-header-left">
-        <h1 class="page-title">Account Management</h1>
-        <div class="page-breadcrumb">
-          <a href="super-admin-catalog.html">Dashboard</a>
-          <i class="bi bi-chevron-right"></i>
-          <span>Account Management</span>
-        </div>
-      </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-        <button class="btn-sa-outline" id="btn-export">
-          <i class="bi bi-download"></i> Export
-        </button>
-        <button class="btn-sa-primary" id="btn-add-account">
-          <i class="bi bi-person-plus-fill"></i> Add Account
-        </button>
-      </div>
-    </div>
-
-    <!-- Stats Row -->
-    <div class="stat-grid">
-      <div class="stat-card primary">
-        <div class="stat-icon primary"><i class="bi bi-people-fill"></i></div>
-        <div class="stat-info">
-          <div class="stat-value">248</div>
-          <div class="stat-label">Total Accounts</div>
-        </div>
-      </div>
-      <div class="stat-card success">
-        <div class="stat-icon success"><i class="bi bi-building-check"></i></div>
-        <div class="stat-info">
-          <div class="stat-value">36</div>
-          <div class="stat-label">IP Admins</div>
-        </div>
-      </div>
-      <div class="stat-card info">
-        <div class="stat-icon info"><i class="bi bi-person-badge"></i></div>
-        <div class="stat-info">
-          <div class="stat-value">209</div>
-          <div class="stat-label">Client Accounts</div>
-        </div>
-      </div>
-      <div class="stat-card warning">
-        <div class="stat-icon warning"><i class="bi bi-hourglass-split"></i></div>
-        <div class="stat-info">
-          <div class="stat-value">3</div>
-          <div class="stat-label">Pending Approval</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pending Approvals Spotlight -->
-    <div class="approval-card">
-      <div class="approval-card-header">
-        <h2 class="approval-card-title">
-          <i class="bi bi-hourglass-split" style="color:var(--sa-warning)"></i>
-          Pending Approvals
-          <span style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.35);border-radius:20px;padding:2px 10px;font-size:11px;color:#d97706;font-weight:700;">3 awaiting</span>
-        </h2>
-        <a href="#" style="font-size:13px;color:var(--sa-primary);font-weight:600;text-decoration:none;">View all</a>
-      </div>
-      <div class="approval-list" id="approval-list">
-
-        <div class="approval-item" id="approval-1">
-          <div class="user-avatar-initials approval-item-avatar" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);">NA</div>
-          <div class="approval-item-info">
-            <div class="approval-item-name">Nguyen Van An</div>
-            <div class="approval-item-meta">nguyen.vanan@vsip.com.vn · IP Admin Request</div>
-            <div class="approval-item-cluster"><i class="bi bi-building"></i> VSIP Cluster · Binh Duong</div>
-          </div>
-          <div class="approval-item-actions">
-            <button class="btn-approve" onclick="approveItem('approval-1', 'Nguyen Van An')"><i class="bi bi-check-lg"></i> Approve</button>
-            <button class="btn-reject"  onclick="rejectItem('approval-1',  'Nguyen Van An')"><i class="bi bi-x-lg"></i> Reject</button>
+    <div class="main-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="page-header-left">
+          <h1 class="page-title">Account Management</h1>
+          <div class="page-breadcrumb">
+            <a href="super-admin-catalog.html">Dashboard</a>
+            <i class="bi bi-chevron-right"></i>
+            <span>Account Management</span>
           </div>
         </div>
-
-        <div class="approval-item" id="approval-2">
-          <div class="user-avatar-initials approval-item-avatar" style="background:linear-gradient(135deg,#059669,#34d399);">LT</div>
-          <div class="approval-item-info">
-            <div class="approval-item-name">Le Thi Bich Tuyen</div>
-            <div class="approval-item-meta">bich.tuyen@amata.vn · Client Account Request</div>
-            <div class="approval-item-cluster"><i class="bi bi-building"></i> Amata Group · Dong Nai</div>
-          </div>
-          <div class="approval-item-actions">
-            <button class="btn-approve" onclick="approveItem('approval-2','Le Thi Bich Tuyen')"><i class="bi bi-check-lg"></i> Approve</button>
-            <button class="btn-reject"  onclick="rejectItem('approval-2','Le Thi Bich Tuyen')"><i class="bi bi-x-lg"></i> Reject</button>
-          </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <button class="btn-sa-outline" id="btn-export">
+            <i class="bi bi-download"></i> Export
+          </button>
+          <button class="btn-sa-primary" id="btn-add-account">
+            <i class="bi bi-person-plus-fill"></i> Add Account
+          </button>
         </div>
-
-        <div class="approval-item" id="approval-3">
-          <div class="user-avatar-initials approval-item-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">PD</div>
-          <div class="approval-item-info">
-            <div class="approval-item-name">Pham Duc Minh</div>
-            <div class="approval-item-meta">duc.minh@myphuoc.com.vn · IP Admin Request</div>
-            <div class="approval-item-cluster"><i class="bi bi-building"></i> My Phuoc Group · Binh Duong</div>
-          </div>
-          <div class="approval-item-actions">
-            <button class="btn-approve" onclick="approveItem('approval-3','Pham Duc Minh')"><i class="bi bi-check-lg"></i> Approve</button>
-            <button class="btn-reject"  onclick="rejectItem('approval-3','Pham Duc Minh')"><i class="bi bi-x-lg"></i> Reject</button>
-          </div>
-        </div>
-
       </div>
-    </div>
 
-    <!-- Main content grid -->
-    <div class="row g-3">
-
-      <!-- Left: Account Table -->
-      <div class="col-lg-8">
-        <!-- Tabs -->
-        <div class="sa-tabs" role="tablist">
-          <button class="sa-tab active" data-tab="tab-all"     onclick="switchTab(this,'tab-all')">All <span class="tab-count">248</span></button>
-          <button class="sa-tab" data-tab="tab-ip-admin"       onclick="switchTab(this,'tab-ip-admin')">IP Admins <span class="tab-count">36</span></button>
-          <button class="sa-tab" data-tab="tab-client"         onclick="switchTab(this,'tab-client')">Clients <span class="tab-count">209</span></button>
-          <button class="sa-tab" data-tab="tab-suspended"      onclick="switchTab(this,'tab-suspended')">Suspended <span class="tab-count">3</span></button>
+      <!-- Stats Row -->
+      <div class="stat-grid">
+        <div class="stat-card primary">
+          <div class="stat-icon primary"><i class="bi bi-people-fill"></i></div>
+          <div class="stat-info">
+            <div class="stat-value">248</div>
+            <div class="stat-label">Total Accounts</div>
+          </div>
         </div>
+        <div class="stat-card success">
+          <div class="stat-icon success"><i class="bi bi-building-check"></i></div>
+          <div class="stat-info">
+            <div class="stat-value">36</div>
+            <div class="stat-label">IP Admins</div>
+          </div>
+        </div>
+        <div class="stat-card info">
+          <div class="stat-icon info"><i class="bi bi-person-badge"></i></div>
+          <div class="stat-info">
+            <div class="stat-value">209</div>
+            <div class="stat-label">Client Accounts</div>
+          </div>
+        </div>
+        <div class="stat-card warning">
+          <div class="stat-icon warning"><i class="bi bi-hourglass-split"></i></div>
+          <div class="stat-info">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Pending Approval</div>
+          </div>
+        </div>
+      </div>
 
-        <div class="table-card">
-          <div class="table-card-header">
-            <h3 class="table-card-title"><i class="bi bi-people-fill"></i> User Accounts</h3>
-            <div class="table-actions">
-              <div class="search-wrap">
-                <i class="bi bi-search"></i>
-                <input type="search" class="search-input-sm" placeholder="Search accounts..." id="account-search" oninput="filterTable(this.value)">
+      <!-- Pending Approvals Spotlight -->
+      <div class="approval-card">
+        <div class="approval-card-header">
+          <h2 class="approval-card-title">
+            <i class="bi bi-hourglass-split" style="color:var(--sa-warning)"></i>
+            Pending Approvals
+            <span
+              style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.35);border-radius:20px;padding:2px 10px;font-size:11px;color:#d97706;font-weight:700;">3
+              awaiting</span>
+          </h2>
+          <a href="#" style="font-size:13px;color:var(--sa-primary);font-weight:600;text-decoration:none;">View all</a>
+        </div>
+        <div class="approval-list" id="approval-list">
+
+          <div class="approval-item" id="approval-1">
+            <div class="user-avatar-initials approval-item-avatar"
+              style="background:linear-gradient(135deg,#4f46e5,#7c3aed);">NA</div>
+            <div class="approval-item-info">
+              <div class="approval-item-name">Nguyen Van An</div>
+              <div class="approval-item-meta">nguyen.vanan@vsip.com.vn · IP Admin Request</div>
+              <div class="approval-item-cluster"><i class="bi bi-building"></i> VSIP Cluster · Binh Duong</div>
+            </div>
+            <div class="approval-item-actions">
+              <button class="btn-approve" onclick="approveItem('approval-1', 'Nguyen Van An')"><i
+                  class="bi bi-check-lg"></i> Approve</button>
+              <button class="btn-reject" onclick="rejectItem('approval-1',  'Nguyen Van An')"><i class="bi bi-x-lg"></i>
+                Reject</button>
+            </div>
+          </div>
+
+          <div class="approval-item" id="approval-2">
+            <div class="user-avatar-initials approval-item-avatar"
+              style="background:linear-gradient(135deg,#059669,#34d399);">LT</div>
+            <div class="approval-item-info">
+              <div class="approval-item-name">Le Thi Bich Tuyen</div>
+              <div class="approval-item-meta">bich.tuyen@amata.vn · Client Account Request</div>
+              <div class="approval-item-cluster"><i class="bi bi-building"></i> Amata Group · Dong Nai</div>
+            </div>
+            <div class="approval-item-actions">
+              <button class="btn-approve" onclick="approveItem('approval-2','Le Thi Bich Tuyen')"><i
+                  class="bi bi-check-lg"></i> Approve</button>
+              <button class="btn-reject" onclick="rejectItem('approval-2','Le Thi Bich Tuyen')"><i
+                  class="bi bi-x-lg"></i> Reject</button>
+            </div>
+          </div>
+
+          <div class="approval-item" id="approval-3">
+            <div class="user-avatar-initials approval-item-avatar"
+              style="background:linear-gradient(135deg,#2563eb,#60a5fa);">PD</div>
+            <div class="approval-item-info">
+              <div class="approval-item-name">Pham Duc Minh</div>
+              <div class="approval-item-meta">duc.minh@myphuoc.com.vn · IP Admin Request</div>
+              <div class="approval-item-cluster"><i class="bi bi-building"></i> My Phuoc Group · Binh Duong</div>
+            </div>
+            <div class="approval-item-actions">
+              <button class="btn-approve" onclick="approveItem('approval-3','Pham Duc Minh')"><i
+                  class="bi bi-check-lg"></i> Approve</button>
+              <button class="btn-reject" onclick="rejectItem('approval-3','Pham Duc Minh')"><i class="bi bi-x-lg"></i>
+                Reject</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Main content grid -->
+      <div class="row g-3">
+
+        <!-- Left: Account Table -->
+        <div class="col-lg-8">
+          <!-- Tabs -->
+          <div class="sa-tabs" role="tablist">
+            <button class="sa-tab active" data-tab="tab-all" onclick="switchTab(this,'tab-all')">All <span
+                class="tab-count">248</span></button>
+            <button class="sa-tab" data-tab="tab-ip-admin" onclick="switchTab(this,'tab-ip-admin')">IP Admins <span
+                class="tab-count">36</span></button>
+            <button class="sa-tab" data-tab="tab-client" onclick="switchTab(this,'tab-client')">Clients <span
+                class="tab-count">209</span></button>
+            <button class="sa-tab" data-tab="tab-suspended" onclick="switchTab(this,'tab-suspended')">Suspended <span
+                class="tab-count">3</span></button>
+          </div>
+
+          <div class="table-card">
+            <div class="table-card-header">
+              <h3 class="table-card-title"><i class="bi bi-people-fill"></i> User Accounts</h3>
+              <div class="table-actions">
+                <div class="search-wrap">
+                  <i class="bi bi-search"></i>
+                  <input type="search" class="search-input-sm" placeholder="Search accounts..." id="account-search"
+                    oninput="filterTable(this.value)">
+                </div>
+                <select class="search-input-sm" style="width:auto;padding-left:12px;" id="filter-role"
+                  onchange="filterTable(document.getElementById('account-search').value)">
+                  <option value="">All Roles</option>
+                  <option value="Super Admin">Super Admin</option>
+                  <option value="IP Admin">IP Admin</option>
+                  <option value="Client">Client</option>
+                </select>
+                <button class="btn-sa-outline" onclick="document.getElementById('export-modal').classList.add('show')">
+                  <i class="bi bi-funnel"></i> Filter
+                </button>
               </div>
-              <select class="search-input-sm" style="width:auto;padding-left:12px;" id="filter-role" onchange="filterTable(document.getElementById('account-search').value)">
-                <option value="">All Roles</option>
-                <option value="Super Admin">Super Admin</option>
-                <option value="IP Admin">IP Admin</option>
-                <option value="Client">Client</option>
-              </select>
-              <button class="btn-sa-outline" onclick="document.getElementById('export-modal').classList.add('show')">
-                <i class="bi bi-funnel"></i> Filter
+            </div>
+
+            <!-- Tab panels -->
+            <div class="tab-panel active" id="tab-all">
+              <table class="sa-table" id="accounts-table">
+                <thead>
+                  <tr>
+                    <th class="check-col"><input type="checkbox" class="sa-checkbox" id="check-all"
+                        onchange="toggleAll(this)"></th>
+                    <th>Account</th>
+                    <th>Role</th>
+                    <th>Park / Cluster</th>
+                    <th>Status</th>
+                    <th>Permissions</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="accounts-tbody">
+
+                  <tr data-role="Super Admin" data-name="System Admin">
+                    <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-initials" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);">SA
+                        </div>
+                        <div>
+                          <div class="user-name-sm">System Admin</div>
+                          <div class="user-email-sm">superadmin@sibmip.vn</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge-role super-admin"><i class="bi bi-star-fill"></i> Super Admin</span></td>
+                    <td><span style="color:var(--text-muted);font-size:12px;">— All clusters —</span></td>
+                    <td><span class="badge-status active">Active</span></td>
+                    <td>
+                      <div class="perm-tags"><span class="perm-tag">Full Access</span></div>
+                    </td>
+                    <td>
+                      <div class="row-actions">
+                        <button class="row-action-btn edit" title="Edit"><i class="bi bi-pencil"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr data-role="IP Admin" data-name="Tran Minh Khoa">
+                    <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-initials" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">TK
+                        </div>
+                        <div>
+                          <div class="user-name-sm">Tran Minh Khoa</div>
+                          <div class="user-email-sm">minh.khoa@vsip.com.vn</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge-role ip-admin"><i class="bi bi-building"></i> IP Admin</span></td>
+                    <td>VSIP · Binh Duong</td>
+                    <td><span class="badge-status active">Active</span></td>
+                    <td>
+                      <div class="perm-tags"><span class="perm-tag">Manage Clients</span><span class="perm-tag">View
+                          Reports</span></div>
+                    </td>
+                    <td>
+                      <div class="row-actions">
+                        <button class="row-action-btn edit" title="Edit"
+                          onclick="openEditModal('Tran Minh Khoa','IP Admin','VSIP · Binh Duong','active')"><i
+                            class="bi bi-pencil"></i></button>
+                        <button class="row-action-btn approve" title="Grant perm"
+                          onclick="showToast('success','Permissions updated for Tran Minh Khoa.')"><i
+                            class="bi bi-shield-check"></i></button>
+                        <button class="row-action-btn reject" title="Suspend"
+                          onclick="showToast('danger','Account suspended.')"><i class="bi bi-slash-circle"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr data-role="IP Admin" data-name="Hoang Thi Mai">
+                    <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-initials" style="background:linear-gradient(135deg,#059669,#34d399);">HM
+                        </div>
+                        <div>
+                          <div class="user-name-sm">Hoang Thi Mai</div>
+                          <div class="user-email-sm">thi.mai@myphuoc.com.vn</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge-role ip-admin"><i class="bi bi-building"></i> IP Admin</span></td>
+                    <td>My Phuoc · Binh Duong</td>
+                    <td><span class="badge-status active">Active</span></td>
+                    <td>
+                      <div class="perm-tags"><span class="perm-tag">Manage Clients</span><span
+                          class="perm-tag">Transactions</span><span class="perm-tag">Reports</span></div>
+                    </td>
+                    <td>
+                      <div class="row-actions">
+                        <button class="row-action-btn edit" title="Edit"
+                          onclick="openEditModal('Hoang Thi Mai','IP Admin','My Phuoc · Binh Duong','active')"><i
+                            class="bi bi-pencil"></i></button>
+                        <button class="row-action-btn approve" title="Grant"
+                          onclick="showToast('success','Permissions updated.')"><i
+                            class="bi bi-shield-check"></i></button>
+                        <button class="row-action-btn reject" title="Suspend"
+                          onclick="showToast('danger','Account suspended.')"><i class="bi bi-slash-circle"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr class="pending-row" data-role="Client" data-name="Nguyen Thi Lan">
+                    <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-initials" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">NL
+                        </div>
+                        <div>
+                          <div class="user-name-sm">Nguyen Thi Lan</div>
+                          <div class="user-email-sm">thi.lan@client.vn</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge-role client"><i class="bi bi-person-badge"></i> Client</span></td>
+                    <td>VSIP · Hai Phong</td>
+                    <td><span class="badge-status pending">Pending</span></td>
+                    <td>
+                      <div class="perm-tags"><span class="perm-tag">View Only</span></div>
+                    </td>
+                    <td>
+                      <div class="row-actions">
+                        <button class="row-action-btn approve" title="Approve"
+                          onclick="showToast('success','Account approved.')"><i class="bi bi-check-lg"></i></button>
+                        <button class="row-action-btn reject" title="Reject"
+                          onclick="showToast('danger','Account rejected.')"><i class="bi bi-x-lg"></i></button>
+                        <button class="row-action-btn edit" title="Edit"
+                          onclick="openEditModal('Nguyen Thi Lan','Client','VSIP · Hai Phong','pending')"><i
+                            class="bi bi-pencil"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr data-role="Client" data-name="Do Van Thanh">
+                    <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-initials" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">DT
+                        </div>
+                        <div>
+                          <div class="user-name-sm">Do Van Thanh</div>
+                          <div class="user-email-sm">van.thanh@doanhnghiep.vn</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge-role client"><i class="bi bi-person-badge"></i> Client</span></td>
+                    <td>Amata · Dong Nai</td>
+                    <td><span class="badge-status active">Active</span></td>
+                    <td>
+                      <div class="perm-tags"><span class="perm-tag">View Reports</span><span class="perm-tag">Submit
+                          Orders</span></div>
+                    </td>
+                    <td>
+                      <div class="row-actions">
+                        <button class="row-action-btn edit" title="Edit"
+                          onclick="openEditModal('Do Van Thanh','Client','Amata · Dong Nai','active')"><i
+                            class="bi bi-pencil"></i></button>
+                        <button class="row-action-btn reject" title="Suspend"
+                          onclick="showToast('danger','Account suspended.')"><i class="bi bi-slash-circle"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <tr data-role="Client" data-name="Phan Thanh Son">
+                    <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
+                    <td>
+                      <div class="user-cell">
+                        <div class="user-avatar-initials" style="background:linear-gradient(135deg,#ef4444,#f87171);">PS
+                        </div>
+                        <div>
+                          <div class="user-name-sm">Phan Thanh Son</div>
+                          <div class="user-email-sm">thanh.son@enterprise.vn</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td><span class="badge-role client"><i class="bi bi-person-badge"></i> Client</span></td>
+                    <td>My Phuoc · Binh Duong</td>
+                    <td><span class="badge-status suspended">Suspended</span></td>
+                    <td>
+                      <div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Revoked</span></div>
+                    </td>
+                    <td>
+                      <div class="row-actions">
+                        <button class="row-action-btn approve" title="Reinstate"
+                          onclick="showToast('success','Account reinstated.')"><i
+                            class="bi bi-arrow-counterclockwise"></i></button>
+                        <button class="row-action-btn edit" title="Edit"
+                          onclick="openEditModal('Phan Thanh Son','Client','My Phuoc · Binh Duong','suspended')"><i
+                            class="bi bi-pencil"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <!-- IP Admins tab -->
+            <div class="tab-panel" id="tab-ip-admin">
+              <div style="padding:40px; text-align:center; color:var(--text-muted);">
+                <i class="bi bi-building" style="font-size:40px; opacity:0.3;"></i>
+                <p style="margin-top:12px; font-size:14px;">Showing 36 IP Admin accounts — filter active here.</p>
+              </div>
+            </div>
+
+            <!-- Clients tab -->
+            <div class="tab-panel" id="tab-client">
+              <div style="padding:40px; text-align:center; color:var(--text-muted);">
+                <i class="bi bi-person-badge" style="font-size:40px; opacity:0.3;"></i>
+                <p style="margin-top:12px; font-size:14px;">Showing 209 client accounts — filter active here.</p>
+              </div>
+            </div>
+
+            <!-- Suspended tab -->
+            <div class="tab-panel" id="tab-suspended">
+              <div style="padding:40px; text-align:center; color:var(--text-muted);">
+                <i class="bi bi-slash-circle" style="font-size:40px; opacity:0.3;"></i>
+                <p style="margin-top:12px; font-size:14px;">3 suspended accounts — review and reinstate.</p>
+              </div>
+            </div>
+
+            <div class="table-footer">
+              <span>Showing <strong>6</strong> of <strong>248</strong> accounts</span>
+              <div class="pagination-btns">
+                <button class="pg-btn" disabled><i class="bi bi-chevron-left"></i></button>
+                <button class="pg-btn active">1</button>
+                <button class="pg-btn">2</button>
+                <button class="pg-btn">3</button>
+                <button class="pg-btn">…</button>
+                <button class="pg-btn">42</button>
+                <button class="pg-btn"><i class="bi bi-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Park Clusters -->
+        <div class="col-lg-4">
+          <div class="cluster-card">
+            <div class="cluster-card-header">
+              <h3 class="cluster-card-title"><i class="bi bi-diagram-3-fill" style="color:var(--sa-primary)"></i>
+                Industrial Park Clusters</h3>
+              <button class="btn-sa-primary" style="padding:5px 11px;font-size:12px;"
+                onclick="document.getElementById('cluster-modal').classList.add('show')">
+                <i class="bi bi-plus"></i> Add
               </button>
             </div>
-          </div>
+            <div class="cluster-list">
 
-          <!-- Tab panels -->
-          <div class="tab-panel active" id="tab-all">
-            <table class="sa-table" id="accounts-table">
-              <thead>
-                <tr>
-                  <th class="check-col"><input type="checkbox" class="sa-checkbox" id="check-all" onchange="toggleAll(this)"></th>
-                  <th>Account</th>
-                  <th>Role</th>
-                  <th>Park / Cluster</th>
-                  <th>Status</th>
-                  <th>Permissions</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody id="accounts-tbody">
+              <div class="park-header-row">
+                <div class="park-icon" style="background:rgba(79,70,229,0.1);color:var(--sa-primary)"><i
+                    class="bi bi-building-fill"></i></div>
+                <div>
+                  <div class="park-info-name">VSIP Group</div>
+                  <div class="park-info-sub">Vietnam Singapore Industrial Park</div>
+                </div>
+              </div>
+              <div class="cluster-item active">
+                <div class="cluster-dot" style="background:#4f46e5;"></div>
+                <div class="cluster-info">
+                  <div class="cluster-name">VSIP Binh Duong</div>
+                  <div class="cluster-sub">4 admins · 82 clients</div>
+                </div>
+                <span class="cluster-count">86</span>
+              </div>
+              <div class="cluster-item">
+                <div class="cluster-dot" style="background:#7c3aed;"></div>
+                <div class="cluster-info">
+                  <div class="cluster-name">VSIP Hai Phong</div>
+                  <div class="cluster-sub">3 admins · 54 clients</div>
+                </div>
+                <span class="cluster-count">57</span>
+              </div>
+              <div class="cluster-item">
+                <div class="cluster-dot" style="background:#a78bfa;"></div>
+                <div class="cluster-info">
+                  <div class="cluster-name">VSIP Quang Ngai</div>
+                  <div class="cluster-sub">2 admins · 31 clients</div>
+                </div>
+                <span class="cluster-count">33</span>
+              </div>
 
-                <tr data-role="Super Admin" data-name="System Admin">
-                  <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
-                  <td>
-                    <div class="user-cell">
-                      <div class="user-avatar-initials" style="background:linear-gradient(135deg,#4f46e5,#7c3aed);">SA</div>
-                      <div>
-                        <div class="user-name-sm">System Admin</div>
-                        <div class="user-email-sm">superadmin@sibmip.vn</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="badge-role super-admin"><i class="bi bi-star-fill"></i> Super Admin</span></td>
-                  <td><span style="color:var(--text-muted);font-size:12px;">— All clusters —</span></td>
-                  <td><span class="badge-status active">Active</span></td>
-                  <td><div class="perm-tags"><span class="perm-tag">Full Access</span></div></td>
-                  <td>
-                    <div class="row-actions">
-                      <button class="row-action-btn edit" title="Edit"><i class="bi bi-pencil"></i></button>
-                    </div>
-                  </td>
-                </tr>
+              <div class="park-header-row" style="margin-top:10px;">
+                <div class="park-icon" style="background:rgba(5,150,105,0.1);color:#059669"><i
+                    class="bi bi-building-fill"></i></div>
+                <div>
+                  <div class="park-info-name">My Phuoc Group</div>
+                  <div class="park-info-sub">My Phuoc Industrial Zone</div>
+                </div>
+              </div>
+              <div class="cluster-item">
+                <div class="cluster-dot" style="background:#059669;"></div>
+                <div class="cluster-info">
+                  <div class="cluster-name">My Phuoc 1</div>
+                  <div class="cluster-sub">2 admins · 27 clients</div>
+                </div>
+                <span class="cluster-count">29</span>
+              </div>
+              <div class="cluster-item">
+                <div class="cluster-dot" style="background:#34d399;"></div>
+                <div class="cluster-info">
+                  <div class="cluster-name">My Phuoc 2 & 3</div>
+                  <div class="cluster-sub">3 admins · 40 clients</div>
+                </div>
+                <span class="cluster-count">43</span>
+              </div>
 
-                <tr data-role="IP Admin" data-name="Tran Minh Khoa">
-                  <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
-                  <td>
-                    <div class="user-cell">
-                      <div class="user-avatar-initials" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">TK</div>
-                      <div>
-                        <div class="user-name-sm">Tran Minh Khoa</div>
-                        <div class="user-email-sm">minh.khoa@vsip.com.vn</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="badge-role ip-admin"><i class="bi bi-building"></i> IP Admin</span></td>
-                  <td>VSIP · Binh Duong</td>
-                  <td><span class="badge-status active">Active</span></td>
-                  <td><div class="perm-tags"><span class="perm-tag">Manage Clients</span><span class="perm-tag">View Reports</span></div></td>
-                  <td>
-                    <div class="row-actions">
-                      <button class="row-action-btn edit"    title="Edit"       onclick="openEditModal('Tran Minh Khoa','IP Admin','VSIP · Binh Duong','active')"><i class="bi bi-pencil"></i></button>
-                      <button class="row-action-btn approve" title="Grant perm" onclick="showToast('success','Permissions updated for Tran Minh Khoa.')"><i class="bi bi-shield-check"></i></button>
-                      <button class="row-action-btn reject"  title="Suspend"    onclick="showToast('danger','Account suspended.')"><i class="bi bi-slash-circle"></i></button>
-                    </div>
-                  </td>
-                </tr>
+              <div class="park-header-row" style="margin-top:10px;">
+                <div class="park-icon" style="background:rgba(245,158,11,0.1);color:#d97706"><i
+                    class="bi bi-building-fill"></i></div>
+                <div>
+                  <div class="park-info-name">Amata Group</div>
+                  <div class="park-info-sub">Amata City Industrial Estate</div>
+                </div>
+              </div>
+              <div class="cluster-item">
+                <div class="cluster-dot" style="background:#f59e0b;"></div>
+                <div class="cluster-info">
+                  <div class="cluster-name">Amata Bien Hoa</div>
+                  <div class="cluster-sub">5 admins · 62 clients</div>
+                </div>
+                <span class="cluster-count">67</span>
+              </div>
 
-                <tr data-role="IP Admin" data-name="Hoang Thi Mai">
-                  <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
-                  <td>
-                    <div class="user-cell">
-                      <div class="user-avatar-initials" style="background:linear-gradient(135deg,#059669,#34d399);">HM</div>
-                      <div>
-                        <div class="user-name-sm">Hoang Thi Mai</div>
-                        <div class="user-email-sm">thi.mai@myphuoc.com.vn</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="badge-role ip-admin"><i class="bi bi-building"></i> IP Admin</span></td>
-                  <td>My Phuoc · Binh Duong</td>
-                  <td><span class="badge-status active">Active</span></td>
-                  <td><div class="perm-tags"><span class="perm-tag">Manage Clients</span><span class="perm-tag">Transactions</span><span class="perm-tag">Reports</span></div></td>
-                  <td>
-                    <div class="row-actions">
-                      <button class="row-action-btn edit"    title="Edit"    onclick="openEditModal('Hoang Thi Mai','IP Admin','My Phuoc · Binh Duong','active')"><i class="bi bi-pencil"></i></button>
-                      <button class="row-action-btn approve" title="Grant"   onclick="showToast('success','Permissions updated.')"><i class="bi bi-shield-check"></i></button>
-                      <button class="row-action-btn reject"  title="Suspend" onclick="showToast('danger','Account suspended.')"><i class="bi bi-slash-circle"></i></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr class="pending-row" data-role="Client" data-name="Nguyen Thi Lan">
-                  <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
-                  <td>
-                    <div class="user-cell">
-                      <div class="user-avatar-initials" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">NL</div>
-                      <div>
-                        <div class="user-name-sm">Nguyen Thi Lan</div>
-                        <div class="user-email-sm">thi.lan@client.vn</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="badge-role client"><i class="bi bi-person-badge"></i> Client</span></td>
-                  <td>VSIP · Hai Phong</td>
-                  <td><span class="badge-status pending">Pending</span></td>
-                  <td><div class="perm-tags"><span class="perm-tag">View Only</span></div></td>
-                  <td>
-                    <div class="row-actions">
-                      <button class="row-action-btn approve" title="Approve" onclick="showToast('success','Account approved.')"><i class="bi bi-check-lg"></i></button>
-                      <button class="row-action-btn reject"  title="Reject"  onclick="showToast('danger','Account rejected.')"><i class="bi bi-x-lg"></i></button>
-                      <button class="row-action-btn edit"    title="Edit"    onclick="openEditModal('Nguyen Thi Lan','Client','VSIP · Hai Phong','pending')"><i class="bi bi-pencil"></i></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr data-role="Client" data-name="Do Van Thanh">
-                  <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
-                  <td>
-                    <div class="user-cell">
-                      <div class="user-avatar-initials" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">DT</div>
-                      <div>
-                        <div class="user-name-sm">Do Van Thanh</div>
-                        <div class="user-email-sm">van.thanh@doanhnghiep.vn</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="badge-role client"><i class="bi bi-person-badge"></i> Client</span></td>
-                  <td>Amata · Dong Nai</td>
-                  <td><span class="badge-status active">Active</span></td>
-                  <td><div class="perm-tags"><span class="perm-tag">View Reports</span><span class="perm-tag">Submit Orders</span></div></td>
-                  <td>
-                    <div class="row-actions">
-                      <button class="row-action-btn edit"   title="Edit"    onclick="openEditModal('Do Van Thanh','Client','Amata · Dong Nai','active')"><i class="bi bi-pencil"></i></button>
-                      <button class="row-action-btn reject" title="Suspend" onclick="showToast('danger','Account suspended.')"><i class="bi bi-slash-circle"></i></button>
-                    </div>
-                  </td>
-                </tr>
-
-                <tr data-role="Client" data-name="Phan Thanh Son">
-                  <td class="check-col"><input type="checkbox" class="sa-checkbox row-check"></td>
-                  <td>
-                    <div class="user-cell">
-                      <div class="user-avatar-initials" style="background:linear-gradient(135deg,#ef4444,#f87171);">PS</div>
-                      <div>
-                        <div class="user-name-sm">Phan Thanh Son</div>
-                        <div class="user-email-sm">thanh.son@enterprise.vn</div>
-                      </div>
-                    </div>
-                  </td>
-                  <td><span class="badge-role client"><i class="bi bi-person-badge"></i> Client</span></td>
-                  <td>My Phuoc · Binh Duong</td>
-                  <td><span class="badge-status suspended">Suspended</span></td>
-                  <td><div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Revoked</span></div></td>
-                  <td>
-                    <div class="row-actions">
-                      <button class="row-action-btn approve" title="Reinstate" onclick="showToast('success','Account reinstated.')"><i class="bi bi-arrow-counterclockwise"></i></button>
-                      <button class="row-action-btn edit"    title="Edit"      onclick="openEditModal('Phan Thanh Son','Client','My Phuoc · Binh Duong','suspended')"><i class="bi bi-pencil"></i></button>
-                    </div>
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-
-          <!-- IP Admins tab -->
-          <div class="tab-panel" id="tab-ip-admin">
-            <div style="padding:40px; text-align:center; color:var(--text-muted);">
-              <i class="bi bi-building" style="font-size:40px; opacity:0.3;"></i>
-              <p style="margin-top:12px; font-size:14px;">Showing 36 IP Admin accounts — filter active here.</p>
             </div>
           </div>
 
-          <!-- Clients tab -->
-          <div class="tab-panel" id="tab-client">
-            <div style="padding:40px; text-align:center; color:var(--text-muted);">
-              <i class="bi bi-person-badge" style="font-size:40px; opacity:0.3;"></i>
-              <p style="margin-top:12px; font-size:14px;">Showing 209 client accounts — filter active here.</p>
+          <!-- Roles quick panel -->
+          <div class="cluster-card" style="margin-top:16px;">
+            <div class="cluster-card-header">
+              <h3 class="cluster-card-title"><i class="bi bi-shield-fill-check" style="color:var(--sa-primary)"></i>
+                Permission Matrix</h3>
+              <a href="#"
+                style="font-size:12px;font-weight:600;color:var(--sa-primary);text-decoration:none;">Manage</a>
             </div>
-          </div>
-
-          <!-- Suspended tab -->
-          <div class="tab-panel" id="tab-suspended">
-            <div style="padding:40px; text-align:center; color:var(--text-muted);">
-              <i class="bi bi-slash-circle" style="font-size:40px; opacity:0.3;"></i>
-              <p style="margin-top:12px; font-size:14px;">3 suspended accounts — review and reinstate.</p>
-            </div>
-          </div>
-
-          <div class="table-footer">
-            <span>Showing <strong>6</strong> of <strong>248</strong> accounts</span>
-            <div class="pagination-btns">
-              <button class="pg-btn" disabled><i class="bi bi-chevron-left"></i></button>
-              <button class="pg-btn active">1</button>
-              <button class="pg-btn">2</button>
-              <button class="pg-btn">3</button>
-              <button class="pg-btn">…</button>
-              <button class="pg-btn">42</button>
-              <button class="pg-btn"><i class="bi bi-chevron-right"></i></button>
+            <div style="padding:16px;">
+              <div style="display:grid; grid-template-columns: auto 1fr; gap:10px 14px; font-size:13px;">
+                <span style="font-weight:700;color:var(--heading-color);">Super Admin</span>
+                <div class="perm-tags"><span class="perm-tag">Full Control</span><span class="perm-tag">All
+                    Clusters</span></div>
+                <span style="font-weight:700;color:var(--heading-color);">IP Admin</span>
+                <div class="perm-tags"><span class="perm-tag">Manage Clients</span><span class="perm-tag">View
+                    Reports</span><span class="perm-tag">Transactions</span></div>
+                <span style="font-weight:700;color:var(--heading-color);">Client</span>
+                <div class="perm-tags"><span class="perm-tag">Submit Orders</span><span class="perm-tag">View
+                    Reports</span></div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-
-      <!-- Right: Park Clusters -->
-      <div class="col-lg-4">
-        <div class="cluster-card">
-          <div class="cluster-card-header">
-            <h3 class="cluster-card-title"><i class="bi bi-diagram-3-fill" style="color:var(--sa-primary)"></i> Industrial Park Clusters</h3>
-            <button class="btn-sa-primary" style="padding:5px 11px;font-size:12px;" onclick="document.getElementById('cluster-modal').classList.add('show')">
-              <i class="bi bi-plus"></i> Add
-            </button>
-          </div>
-          <div class="cluster-list">
-
-            <div class="park-header-row">
-              <div class="park-icon" style="background:rgba(79,70,229,0.1);color:var(--sa-primary)"><i class="bi bi-building-fill"></i></div>
-              <div>
-                <div class="park-info-name">VSIP Group</div>
-                <div class="park-info-sub">Vietnam Singapore Industrial Park</div>
-              </div>
-            </div>
-            <div class="cluster-item active">
-              <div class="cluster-dot" style="background:#4f46e5;"></div>
-              <div class="cluster-info">
-                <div class="cluster-name">VSIP Binh Duong</div>
-                <div class="cluster-sub">4 admins · 82 clients</div>
-              </div>
-              <span class="cluster-count">86</span>
-            </div>
-            <div class="cluster-item">
-              <div class="cluster-dot" style="background:#7c3aed;"></div>
-              <div class="cluster-info">
-                <div class="cluster-name">VSIP Hai Phong</div>
-                <div class="cluster-sub">3 admins · 54 clients</div>
-              </div>
-              <span class="cluster-count">57</span>
-            </div>
-            <div class="cluster-item">
-              <div class="cluster-dot" style="background:#a78bfa;"></div>
-              <div class="cluster-info">
-                <div class="cluster-name">VSIP Quang Ngai</div>
-                <div class="cluster-sub">2 admins · 31 clients</div>
-              </div>
-              <span class="cluster-count">33</span>
-            </div>
-
-            <div class="park-header-row" style="margin-top:10px;">
-              <div class="park-icon" style="background:rgba(5,150,105,0.1);color:#059669"><i class="bi bi-building-fill"></i></div>
-              <div>
-                <div class="park-info-name">My Phuoc Group</div>
-                <div class="park-info-sub">My Phuoc Industrial Zone</div>
-              </div>
-            </div>
-            <div class="cluster-item">
-              <div class="cluster-dot" style="background:#059669;"></div>
-              <div class="cluster-info">
-                <div class="cluster-name">My Phuoc 1</div>
-                <div class="cluster-sub">2 admins · 27 clients</div>
-              </div>
-              <span class="cluster-count">29</span>
-            </div>
-            <div class="cluster-item">
-              <div class="cluster-dot" style="background:#34d399;"></div>
-              <div class="cluster-info">
-                <div class="cluster-name">My Phuoc 2 & 3</div>
-                <div class="cluster-sub">3 admins · 40 clients</div>
-              </div>
-              <span class="cluster-count">43</span>
-            </div>
-
-            <div class="park-header-row" style="margin-top:10px;">
-              <div class="park-icon" style="background:rgba(245,158,11,0.1);color:#d97706"><i class="bi bi-building-fill"></i></div>
-              <div>
-                <div class="park-info-name">Amata Group</div>
-                <div class="park-info-sub">Amata City Industrial Estate</div>
-              </div>
-            </div>
-            <div class="cluster-item">
-              <div class="cluster-dot" style="background:#f59e0b;"></div>
-              <div class="cluster-info">
-                <div class="cluster-name">Amata Bien Hoa</div>
-                <div class="cluster-sub">5 admins · 62 clients</div>
-              </div>
-              <span class="cluster-count">67</span>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Roles quick panel -->
-        <div class="cluster-card" style="margin-top:16px;">
-          <div class="cluster-card-header">
-            <h3 class="cluster-card-title"><i class="bi bi-shield-fill-check" style="color:var(--sa-primary)"></i> Permission Matrix</h3>
-            <a href="#" style="font-size:12px;font-weight:600;color:var(--sa-primary);text-decoration:none;">Manage</a>
-          </div>
-          <div style="padding:16px;">
-            <div style="display:grid; grid-template-columns: auto 1fr; gap:10px 14px; font-size:13px;">
-              <span style="font-weight:700;color:var(--heading-color);">Super Admin</span>
-              <div class="perm-tags"><span class="perm-tag">Full Control</span><span class="perm-tag">All Clusters</span></div>
-              <span style="font-weight:700;color:var(--heading-color);">IP Admin</span>
-              <div class="perm-tags"><span class="perm-tag">Manage Clients</span><span class="perm-tag">View Reports</span><span class="perm-tag">Transactions</span></div>
-              <span style="font-weight:700;color:var(--heading-color);">Client</span>
-              <div class="perm-tags"><span class="perm-tag">Submit Orders</span><span class="perm-tag">View Reports</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </main>
 
@@ -1314,8 +802,10 @@
   <div class="sa-modal-overlay" id="add-account-modal">
     <div class="sa-modal" role="dialog" aria-modal="true" aria-labelledby="modal-add-title">
       <div class="sa-modal-header">
-        <h2 class="sa-modal-title" id="modal-add-title"><i class="bi bi-person-plus-fill" style="color:var(--sa-primary)"></i> Add New Account</h2>
-        <button class="sa-modal-close" onclick="closeModal('add-account-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="sa-modal-title" id="modal-add-title"><i class="bi bi-person-plus-fill"
+            style="color:var(--sa-primary)"></i> Add New Account</h2>
+        <button class="sa-modal-close" onclick="closeModal('add-account-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-row">
         <div class="form-group-modal">
@@ -1380,8 +870,10 @@
   <div class="sa-modal-overlay" id="edit-account-modal">
     <div class="sa-modal" role="dialog" aria-modal="true" aria-labelledby="modal-edit-title">
       <div class="sa-modal-header">
-        <h2 class="sa-modal-title" id="modal-edit-title"><i class="bi bi-pencil-square" style="color:var(--sa-primary)"></i> Edit Account</h2>
-        <button class="sa-modal-close" onclick="closeModal('edit-account-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="sa-modal-title" id="modal-edit-title"><i class="bi bi-pencil-square"
+            style="color:var(--sa-primary)"></i> Edit Account</h2>
+        <button class="sa-modal-close" onclick="closeModal('edit-account-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Full Name</label>
@@ -1421,8 +913,10 @@
   <div class="sa-modal-overlay" id="cluster-modal">
     <div class="sa-modal" role="dialog" aria-labelledby="modal-cluster-title">
       <div class="sa-modal-header">
-        <h2 class="sa-modal-title" id="modal-cluster-title"><i class="bi bi-building-add" style="color:var(--sa-primary)"></i> Add Park Cluster</h2>
-        <button class="sa-modal-close" onclick="closeModal('cluster-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="sa-modal-title" id="modal-cluster-title"><i class="bi bi-building-add"
+            style="color:var(--sa-primary)"></i> Add Park Cluster</h2>
+        <button class="sa-modal-close" onclick="closeModal('cluster-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Cluster Name</label>
@@ -1434,7 +928,7 @@
           <option>VSIP Group</option>
           <option>My Phuoc Group</option>
           <option>Amata Group</option>
-          <option>—  New Group —</option>
+          <option>— New Group —</option>
         </select>
       </div>
       <div class="form-group-modal">
@@ -1443,7 +937,9 @@
       </div>
       <div class="sa-modal-footer">
         <button class="btn-sa-outline" onclick="closeModal('cluster-modal')">Cancel</button>
-        <button class="btn-sa-primary" onclick="closeModal('cluster-modal');showToast('success','Park cluster added successfully.')"><i class="bi bi-check-lg"></i> Add Cluster</button>
+        <button class="btn-sa-primary"
+          onclick="closeModal('cluster-modal');showToast('success','Park cluster added successfully.')"><i
+            class="bi bi-check-lg"></i> Add Cluster</button>
       </div>
     </div>
   </div>
@@ -1452,16 +948,28 @@
   <div class="sa-modal-overlay" id="export-modal">
     <div class="sa-modal" role="dialog" aria-labelledby="modal-filter-title" style="max-width:420px;">
       <div class="sa-modal-header">
-        <h2 class="sa-modal-title" id="modal-filter-title"><i class="bi bi-funnel-fill" style="color:var(--sa-primary)"></i> Filter Accounts</h2>
-        <button class="sa-modal-close" onclick="closeModal('export-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="sa-modal-title" id="modal-filter-title"><i class="bi bi-funnel-fill"
+            style="color:var(--sa-primary)"></i> Filter Accounts</h2>
+        <button class="sa-modal-close" onclick="closeModal('export-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Status</label>
-        <select class="form-control-modal"><option>All</option><option>Active</option><option>Pending</option><option>Suspended</option></select>
+        <select class="form-control-modal">
+          <option>All</option>
+          <option>Active</option>
+          <option>Pending</option>
+          <option>Suspended</option>
+        </select>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Cluster</label>
-        <select class="form-control-modal"><option>All Clusters</option><option>VSIP Binh Duong</option><option>My Phuoc 1</option><option>Amata Bien Hoa</option></select>
+        <select class="form-control-modal">
+          <option>All Clusters</option>
+          <option>VSIP Binh Duong</option>
+          <option>My Phuoc 1</option>
+          <option>Amata Bien Hoa</option>
+        </select>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Date Joined</label>
@@ -1469,7 +977,8 @@
       </div>
       <div class="sa-modal-footer">
         <button class="btn-sa-outline" onclick="closeModal('export-modal')">Reset</button>
-        <button class="btn-sa-primary" onclick="closeModal('export-modal');showToast('success','Filter applied.')"><i class="bi bi-funnel"></i> Apply Filter</button>
+        <button class="btn-sa-primary" onclick="closeModal('export-modal');showToast('success','Filter applied.')"><i
+            class="bi bi-funnel"></i> Apply Filter</button>
       </div>
     </div>
   </div>
@@ -1498,7 +1007,7 @@
     // ── Close modals ──
     function closeModal(id) { document.getElementById(id).classList.remove('show'); }
     document.querySelectorAll('.sa-modal-overlay').forEach(overlay => {
-      overlay.addEventListener('click', function(e) {
+      overlay.addEventListener('click', function (e) {
         if (e.target === this) this.classList.remove('show');
       });
     });
@@ -1522,7 +1031,7 @@
       const q = query.toLowerCase();
       document.querySelectorAll('#accounts-tbody tr').forEach(row => {
         const name = (row.dataset.name || '').toLowerCase();
-        const r    = (row.dataset.role || '').toLowerCase();
+        const r = (row.dataset.role || '').toLowerCase();
         const show = name.includes(q) && (role === '' || r.includes(role));
         row.style.display = show ? '' : 'none';
       });
@@ -1546,9 +1055,9 @@
 
     // ── Edit modal ──
     function openEditModal(name, role, cluster, status) {
-      document.getElementById('edit-name').value   = name;
+      document.getElementById('edit-name').value = name;
       document.getElementById('edit-cluster').value = cluster;
-      document.getElementById('edit-role-select').value   = role;
+      document.getElementById('edit-role-select').value = role;
       document.getElementById('edit-status-select').value = status;
       document.getElementById('edit-account-modal').classList.add('show');
     }
@@ -1567,7 +1076,7 @@
     let toastTimer;
     function showToast(type, text) {
       const toast = document.getElementById('sa-toast');
-      const icon  = toast.querySelector('.sa-toast-icon');
+      const icon = toast.querySelector('.sa-toast-icon');
       toast.className = `sa-toast ${type}`;
       document.getElementById('sa-toast-text').textContent = text;
       icon.className = type === 'success'

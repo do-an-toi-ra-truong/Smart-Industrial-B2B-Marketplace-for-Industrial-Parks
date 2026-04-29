@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,9 @@
   <link href="./assets/images/apple-touch-icon.png" rel="apple-touch-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
   <link href="./assets/styles/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/styles/bootstrap-icons.css" rel="stylesheet">
   <link href="./assets/styles/remixicon.css" rel="stylesheet">
@@ -18,123 +21,9 @@
   <link href="./assets/styles/phosphor-icons.css" rel="stylesheet">
   <link href="./assets/styles/style.css" rel="stylesheet">
   <link href="./assets/styles/main.css" rel="stylesheet">
-  <style>
-    :root {
-      --sa-primary: #4f46e5;
-      --sa-primary-dark: #4338ca;
-      --sa-accent: #7c3aed;
-      --sa-gold: #fbbf24;
-      --sa-success: #10b981;
-      --sa-danger: #ef4444;
-      --sa-warning: #f59e0b;
-    }
-    .page-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:28px;}
-    .page-title{font-family:'Poppins',sans-serif;font-size:22px;font-weight:700;color:var(--heading-color);margin:0 0 4px;}
-    .page-breadcrumb{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);}
-    .page-breadcrumb a{color:var(--sa-primary);text-decoration:none;}
-    .page-breadcrumb i{font-size:10px;}
-
-    /* Hero KPI strip */
-    .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px;}
-    .kpi-card{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;padding:20px 22px;position:relative;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;}
-    .kpi-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.1);}
-    .kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;}
-    .kpi-card.c1::before{background:linear-gradient(90deg,#4f46e5,#7c3aed);}
-    .kpi-card.c2::before{background:linear-gradient(90deg,#10b981,#34d399);}
-    .kpi-card.c3::before{background:linear-gradient(90deg,#f59e0b,#fbbf24);}
-    .kpi-card.c4::before{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
-    .kpi-card.c5::before{background:linear-gradient(90deg,#ef4444,#f87171);}
-    .kpi-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-    .kpi-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;}
-    .kpi-icon.c1{background:rgba(79,70,229,0.12);color:#4f46e5;}
-    .kpi-icon.c2{background:rgba(16,185,129,0.12);color:#10b981;}
-    .kpi-icon.c3{background:rgba(245,158,11,0.12);color:#f59e0b;}
-    .kpi-icon.c4{background:rgba(59,130,246,0.12);color:#3b82f6;}
-    .kpi-icon.c5{background:rgba(239,68,68,0.12);color:#ef4444;}
-    .kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;}
-    .kpi-trend.up{background:rgba(16,185,129,0.12);color:#059669;}
-    .kpi-trend.down{background:rgba(239,68,68,0.1);color:#dc2626;}
-    .kpi-value{font-family:'Poppins';font-size:28px;font-weight:700;color:var(--heading-color);line-height:1;margin-bottom:4px;}
-    .kpi-label{font-size:12px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.3px;}
-    .kpi-sub{font-size:11.5px;color:var(--text-muted);margin-top:6px;}
-
-    /* Section cards */
-    .section-card{background:var(--card-bg);border:1px solid var(--border-color);border-radius:16px;overflow:hidden;margin-bottom:22px;}
-    .section-card-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border-color);flex-wrap:wrap;gap:10px;}
-    .section-title{font-family:'Poppins';font-size:15px;font-weight:600;color:var(--heading-color);margin:0;display:flex;align-items:center;gap:8px;}
-    .section-title i{color:var(--sa-primary);}
-    .section-body{padding:22px;}
-
-    /* Chart range */
-    .chart-range{display:flex;gap:4px;}
-    .range-btn{padding:4px 10px;border-radius:6px;border:1px solid var(--border-color);background:none;font-size:11.5px;font-weight:600;cursor:pointer;color:var(--text-muted);font-family:inherit;transition:all 0.15s;}
-    .range-btn.active{background:var(--sa-primary);border-color:var(--sa-primary);color:#fff;}
-
-    /* Park health table */
-    .park-table{width:100%;border-collapse:collapse;}
-    .park-table th{padding:10px 14px;font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.4px;background:rgba(0,0,0,0.03);border-bottom:1px solid var(--border-color);text-align:left;}
-    .park-table td{padding:13px 14px;font-size:13.5px;color:var(--text-color);border-bottom:1px solid var(--border-color);vertical-align:middle;}
-    .park-table tbody tr:last-child td{border-bottom:none;}
-    .park-table tbody tr{transition:background 0.15s;}
-    .park-table tbody tr:hover{background:rgba(79,70,229,0.03);}
-    .park-name{font-weight:600;color:var(--heading-color);}
-    .park-cluster{font-size:11.5px;color:var(--text-muted);}
-
-    /* Health bar */
-    .health-bar-wrap{display:flex;align-items:center;gap:8px;}
-    .health-bar{height:7px;border-radius:20px;background:var(--border-color);overflow:hidden;flex:1;min-width:80px;}
-    .health-fill{height:100%;border-radius:20px;}
-    .health-score{font-size:12px;font-weight:700;width:32px;text-align:right;flex-shrink:0;}
-
-    /* Industry flow */
-    .industry-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;}
-    .industry-card{background:var(--hover-bg,rgba(0,0,0,0.025));border:1px solid var(--border-color);border-radius:12px;padding:16px;text-align:center;transition:border-color 0.2s,transform 0.2s;}
-    .industry-card:hover{border-color:var(--sa-primary);transform:translateY(-2px);}
-    .industry-icon{font-size:32px;margin-bottom:10px;display:block;}
-    .industry-name{font-size:12.5px;font-weight:700;color:var(--heading-color);margin-bottom:4px;}
-    .industry-volume{font-family:'Poppins';font-size:18px;font-weight:700;color:var(--sa-primary);margin-bottom:4px;}
-    .industry-change{font-size:11.5px;font-weight:600;}
-    .industry-change.up{color:#059669;}
-    .industry-change.down{color:#dc2626;}
-    .industry-bar{height:5px;border-radius:20px;background:var(--border-color);margin-top:8px;overflow:hidden;}
-    .industry-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--sa-primary),var(--sa-accent));}
-
-    /* Goods flow map placeholder */
-    .flow-map{background:linear-gradient(135deg,rgba(79,70,229,0.06),rgba(124,58,237,0.03));border:1px solid rgba(79,70,229,0.12);border-radius:12px;padding:32px;text-align:center;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
-    .flow-map-icon{font-size:48px;}
-    .flow-map-title{font-family:'Poppins';font-size:15px;font-weight:600;color:var(--heading-color);}
-    .flow-map-sub{font-size:13px;color:var(--text-muted);max-width:360px;}
-
-    /* Trend tag */
-    .trend-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:700;}
-    .trend-tag.hot{background:rgba(239,68,68,0.1);color:#dc2626;}
-    .trend-tag.rising{background:rgba(245,158,11,0.12);color:#d97706;}
-    .trend-tag.stable{background:rgba(16,185,129,0.1);color:#059669;}
-
-    /* Smart city recs */
-    .rec-list{display:flex;flex-direction:column;gap:12px;}
-    .rec-item{display:flex;gap:14px;padding:14px;background:var(--hover-bg,rgba(0,0,0,0.025));border:1px solid var(--border-color);border-radius:12px;transition:border-color 0.2s;}
-    .rec-item:hover{border-color:var(--sa-primary);}
-    .rec-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-    .rec-title{font-size:13.5px;font-weight:700;color:var(--heading-color);margin-bottom:3px;}
-    .rec-desc{font-size:12.5px;color:var(--text-muted);}
-    .rec-priority{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-flex;align-items:center;gap:3px;margin-top:5px;}
-    .rec-priority.high{background:rgba(239,68,68,0.1);color:#dc2626;}
-    .rec-priority.med{background:rgba(245,158,11,0.12);color:#d97706;}
-    .rec-priority.low{background:rgba(16,185,129,0.1);color:#059669;}
-
-    /* Buttons */
-    .btn-sa-primary{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--sa-primary);border:none;border-radius:9px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.2s,transform 0.15s;}
-    .btn-sa-primary:hover{background:var(--sa-primary-dark);transform:translateY(-1px);}
-    .btn-sa-outline{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:transparent;border:1.5px solid var(--border-color);border-radius:9px;color:var(--text-color);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:border-color 0.2s,color 0.2s;}
-    .btn-sa-outline:hover{border-color:var(--sa-primary);color:var(--sa-primary);}
-
-    .sa-role-chip{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(90deg,rgba(79,70,229,0.2),rgba(124,58,237,0.15));border:1px solid rgba(79,70,229,0.4);border-radius:20px;padding:3px 10px 3px 6px;font-size:10px;font-weight:700;color:#a5b4fc;letter-spacing:0.5px;text-transform:uppercase;margin-top:4px;}
-    .mono{font-family:'JetBrains Mono',monospace;font-size:13px;}
-
-    @media(max-width:768px){.kpi-strip{grid-template-columns:1fr 1fr;}}
-  </style>
+  <link href="./assets/styles/superAdmin.css" rel="stylesheet">
 </head>
+
 <body>
   <header class="header">
     <div class="header-left">
@@ -156,14 +45,33 @@
     <div class="header-right">
       <div class="header-actions-desktop">
         <div class="header-action-wrap dropdown notification-dropdown">
-          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+            title="Notifications">
             <i class="bi bi-bell"></i><span class="header-badge">4</span>
           </button>
           <div class="dropdown-menu dropdown-menu-end notification-menu">
-            <div class="notification-header"><div><h6>System Alerts</h6><span>4 unread</span></div><a href="#">Mark all read</a></div>
+            <div class="notification-header">
+              <div>
+                <h6>System Alerts</h6><span>4 unread</span>
+              </div><a href="#">Mark all read</a>
+            </div>
             <div class="notification-list">
-              <div class="notification-item unread"><span class="notification-dot"></span><div class="notification-icon success"><i class="bi bi-graph-up-arrow"></i></div><div class="notification-content"><div class="notification-title">Q1 economic report ready</div><div class="notification-text">Download the full SIBMIP Q1 2026 report.</div><span class="notification-time">1h ago</span></div></div>
-              <div class="notification-item unread"><span class="notification-dot"></span><div class="notification-icon warning"><i class="bi bi-exclamation-triangle"></i></div><div class="notification-content"><div class="notification-title">3 pending Industrial Admin approvals</div><div class="notification-text">New Industrial Park Admin accounts awaiting grant.</div><span class="notification-time">3h ago</span></div></div>
+              <div class="notification-item unread"><span class="notification-dot"></span>
+                <div class="notification-icon success"><i class="bi bi-graph-up-arrow"></i></div>
+                <div class="notification-content">
+                  <div class="notification-title">Q1 economic report ready</div>
+                  <div class="notification-text">Download the full SIBMIP Q1 2026 report.</div><span
+                    class="notification-time">1h ago</span>
+                </div>
+              </div>
+              <div class="notification-item unread"><span class="notification-dot"></span>
+                <div class="notification-icon warning"><i class="bi bi-exclamation-triangle"></i></div>
+                <div class="notification-content">
+                  <div class="notification-title">3 pending Industrial Admin approvals</div>
+                  <div class="notification-text">New Industrial Park Admin accounts awaiting grant.</div><span
+                    class="notification-time">3h ago</span>
+                </div>
+              </div>
             </div>
             <div class="notification-footer"><a href="#">View all alerts</a></div>
           </div>
@@ -175,12 +83,21 @@
         <div class="header-action-wrap dropdown user-dropdown">
           <button class="dropdown-toggle user-trigger" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="./assets/images/profile-img.webp" alt="Super Admin" class="user-avatar">
-            <div class="user-brief"><span class="user-name">Nguyen Thanh Tung</span><span class="user-role">Super Admin</span></div>
+            <div class="user-brief"><span class="user-name">Nguyen Thanh Tung</span><span class="user-role">Super
+                Admin</span></div>
           </button>
           <div class="dropdown-menu dropdown-menu-end user-menu">
-            <div class="user-menu-header"><img src="./assets/images/profile-img.webp" alt="Super Admin" class="user-menu-avatar"><div class="user-menu-info"><div class="user-menu-name">Nguyen Thanh Tung</div><div class="user-menu-email">admin@sibmip.gov.vn</div></div></div>
-            <div class="user-menu-body"><a class="user-menu-item" href="#"><i class="bi bi-person"></i><span>Profile</span></a></div>
-            <div class="user-menu-footer"><a class="user-menu-logout" href="super-admin-login.html"><i class="bi bi-box-arrow-right"></i><span>Sign Out</span></a></div>
+            <div class="user-menu-header"><img src="./assets/images/profile-img.webp" alt="Super Admin"
+                class="user-menu-avatar">
+              <div class="user-menu-info">
+                <div class="user-menu-name">Nguyen Thanh Tung</div>
+                <div class="user-menu-email">admin@sibmip.gov.vn</div>
+              </div>
+            </div>
+            <div class="user-menu-body"><a class="user-menu-item" href="#"><i
+                  class="bi bi-person"></i><span>Profile</span></a></div>
+            <div class="user-menu-footer"><a class="user-menu-logout" href="super-admin-login.html"><i
+                  class="bi bi-box-arrow-right"></i><span>Sign Out</span></a></div>
           </div>
         </div>
       </div>
@@ -190,10 +107,14 @@
       </div>
     </div>
   </header>
-  <div class="mobile-header-menu"><div class="mobile-header-menu-content">
-    <button class="mobile-menu-item theme-toggle"><i class="ph-light ph-moon-stars theme-icon-dark"></i><i class="ph-light ph-sun theme-icon-light"></i><span class="mobile-menu-label">Theme</span></button>
-    <a href="super-admin-login.html" class="mobile-menu-item mobile-menu-item-danger"><i class="bi bi-box-arrow-right"></i><span class="mobile-menu-label">Sign Out</span></a>
-  </div></div>
+  <div class="mobile-header-menu">
+    <div class="mobile-header-menu-content">
+      <button class="mobile-menu-item theme-toggle"><i class="ph-light ph-moon-stars theme-icon-dark"></i><i
+          class="ph-light ph-sun theme-icon-light"></i><span class="mobile-menu-label">Theme</span></button>
+      <a href="super-admin-login.html" class="mobile-menu-item mobile-menu-item-danger"><i
+          class="bi bi-box-arrow-right"></i><span class="mobile-menu-label">Sign Out</span></a>
+    </div>
+  </div>
 
   <aside class="sidebar">
     <div class="sidebar-shell">
@@ -213,6 +134,22 @@
               <span class="nav-badge">3</span>
             </a>
           </li>
+
+          <!-- Industrial Park Clusters -->
+          <li class="nav-item has-submenu">
+            <a class="nav-link" href="#" aria-expanded="false">
+              <span class="nav-icon"><i class="bi bi-building"></i></span>
+              <span class="nav-text">Park Clusters</span>
+              <span class="nav-arrow"><i class="bi bi-chevron-right"></i></span>
+            </a>
+            <ul class="nav-submenu">
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>VSIP Group</a></li>
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>My Phuoc Group</a></li>
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>Amata Group</a></li>
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>+ Add Cluster</a></li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" href="super-admin-catalog.html">
               <span class="nav-icon"><i class="bi bi-grid-3x3-gap-fill"></i></span>
@@ -233,7 +170,8 @@
           </a>
           <div class="sidebar-account-actions">
             <a href="#" class="sidebar-account-action" title="Settings"><i class="bi bi-gear"></i></a>
-            <a href="super-admin-login.html" class="sidebar-account-action sidebar-account-logout" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
+            <a href="super-admin-login.html" class="sidebar-account-action sidebar-account-logout" title="Logout"><i
+                class="bi bi-box-arrow-right"></i></a>
           </div>
         </div>
         <div class="sidebar-footer-links">
@@ -246,295 +184,372 @@
   <div class="sidebar-overlay"></div>
 
   <main class="main">
-    <!-- Page Header -->
-    <div class="page-header">
-      <div>
-        <h1 class="page-title">Economic Dashboard — Báo cáo kinh tế tổng hợp</h1>
-        <div class="page-breadcrumb">
-          <a href="super-admin-dashboard.html">Dashboard</a>
-          <i class="bi bi-chevron-right"></i>
-          <span>SIBMIP Economic Overview · Q1 2026</span>
+    <div class="main-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Economic Dashboard — Báo cáo kinh tế tổng hợp</h1>
+          <div class="page-breadcrumb">
+            <a href="super-admin-dashboard.html">Dashboard</a>
+            <i class="bi bi-chevron-right"></i>
+            <span>SIBMIP Economic Overview · Q1 2026</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <div class="chart-range">
+            <button class="range-btn" onclick="setRange(this)">1M</button>
+            <button class="range-btn active" onclick="setRange(this)">Q1</button>
+            <button class="range-btn" onclick="setRange(this)">6M</button>
+            <button class="range-btn" onclick="setRange(this)">1Y</button>
+          </div>
+          <button class="btn-sa-outline"><i class="bi bi-download"></i> Export PDF</button>
+          <button class="btn-sa-primary"><i class="bi bi-send"></i> Share Report</button>
         </div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <div class="chart-range">
-          <button class="range-btn" onclick="setRange(this)">1M</button>
-          <button class="range-btn active" onclick="setRange(this)">Q1</button>
-          <button class="range-btn" onclick="setRange(this)">6M</button>
-          <button class="range-btn" onclick="setRange(this)">1Y</button>
+
+      <!-- KPI Strip -->
+      <div class="kpi-strip">
+        <div class="kpi-card c1">
+          <div class="kpi-top">
+            <div class="kpi-icon c1"><i class="bi bi-bar-chart-line-fill"></i></div><span class="kpi-trend up"><i
+                class="bi bi-arrow-up"></i>+24.3%</span>
+          </div>
+          <div class="kpi-value">₫48.7T</div>
+          <div class="kpi-label">Total Transaction Volume</div>
+          <div class="kpi-sub">Across all 24 industrial parks · Q1 2026</div>
         </div>
-        <button class="btn-sa-outline"><i class="bi bi-download"></i> Export PDF</button>
-        <button class="btn-sa-primary"><i class="bi bi-send"></i> Share Report</button>
+        <div class="kpi-card c2">
+          <div class="kpi-top">
+            <div class="kpi-icon c2"><i class="bi bi-buildings-fill"></i></div><span class="kpi-trend up"><i
+                class="bi bi-arrow-up"></i>+12</span>
+          </div>
+          <div class="kpi-value">348</div>
+          <div class="kpi-label">Active Companies</div>
+          <div class="kpi-sub">87 new registrations this quarter</div>
+        </div>
+        <div class="kpi-card c3">
+          <div class="kpi-top">
+            <div class="kpi-icon c3"><i class="bi bi-file-earmark-text-fill"></i></div><span class="kpi-trend up"><i
+                class="bi bi-arrow-up"></i>+18.7%</span>
+          </div>
+          <div class="kpi-value">14,820</div>
+          <div class="kpi-label">RFQs Processed</div>
+          <div class="kpi-sub">₫12.4T matched via marketplace</div>
+        </div>
+        <div class="kpi-card c4">
+          <div class="kpi-top">
+            <div class="kpi-icon c4"><i class="bi bi-box-seam-fill"></i></div><span class="kpi-trend up"><i
+                class="bi bi-arrow-up"></i>+9.8%</span>
+          </div>
+          <div class="kpi-value">84,200T</div>
+          <div class="kpi-label">Goods Flow (Tons)</div>
+          <div class="kpi-sub">Cross-park logistics volume</div>
+        </div>
+        <div class="kpi-card c5">
+          <div class="kpi-top">
+            <div class="kpi-icon c5"><i class="bi bi-people-fill"></i></div><span class="kpi-trend up"><i
+                class="bi bi-arrow-up"></i>+2,840</span>
+          </div>
+          <div class="kpi-value">127K</div>
+          <div class="kpi-label">Total Workforce</div>
+          <div class="kpi-sub">Employed across SIBMIP parks</div>
+        </div>
       </div>
-    </div>
 
-    <!-- KPI Strip -->
-    <div class="kpi-strip">
-      <div class="kpi-card c1">
-        <div class="kpi-top"><div class="kpi-icon c1"><i class="bi bi-bar-chart-line-fill"></i></div><span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+24.3%</span></div>
-        <div class="kpi-value">₫48.7T</div>
-        <div class="kpi-label">Total Transaction Volume</div>
-        <div class="kpi-sub">Across all 24 industrial parks · Q1 2026</div>
-      </div>
-      <div class="kpi-card c2">
-        <div class="kpi-top"><div class="kpi-icon c2"><i class="bi bi-buildings-fill"></i></div><span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+12</span></div>
-        <div class="kpi-value">348</div>
-        <div class="kpi-label">Active Companies</div>
-        <div class="kpi-sub">87 new registrations this quarter</div>
-      </div>
-      <div class="kpi-card c3">
-        <div class="kpi-top"><div class="kpi-icon c3"><i class="bi bi-file-earmark-text-fill"></i></div><span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+18.7%</span></div>
-        <div class="kpi-value">14,820</div>
-        <div class="kpi-label">RFQs Processed</div>
-        <div class="kpi-sub">₫12.4T matched via marketplace</div>
-      </div>
-      <div class="kpi-card c4">
-        <div class="kpi-top"><div class="kpi-icon c4"><i class="bi bi-box-seam-fill"></i></div><span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+9.8%</span></div>
-        <div class="kpi-value">84,200T</div>
-        <div class="kpi-label">Goods Flow (Tons)</div>
-        <div class="kpi-sub">Cross-park logistics volume</div>
-      </div>
-      <div class="kpi-card c5">
-        <div class="kpi-top"><div class="kpi-icon c5"><i class="bi bi-people-fill"></i></div><span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+2,840</span></div>
-        <div class="kpi-value">127K</div>
-        <div class="kpi-label">Total Workforce</div>
-        <div class="kpi-sub">Employed across SIBMIP parks</div>
-      </div>
-    </div>
-
-    <!-- Charts row -->
-    <div class="row g-3 mb-3">
-      <div class="col-lg-8">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-graph-up-arrow"></i> Transaction Volume Trend (₫ Trillion)</h2>
-            <div class="chart-range">
-              <button class="range-btn active" onclick="setRange(this)">Monthly</button>
-              <button class="range-btn" onclick="setRange(this)">Quarterly</button>
+      <!-- Charts row -->
+      <div class="row g-3 mb-3">
+        <div class="col-lg-8">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-graph-up-arrow"></i> Transaction Volume Trend (₫ Trillion)</h2>
+              <div class="chart-range">
+                <button class="range-btn active" onclick="setRange(this)">Monthly</button>
+                <button class="range-btn" onclick="setRange(this)">Quarterly</button>
+              </div>
+            </div>
+            <div class="section-body">
+              <canvas id="transaction-chart" height="280"></canvas>
             </div>
           </div>
-          <div class="section-body">
-            <canvas id="transaction-chart" height="280"></canvas>
-          </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="section-card" style="height:100%;">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-pie-chart-fill"></i> Transaction by Industry</h2>
-          </div>
-          <div class="section-body" style="display:flex;flex-direction:column;align-items:center;gap:14px;">
-            <canvas id="industry-pie" width="180" height="180"></canvas>
-            <div id="pie-legend" style="width:100%;display:flex;flex-direction:column;gap:7px;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Goods flow + Park health -->
-    <div class="row g-3 mb-3">
-      <div class="col-lg-5">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-arrow-left-right"></i> Goods Flow Map</h2>
-            <button class="btn-sa-outline" style="font-size:12px;padding:5px 12px;"><i class="bi bi-fullscreen"></i> Expand</button>
-          </div>
-          <div class="section-body">
-            <div class="flow-map">
-              <div class="flow-map-icon">🗺️</div>
-              <div class="flow-map-title">Inter-Park Goods Flow Visualization</div>
-              <div class="flow-map-sub">Live goods flow between VSIP, My Phuoc, Amata and other clusters. Integration with GIS module required for full map view.</div>
-              <button class="btn-sa-primary" style="margin-top:8px;"><i class="bi bi-geo-alt-fill"></i> Load GIS Map</button>
+        <div class="col-lg-4">
+          <div class="section-card" style="height:100%;">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-pie-chart-fill"></i> Transaction by Industry</h2>
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
-              <div style="background:rgba(79,70,229,0.06);border:1px solid rgba(79,70,229,0.15);border-radius:10px;padding:12px;text-align:center;">
-                <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:var(--sa-primary);">38,400T</div>
-                <div style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-top:2px;">Inbound Goods</div>
-              </div>
-              <div style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:10px;padding:12px;text-align:center;">
-                <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:#10b981;">45,800T</div>
-                <div style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-top:2px;">Outbound Goods</div>
-              </div>
+            <div class="section-body" style="display:flex;flex-direction:column;align-items:center;gap:14px;">
+              <canvas id="industry-pie" width="180" height="180"></canvas>
+              <div id="pie-legend" style="width:100%;display:flex;flex-direction:column;gap:7px;"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-7">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-heart-pulse-fill"></i> Park Economic Health Index</h2>
-            <button class="btn-sa-outline" style="font-size:12px;padding:5px 12px;"><i class="bi bi-download"></i> Export</button>
-          </div>
-          <div style="overflow-x:auto;">
-            <table class="park-table">
-              <thead>
-                <tr><th>Industrial Park</th><th>Cluster</th><th>Txn Volume</th><th>Companies</th><th>Health Score</th><th>Trend</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><div class="park-name">VSIP Binh Duong</div></td>
-                  <td><span class="park-cluster">Southern Cluster</span></td>
-                  <td class="mono" style="font-weight:700;">₫12.4T</td>
-                  <td style="font-weight:600;">142</td>
-                  <td>
-                    <div class="health-bar-wrap">
-                      <div class="health-bar"><div class="health-fill" style="width:92%;background:linear-gradient(90deg,#4f46e5,#7c3aed);"></div></div>
-                      <span class="health-score" style="color:#4f46e5;">92</span>
-                    </div>
-                  </td>
-                  <td><span class="trend-tag hot"><i class="bi bi-fire"></i> Hot</span></td>
-                </tr>
-                <tr>
-                  <td><div class="park-name">My Phuoc 2</div></td>
-                  <td><span class="park-cluster">Southern Cluster</span></td>
-                  <td class="mono" style="font-weight:700;">₫9.8T</td>
-                  <td style="font-weight:600;">98</td>
-                  <td>
-                    <div class="health-bar-wrap">
-                      <div class="health-bar"><div class="health-fill" style="width:85%;background:linear-gradient(90deg,#10b981,#34d399);"></div></div>
-                      <span class="health-score" style="color:#10b981;">85</span>
-                    </div>
-                  </td>
-                  <td><span class="trend-tag rising"><i class="bi bi-arrow-up-right"></i> Rising</span></td>
-                </tr>
-                <tr>
-                  <td><div class="park-name">VSIP Hai Phong</div></td>
-                  <td><span class="park-cluster">Northern Cluster</span></td>
-                  <td class="mono" style="font-weight:700;">₫7.2T</td>
-                  <td style="font-weight:600;">62</td>
-                  <td>
-                    <div class="health-bar-wrap">
-                      <div class="health-bar"><div class="health-fill" style="width:78%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-                      <span class="health-score" style="color:#3b82f6;">78</span>
-                    </div>
-                  </td>
-                  <td><span class="trend-tag stable"><i class="bi bi-dash"></i> Stable</span></td>
-                </tr>
-                <tr>
-                  <td><div class="park-name">Amata Bien Hoa</div></td>
-                  <td><span class="park-cluster">Eastern Cluster</span></td>
-                  <td class="mono" style="font-weight:700;">₫6.1T</td>
-                  <td style="font-weight:600;">41</td>
-                  <td>
-                    <div class="health-bar-wrap">
-                      <div class="health-bar"><div class="health-fill" style="width:71%;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div></div>
-                      <span class="health-score" style="color:#d97706;">71</span>
-                    </div>
-                  </td>
-                  <td><span class="trend-tag rising"><i class="bi bi-arrow-up-right"></i> Rising</span></td>
-                </tr>
-                <tr>
-                  <td><div class="park-name">My Phuoc 1</div></td>
-                  <td><span class="park-cluster">Southern Cluster</span></td>
-                  <td class="mono" style="font-weight:700;">₫5.4T</td>
-                  <td style="font-weight:600;">38</td>
-                  <td>
-                    <div class="health-bar-wrap">
-                      <div class="health-bar"><div class="health-fill" style="width:68%;background:linear-gradient(90deg,#6b7280,#9ca3af);"></div></div>
-                      <span class="health-score" style="color:#6b7280;">68</span>
-                    </div>
-                  </td>
-                  <td><span class="trend-tag stable"><i class="bi bi-dash"></i> Stable</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Industry Activity + Smart City Recommendations -->
-    <div class="row g-3 mb-3">
-      <div class="col-lg-7">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-activity"></i> Industry Activity — Most Active Sectors</h2>
-          </div>
-          <div class="section-body">
-            <div class="industry-grid">
-              <div class="industry-card">
-                <span class="industry-icon">⚙️</span>
-                <div class="industry-name">Mechanical Eng.</div>
-                <div class="industry-volume">₫18.4T</div>
-                <div class="industry-change up"><i class="bi bi-arrow-up"></i> +28.4%</div>
-                <div class="industry-bar"><div class="industry-fill" style="width:90%;"></div></div>
-              </div>
-              <div class="industry-card">
-                <span class="industry-icon">🔌</span>
-                <div class="industry-name">Electronics</div>
-                <div class="industry-volume">₫14.1T</div>
-                <div class="industry-change up"><i class="bi bi-arrow-up"></i> +21.2%</div>
-                <div class="industry-bar"><div class="industry-fill" style="width:72%;"></div></div>
-              </div>
-              <div class="industry-card">
-                <span class="industry-icon">🧪</span>
-                <div class="industry-name">Chemicals</div>
-                <div class="industry-volume">₫7.8T</div>
-                <div class="industry-change up"><i class="bi bi-arrow-up"></i> +14.5%</div>
-                <div class="industry-bar"><div class="industry-fill" style="width:53%;"></div></div>
-              </div>
-              <div class="industry-card">
-                <span class="industry-icon">🚛</span>
-                <div class="industry-name">Logistics</div>
-                <div class="industry-volume">₫5.2T</div>
-                <div class="industry-change up"><i class="bi bi-arrow-up"></i> +8.1%</div>
-                <div class="industry-bar"><div class="industry-fill" style="width:42%;"></div></div>
-              </div>
-              <div class="industry-card">
-                <span class="industry-icon">🏗️</span>
-                <div class="industry-name">Construction</div>
-                <div class="industry-volume">₫2.1T</div>
-                <div class="industry-change down"><i class="bi bi-arrow-down"></i> -3.2%</div>
-                <div class="industry-bar"><div class="industry-fill" style="width:22%;background:linear-gradient(90deg,#ef4444,#f87171);"></div></div>
-              </div>
-              <div class="industry-card">
-                <span class="industry-icon">📦</span>
-                <div class="industry-name">Consumer Goods</div>
-                <div class="industry-volume">₫1.1T</div>
-                <div class="industry-change up"><i class="bi bi-arrow-up"></i> +5.4%</div>
-                <div class="industry-bar"><div class="industry-fill" style="width:15%;"></div></div>
-              </div>
+      <!-- Goods flow + Park health -->
+      <div class="row g-3 mb-3">
+        <div class="col-lg-5">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-arrow-left-right"></i> Goods Flow Map</h2>
+              <button class="btn-sa-outline" style="font-size:12px;padding:5px 12px;"><i class="bi bi-fullscreen"></i>
+                Expand</button>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-5">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-lightbulb-fill"></i> Smart City Development Recommendations</h2>
-          </div>
-          <div class="section-body">
-            <div class="rec-list">
-              <div class="rec-item">
-                <div class="rec-icon" style="background:rgba(239,68,68,0.1);">⚡</div>
-                <div>
-                  <div class="rec-title">Expand Electronics Manufacturing Zone</div>
-                  <div class="rec-desc">Electronics sector up 21% — recommend 200 new hectares in VSIP Hai Phong cluster</div>
-                  <span class="rec-priority high"><i class="bi bi-exclamation-circle-fill"></i>High Priority</span>
+            <div class="section-body">
+              <div class="flow-map">
+                <div class="flow-map-icon">🗺️</div>
+                <div class="flow-map-title">Inter-Park Goods Flow Visualization</div>
+                <div class="flow-map-sub">Live goods flow between VSIP, My Phuoc, Amata and other clusters. Integration
+                  with GIS module required for full map view.</div>
+                <button class="btn-sa-primary" style="margin-top:8px;"><i class="bi bi-geo-alt-fill"></i> Load GIS
+                  Map</button>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
+                <div
+                  style="background:rgba(79,70,229,0.06);border:1px solid rgba(79,70,229,0.15);border-radius:10px;padding:12px;text-align:center;">
+                  <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:var(--sa-primary);">38,400T
+                  </div>
+                  <div
+                    style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-top:2px;">
+                    Inbound Goods</div>
+                </div>
+                <div
+                  style="background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:10px;padding:12px;text-align:center;">
+                  <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:#10b981;">45,800T</div>
+                  <div
+                    style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-top:2px;">
+                    Outbound Goods</div>
                 </div>
               </div>
-              <div class="rec-item">
-                <div class="rec-icon" style="background:rgba(245,158,11,0.1);">🚛</div>
-                <div>
-                  <div class="rec-title">Upgrade Logistics Infrastructure</div>
-                  <div class="rec-desc">Cross-park freight bottleneck detected between VSIP BD and My Phuoc 2 — suggest new highway link</div>
-                  <span class="rec-priority med"><i class="bi bi-dash-circle-fill"></i>Medium Priority</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-heart-pulse-fill"></i> Park Economic Health Index</h2>
+              <button class="btn-sa-outline" style="font-size:12px;padding:5px 12px;"><i class="bi bi-download"></i>
+                Export</button>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="park-table">
+                <thead>
+                  <tr>
+                    <th>Industrial Park</th>
+                    <th>Cluster</th>
+                    <th>Txn Volume</th>
+                    <th>Companies</th>
+                    <th>Health Score</th>
+                    <th>Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="park-name">VSIP Binh Duong</div>
+                    </td>
+                    <td><span class="park-cluster">Southern Cluster</span></td>
+                    <td class="mono" style="font-weight:700;">₫12.4T</td>
+                    <td style="font-weight:600;">142</td>
+                    <td>
+                      <div class="health-bar-wrap">
+                        <div class="health-bar">
+                          <div class="health-fill" style="width:92%;background:linear-gradient(90deg,#4f46e5,#7c3aed);">
+                          </div>
+                        </div>
+                        <span class="health-score" style="color:#4f46e5;">92</span>
+                      </div>
+                    </td>
+                    <td><span class="trend-tag hot"><i class="bi bi-fire"></i> Hot</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="park-name">My Phuoc 2</div>
+                    </td>
+                    <td><span class="park-cluster">Southern Cluster</span></td>
+                    <td class="mono" style="font-weight:700;">₫9.8T</td>
+                    <td style="font-weight:600;">98</td>
+                    <td>
+                      <div class="health-bar-wrap">
+                        <div class="health-bar">
+                          <div class="health-fill" style="width:85%;background:linear-gradient(90deg,#10b981,#34d399);">
+                          </div>
+                        </div>
+                        <span class="health-score" style="color:#10b981;">85</span>
+                      </div>
+                    </td>
+                    <td><span class="trend-tag rising"><i class="bi bi-arrow-up-right"></i> Rising</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="park-name">VSIP Hai Phong</div>
+                    </td>
+                    <td><span class="park-cluster">Northern Cluster</span></td>
+                    <td class="mono" style="font-weight:700;">₫7.2T</td>
+                    <td style="font-weight:600;">62</td>
+                    <td>
+                      <div class="health-bar-wrap">
+                        <div class="health-bar">
+                          <div class="health-fill" style="width:78%;background:linear-gradient(90deg,#3b82f6,#60a5fa);">
+                          </div>
+                        </div>
+                        <span class="health-score" style="color:#3b82f6;">78</span>
+                      </div>
+                    </td>
+                    <td><span class="trend-tag stable"><i class="bi bi-dash"></i> Stable</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="park-name">Amata Bien Hoa</div>
+                    </td>
+                    <td><span class="park-cluster">Eastern Cluster</span></td>
+                    <td class="mono" style="font-weight:700;">₫6.1T</td>
+                    <td style="font-weight:600;">41</td>
+                    <td>
+                      <div class="health-bar-wrap">
+                        <div class="health-bar">
+                          <div class="health-fill" style="width:71%;background:linear-gradient(90deg,#f59e0b,#fbbf24);">
+                          </div>
+                        </div>
+                        <span class="health-score" style="color:#d97706;">71</span>
+                      </div>
+                    </td>
+                    <td><span class="trend-tag rising"><i class="bi bi-arrow-up-right"></i> Rising</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="park-name">My Phuoc 1</div>
+                    </td>
+                    <td><span class="park-cluster">Southern Cluster</span></td>
+                    <td class="mono" style="font-weight:700;">₫5.4T</td>
+                    <td style="font-weight:600;">38</td>
+                    <td>
+                      <div class="health-bar-wrap">
+                        <div class="health-bar">
+                          <div class="health-fill" style="width:68%;background:linear-gradient(90deg,#6b7280,#9ca3af);">
+                          </div>
+                        </div>
+                        <span class="health-score" style="color:#6b7280;">68</span>
+                      </div>
+                    </td>
+                    <td><span class="trend-tag stable"><i class="bi bi-dash"></i> Stable</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industry Activity + Smart City Recommendations -->
+      <div class="row g-3 mb-3">
+        <div class="col-lg-7">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-activity"></i> Industry Activity — Most Active Sectors</h2>
+            </div>
+            <div class="section-body">
+              <div class="industry-grid">
+                <div class="industry-card">
+                  <span class="industry-icon">⚙️</span>
+                  <div class="industry-name">Mechanical Eng.</div>
+                  <div class="industry-volume">₫18.4T</div>
+                  <div class="industry-change up"><i class="bi bi-arrow-up"></i> +28.4%</div>
+                  <div class="industry-bar">
+                    <div class="industry-fill" style="width:90%;"></div>
+                  </div>
+                </div>
+                <div class="industry-card">
+                  <span class="industry-icon">🔌</span>
+                  <div class="industry-name">Electronics</div>
+                  <div class="industry-volume">₫14.1T</div>
+                  <div class="industry-change up"><i class="bi bi-arrow-up"></i> +21.2%</div>
+                  <div class="industry-bar">
+                    <div class="industry-fill" style="width:72%;"></div>
+                  </div>
+                </div>
+                <div class="industry-card">
+                  <span class="industry-icon">🧪</span>
+                  <div class="industry-name">Chemicals</div>
+                  <div class="industry-volume">₫7.8T</div>
+                  <div class="industry-change up"><i class="bi bi-arrow-up"></i> +14.5%</div>
+                  <div class="industry-bar">
+                    <div class="industry-fill" style="width:53%;"></div>
+                  </div>
+                </div>
+                <div class="industry-card">
+                  <span class="industry-icon">🚛</span>
+                  <div class="industry-name">Logistics</div>
+                  <div class="industry-volume">₫5.2T</div>
+                  <div class="industry-change up"><i class="bi bi-arrow-up"></i> +8.1%</div>
+                  <div class="industry-bar">
+                    <div class="industry-fill" style="width:42%;"></div>
+                  </div>
+                </div>
+                <div class="industry-card">
+                  <span class="industry-icon">🏗️</span>
+                  <div class="industry-name">Construction</div>
+                  <div class="industry-volume">₫2.1T</div>
+                  <div class="industry-change down"><i class="bi bi-arrow-down"></i> -3.2%</div>
+                  <div class="industry-bar">
+                    <div class="industry-fill" style="width:22%;background:linear-gradient(90deg,#ef4444,#f87171);">
+                    </div>
+                  </div>
+                </div>
+                <div class="industry-card">
+                  <span class="industry-icon">📦</span>
+                  <div class="industry-name">Consumer Goods</div>
+                  <div class="industry-volume">₫1.1T</div>
+                  <div class="industry-change up"><i class="bi bi-arrow-up"></i> +5.4%</div>
+                  <div class="industry-bar">
+                    <div class="industry-fill" style="width:15%;"></div>
+                  </div>
                 </div>
               </div>
-              <div class="rec-item">
-                <div class="rec-icon" style="background:rgba(16,185,129,0.1);">🌱</div>
-                <div>
-                  <div class="rec-title">Green Industrial Incentive Program</div>
-                  <div class="rec-desc">Offer tax rebates for ISO 14001 certified companies — projected +12% new listings</div>
-                  <span class="rec-priority low"><i class="bi bi-plus-circle-fill"></i>Opportunity</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-lightbulb-fill"></i> Smart City Development Recommendations</h2>
+            </div>
+            <div class="section-body">
+              <div class="rec-list">
+                <div class="rec-item">
+                  <div class="rec-icon" style="background:rgba(239,68,68,0.1);">⚡</div>
+                  <div>
+                    <div class="rec-title">Expand Electronics Manufacturing Zone</div>
+                    <div class="rec-desc">Electronics sector up 21% — recommend 200 new hectares in VSIP Hai Phong
+                      cluster</div>
+                    <span class="rec-priority high"><i class="bi bi-exclamation-circle-fill"></i>High Priority</span>
+                  </div>
                 </div>
-              </div>
-              <div class="rec-item">
-                <div class="rec-icon" style="background:rgba(79,70,229,0.1);">🤖</div>
-                <div>
-                  <div class="rec-title">AI-powered Supplier Matching</div>
-                  <div class="rec-desc">Integrating ML model can reduce RFQ-to-order time from 4.2 to 1.8 days on average</div>
-                  <span class="rec-priority med"><i class="bi bi-dash-circle-fill"></i>Medium Priority</span>
+                <div class="rec-item">
+                  <div class="rec-icon" style="background:rgba(245,158,11,0.1);">🚛</div>
+                  <div>
+                    <div class="rec-title">Upgrade Logistics Infrastructure</div>
+                    <div class="rec-desc">Cross-park freight bottleneck detected between VSIP BD and My Phuoc 2 —
+                      suggest new highway link</div>
+                    <span class="rec-priority med"><i class="bi bi-dash-circle-fill"></i>Medium Priority</span>
+                  </div>
+                </div>
+                <div class="rec-item">
+                  <div class="rec-icon" style="background:rgba(16,185,129,0.1);">🌱</div>
+                  <div>
+                    <div class="rec-title">Green Industrial Incentive Program</div>
+                    <div class="rec-desc">Offer tax rebates for ISO 14001 certified companies — projected +12% new
+                      listings</div>
+                    <span class="rec-priority low"><i class="bi bi-plus-circle-fill"></i>Opportunity</span>
+                  </div>
+                </div>
+                <div class="rec-item">
+                  <div class="rec-icon" style="background:rgba(79,70,229,0.1);">🤖</div>
+                  <div>
+                    <div class="rec-title">AI-powered Supplier Matching</div>
+                    <div class="rec-desc">Integrating ML model can reduce RFQ-to-order time from 4.2 to 1.8 days on
+                      average</div>
+                    <span class="rec-priority med"><i class="bi bi-dash-circle-fill"></i>Medium Priority</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -551,7 +566,7 @@
   <script src="./assets/libs/js/theme.js"></script>
   <script src="./assets/libs/js/main.js"></script>
   <script>
-    function setRange(el) { document.querySelectorAll('.chart-range .range-btn, .section-card-header .range-btn').forEach(b=>b.classList.remove('active')); el.classList.add('active'); }
+    function setRange(el) { document.querySelectorAll('.chart-range .range-btn, .section-card-header .range-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); }
 
     // Transaction volume chart
     const txCtx = document.getElementById('transaction-chart');
@@ -559,34 +574,34 @@
       new Chart(txCtx, {
         type: 'line',
         data: {
-          labels: ['Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun'],
+          labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
           datasets: [
-            { label: 'Total Volume (₫T)', data: [10.2,11.4,12.8,14.1,15.8,18.8,21.4,null,null], borderColor:'#4f46e5', backgroundColor:'rgba(79,70,229,0.08)', fill:true, tension:0.4, borderWidth:2.5, pointRadius:4, pointBackgroundColor:'#4f46e5' },
-            { label: 'Mechanical (₫T)', data: [4.1,4.8,5.4,6.0,7.2,8.4,9.8,null,null], borderColor:'#10b981', backgroundColor:'rgba(16,185,129,0.05)', fill:false, tension:0.4, borderWidth:2, borderDash:[5,5], pointRadius:3, pointBackgroundColor:'#10b981' },
-            { label: 'Electronics (₫T)', data: [2.8,3.1,3.6,4.0,4.8,5.6,6.2,null,null], borderColor:'#f59e0b', backgroundColor:'rgba(245,158,11,0.05)', fill:false, tension:0.4, borderWidth:2, borderDash:[5,5], pointRadius:3, pointBackgroundColor:'#f59e0b' }
+            { label: 'Total Volume (₫T)', data: [10.2, 11.4, 12.8, 14.1, 15.8, 18.8, 21.4, null, null], borderColor: '#4f46e5', backgroundColor: 'rgba(79,70,229,0.08)', fill: true, tension: 0.4, borderWidth: 2.5, pointRadius: 4, pointBackgroundColor: '#4f46e5' },
+            { label: 'Mechanical (₫T)', data: [4.1, 4.8, 5.4, 6.0, 7.2, 8.4, 9.8, null, null], borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.05)', fill: false, tension: 0.4, borderWidth: 2, borderDash: [5, 5], pointRadius: 3, pointBackgroundColor: '#10b981' },
+            { label: 'Electronics (₫T)', data: [2.8, 3.1, 3.6, 4.0, 4.8, 5.6, 6.2, null, null], borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.05)', fill: false, tension: 0.4, borderWidth: 2, borderDash: [5, 5], pointRadius: 3, pointBackgroundColor: '#f59e0b' }
           ]
         },
         options: {
-          responsive:true, maintainAspectRatio:false,
-          plugins:{ legend:{ position:'top' } },
-          scales:{ x:{ grid:{ display:false } }, y:{ grid:{ color:'rgba(0,0,0,0.05)' }, ticks:{ callback: v => '₫'+v+'T' } } }
+          responsive: true, maintainAspectRatio: false,
+          plugins: { legend: { position: 'top' } },
+          scales: { x: { grid: { display: false } }, y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { callback: v => '₫' + v + 'T' } } }
         }
       });
     }
 
     // Industry pie
     const pieCtx = document.getElementById('industry-pie');
-    const pieColors = ['#4f46e5','#10b981','#f59e0b','#3b82f6','#ef4444','#6b7280'];
-    const pieLabels = ['Mechanical','Electronics','Chemicals','Logistics','Construction','Other'];
-    const pieData = [38,29,16,11,4,2];
+    const pieColors = ['#4f46e5', '#10b981', '#f59e0b', '#3b82f6', '#ef4444', '#6b7280'];
+    const pieLabels = ['Mechanical', 'Electronics', 'Chemicals', 'Logistics', 'Construction', 'Other'];
+    const pieData = [38, 29, 16, 11, 4, 2];
     if (pieCtx) {
       new Chart(pieCtx, {
         type: 'doughnut',
-        data: { labels:pieLabels, datasets:[{ data:pieData, backgroundColor:pieColors, borderWidth:2, borderColor:'var(--card-bg)' }] },
-        options: { responsive:false, cutout:'68%', plugins:{ legend:{ display:false } } }
+        data: { labels: pieLabels, datasets: [{ data: pieData, backgroundColor: pieColors, borderWidth: 2, borderColor: 'var(--card-bg)' }] },
+        options: { responsive: false, cutout: '68%', plugins: { legend: { display: false } } }
       });
       const legend = document.getElementById('pie-legend');
-      pieLabels.forEach((l,i) => {
+      pieLabels.forEach((l, i) => {
         legend.innerHTML += `<div style="display:flex;align-items:center;justify-content:space-between;font-size:12.5px;">
           <div style="display:flex;align-items:center;gap:7px;"><span style="width:10px;height:10px;border-radius:50%;background:${pieColors[i]};display:inline-block;flex-shrink:0;"></span>${l}</div>
           <strong style="color:var(--heading-color);">${pieData[i]}%</strong>
@@ -595,4 +610,5 @@
     }
   </script>
 </body>
+
 </html>
