@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Industrial Park Admin Dashboard | SIBMIP</title>
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="SIBMIP Industrial Park Management Board - Company Management & Statistics Dashboard">
+  <meta name="description"
+    content="SIBMIP Industrial Park Management Board - Company Management & Statistics Dashboard">
 
   <!-- Favicons -->
   <link href="./assets/images/favicon.png" rel="icon">
@@ -15,7 +16,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="./assets/styles/bootstrap.min.css" rel="stylesheet">
@@ -25,624 +28,7 @@
   <link href="./assets/styles/phosphor-icons.css" rel="stylesheet">
   <link href="./assets/styles/style.css" rel="stylesheet">
   <link href="./assets/styles/main.css" rel="stylesheet">
-
-  <style>
-    /* ── Industrial Admin accent overrides ── */
-    :root {
-      --ia-primary: #0d9488;
-      --ia-primary-rgb: 13,148,136;
-      --ia-primary-dark: #0f766e;
-      --ia-accent: #06b6d4;
-      --ia-emerald: #10b981;
-      --ia-gold: #f59e0b;
-      --ia-success: #10b981;
-      --ia-danger: #ef4444;
-      --ia-warning: #f59e0b;
-      --ia-info: #3b82f6;
-    }
-
-    /* Page header */
-    .page-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .page-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--heading-color);
-      margin: 0 0 4px;
-    }
-    .page-breadcrumb {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    .page-breadcrumb a { color: var(--ia-primary); text-decoration: none; }
-    .page-breadcrumb i { font-size: 10px; }
-
-    /* Park info banner */
-    .park-banner {
-      background: linear-gradient(135deg, rgba(13,148,136,0.08), rgba(6,182,212,0.04));
-      border: 1px solid rgba(13,148,136,0.2);
-      border-radius: 16px;
-      padding: 16px 22px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-    .park-banner-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--ia-primary), var(--ia-accent));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; color: #fff;
-      flex-shrink: 0;
-      box-shadow: 0 4px 16px rgba(13,148,136,0.3);
-    }
-    .park-banner-info { flex: 1; }
-    .park-banner-name { font-family: 'Poppins'; font-weight: 700; font-size: 16px; color: var(--heading-color); }
-    .park-banner-detail { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-    .park-banner-stats {
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .park-banner-stat {
-      text-align: center;
-    }
-    .park-banner-stat-val {
-      font-family: 'Poppins'; font-size: 20px; font-weight: 700; color: var(--heading-color); line-height: 1;
-    }
-    .park-banner-stat-label {
-      font-size: 10px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; margin-top: 2px;
-    }
-
-    /* Stat summary cards */
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .stat-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 20px 22px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      right: 0; height: 3px;
-      border-radius: 16px 16px 0 0;
-    }
-    .stat-card.teal::before    { background: linear-gradient(90deg, var(--ia-primary), var(--ia-accent)); }
-    .stat-card.success::before { background: linear-gradient(90deg, #10b981, #34d399); }
-    .stat-card.warning::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-    .stat-card.info::before    { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
-    .stat-card.danger::before  { background: linear-gradient(90deg, #ef4444, #f87171); }
-    .stat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-    .stat-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .stat-icon.teal    { background: rgba(13,148,136,0.12); color: var(--ia-primary); }
-    .stat-icon.success { background: rgba(16,185,129,0.12); color: var(--ia-success); }
-    .stat-icon.warning { background: rgba(245,158,11,0.12); color: var(--ia-warning); }
-    .stat-icon.info    { background: rgba(59,130,246,0.12); color: var(--ia-info); }
-    .stat-icon.danger  { background: rgba(239,68,68,0.12); color: var(--ia-danger); }
-    .stat-value { font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 700; line-height: 1; margin-bottom: 3px; color: var(--heading-color); }
-    .stat-label { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
-
-    /* Main navigation tabs */
-    .main-tabs {
-      display: flex;
-      gap: 4px;
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 5px;
-      width: fit-content;
-      margin-bottom: 24px;
-    }
-    .main-tab {
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--text-muted);
-      border: none;
-      background: none;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-family: inherit;
-    }
-    .main-tab i { font-size: 15px; }
-    .main-tab .tab-count {
-      background: var(--border-color);
-      border-radius: 20px;
-      padding: 1px 8px;
-      font-size: 11px;
-    }
-    .main-tab.active {
-      background: var(--ia-primary);
-      color: #fff;
-    }
-    .main-tab.active .tab-count {
-      background: rgba(255,255,255,0.25);
-    }
-    .main-tab:not(.active):hover { background: var(--hover-bg, rgba(0,0,0,0.04)); color: var(--heading-color); }
-
-    .main-panel { display: none; }
-    .main-panel.active { display: block; }
-
-    /* Table card */
-    .table-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .table-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 22px;
-      border-bottom: 1px solid var(--border-color);
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .table-card-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--heading-color);
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .table-card-title i { color: var(--ia-primary); }
-    .table-actions {
-      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-    }
-    .search-input-sm {
-      padding: 8px 12px 8px 34px;
-      background: var(--input-bg, rgba(0,0,0,0.04));
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      font-size: 13px;
-      color: var(--text-color);
-      outline: none;
-      font-family: inherit;
-      width: 220px;
-      transition: border-color 0.2s;
-    }
-    .search-input-sm:focus { border-color: var(--ia-primary); }
-    .search-wrap { position: relative; }
-    .search-wrap i { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 13px; pointer-events: none; }
-
-    /* Buttons */
-    .btn-ia-primary {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 8px 16px;
-      background: var(--ia-primary);
-      border: none; border-radius: 9px;
-      color: #fff; font-size: 13px; font-weight: 600;
-      cursor: pointer; font-family: inherit;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-ia-primary:hover { background: var(--ia-primary-dark); transform: translateY(-1px); }
-    .btn-ia-outline {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 7px 14px;
-      background: transparent;
-      border: 1.5px solid var(--border-color);
-      border-radius: 9px;
-      color: var(--text-color);
-      font-size: 13px; font-weight: 600;
-      cursor: pointer; font-family: inherit;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ia-outline:hover { border-color: var(--ia-primary); color: var(--ia-primary); }
-
-    /* Data table */
-    .ia-table { width: 100%; border-collapse: collapse; }
-    .ia-table thead tr { background: var(--table-header-bg, rgba(0,0,0,0.03)); }
-    .ia-table th {
-      padding: 11px 16px; font-size: 11px; font-weight: 700;
-      color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
-      text-align: left; white-space: nowrap; border-bottom: 1px solid var(--border-color);
-    }
-    .ia-table td {
-      padding: 14px 16px; font-size: 13.5px;
-      color: var(--text-color); border-bottom: 1px solid var(--border-color);
-      vertical-align: middle;
-    }
-    .ia-table tbody tr:last-child td { border-bottom: none; }
-    .ia-table tbody tr { transition: background 0.15s; }
-    .ia-table tbody tr:hover { background: rgba(13,148,136,0.04); }
-
-    /* User cell */
-    .user-cell { display: flex; align-items: center; gap: 11px; }
-    .user-avatar-initials {
-      width: 36px; height: 36px;
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; font-weight: 700; color: #fff;
-      flex-shrink: 0;
-    }
-    .user-name-sm { font-weight: 600; color: var(--heading-color); font-size: 13.5px; }
-    .user-email-sm { font-size: 12px; color: var(--text-muted); }
-
-    /* Status badges */
-    .badge-status {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 3px 10px; border-radius: 20px;
-      font-size: 11.5px; font-weight: 600;
-    }
-    .badge-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; }
-    .badge-status.active  { background: rgba(16,185,129,0.12); color: #059669; }
-    .badge-status.active::before { background: #10b981; }
-    .badge-status.pending { background: rgba(245,158,11,0.12); color: #d97706; }
-    .badge-status.pending::before { background: #f59e0b; box-shadow: 0 0 5px #f59e0b; animation: pulse 1.5s infinite; }
-    .badge-status.suspended { background: rgba(239,68,68,0.1); color: #dc2626; }
-    .badge-status.suspended::before { background: #ef4444; }
-    .badge-status.verified { background: rgba(13,148,136,0.12); color: #0d9488; }
-    .badge-status.verified::before { background: #0d9488; }
-    .badge-status.rejected { background: rgba(239,68,68,0.1); color: #dc2626; }
-    .badge-status.rejected::before { background: #ef4444; }
-    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity: 0.4; } }
-
-    /* Role badge */
-    .badge-role {
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 3px 9px; border-radius: 6px;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
-    }
-    .badge-role.company-admin { background: rgba(13,148,136,0.12); color: #0d9488; border: 1px solid rgba(13,148,136,0.2); }
-    .badge-role.company-staff { background: rgba(59,130,246,0.1); color: #2563eb; border: 1px solid rgba(59,130,246,0.2); }
-
-    /* Row actions */
-    .row-actions { display: flex; align-items: center; gap: 4px; }
-    .row-action-btn {
-      width: 30px; height: 30px; border-radius: 7px;
-      border: none; background: transparent; color: var(--text-muted);
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 14px; transition: background 0.15s, color 0.15s;
-    }
-    .row-action-btn:hover { background: var(--hover-bg, rgba(0,0,0,0.07)); color: var(--heading-color); }
-    .row-action-btn.approve:hover { background: rgba(16,185,129,0.12); color: #059669; }
-    .row-action-btn.reject:hover  { background: rgba(239,68,68,0.1); color: #dc2626; }
-    .row-action-btn.view:hover    { background: rgba(13,148,136,0.12); color: #0d9488; }
-
-    /* Pending approvals / verification card */
-    .approval-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 24px;
-    }
-    .approval-card-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .approval-card-title {
-      font-family: 'Poppins'; font-size: 15px; font-weight: 600;
-      color: var(--heading-color); margin:0;
-      display:flex; align-items:center; gap:8px;
-    }
-    .approval-list { display: flex; flex-direction: column; gap: 12px; }
-    .approval-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 16px 18px;
-      background: var(--hover-bg, rgba(0,0,0,0.025));
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      transition: border-color 0.2s;
-    }
-    .approval-item:hover { border-color: var(--ia-primary); }
-    .approval-item-avatar { width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; color: #fff; }
-    .approval-item-info { flex: 1; }
-    .approval-item-name { font-weight: 600; font-size: 14px; color: var(--heading-color); }
-    .approval-item-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-    .approval-item-docs {
-      display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap;
-    }
-    .doc-tag {
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 2px 8px; border-radius: 5px;
-      font-size: 10.5px; font-weight: 600;
-    }
-    .doc-tag.valid { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.2); }
-    .doc-tag.pending { background: rgba(245,158,11,0.1); color: #d97706; border: 1px solid rgba(245,158,11,0.25); }
-    .doc-tag.missing { background: rgba(239,68,68,0.08); color: #dc2626; border: 1px solid rgba(239,68,68,0.2); }
-
-    .approval-item-actions { display: flex; gap: 8px; flex-shrink: 0; }
-    .btn-approve {
-      padding: 6px 14px;
-      background: rgba(16,185,129,0.1);
-      border: 1px solid rgba(16,185,129,0.3);
-      border-radius: 8px; color: #059669;
-      font-size: 12px; font-weight: 700;
-      cursor: pointer; font-family: inherit;
-      display: flex; align-items: center; gap: 5px;
-      transition: background 0.2s;
-    }
-    .btn-approve:hover { background: rgba(16,185,129,0.2); }
-    .btn-reject {
-      padding: 6px 14px;
-      background: rgba(239,68,68,0.08);
-      border: 1px solid rgba(239,68,68,0.25);
-      border-radius: 8px; color: #dc2626;
-      font-size: 12px; font-weight: 700;
-      cursor: pointer; font-family: inherit;
-      display: flex; align-items: center; gap: 5px;
-      transition: background 0.2s;
-    }
-    .btn-reject:hover { background: rgba(239,68,68,0.15); }
-    .btn-verify-docs {
-      padding: 6px 14px;
-      background: rgba(13,148,136,0.1);
-      border: 1px solid rgba(13,148,136,0.3);
-      border-radius: 8px; color: #0d9488;
-      font-size: 12px; font-weight: 700;
-      cursor: pointer; font-family: inherit;
-      display: flex; align-items: center; gap: 5px;
-      transition: background 0.2s;
-    }
-    .btn-verify-docs:hover { background: rgba(13,148,136,0.2); }
-
-    /* Section card (for charts) */
-    .section-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-    .section-card-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 22px;
-      border-bottom: 1px solid var(--border-color);
-      flex-wrap: wrap; gap: 12px;
-    }
-    .section-title {
-      font-family: 'Poppins'; font-size: 15px; font-weight: 600;
-      color: var(--heading-color); margin: 0;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .section-title i { color: var(--ia-primary); }
-    .section-body { padding: 22px; }
-
-    /* Chart range buttons */
-    .chart-range { display: flex; gap: 4px; }
-    .range-btn {
-      padding: 4px 10px; border-radius: 6px;
-      border: 1px solid var(--border-color);
-      background: none; font-size: 11.5px; font-weight: 600;
-      cursor: pointer; color: var(--text-muted); font-family: inherit;
-      transition: all 0.15s;
-    }
-    .range-btn.active { background: var(--ia-primary); border-color: var(--ia-primary); color: #fff; }
-
-    /* Flow diagram */
-    .flow-stage { display: flex; align-items: center; gap: 0; }
-    .flow-node {
-      flex: 1;
-      background: var(--hover-bg, rgba(0,0,0,0.03));
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 14px 12px;
-      text-align: center;
-      transition: border-color 0.2s;
-    }
-    .flow-node:hover { border-color: var(--ia-primary); }
-    .flow-node-icon { font-size: 24px; margin-bottom: 6px; }
-    .flow-node-name { font-size: 12px; font-weight: 700; color: var(--heading-color); }
-    .flow-node-val  { font-size: 13px; font-weight: 700; color: var(--ia-primary); margin-top: 3px; }
-    .flow-arrow { color: var(--text-muted); font-size: 18px; flex-shrink: 0; padding: 0 4px; }
-
-    /* Health meter */
-    .health-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 24px;
-    }
-    .health-title { font-family: 'Poppins'; font-size: 14px; font-weight: 600; color: var(--heading-color); margin: 0 0 16px; display: flex; align-items: center; gap: 7px; }
-    .health-item { margin-bottom: 14px; }
-    .health-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-    .health-item-name { font-size: 13px; font-weight: 600; color: var(--heading-color); }
-    .health-item-val  { font-size: 12px; color: var(--text-muted); }
-    .health-bar { height: 7px; border-radius: 20px; background: var(--border-color); overflow: hidden; }
-    .health-fill { height: 100%; border-radius: 20px; transition: width 1s ease; }
-
-    /* Permission tags */
-    .perm-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-    .perm-tag {
-      display: inline-flex; align-items: center; gap: 3px;
-      padding: 2px 8px;
-      background: rgba(13,148,136,0.08);
-      border: 1px solid rgba(13,148,136,0.15);
-      border-radius: 5px;
-      font-size: 10.5px; font-weight: 600;
-      color: var(--ia-primary);
-    }
-
-    /* Checkbox */
-    .ia-checkbox {
-      width: 15px; height: 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      accent-color: var(--ia-primary);
-    }
-
-    /* Pagination */
-    .table-footer {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 22px;
-      border-top: 1px solid var(--border-color);
-      font-size: 13px; color: var(--text-muted);
-      flex-wrap: wrap; gap: 10px;
-    }
-    .pagination-btns { display: flex; gap: 4px; }
-    .pg-btn {
-      width: 32px; height: 32px; border-radius: 7px;
-      border: 1px solid var(--border-color);
-      background: transparent; color: var(--text-color);
-      font-size: 13px; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.15s; font-family: inherit;
-    }
-    .pg-btn.active { background: var(--ia-primary); border-color: var(--ia-primary); color: #fff; }
-    .pg-btn:not(.active):hover { border-color: var(--ia-primary); color: var(--ia-primary); }
-
-    /* Pending row */
-    .ia-table tbody tr.pending-row td:first-child { border-left: 3px solid var(--ia-warning); }
-    .ia-table tbody tr.pending-row { background: rgba(245,158,11,0.03); }
-
-    /* Modal */
-    .ia-modal-overlay {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.25s;
-    }
-    .ia-modal-overlay.show { opacity: 1; pointer-events: all; }
-    .ia-modal {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      width: 100%; max-width: 600px;
-      padding: 32px;
-      transform: scale(0.92) translateY(20px);
-      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .ia-modal-overlay.show .ia-modal { transform: scale(1) translateY(0); }
-    .ia-modal-header {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 24px;
-    }
-    .ia-modal-title { font-family: 'Poppins'; font-size: 17px; font-weight: 700; color: var(--heading-color); margin: 0; }
-    .ia-modal-close {
-      width: 32px; height: 32px; border-radius: 8px;
-      border: 1px solid var(--border-color);
-      background: none; cursor: pointer; color: var(--text-muted);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; transition: background 0.15s;
-    }
-    .ia-modal-close:hover { background: var(--hover-bg); color: var(--heading-color); }
-    .form-group-modal { margin-bottom: 18px; }
-    .form-label-modal {
-      display: block; font-size: 12px; font-weight: 700;
-      color: var(--text-muted); text-transform: uppercase;
-      letter-spacing: 0.4px; margin-bottom: 7px;
-    }
-    .form-control-modal {
-      width: 100%; padding: 10px 14px;
-      background: var(--input-bg, rgba(0,0,0,0.04));
-      border: 1px solid var(--border-color);
-      border-radius: 10px; font-size: 13.5px;
-      color: var(--text-color); font-family: inherit;
-      outline: none; transition: border-color 0.2s;
-    }
-    .form-control-modal:focus { border-color: var(--ia-primary); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .ia-modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
-
-    /* Verification detail in modal */
-    .verify-detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-    .verify-field {
-      padding: 12px 14px;
-      background: var(--hover-bg, rgba(0,0,0,0.025));
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-    }
-    .verify-field-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; }
-    .verify-field-value { font-size: 14px; font-weight: 600; color: var(--heading-color); }
-    .verify-field-value.mono { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
-    .verify-doc-section {
-      background: var(--hover-bg, rgba(0,0,0,0.025));
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 14px;
-    }
-    .verify-doc-title {
-      font-size: 12px; font-weight: 700; color: var(--heading-color);
-      margin-bottom: 8px;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .verify-doc-status {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 12px; color: var(--text-muted);
-    }
-    .verify-doc-status .bi { font-size: 16px; }
-
-    /* Legend dot */
-    .legend-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-
-    /* Toast */
-    .ia-toast {
-      position: fixed; bottom: 28px; right: 28px;
-      background: #1a1a2e;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 12px; padding: 14px 20px;
-      display: flex; align-items: center; gap: 12px;
-      font-size: 13px; color: #fff; z-index: 99999;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      transform: translateY(80px); opacity: 0;
-      transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
-      max-width: 380px;
-    }
-    .ia-toast.show { transform: translateY(0); opacity: 1; }
-    .ia-toast-icon { font-size: 18px; flex-shrink: 0; }
-    .ia-toast.success { border-color: rgba(16,185,129,0.4); }
-    .ia-toast.success .ia-toast-icon { color: #10b981; }
-    .ia-toast.danger { border-color: rgba(239,68,68,0.4); }
-    .ia-toast.danger .ia-toast-icon { color: #ef4444; }
-
-    /* Responsive */
-    @media (max-width:768px) {
-      .park-banner-stats { gap: 12px; }
-      .flow-stage { flex-direction: column; }
-      .flow-arrow { transform: rotate(90deg); }
-      .verify-detail-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link href="./assets/styles/indusAdmin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -669,13 +55,16 @@
       <div class="header-actions-desktop">
         <!-- Notifications -->
         <div class="header-action-wrap dropdown notification-dropdown">
-          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+            title="Notifications">
             <i class="bi bi-bell"></i>
             <span class="header-badge">5</span>
           </button>
           <div class="dropdown-menu dropdown-menu-end notification-menu">
             <div class="notification-header">
-              <div><h6>Notifications</h6><span>5 unread</span></div>
+              <div>
+                <h6>Notifications</h6><span>5 unread</span>
+              </div>
               <a href="#" data-notification-action="mark-all-read">Mark all read</a>
             </div>
             <div class="notification-list">
@@ -778,7 +167,7 @@
     </div>
   </div>
 
-       SIDEBAR
+  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-shell">
       <button class="sidebar-close" type="button" aria-label="Close sidebar"><i class="bi bi-x-lg"></i></button>
@@ -802,9 +191,12 @@
               <span class="nav-arrow"><i class="bi bi-chevron-right"></i></span>
             </a>
             <ul class="nav-submenu show">
-              <li><a class="nav-link active" href="#company-accounts"><span class="nav-dot"></span>All Companies</a></li>
-              <li><a class="nav-link" href="#pending-approval"><span class="nav-dot"></span>Pending Approvals <span class="nav-badge">4</span></a></li>
-              <li><a class="nav-link" href="#business-verify"><span class="nav-dot"></span>Business Verification</a></li>
+              <li><a class="nav-link active" href="#company-accounts"><span class="nav-dot"></span>All Companies</a>
+              </li>
+              <li><a class="nav-link" href="#pending-approval"><span class="nav-dot"></span>Pending Approvals <span
+                    class="nav-badge">4</span></a></li>
+              <li><a class="nav-link" href="#business-verify"><span class="nav-dot"></span>Business Verification</a>
+              </li>
               <li><a class="nav-link" href="#permissions"><span class="nav-dot"></span>Permissions</a></li>
             </ul>
           </li>
@@ -818,8 +210,10 @@
               <span class="nav-arrow"><i class="bi bi-chevron-right"></i></span>
             </a>
             <ul class="nav-submenu">
-              <li><a class="nav-link" href="#admin-accounts"><span class="nav-dot"></span>Company Admins <span class="nav-badge">12</span></a></li>
-              <li><a class="nav-link" href="#pending-admins"><span class="nav-dot"></span>Pending Requests <span class="nav-badge">3</span></a></li>
+              <li><a class="nav-link" href="#admin-accounts"><span class="nav-dot"></span>Company Admins <span
+                    class="nav-badge">12</span></a></li>
+              <li><a class="nav-link" href="#pending-admins"><span class="nav-dot"></span>Pending Requests <span
+                    class="nav-badge">3</span></a></li>
               <li><a class="nav-link" href="#admin-permissions"><span class="nav-dot"></span>Grant Permissions</a></li>
             </ul>
           </li>
@@ -853,7 +247,8 @@
           </a>
           <div class="sidebar-account-actions">
             <a href="#" class="sidebar-account-action" title="Settings"><i class="bi bi-gear"></i></a>
-            <a href="industrial-admin-login.html" class="sidebar-account-action sidebar-account-logout" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
+            <a href="industrial-admin-login.html" class="sidebar-account-action sidebar-account-logout"
+              title="Logout"><i class="bi bi-box-arrow-right"></i></a>
           </div>
         </div>
         <div class="sidebar-footer-links">
@@ -866,954 +261,963 @@
 
   <div class="sidebar-overlay"></div>
 
-       MAIN CONTENT
+  <!-- MAIN CONTENT -->
   <main class="main">
-
-    <!-- Page Header -->
-    <div class="page-header">
-      <div>
-        <h1 class="page-title">Industrial Park Management</h1>
-        <div class="page-breadcrumb">
-          <a href="industrial-admin-dashboard.html">Dashboard</a>
-          <i class="bi bi-chevron-right"></i>
-          <span>Company Management & Statistics</span>
-        </div>
-      </div>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-        <button class="btn-ia-outline" id="btn-export"><i class="bi bi-download"></i> Export Report</button>
-        <button class="btn-ia-primary" id="btn-add-company"><i class="bi bi-building-add"></i> Add Company</button>
-      </div>
-    </div>
-
-    <!-- Park Info Banner -->
-    <div class="park-banner">
-      <div class="park-banner-icon"><i class="bi bi-building-fill"></i></div>
-      <div class="park-banner-info">
-        <div class="park-banner-name">VSIP Binh Duong Industrial Park</div>
-        <div class="park-banner-detail">Vietnam Singapore Industrial Park · Binh Duong Province · Area: 499 ha</div>
-      </div>
-      <div class="park-banner-stats">
-        <div class="park-banner-stat">
-          <div class="park-banner-stat-val">68</div>
-          <div class="park-banner-stat-label">Companies</div>
-        </div>
-        <div class="park-banner-stat">
-          <div class="park-banner-stat-val">96%</div>
-          <div class="park-banner-stat-label">Occupancy</div>
-        </div>
-        <div class="park-banner-stat">
-          <div class="park-banner-stat-val">₫28.4B</div>
-          <div class="park-banner-stat-label">Monthly Txn</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Stats Row -->
-    <div class="stat-grid">
-      <div class="stat-card teal">
-        <div class="stat-icon teal"><i class="bi bi-building-fill"></i></div>
+    <div class="main-content">
+      <!-- Page Header -->
+      <div class="page-header">
         <div>
-          <div class="stat-value">68</div>
-          <div class="stat-label">Total Companies</div>
-        </div>
-      </div>
-      <div class="stat-card success">
-        <div class="stat-icon success"><i class="bi bi-check-circle-fill"></i></div>
-        <div>
-          <div class="stat-value">54</div>
-          <div class="stat-label">Verified & Active</div>
-        </div>
-      </div>
-      <div class="stat-card warning">
-        <div class="stat-icon warning"><i class="bi bi-hourglass-split"></i></div>
-        <div>
-          <div class="stat-value">4</div>
-          <div class="stat-label">Pending Verification</div>
-        </div>
-      </div>
-      <div class="stat-card info">
-        <div class="stat-icon info"><i class="bi bi-person-fill-gear"></i></div>
-        <div>
-          <div class="stat-value">12</div>
-          <div class="stat-label">Company Admins</div>
-        </div>
-      </div>
-      <div class="stat-card danger">
-        <div class="stat-icon danger"><i class="bi bi-shield-exclamation"></i></div>
-        <div>
-          <div class="stat-value">2</div>
-          <div class="stat-label">License Expired</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Navigation Tabs -->
-    <div class="main-tabs" role="tablist">
-      <button class="main-tab active" onclick="switchMainTab(this,'panel-companies')"><i class="bi bi-building-fill-gear"></i> Companies <span class="tab-count">68</span></button>
-      <button class="main-tab" onclick="switchMainTab(this,'panel-accounts')"><i class="bi bi-person-fill-gear"></i> Account Manager <span class="tab-count">12</span></button>
-      <button class="main-tab" onclick="switchMainTab(this,'panel-verification')"><i class="bi bi-file-earmark-check-fill"></i> Verification <span class="tab-count">4</span></button>
-      <button class="main-tab" onclick="switchMainTab(this,'panel-statistics')"><i class="bi bi-bar-chart-line-fill"></i> Statistics</button>
-    </div>
-
-    <!-- ═══════════════════════════════════
-         PANEL 1: Company Accounts
-    ═══════════════════════════════════ -->
-    <div class="main-panel active" id="panel-companies">
-
-      <!-- Pending Company Approvals -->
-      <div class="approval-card" id="pending-approval">
-        <div class="approval-card-header">
-          <h2 class="approval-card-title">
-            <i class="bi bi-hourglass-split" style="color:var(--ia-warning)"></i>
-            Pending Company Approvals
-            <span style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.35);border-radius:20px;padding:2px 10px;font-size:11px;color:#d97706;font-weight:700;">4 awaiting</span>
-          </h2>
-          <a href="#" style="font-size:13px;color:var(--ia-primary);font-weight:600;text-decoration:none;">View all</a>
-        </div>
-        <div class="approval-list" id="approval-list">
-
-          <div class="approval-item" id="approval-1">
-            <div class="approval-item-avatar" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">AC</div>
-            <div class="approval-item-info">
-              <div class="approval-item-name">ABC Manufacturing Corp</div>
-              <div class="approval-item-meta">Le Thanh Hai · Company Admin · abc.corp@vsip.com.vn</div>
-              <div class="approval-item-docs">
-                <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Tax ID: Valid</span>
-                <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Business License</span>
-                <span class="doc-tag pending"><i class="bi bi-clock-fill"></i> Env. Certificate: Reviewing</span>
-              </div>
-            </div>
-            <div class="approval-item-actions">
-              <button class="btn-verify-docs" onclick="openVerifyModal('ABC Manufacturing Corp','0301234567','GP-2026-0142','Le Thanh Hai','abc.corp@vsip.com.vn')"><i class="bi bi-file-earmark-check"></i> Verify</button>
-              <button class="btn-approve" onclick="approveItem('approval-1','ABC Manufacturing Corp')"><i class="bi bi-check-lg"></i> Approve</button>
-              <button class="btn-reject" onclick="rejectItem('approval-1','ABC Manufacturing Corp')"><i class="bi bi-x-lg"></i> Reject</button>
-            </div>
+          <h1 class="page-title">Industrial Park Management</h1>
+          <div class="page-breadcrumb">
+            <a href="industrial-admin-dashboard.html">Dashboard</a>
+            <i class="bi bi-chevron-right"></i>
+            <span>Company Management & Statistics</span>
           </div>
-
-          <div class="approval-item" id="approval-2">
-            <div class="approval-item-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">DT</div>
-            <div class="approval-item-info">
-              <div class="approval-item-name">Delta Tech Solutions</div>
-              <div class="approval-item-meta">Nguyen Minh Tu · Company Admin · delta@enterprise.vn</div>
-              <div class="approval-item-docs">
-                <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Tax ID: Valid</span>
-                <span class="doc-tag missing"><i class="bi bi-x-circle-fill"></i> License: Missing</span>
-              </div>
-            </div>
-            <div class="approval-item-actions">
-              <button class="btn-verify-docs" onclick="openVerifyModal('Delta Tech Solutions','0309876543','—','Nguyen Minh Tu','delta@enterprise.vn')"><i class="bi bi-file-earmark-check"></i> Verify</button>
-              <button class="btn-approve" onclick="approveItem('approval-2','Delta Tech Solutions')" disabled style="opacity:0.4;cursor:not-allowed;"><i class="bi bi-check-lg"></i> Approve</button>
-              <button class="btn-reject" onclick="rejectItem('approval-2','Delta Tech Solutions')"><i class="bi bi-x-lg"></i> Reject</button>
-            </div>
-          </div>
-
-          <div class="approval-item" id="approval-3">
-            <div class="approval-item-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">GH</div>
-            <div class="approval-item-info">
-              <div class="approval-item-name">Green Horizon Logistics</div>
-              <div class="approval-item-meta">Vo Thanh Son · Company Admin · gh.logistics@mail.vn</div>
-              <div class="approval-item-docs">
-                <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Tax ID: Valid</span>
-                <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Business License</span>
-                <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Env. Certificate</span>
-              </div>
-            </div>
-            <div class="approval-item-actions">
-              <button class="btn-verify-docs" onclick="openVerifyModal('Green Horizon Logistics','0317654321','GP-2026-0198','Vo Thanh Son','gh.logistics@mail.vn')"><i class="bi bi-file-earmark-check"></i> Verify</button>
-              <button class="btn-approve" onclick="approveItem('approval-3','Green Horizon Logistics')"><i class="bi bi-check-lg"></i> Approve</button>
-              <button class="btn-reject" onclick="rejectItem('approval-3','Green Horizon Logistics')"><i class="bi bi-x-lg"></i> Reject</button>
-            </div>
-          </div>
-
-          <div class="approval-item" id="approval-4">
-            <div class="approval-item-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">PS</div>
-            <div class="approval-item-info">
-              <div class="approval-item-name">Pacific Star Chemicals</div>
-              <div class="approval-item-meta">Tran Anh Duc · Company Admin · ps.chem@mail.vn</div>
-              <div class="approval-item-docs">
-                <span class="doc-tag pending"><i class="bi bi-clock-fill"></i> Tax ID: Reviewing</span>
-                <span class="doc-tag pending"><i class="bi bi-clock-fill"></i> License: Reviewing</span>
-              </div>
-            </div>
-            <div class="approval-item-actions">
-              <button class="btn-verify-docs" onclick="openVerifyModal('Pacific Star Chemicals','0321234567','GP-2026-0215','Tran Anh Duc','ps.chem@mail.vn')"><i class="bi bi-file-earmark-check"></i> Verify</button>
-              <button class="btn-approve" onclick="approveItem('approval-4','Pacific Star Chemicals')" disabled style="opacity:0.4;cursor:not-allowed;"><i class="bi bi-check-lg"></i> Approve</button>
-              <button class="btn-reject" onclick="rejectItem('approval-4','Pacific Star Chemicals')"><i class="bi bi-x-lg"></i> Reject</button>
-            </div>
-          </div>
-
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+          <button class="btn-ia-outline" id="btn-export"><i class="bi bi-download"></i> Export Report</button>
+          <button class="btn-ia-primary" id="btn-add-company"><i class="bi bi-building-add"></i> Add Company</button>
         </div>
       </div>
 
-      <!-- Company Accounts Table -->
-      <div class="table-card" id="company-accounts">
-        <div class="table-card-header">
-          <h3 class="table-card-title"><i class="bi bi-building-fill"></i> Company Accounts</h3>
-          <div class="table-actions">
-            <div class="search-wrap">
-              <i class="bi bi-search"></i>
-              <input type="search" class="search-input-sm" placeholder="Search companies..." id="company-search" oninput="filterCompanyTable(this.value)">
-            </div>
-            <select class="search-input-sm" style="width:auto;padding-left:12px;" id="filter-status" onchange="filterCompanyTable(document.getElementById('company-search').value)">
-              <option value="">All Status</option>
-              <option value="active">Active</option>
-              <option value="pending">Pending</option>
-              <option value="suspended">Suspended</option>
-            </select>
-          </div>
+      <!-- Park Info Banner -->
+      <div class="park-banner">
+        <div class="park-banner-icon"><i class="bi bi-building-fill"></i></div>
+        <div class="park-banner-info">
+          <div class="park-banner-name">VSIP Binh Duong Industrial Park</div>
+          <div class="park-banner-detail">Vietnam Singapore Industrial Park · Binh Duong Province · Area: 499 ha</div>
         </div>
-
-        <table class="ia-table" id="company-table">
-          <thead>
-            <tr>
-              <th style="width:40px;padding-right:0;"><input type="checkbox" class="ia-checkbox" id="check-all" onchange="toggleAllChecks(this)"></th>
-              <th>Company</th>
-              <th>Company Admin</th>
-              <th>Tax ID</th>
-              <th>License</th>
-              <th>Status</th>
-              <th>Permissions</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="company-tbody">
-
-            <tr data-status="active" data-name="Saigon Precision Engineering">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">SP</div>
-                  <div>
-                    <div class="user-name-sm">Saigon Precision Engineering</div>
-                    <div class="user-email-sm">Mechanical Engineering · Since 2019</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="user-name-sm" style="font-size:12px;">Pham Duc Long</div>
-                <div class="user-email-sm">duc.long@spe.vn</div>
-              </td>
-              <td><span style="font-family:'JetBrains Mono';font-size:12px;">0301234501</span></td>
-              <td><span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Valid</span></td>
-              <td><span class="badge-status active">Active</span></td>
-              <td><div class="perm-tags"><span class="perm-tag">Full Ops</span><span class="perm-tag">Transactions</span></div></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn view" title="View details" onclick="openVerifyModal('Saigon Precision Engineering','0301234501','GP-2019-0084','Pham Duc Long','duc.long@spe.vn')"><i class="bi bi-eye"></i></button>
-                  <button class="row-action-btn" title="Edit permissions" onclick="openPermModal('Saigon Precision Engineering')"><i class="bi bi-shield-check"></i></button>
-                  <button class="row-action-btn reject" title="Suspend" onclick="showToast('danger','Company suspended.')"><i class="bi bi-slash-circle"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr data-status="active" data-name="VietChip Semiconductor">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">VC</div>
-                  <div>
-                    <div class="user-name-sm">VietChip Semiconductor</div>
-                    <div class="user-email-sm">Electronics · Since 2021</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="user-name-sm" style="font-size:12px;">Nguyen Hoang Anh</div>
-                <div class="user-email-sm">hoang.anh@vietchip.vn</div>
-              </td>
-              <td><span style="font-family:'JetBrains Mono';font-size:12px;">0307654321</span></td>
-              <td><span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Valid</span></td>
-              <td><span class="badge-status active">Active</span></td>
-              <td><div class="perm-tags"><span class="perm-tag">Full Ops</span><span class="perm-tag">Reports</span></div></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn view" title="View" onclick="openVerifyModal('VietChip Semiconductor','0307654321','GP-2021-0127','Nguyen Hoang Anh','hoang.anh@vietchip.vn')"><i class="bi bi-eye"></i></button>
-                  <button class="row-action-btn" title="Permissions" onclick="openPermModal('VietChip Semiconductor')"><i class="bi bi-shield-check"></i></button>
-                  <button class="row-action-btn reject" title="Suspend" onclick="showToast('danger','Company suspended.')"><i class="bi bi-slash-circle"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr data-status="active" data-name="Eco Plastics Vietnam">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#10b981,#34d399);">EP</div>
-                  <div>
-                    <div class="user-name-sm">Eco Plastics Vietnam</div>
-                    <div class="user-email-sm">Consumer Goods · Since 2020</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="user-name-sm" style="font-size:12px;">Le Thi Minh</div>
-                <div class="user-email-sm">minh.le@ecoplastics.vn</div>
-              </td>
-              <td><span style="font-family:'JetBrains Mono';font-size:12px;">0315678901</span></td>
-              <td><span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Valid</span></td>
-              <td><span class="badge-status active">Active</span></td>
-              <td><div class="perm-tags"><span class="perm-tag">Operations</span><span class="perm-tag">Shipping</span></div></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn view" title="View" onclick="openVerifyModal('Eco Plastics Vietnam','0315678901','GP-2020-0098','Le Thi Minh','minh.le@ecoplastics.vn')"><i class="bi bi-eye"></i></button>
-                  <button class="row-action-btn" title="Permissions" onclick="openPermModal('Eco Plastics Vietnam')"><i class="bi bi-shield-check"></i></button>
-                  <button class="row-action-btn reject" title="Suspend" onclick="showToast('danger','Company suspended.')"><i class="bi bi-slash-circle"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="pending-row" data-status="pending" data-name="ABC Manufacturing Corp">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">AB</div>
-                  <div>
-                    <div class="user-name-sm">ABC Manufacturing Corp</div>
-                    <div class="user-email-sm">Chemicals · Applying</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="user-name-sm" style="font-size:12px;">Le Thanh Hai</div>
-                <div class="user-email-sm">abc.corp@vsip.com.vn</div>
-              </td>
-              <td><span style="font-family:'JetBrains Mono';font-size:12px;">0301234567</span></td>
-              <td><span class="doc-tag pending"><i class="bi bi-clock-fill"></i> Reviewing</span></td>
-              <td><span class="badge-status pending">Pending</span></td>
-              <td><div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Not Granted</span></div></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn approve" title="Approve" onclick="showToast('success','Company approved.')"><i class="bi bi-check-lg"></i></button>
-                  <button class="row-action-btn reject" title="Reject" onclick="showToast('danger','Company rejected.')"><i class="bi bi-x-lg"></i></button>
-                  <button class="row-action-btn view" title="Verify" onclick="openVerifyModal('ABC Manufacturing Corp','0301234567','GP-2026-0142','Le Thanh Hai','abc.corp@vsip.com.vn')"><i class="bi bi-file-earmark-check"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr data-status="suspended" data-name="Hung Thinh Metals">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#ef4444,#f87171);">HT</div>
-                  <div>
-                    <div class="user-name-sm">Hung Thinh Metals</div>
-                    <div class="user-email-sm">Mechanical · License Expired</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div class="user-name-sm" style="font-size:12px;">Do Van Cuong</div>
-                <div class="user-email-sm">cuong@hungthinhmetals.vn</div>
-              </td>
-              <td><span style="font-family:'JetBrains Mono';font-size:12px;">0322345678</span></td>
-              <td><span class="doc-tag missing"><i class="bi bi-x-circle-fill"></i> Expired</span></td>
-              <td><span class="badge-status suspended">Suspended</span></td>
-              <td><div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Revoked</span></div></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn approve" title="Reinstate" onclick="showToast('success','Company reinstated.')"><i class="bi bi-arrow-counterclockwise"></i></button>
-                  <button class="row-action-btn view" title="View" onclick="openVerifyModal('Hung Thinh Metals','0322345678','GP-2018-0033','Do Van Cuong','cuong@hungthinhmetals.vn')"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-
-        <div class="table-footer">
-          <span>Showing <strong>5</strong> of <strong>68</strong> companies</span>
-          <div class="pagination-btns">
-            <button class="pg-btn" disabled><i class="bi bi-chevron-left"></i></button>
-            <button class="pg-btn active">1</button>
-            <button class="pg-btn">2</button>
-            <button class="pg-btn">3</button>
-            <button class="pg-btn">…</button>
-            <button class="pg-btn">14</button>
-            <button class="pg-btn"><i class="bi bi-chevron-right"></i></button>
+        <div class="park-banner-stats">
+          <div class="park-banner-stat">
+            <div class="park-banner-stat-val">68</div>
+            <div class="park-banner-stat-label">Companies</div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════
-         PANEL 2: Account Manager
-    ═══════════════════════════════════ -->
-    <div class="main-panel" id="panel-accounts">
-
-      <!-- Pending Admin Requests -->
-      <div class="approval-card" id="pending-admins">
-        <div class="approval-card-header">
-          <h2 class="approval-card-title">
-            <i class="bi bi-person-fill-add" style="color:var(--ia-warning)"></i>
-            Pending Company Admin Requests
-            <span style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.35);border-radius:20px;padding:2px 10px;font-size:11px;color:#d97706;font-weight:700;">3 new</span>
-          </h2>
-        </div>
-        <div class="approval-list">
-
-          <div class="approval-item" id="admin-req-1">
-            <div class="approval-item-avatar" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">LH</div>
-            <div class="approval-item-info">
-              <div class="approval-item-name">Le Thanh Hai</div>
-              <div class="approval-item-meta">abc.corp@vsip.com.vn · ABC Manufacturing Corp · Requested: Apr 14, 2026</div>
-              <div class="approval-item-docs">
-                <span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
-                <span class="doc-tag valid"><i class="bi bi-building-check"></i> Company Verified</span>
-              </div>
-            </div>
-            <div class="approval-item-actions">
-              <button class="btn-verify-docs" onclick="openEditAdminModal('Le Thanh Hai','abc.corp@vsip.com.vn','ABC Manufacturing Corp','Company Admin')"><i class="bi bi-pencil-square"></i> Review</button>
-              <button class="btn-approve" onclick="approveAdminReq('admin-req-1','Le Thanh Hai')"><i class="bi bi-check-lg"></i> Approve</button>
-              <button class="btn-reject" onclick="rejectAdminReq('admin-req-1','Le Thanh Hai')"><i class="bi bi-x-lg"></i> Reject</button>
-            </div>
+          <div class="park-banner-stat">
+            <div class="park-banner-stat-val">96%</div>
+            <div class="park-banner-stat-label">Occupancy</div>
           </div>
-
-          <div class="approval-item" id="admin-req-2">
-            <div class="approval-item-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">NM</div>
-            <div class="approval-item-info">
-              <div class="approval-item-name">Nguyen Minh Tu</div>
-              <div class="approval-item-meta">delta@enterprise.vn · Delta Tech Solutions · Requested: Apr 15, 2026</div>
-              <div class="approval-item-docs">
-                <span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
-                <span class="doc-tag missing"><i class="bi bi-exclamation-triangle-fill"></i> License Missing</span>
-              </div>
-            </div>
-            <div class="approval-item-actions">
-              <button class="btn-verify-docs" onclick="openEditAdminModal('Nguyen Minh Tu','delta@enterprise.vn','Delta Tech Solutions','Company Admin')"><i class="bi bi-pencil-square"></i> Review</button>
-              <button class="btn-approve" disabled style="opacity:0.4;cursor:not-allowed;"><i class="bi bi-check-lg"></i> Approve</button>
-              <button class="btn-reject" onclick="rejectAdminReq('admin-req-2','Nguyen Minh Tu')"><i class="bi bi-x-lg"></i> Reject</button>
-            </div>
-          </div>
-
-          <div class="approval-item" id="admin-req-3">
-            <div class="approval-item-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">VS</div>
-            <div class="approval-item-info">
-              <div class="approval-item-name">Vo Thanh Son</div>
-              <div class="approval-item-meta">gh.logistics@mail.vn · Green Horizon Logistics · Requested: Apr 15, 2026</div>
-              <div class="approval-item-docs">
-                <span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
-                <span class="doc-tag valid"><i class="bi bi-building-check"></i> Company Verified</span>
-              </div>
-            </div>
-            <div class="approval-item-actions">
-              <button class="btn-verify-docs" onclick="openEditAdminModal('Vo Thanh Son','gh.logistics@mail.vn','Green Horizon Logistics','Company Admin')"><i class="bi bi-pencil-square"></i> Review</button>
-              <button class="btn-approve" onclick="approveAdminReq('admin-req-3','Vo Thanh Son')"><i class="bi bi-check-lg"></i> Approve</button>
-              <button class="btn-reject" onclick="rejectAdminReq('admin-req-3','Vo Thanh Son')"><i class="bi bi-x-lg"></i> Reject</button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Company Admin Accounts Table -->
-      <div class="table-card" id="admin-accounts">
-        <div class="table-card-header">
-          <h3 class="table-card-title"><i class="bi bi-people-fill"></i> Company Admin Accounts</h3>
-          <div class="table-actions">
-            <div class="search-wrap">
-              <i class="bi bi-search"></i>
-              <input type="search" class="search-input-sm" placeholder="Search admins..." id="admin-search" oninput="filterAdminTable(this.value)">
-            </div>
-            <select class="search-input-sm" style="width:auto;padding-left:12px;" id="filter-admin-status" onchange="filterAdminTable(document.getElementById('admin-search').value)">
-              <option value="">All Status</option>
-              <option value="active">Active</option>
-              <option value="pending">Pending</option>
-              <option value="suspended">Suspended</option>
-            </select>
-            <button class="btn-ia-primary" onclick="document.getElementById('add-admin-modal').classList.add('show')"><i class="bi bi-person-plus-fill"></i> Add Admin</button>
-          </div>
-        </div>
-
-        <table class="ia-table" id="admin-table">
-          <thead>
-            <tr>
-              <th style="width:40px;padding-right:0;"><input type="checkbox" class="ia-checkbox" onchange="document.querySelectorAll('.admin-row-check').forEach(c=>c.checked=this.checked)"></th>
-              <th>Admin Account</th>
-              <th>Company</th>
-              <th>Role</th>
-              <th>Status</th>
-              <th>Permissions</th>
-              <th>Last Login</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="admin-tbody">
-
-            <tr data-status="active" data-name="Pham Duc Long">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">PD</div>
-                  <div>
-                    <div class="user-name-sm">Pham Duc Long</div>
-                    <div class="user-email-sm">duc.long@spe.vn</div>
-                  </div>
-                </div>
-              </td>
-              <td><span style="font-size:13px;font-weight:600;">Saigon Precision Engineering</span></td>
-              <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span></td>
-              <td><span class="badge-status active">Active</span></td>
-              <td><div class="perm-tags"><span class="perm-tag">Full Ops</span><span class="perm-tag">Trading</span><span class="perm-tag">Reports</span></div></td>
-              <td><span style="font-size:12px;color:var(--text-muted);">Today, 09:14</span></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn view" title="Edit account" onclick="openEditAdminModal('Pham Duc Long','duc.long@spe.vn','Saigon Precision Engineering','Company Admin')"><i class="bi bi-pencil"></i></button>
-                  <button class="row-action-btn" title="Manage permissions" onclick="openPermModal('Saigon Precision Engineering')"><i class="bi bi-shield-check"></i></button>
-                  <button class="row-action-btn reject" title="Suspend account" onclick="showToast('danger','Account suspended: Pham Duc Long')"><i class="bi bi-slash-circle"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr data-status="active" data-name="Nguyen Hoang Anh">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">NH</div>
-                  <div>
-                    <div class="user-name-sm">Nguyen Hoang Anh</div>
-                    <div class="user-email-sm">hoang.anh@vietchip.vn</div>
-                  </div>
-                </div>
-              </td>
-              <td><span style="font-size:13px;font-weight:600;">VietChip Semiconductor</span></td>
-              <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span></td>
-              <td><span class="badge-status active">Active</span></td>
-              <td><div class="perm-tags"><span class="perm-tag">Full Ops</span><span class="perm-tag">Reports</span></div></td>
-              <td><span style="font-size:12px;color:var(--text-muted);">Today, 08:42</span></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn view" title="Edit" onclick="openEditAdminModal('Nguyen Hoang Anh','hoang.anh@vietchip.vn','VietChip Semiconductor','Company Admin')"><i class="bi bi-pencil"></i></button>
-                  <button class="row-action-btn" title="Permissions" onclick="openPermModal('VietChip Semiconductor')"><i class="bi bi-shield-check"></i></button>
-                  <button class="row-action-btn reject" title="Suspend" onclick="showToast('danger','Account suspended: Nguyen Hoang Anh')"><i class="bi bi-slash-circle"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr data-status="active" data-name="Le Thi Minh">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#10b981,#34d399);">LM</div>
-                  <div>
-                    <div class="user-name-sm">Le Thi Minh</div>
-                    <div class="user-email-sm">minh.le@ecoplastics.vn</div>
-                  </div>
-                </div>
-              </td>
-              <td><span style="font-size:13px;font-weight:600;">Eco Plastics Vietnam</span></td>
-              <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span></td>
-              <td><span class="badge-status active">Active</span></td>
-              <td><div class="perm-tags"><span class="perm-tag">Operations</span><span class="perm-tag">Shipping</span></div></td>
-              <td><span style="font-size:12px;color:var(--text-muted);">Yesterday</span></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn view" title="Edit" onclick="openEditAdminModal('Le Thi Minh','minh.le@ecoplastics.vn','Eco Plastics Vietnam','Company Admin')"><i class="bi bi-pencil"></i></button>
-                  <button class="row-action-btn" title="Permissions" onclick="openPermModal('Eco Plastics Vietnam')"><i class="bi bi-shield-check"></i></button>
-                  <button class="row-action-btn reject" title="Suspend" onclick="showToast('danger','Account suspended: Le Thi Minh')"><i class="bi bi-slash-circle"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="pending-row" data-status="pending" data-name="Le Thanh Hai">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">LH</div>
-                  <div>
-                    <div class="user-name-sm">Le Thanh Hai</div>
-                    <div class="user-email-sm">abc.corp@vsip.com.vn</div>
-                  </div>
-                </div>
-              </td>
-              <td><span style="font-size:13px;font-weight:600;">ABC Manufacturing Corp</span></td>
-              <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span></td>
-              <td><span class="badge-status pending">Pending Approval</span></td>
-              <td><div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Not Granted</span></div></td>
-              <td><span style="font-size:12px;color:var(--text-muted);">Never</span></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn approve" title="Approve" onclick="showToast('success','Account approved: Le Thanh Hai')"><i class="bi bi-check-lg"></i></button>
-                  <button class="row-action-btn reject" title="Reject" onclick="showToast('danger','Account rejected: Le Thanh Hai')"><i class="bi bi-x-lg"></i></button>
-                  <button class="row-action-btn view" title="Review" onclick="openEditAdminModal('Le Thanh Hai','abc.corp@vsip.com.vn','ABC Manufacturing Corp','Company Admin')"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr data-status="active" data-name="Tran Van Bao">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">TB</div>
-                  <div>
-                    <div class="user-name-sm">Tran Van Bao</div>
-                    <div class="user-email-sm">bao.tran@sunwell.vn</div>
-                  </div>
-                </div>
-              </td>
-              <td><span style="font-size:13px;font-weight:600;">Sun Well Industries</span></td>
-              <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span></td>
-              <td><span class="badge-status active">Active</span></td>
-              <td><div class="perm-tags"><span class="perm-tag">Trading</span><span class="perm-tag">Reports</span></div></td>
-              <td><span style="font-size:12px;color:var(--text-muted);">Apr 14</span></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn view" title="Edit" onclick="openEditAdminModal('Tran Van Bao','bao.tran@sunwell.vn','Sun Well Industries','Company Admin')"><i class="bi bi-pencil"></i></button>
-                  <button class="row-action-btn" title="Permissions" onclick="openPermModal('Sun Well Industries')"><i class="bi bi-shield-check"></i></button>
-                  <button class="row-action-btn reject" title="Suspend" onclick="showToast('danger','Account suspended: Tran Van Bao')"><i class="bi bi-slash-circle"></i></button>
-                </div>
-              </td>
-            </tr>
-
-            <tr data-status="suspended" data-name="Do Van Cuong">
-              <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar-initials" style="background:linear-gradient(135deg,#ef4444,#f87171);">DC</div>
-                  <div>
-                    <div class="user-name-sm">Do Van Cuong</div>
-                    <div class="user-email-sm">cuong@hungthinhmetals.vn</div>
-                  </div>
-                </div>
-              </td>
-              <td><span style="font-size:13px;font-weight:600;">Hung Thinh Metals</span></td>
-              <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span></td>
-              <td><span class="badge-status suspended">Suspended</span></td>
-              <td><div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Revoked</span></div></td>
-              <td><span style="font-size:12px;color:var(--text-muted);">Jan 2026</span></td>
-              <td>
-                <div class="row-actions">
-                  <button class="row-action-btn approve" title="Reinstate" onclick="showToast('success','Account reinstated: Do Van Cuong')"><i class="bi bi-arrow-counterclockwise"></i></button>
-                  <button class="row-action-btn view" title="View" onclick="openEditAdminModal('Do Van Cuong','cuong@hungthinhmetals.vn','Hung Thinh Metals','Company Admin')"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-
-        <div class="table-footer">
-          <span>Showing <strong>6</strong> of <strong>12</strong> company admin accounts</span>
-          <div class="pagination-btns">
-            <button class="pg-btn" disabled><i class="bi bi-chevron-left"></i></button>
-            <button class="pg-btn active">1</button>
-            <button class="pg-btn">2</button>
-            <button class="pg-btn"><i class="bi bi-chevron-right"></i></button>
+          <div class="park-banner-stat">
+            <div class="park-banner-stat-val">₫28.4B</div>
+            <div class="park-banner-stat-label">Monthly Txn</div>
           </div>
         </div>
       </div>
 
-    </div>
-
-    <!-- ═══════════════════════════════════
-         PANEL 3: Business Verification
-    ═══════════════════════════════════ -->
-    <div class="main-panel" id="panel-verification">
-      <div class="row g-3">
-        <div class="col-lg-8">
-          <div class="section-card" id="business-verify">
-            <div class="section-card-header">
-              <h2 class="section-title"><i class="bi bi-file-earmark-check-fill"></i> Business Records Verification Queue</h2>
-              <div class="chart-range">
-                <button class="range-btn active">All</button>
-                <button class="range-btn">Tax ID</button>
-                <button class="range-btn">License</button>
-                <button class="range-btn">Certificate</button>
-              </div>
-            </div>
-            <div class="section-body" style="padding:0;">
-              <table class="ia-table">
-                <thead>
-                  <tr>
-                    <th>Company</th>
-                    <th>Document Type</th>
-                    <th>Document ID</th>
-                    <th>Submitted</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>ABC Manufacturing Corp</strong></td>
-                    <td><span class="doc-tag pending" style="padding:4px 10px;font-size:11px;"><i class="bi bi-file-text-fill"></i> Env. Certificate</span></td>
-                    <td><span style="font-family:'JetBrains Mono';font-size:12px;">ENV-2026-4582</span></td>
-                    <td style="font-size:12px;">Apr 14, 2026</td>
-                    <td><span class="badge-status pending">Under Review</span></td>
-                    <td>
-                      <div class="row-actions">
-                        <button class="row-action-btn approve" title="Approve doc" onclick="showToast('success','Document approved.')"><i class="bi bi-check-lg"></i></button>
-                        <button class="row-action-btn reject" title="Reject doc" onclick="showToast('danger','Document rejected.')"><i class="bi bi-x-lg"></i></button>
-                        <button class="row-action-btn view" title="View doc"><i class="bi bi-eye"></i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Delta Tech Solutions</strong></td>
-                    <td><span class="doc-tag missing" style="padding:4px 10px;font-size:11px;"><i class="bi bi-file-earmark-x"></i> Business License</span></td>
-                    <td><span style="font-size:12px;color:var(--text-muted);">Not submitted</span></td>
-                    <td style="font-size:12px;color:var(--text-muted);">—</td>
-                    <td><span class="badge-status rejected">Missing</span></td>
-                    <td>
-                      <div class="row-actions">
-                        <button class="row-action-btn" title="Request upload" onclick="showToast('success','Upload requested via email.')"><i class="bi bi-envelope-arrow-up"></i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Pacific Star Chemicals</strong></td>
-                    <td><span class="doc-tag pending" style="padding:4px 10px;font-size:11px;"><i class="bi bi-file-text-fill"></i> Tax ID Certificate</span></td>
-                    <td><span style="font-family:'JetBrains Mono';font-size:12px;">0321234567</span></td>
-                    <td style="font-size:12px;">Apr 15, 2026</td>
-                    <td><span class="badge-status pending">Verifying</span></td>
-                    <td>
-                      <div class="row-actions">
-                        <button class="row-action-btn approve" title="Approve" onclick="showToast('success','Tax ID verified.')"><i class="bi bi-check-lg"></i></button>
-                        <button class="row-action-btn reject" title="Reject" onclick="showToast('danger','Tax ID rejected.')"><i class="bi bi-x-lg"></i></button>
-                        <button class="row-action-btn view" title="View"><i class="bi bi-eye"></i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Pacific Star Chemicals</strong></td>
-                    <td><span class="doc-tag pending" style="padding:4px 10px;font-size:11px;"><i class="bi bi-file-text-fill"></i> Business License</span></td>
-                    <td><span style="font-family:'JetBrains Mono';font-size:12px;">GP-2026-0215</span></td>
-                    <td style="font-size:12px;">Apr 15, 2026</td>
-                    <td><span class="badge-status pending">Verifying</span></td>
-                    <td>
-                      <div class="row-actions">
-                        <button class="row-action-btn approve" title="Approve" onclick="showToast('success','License verified.')"><i class="bi bi-check-lg"></i></button>
-                        <button class="row-action-btn reject" title="Reject" onclick="showToast('danger','License rejected.')"><i class="bi bi-x-lg"></i></button>
-                        <button class="row-action-btn view" title="View"><i class="bi bi-eye"></i></button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Hung Thinh Metals</strong></td>
-                    <td><span class="doc-tag missing" style="padding:4px 10px;font-size:11px;"><i class="bi bi-file-earmark-x"></i> Business License</span></td>
-                    <td><span style="font-family:'JetBrains Mono';font-size:12px;">GP-2018-0033</span></td>
-                    <td style="font-size:12px;">Expired: Jan 2026</td>
-                    <td><span class="badge-status rejected">Expired</span></td>
-                    <td>
-                      <div class="row-actions">
-                        <button class="row-action-btn" title="Request renewal" onclick="showToast('success','Renewal reminder sent.')"><i class="bi bi-arrow-repeat"></i></button>
-                        <button class="row-action-btn view" title="View"><i class="bi bi-eye"></i></button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <!-- Verification summary -->
-          <div class="health-card">
-            <div class="health-title"><i class="bi bi-shield-fill-check" style="color:var(--ia-primary);"></i> Verification Summary</div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Tax ID Verified</span>
-                <span class="health-item-val">62/68</span>
-              </div>
-              <div class="health-bar"><div class="health-fill" style="width:91%;background:linear-gradient(90deg,#0d9488,#06b6d4);"></div></div>
-            </div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Business License Valid</span>
-                <span class="health-item-val">58/68</span>
-              </div>
-              <div class="health-bar"><div class="health-fill" style="width:85%;background:linear-gradient(90deg,#10b981,#34d399);"></div></div>
-            </div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Env. Certificate</span>
-                <span class="health-item-val">54/68</span>
-              </div>
-              <div class="health-bar"><div class="health-fill" style="width:79%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-            </div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Fire Safety</span>
-                <span class="health-item-val">65/68</span>
-              </div>
-              <div class="health-bar"><div class="health-fill" style="width:96%;background:linear-gradient(90deg,#7c3aed,#a78bfa);"></div></div>
-            </div>
-          </div>
-
-          <!-- Permissions quick panel -->
-          <div class="health-card" id="permissions">
-            <div class="health-title"><i class="bi bi-shield-fill-gear" style="color:var(--ia-primary);"></i> Permission Matrix</div>
-            <div style="display:grid; grid-template-columns: auto 1fr; gap:10px 14px; font-size:13px;">
-              <span style="font-weight:700;color:var(--heading-color);">Full Operations</span>
-              <div class="perm-tags"><span class="perm-tag">Trading</span><span class="perm-tag">Shipping</span><span class="perm-tag">Reports</span></div>
-              <span style="font-weight:700;color:var(--heading-color);">Trading Only</span>
-              <div class="perm-tags"><span class="perm-tag">Buy/Sell</span><span class="perm-tag">View Reports</span></div>
-              <span style="font-weight:700;color:var(--heading-color);">View Only</span>
-              <div class="perm-tags"><span class="perm-tag">Dashboard</span><span class="perm-tag">Reports</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══════════════════════════════════
-         PANEL 3: Statistics & Charts
-    ═══════════════════════════════════ -->
-    <div class="main-panel" id="panel-statistics">
-
-      <!-- Transaction KPI Summary Cards -->
-      <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-bottom:20px;">
+      <!-- Stats Row -->
+      <div class="stat-grid">
         <div class="stat-card teal">
-          <div class="stat-icon teal"><i class="bi bi-cash-stack"></i></div>
+          <div class="stat-icon teal"><i class="bi bi-building-fill"></i></div>
           <div>
-            <div class="stat-value" style="font-size:22px;">₫28.4B</div>
-            <div class="stat-label">Total Revenue (Apr)</div>
-            <div style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-up"></i> +12.6% vs Mar</div>
+            <div class="stat-value">68</div>
+            <div class="stat-label">Total Companies</div>
           </div>
         </div>
         <div class="stat-card success">
-          <div class="stat-icon success"><i class="bi bi-receipt-cutoff"></i></div>
+          <div class="stat-icon success"><i class="bi bi-check-circle-fill"></i></div>
           <div>
-            <div class="stat-value" style="font-size:22px;">1,847</div>
-            <div class="stat-label">Total Transactions</div>
-            <div style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-up"></i> +8.3%</div>
-          </div>
-        </div>
-        <div class="stat-card info">
-          <div class="stat-icon info"><i class="bi bi-truck"></i></div>
-          <div>
-            <div class="stat-value" style="font-size:22px;">2,876</div>
-            <div class="stat-label">Shipments Completed</div>
-            <div style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-up"></i> +5.1%</div>
+            <div class="stat-value">54</div>
+            <div class="stat-label">Verified & Active</div>
           </div>
         </div>
         <div class="stat-card warning">
-          <div class="stat-icon warning"><i class="bi bi-currency-exchange"></i></div>
+          <div class="stat-icon warning"><i class="bi bi-hourglass-split"></i></div>
           <div>
-            <div class="stat-value" style="font-size:22px;">₫15.4M</div>
-            <div class="stat-label">Avg Transaction Value</div>
-            <div style="font-size:11px;color:#ef4444;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-down"></i> -2.4%</div>
+            <div class="stat-value">4</div>
+            <div class="stat-label">Pending Verification</div>
+          </div>
+        </div>
+        <div class="stat-card info">
+          <div class="stat-icon info"><i class="bi bi-person-fill-gear"></i></div>
+          <div>
+            <div class="stat-value">12</div>
+            <div class="stat-label">Company Admins</div>
+          </div>
+        </div>
+        <div class="stat-card danger">
+          <div class="stat-icon danger"><i class="bi bi-shield-exclamation"></i></div>
+          <div>
+            <div class="stat-value">2</div>
+            <div class="stat-label">License Expired</div>
           </div>
         </div>
       </div>
 
-      <!-- Transaction Statistics -->
-      <div class="row g-3 mb-3" id="txn-stats">
-        <div class="col-lg-8">
-          <div class="section-card">
-            <div class="section-card-header">
-              <h2 class="section-title"><i class="bi bi-bar-chart-line-fill"></i> Transaction Statistics</h2>
-              <div class="chart-range">
-                <button class="range-btn active" onclick="updateTxnChart('monthly')">Monthly</button>
-                <button class="range-btn" onclick="updateTxnChart('quarterly')">Quarterly</button>
+      <!-- Main Navigation Tabs -->
+      <div class="main-tabs" role="tablist">
+        <button class="main-tab active" onclick="switchMainTab(this,'panel-companies')"><i
+            class="bi bi-building-fill-gear"></i> Companies <span class="tab-count">68</span></button>
+        <button class="main-tab" onclick="switchMainTab(this,'panel-accounts')"><i class="bi bi-person-fill-gear"></i>
+          Account Manager <span class="tab-count">12</span></button>
+        <button class="main-tab" onclick="switchMainTab(this,'panel-verification')"><i
+            class="bi bi-file-earmark-check-fill"></i> Verification <span class="tab-count">4</span></button>
+        <button class="main-tab" onclick="switchMainTab(this,'panel-statistics')"><i
+            class="bi bi-bar-chart-line-fill"></i> Statistics</button>
+      </div>
+
+      <!-- ═══════════════════════════════════
+         PANEL 1: Company Accounts
+      ═══════════════════════════════════ -->
+      <div class="main-panel active" id="panel-companies">
+
+        <!-- Pending Company Approvals -->
+        <div class="approval-card" id="pending-approval">
+          <div class="approval-card-header">
+            <h2 class="approval-card-title">
+              <i class="bi bi-hourglass-split" style="color:var(--ia-warning)"></i>
+              Pending Company Approvals
+              <span
+                style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.35);border-radius:20px;padding:2px 10px;font-size:11px;color:#d97706;font-weight:700;">4
+                awaiting</span>
+            </h2>
+            <a href="#" style="font-size:13px;color:var(--ia-primary);font-weight:600;text-decoration:none;">View
+              all</a>
+          </div>
+          <div class="approval-list" id="approval-list">
+
+            <div class="approval-item" id="approval-1">
+              <div class="approval-item-avatar" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">AC</div>
+              <div class="approval-item-info">
+                <div class="approval-item-name">ABC Manufacturing Corp</div>
+                <div class="approval-item-meta">Le Thanh Hai · Company Admin · abc.corp@vsip.com.vn</div>
+                <div class="approval-item-docs">
+                  <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Tax ID: Valid</span>
+                  <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Business License</span>
+                  <span class="doc-tag pending"><i class="bi bi-clock-fill"></i> Env. Certificate: Reviewing</span>
+                </div>
+              </div>
+              <div class="approval-item-actions">
+                <button class="btn-verify-docs"
+                  onclick="openVerifyModal('ABC Manufacturing Corp','0301234567','GP-2026-0142','Le Thanh Hai','abc.corp@vsip.com.vn')"><i
+                    class="bi bi-file-earmark-check"></i> Verify</button>
+                <button class="btn-approve" onclick="approveItem('approval-1','ABC Manufacturing Corp')"><i
+                    class="bi bi-check-lg"></i> Approve</button>
+                <button class="btn-reject" onclick="rejectItem('approval-1','ABC Manufacturing Corp')"><i
+                    class="bi bi-x-lg"></i> Reject</button>
               </div>
             </div>
-            <div class="section-body">
-              <canvas id="txn-chart" height="300"></canvas>
+
+            <div class="approval-item" id="approval-2">
+              <div class="approval-item-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">DT</div>
+              <div class="approval-item-info">
+                <div class="approval-item-name">Delta Tech Solutions</div>
+                <div class="approval-item-meta">Nguyen Minh Tu · Company Admin · delta@enterprise.vn</div>
+                <div class="approval-item-docs">
+                  <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Tax ID: Valid</span>
+                  <span class="doc-tag missing"><i class="bi bi-x-circle-fill"></i> License: Missing</span>
+                </div>
+              </div>
+              <div class="approval-item-actions">
+                <button class="btn-verify-docs"
+                  onclick="openVerifyModal('Delta Tech Solutions','0309876543','—','Nguyen Minh Tu','delta@enterprise.vn')"><i
+                    class="bi bi-file-earmark-check"></i> Verify</button>
+                <button class="btn-approve" onclick="approveItem('approval-2','Delta Tech Solutions')" disabled
+                  style="opacity:0.4;cursor:not-allowed;"><i class="bi bi-check-lg"></i> Approve</button>
+                <button class="btn-reject" onclick="rejectItem('approval-2','Delta Tech Solutions')"><i
+                    class="bi bi-x-lg"></i> Reject</button>
+              </div>
             </div>
+
+            <div class="approval-item" id="approval-3">
+              <div class="approval-item-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">GH</div>
+              <div class="approval-item-info">
+                <div class="approval-item-name">Green Horizon Logistics</div>
+                <div class="approval-item-meta">Vo Thanh Son · Company Admin · gh.logistics@mail.vn</div>
+                <div class="approval-item-docs">
+                  <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Tax ID: Valid</span>
+                  <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Business License</span>
+                  <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Env. Certificate</span>
+                </div>
+              </div>
+              <div class="approval-item-actions">
+                <button class="btn-verify-docs"
+                  onclick="openVerifyModal('Green Horizon Logistics','0317654321','GP-2026-0198','Vo Thanh Son','gh.logistics@mail.vn')"><i
+                    class="bi bi-file-earmark-check"></i> Verify</button>
+                <button class="btn-approve" onclick="approveItem('approval-3','Green Horizon Logistics')"><i
+                    class="bi bi-check-lg"></i> Approve</button>
+                <button class="btn-reject" onclick="rejectItem('approval-3','Green Horizon Logistics')"><i
+                    class="bi bi-x-lg"></i> Reject</button>
+              </div>
+            </div>
+
+            <div class="approval-item" id="approval-4">
+              <div class="approval-item-avatar" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">PS</div>
+              <div class="approval-item-info">
+                <div class="approval-item-name">Pacific Star Chemicals</div>
+                <div class="approval-item-meta">Tran Anh Duc · Company Admin · ps.chem@mail.vn</div>
+                <div class="approval-item-docs">
+                  <span class="doc-tag pending"><i class="bi bi-clock-fill"></i> Tax ID: Reviewing</span>
+                  <span class="doc-tag pending"><i class="bi bi-clock-fill"></i> License: Reviewing</span>
+                </div>
+              </div>
+              <div class="approval-item-actions">
+                <button class="btn-verify-docs"
+                  onclick="openVerifyModal('Pacific Star Chemicals','0321234567','GP-2026-0215','Tran Anh Duc','ps.chem@mail.vn')"><i
+                    class="bi bi-file-earmark-check"></i> Verify</button>
+                <button class="btn-approve" onclick="approveItem('approval-4','Pacific Star Chemicals')" disabled
+                  style="opacity:0.4;cursor:not-allowed;"><i class="bi bi-check-lg"></i> Approve</button>
+                <button class="btn-reject" onclick="rejectItem('approval-4','Pacific Star Chemicals')"><i
+                    class="bi bi-x-lg"></i> Reject</button>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="col-lg-4" id="economic-health">
-          <div class="health-card" style="margin-bottom:0;">
-            <div class="health-title"><i class="bi bi-heart-pulse-fill" style="color:var(--ia-primary);"></i> Economic Health Index</div>
-            <div style="text-align:center;margin-bottom:16px;">
-              <div style="font-family:'Poppins';font-size:48px;font-weight:700;color:var(--ia-primary);line-height:1;">92</div>
-              <div style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.3px;">out of 100</div>
-              <div style="font-size:12px;color:#10b981;font-weight:700;margin-top:4px;"><i class="bi bi-arrow-up"></i> +3.2 from last month</div>
-            </div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Revenue Growth</span>
-                <span class="health-item-val">94/100</span>
+        <!-- Company Accounts Table -->
+        <div class="table-card" id="company-accounts">
+          <div class="table-card-header">
+            <h3 class="table-card-title"><i class="bi bi-building-fill"></i> Company Accounts</h3>
+            <div class="table-actions">
+              <div class="search-wrap">
+                <i class="bi bi-search"></i>
+                <input type="search" class="search-input-sm" placeholder="Search companies..." id="company-search"
+                  oninput="filterCompanyTable(this.value)">
               </div>
-              <div class="health-bar"><div class="health-fill" style="width:94%;background:linear-gradient(90deg,#0d9488,#06b6d4);"></div></div>
+              <select class="search-input-sm" style="width:auto;padding-left:12px;" id="filter-status"
+                onchange="filterCompanyTable(document.getElementById('company-search').value)">
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="pending">Pending</option>
+                <option value="suspended">Suspended</option>
+              </select>
             </div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Employment Rate</span>
-                <span class="health-item-val">91/100</span>
-              </div>
-              <div class="health-bar"><div class="health-fill" style="width:91%;background:linear-gradient(90deg,#10b981,#34d399);"></div></div>
-            </div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Trade Volume</span>
-                <span class="health-item-val">89/100</span>
-              </div>
-              <div class="health-bar"><div class="health-fill" style="width:89%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-            </div>
-            <div class="health-item">
-              <div class="health-item-header">
-                <span class="health-item-name">Occupancy Utilization</span>
-                <span class="health-item-val">96/100</span>
-              </div>
-              <div class="health-bar"><div class="health-fill" style="width:96%;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div></div>
+          </div>
+
+          <table class="ia-table" id="company-table">
+            <thead>
+              <tr>
+                <th style="width:40px;padding-right:0;"><input type="checkbox" class="ia-checkbox" id="check-all"
+                    onchange="toggleAllChecks(this)"></th>
+                <th>Company</th>
+                <th>Company Admin</th>
+                <th>Tax ID</th>
+                <th>License</th>
+                <th>Status</th>
+                <th>Permissions</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="company-tbody">
+
+              <tr data-status="active" data-name="Saigon Precision Engineering">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">SP
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Saigon Precision Engineering</div>
+                      <div class="user-email-sm">Mechanical Engineering · Since 2019</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-name-sm" style="font-size:12px;">Pham Duc Long</div>
+                  <div class="user-email-sm">duc.long@spe.vn</div>
+                </td>
+                <td><span style="font-family:'JetBrains Mono';font-size:12px;">0301234501</span></td>
+                <td><span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Valid</span></td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag">Full Ops</span><span
+                      class="perm-tag">Transactions</span></div>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn view" title="View details"
+                      onclick="openVerifyModal('Saigon Precision Engineering','0301234501','GP-2019-0084','Pham Duc Long','duc.long@spe.vn')"><i
+                        class="bi bi-eye"></i></button>
+                    <button class="row-action-btn" title="Edit permissions"
+                      onclick="openPermModal('Saigon Precision Engineering')"><i
+                        class="bi bi-shield-check"></i></button>
+                    <button class="row-action-btn reject" title="Suspend"
+                      onclick="showToast('danger','Company suspended.')"><i class="bi bi-slash-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="active" data-name="VietChip Semiconductor">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">VC
+                    </div>
+                    <div>
+                      <div class="user-name-sm">VietChip Semiconductor</div>
+                      <div class="user-email-sm">Electronics · Since 2021</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-name-sm" style="font-size:12px;">Nguyen Hoang Anh</div>
+                  <div class="user-email-sm">hoang.anh@vietchip.vn</div>
+                </td>
+                <td><span style="font-family:'JetBrains Mono';font-size:12px;">0307654321</span></td>
+                <td><span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Valid</span></td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag">Full Ops</span><span class="perm-tag">Reports</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn view" title="View"
+                      onclick="openVerifyModal('VietChip Semiconductor','0307654321','GP-2021-0127','Nguyen Hoang Anh','hoang.anh@vietchip.vn')"><i
+                        class="bi bi-eye"></i></button>
+                    <button class="row-action-btn" title="Permissions"
+                      onclick="openPermModal('VietChip Semiconductor')"><i class="bi bi-shield-check"></i></button>
+                    <button class="row-action-btn reject" title="Suspend"
+                      onclick="showToast('danger','Company suspended.')"><i class="bi bi-slash-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="active" data-name="Eco Plastics Vietnam">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#10b981,#34d399);">EP
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Eco Plastics Vietnam</div>
+                      <div class="user-email-sm">Consumer Goods · Since 2020</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-name-sm" style="font-size:12px;">Le Thi Minh</div>
+                  <div class="user-email-sm">minh.le@ecoplastics.vn</div>
+                </td>
+                <td><span style="font-family:'JetBrains Mono';font-size:12px;">0315678901</span></td>
+                <td><span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Valid</span></td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag">Operations</span><span class="perm-tag">Shipping</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn view" title="View"
+                      onclick="openVerifyModal('Eco Plastics Vietnam','0315678901','GP-2020-0098','Le Thi Minh','minh.le@ecoplastics.vn')"><i
+                        class="bi bi-eye"></i></button>
+                    <button class="row-action-btn" title="Permissions"
+                      onclick="openPermModal('Eco Plastics Vietnam')"><i class="bi bi-shield-check"></i></button>
+                    <button class="row-action-btn reject" title="Suspend"
+                      onclick="showToast('danger','Company suspended.')"><i class="bi bi-slash-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="pending-row" data-status="pending" data-name="ABC Manufacturing Corp">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">AB
+                    </div>
+                    <div>
+                      <div class="user-name-sm">ABC Manufacturing Corp</div>
+                      <div class="user-email-sm">Chemicals · Applying</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-name-sm" style="font-size:12px;">Le Thanh Hai</div>
+                  <div class="user-email-sm">abc.corp@vsip.com.vn</div>
+                </td>
+                <td><span style="font-family:'JetBrains Mono';font-size:12px;">0301234567</span></td>
+                <td><span class="doc-tag pending"><i class="bi bi-clock-fill"></i> Reviewing</span></td>
+                <td><span class="badge-status pending">Pending</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Not Granted</span></div>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn approve" title="Approve"
+                      onclick="showToast('success','Company approved.')"><i class="bi bi-check-lg"></i></button>
+                    <button class="row-action-btn reject" title="Reject"
+                      onclick="showToast('danger','Company rejected.')"><i class="bi bi-x-lg"></i></button>
+                    <button class="row-action-btn view" title="Verify"
+                      onclick="openVerifyModal('ABC Manufacturing Corp','0301234567','GP-2026-0142','Le Thanh Hai','abc.corp@vsip.com.vn')"><i
+                        class="bi bi-file-earmark-check"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="suspended" data-name="Hung Thinh Metals">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#ef4444,#f87171);">HT
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Hung Thinh Metals</div>
+                      <div class="user-email-sm">Mechanical · License Expired</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="user-name-sm" style="font-size:12px;">Do Van Cuong</div>
+                  <div class="user-email-sm">cuong@hungthinhmetals.vn</div>
+                </td>
+                <td><span style="font-family:'JetBrains Mono';font-size:12px;">0322345678</span></td>
+                <td><span class="doc-tag missing"><i class="bi bi-x-circle-fill"></i> Expired</span></td>
+                <td><span class="badge-status suspended">Suspended</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Revoked</span></div>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn approve" title="Reinstate"
+                      onclick="showToast('success','Company reinstated.')"><i
+                        class="bi bi-arrow-counterclockwise"></i></button>
+                    <button class="row-action-btn view" title="View"
+                      onclick="openVerifyModal('Hung Thinh Metals','0322345678','GP-2018-0033','Do Van Cuong','cuong@hungthinhmetals.vn')"><i
+                        class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <div class="table-footer">
+            <span>Showing <strong>5</strong> of <strong>68</strong> companies</span>
+            <div class="pagination-btns">
+              <button class="pg-btn" disabled><i class="bi bi-chevron-left"></i></button>
+              <button class="pg-btn active">1</button>
+              <button class="pg-btn">2</button>
+              <button class="pg-btn">3</button>
+              <button class="pg-btn">…</button>
+              <button class="pg-btn">14</button>
+              <button class="pg-btn"><i class="bi bi-chevron-right"></i></button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Revenue Trend Line + Recent Transactions -->
-      <div class="row g-3 mb-3">
-        <div class="col-lg-8">
-          <div class="section-card">
-            <div class="section-card-header">
-              <h2 class="section-title"><i class="bi bi-graph-up-arrow"></i> Revenue Trend</h2>
-              <span style="font-size:12px;color:var(--text-muted);">Last 12 months</span>
+      <!-- ═══════════════════════════════════
+         PANEL 2: Account Manager
+      ═══════════════════════════════════ -->
+      <div class="main-panel" id="panel-accounts">
+
+        <!-- Pending Admin Requests -->
+        <div class="approval-card" id="pending-admins">
+          <div class="approval-card-header">
+            <h2 class="approval-card-title">
+              <i class="bi bi-person-fill-add" style="color:var(--ia-warning)"></i>
+              Pending Company Admin Requests
+              <span
+                style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.35);border-radius:20px;padding:2px 10px;font-size:11px;color:#d97706;font-weight:700;">3
+                new</span>
+            </h2>
+          </div>
+          <div class="approval-list">
+
+            <div class="approval-item" id="admin-req-1">
+              <div class="approval-item-avatar" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">LH</div>
+              <div class="approval-item-info">
+                <div class="approval-item-name">Le Thanh Hai</div>
+                <div class="approval-item-meta">abc.corp@vsip.com.vn · ABC Manufacturing Corp · Requested: Apr 14, 2026
+                </div>
+                <div class="approval-item-docs">
+                  <span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                  <span class="doc-tag valid"><i class="bi bi-building-check"></i> Company Verified</span>
+                </div>
+              </div>
+              <div class="approval-item-actions">
+                <button class="btn-verify-docs"
+                  onclick="openEditAdminModal('Le Thanh Hai','abc.corp@vsip.com.vn','ABC Manufacturing Corp','Company Admin')"><i
+                    class="bi bi-pencil-square"></i> Review</button>
+                <button class="btn-approve" onclick="approveAdminReq('admin-req-1','Le Thanh Hai')"><i
+                    class="bi bi-check-lg"></i> Approve</button>
+                <button class="btn-reject" onclick="rejectAdminReq('admin-req-1','Le Thanh Hai')"><i
+                    class="bi bi-x-lg"></i> Reject</button>
+              </div>
             </div>
-            <div class="section-body">
-              <div id="revenue-trend-chart"></div>
+
+            <div class="approval-item" id="admin-req-2">
+              <div class="approval-item-avatar" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">NM</div>
+              <div class="approval-item-info">
+                <div class="approval-item-name">Nguyen Minh Tu</div>
+                <div class="approval-item-meta">delta@enterprise.vn · Delta Tech Solutions · Requested: Apr 15, 2026
+                </div>
+                <div class="approval-item-docs">
+                  <span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                  <span class="doc-tag missing"><i class="bi bi-exclamation-triangle-fill"></i> License Missing</span>
+                </div>
+              </div>
+              <div class="approval-item-actions">
+                <button class="btn-verify-docs"
+                  onclick="openEditAdminModal('Nguyen Minh Tu','delta@enterprise.vn','Delta Tech Solutions','Company Admin')"><i
+                    class="bi bi-pencil-square"></i> Review</button>
+                <button class="btn-approve" disabled style="opacity:0.4;cursor:not-allowed;"><i
+                    class="bi bi-check-lg"></i> Approve</button>
+                <button class="btn-reject" onclick="rejectAdminReq('admin-req-2','Nguyen Minh Tu')"><i
+                    class="bi bi-x-lg"></i> Reject</button>
+              </div>
+            </div>
+
+            <div class="approval-item" id="admin-req-3">
+              <div class="approval-item-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">VS</div>
+              <div class="approval-item-info">
+                <div class="approval-item-name">Vo Thanh Son</div>
+                <div class="approval-item-meta">gh.logistics@mail.vn · Green Horizon Logistics · Requested: Apr 15, 2026
+                </div>
+                <div class="approval-item-docs">
+                  <span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                  <span class="doc-tag valid"><i class="bi bi-building-check"></i> Company Verified</span>
+                </div>
+              </div>
+              <div class="approval-item-actions">
+                <button class="btn-verify-docs"
+                  onclick="openEditAdminModal('Vo Thanh Son','gh.logistics@mail.vn','Green Horizon Logistics','Company Admin')"><i
+                    class="bi bi-pencil-square"></i> Review</button>
+                <button class="btn-approve" onclick="approveAdminReq('admin-req-3','Vo Thanh Son')"><i
+                    class="bi bi-check-lg"></i> Approve</button>
+                <button class="btn-reject" onclick="rejectAdminReq('admin-req-3','Vo Thanh Son')"><i
+                    class="bi bi-x-lg"></i> Reject</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Company Admin Accounts Table -->
+        <div class="table-card" id="admin-accounts">
+          <div class="table-card-header">
+            <h3 class="table-card-title"><i class="bi bi-people-fill"></i> Company Admin Accounts</h3>
+            <div class="table-actions">
+              <div class="search-wrap">
+                <i class="bi bi-search"></i>
+                <input type="search" class="search-input-sm" placeholder="Search admins..." id="admin-search"
+                  oninput="filterAdminTable(this.value)">
+              </div>
+              <select class="search-input-sm" style="width:auto;padding-left:12px;" id="filter-admin-status"
+                onchange="filterAdminTable(document.getElementById('admin-search').value)">
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="pending">Pending</option>
+                <option value="suspended">Suspended</option>
+              </select>
+              <button class="btn-ia-primary"
+                onclick="document.getElementById('add-admin-modal').classList.add('show')"><i
+                  class="bi bi-person-plus-fill"></i> Add Admin</button>
+            </div>
+          </div>
+
+          <table class="ia-table" id="admin-table">
+            <thead>
+              <tr>
+                <th style="width:40px;padding-right:0;"><input type="checkbox" class="ia-checkbox"
+                    onchange="document.querySelectorAll('.admin-row-check').forEach(c=>c.checked=this.checked)"></th>
+                <th>Admin Account</th>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Permissions</th>
+                <th>Last Login</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="admin-tbody">
+
+              <tr data-status="active" data-name="Pham Duc Long">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#0d9488,#06b6d4);">PD
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Pham Duc Long</div>
+                      <div class="user-email-sm">duc.long@spe.vn</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span style="font-size:13px;font-weight:600;">Saigon Precision Engineering</span></td>
+                <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                </td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag">Full Ops</span><span
+                      class="perm-tag">Trading</span><span class="perm-tag">Reports</span></div>
+                </td>
+                <td><span style="font-size:12px;color:var(--text-muted);">Today, 09:14</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn view" title="Edit account"
+                      onclick="openEditAdminModal('Pham Duc Long','duc.long@spe.vn','Saigon Precision Engineering','Company Admin')"><i
+                        class="bi bi-pencil"></i></button>
+                    <button class="row-action-btn" title="Manage permissions"
+                      onclick="openPermModal('Saigon Precision Engineering')"><i
+                        class="bi bi-shield-check"></i></button>
+                    <button class="row-action-btn reject" title="Suspend account"
+                      onclick="showToast('danger','Account suspended: Pham Duc Long')"><i
+                        class="bi bi-slash-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="active" data-name="Nguyen Hoang Anh">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">NH
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Nguyen Hoang Anh</div>
+                      <div class="user-email-sm">hoang.anh@vietchip.vn</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span style="font-size:13px;font-weight:600;">VietChip Semiconductor</span></td>
+                <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                </td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag">Full Ops</span><span class="perm-tag">Reports</span>
+                  </div>
+                </td>
+                <td><span style="font-size:12px;color:var(--text-muted);">Today, 08:42</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn view" title="Edit"
+                      onclick="openEditAdminModal('Nguyen Hoang Anh','hoang.anh@vietchip.vn','VietChip Semiconductor','Company Admin')"><i
+                        class="bi bi-pencil"></i></button>
+                    <button class="row-action-btn" title="Permissions"
+                      onclick="openPermModal('VietChip Semiconductor')"><i class="bi bi-shield-check"></i></button>
+                    <button class="row-action-btn reject" title="Suspend"
+                      onclick="showToast('danger','Account suspended: Nguyen Hoang Anh')"><i
+                        class="bi bi-slash-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="active" data-name="Le Thi Minh">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#10b981,#34d399);">LM
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Le Thi Minh</div>
+                      <div class="user-email-sm">minh.le@ecoplastics.vn</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span style="font-size:13px;font-weight:600;">Eco Plastics Vietnam</span></td>
+                <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                </td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag">Operations</span><span class="perm-tag">Shipping</span>
+                  </div>
+                </td>
+                <td><span style="font-size:12px;color:var(--text-muted);">Yesterday</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn view" title="Edit"
+                      onclick="openEditAdminModal('Le Thi Minh','minh.le@ecoplastics.vn','Eco Plastics Vietnam','Company Admin')"><i
+                        class="bi bi-pencil"></i></button>
+                    <button class="row-action-btn" title="Permissions"
+                      onclick="openPermModal('Eco Plastics Vietnam')"><i class="bi bi-shield-check"></i></button>
+                    <button class="row-action-btn reject" title="Suspend"
+                      onclick="showToast('danger','Account suspended: Le Thi Minh')"><i
+                        class="bi bi-slash-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="pending-row" data-status="pending" data-name="Le Thanh Hai">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">LH
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Le Thanh Hai</div>
+                      <div class="user-email-sm">abc.corp@vsip.com.vn</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span style="font-size:13px;font-weight:600;">ABC Manufacturing Corp</span></td>
+                <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                </td>
+                <td><span class="badge-status pending">Pending Approval</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Not Granted</span></div>
+                </td>
+                <td><span style="font-size:12px;color:var(--text-muted);">Never</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn approve" title="Approve"
+                      onclick="showToast('success','Account approved: Le Thanh Hai')"><i
+                        class="bi bi-check-lg"></i></button>
+                    <button class="row-action-btn reject" title="Reject"
+                      onclick="showToast('danger','Account rejected: Le Thanh Hai')"><i class="bi bi-x-lg"></i></button>
+                    <button class="row-action-btn view" title="Review"
+                      onclick="openEditAdminModal('Le Thanh Hai','abc.corp@vsip.com.vn','ABC Manufacturing Corp','Company Admin')"><i
+                        class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="active" data-name="Tran Van Bao">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#7c3aed,#a78bfa);">TB
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Tran Van Bao</div>
+                      <div class="user-email-sm">bao.tran@sunwell.vn</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span style="font-size:13px;font-weight:600;">Sun Well Industries</span></td>
+                <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                </td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag">Trading</span><span class="perm-tag">Reports</span>
+                  </div>
+                </td>
+                <td><span style="font-size:12px;color:var(--text-muted);">Apr 14</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn view" title="Edit"
+                      onclick="openEditAdminModal('Tran Van Bao','bao.tran@sunwell.vn','Sun Well Industries','Company Admin')"><i
+                        class="bi bi-pencil"></i></button>
+                    <button class="row-action-btn" title="Permissions" onclick="openPermModal('Sun Well Industries')"><i
+                        class="bi bi-shield-check"></i></button>
+                    <button class="row-action-btn reject" title="Suspend"
+                      onclick="showToast('danger','Account suspended: Tran Van Bao')"><i
+                        class="bi bi-slash-circle"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr data-status="suspended" data-name="Do Van Cuong">
+                <td style="padding-right:0;"><input type="checkbox" class="ia-checkbox admin-row-check"></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar-initials" style="background:linear-gradient(135deg,#ef4444,#f87171);">DC
+                    </div>
+                    <div>
+                      <div class="user-name-sm">Do Van Cuong</div>
+                      <div class="user-email-sm">cuong@hungthinhmetals.vn</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span style="font-size:13px;font-weight:600;">Hung Thinh Metals</span></td>
+                <td><span class="badge-role company-admin"><i class="bi bi-person-fill-gear"></i> Company Admin</span>
+                </td>
+                <td><span class="badge-status suspended">Suspended</span></td>
+                <td>
+                  <div class="perm-tags"><span class="perm-tag" style="opacity:0.5;">Revoked</span></div>
+                </td>
+                <td><span style="font-size:12px;color:var(--text-muted);">Jan 2026</span></td>
+                <td>
+                  <div class="row-actions">
+                    <button class="row-action-btn approve" title="Reinstate"
+                      onclick="showToast('success','Account reinstated: Do Van Cuong')"><i
+                        class="bi bi-arrow-counterclockwise"></i></button>
+                    <button class="row-action-btn view" title="View"
+                      onclick="openEditAdminModal('Do Van Cuong','cuong@hungthinhmetals.vn','Hung Thinh Metals','Company Admin')"><i
+                        class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <div class="table-footer">
+            <span>Showing <strong>6</strong> of <strong>12</strong> company admin accounts</span>
+            <div class="pagination-btns">
+              <button class="pg-btn" disabled><i class="bi bi-chevron-left"></i></button>
+              <button class="pg-btn active">1</button>
+              <button class="pg-btn">2</button>
+              <button class="pg-btn"><i class="bi bi-chevron-right"></i></button>
             </div>
           </div>
         </div>
-        <div class="col-lg-4">
-          <div class="section-card">
-            <div class="section-card-header">
-              <h2 class="section-title"><i class="bi bi-clock-history"></i> Recent Transactions</h2>
-              <a href="#" style="font-size:12px;color:var(--ia-primary);font-weight:600;text-decoration:none;">View all</a>
+
+      </div>
+
+      <!-- ═══════════════════════════════════
+         PANEL 3: Business Verification
+    ═══════════════════════════════════ -->
+      <div class="main-panel" id="panel-verification">
+        <div class="row g-3">
+          <div class="col-lg-8">
+            <div class="section-card" id="business-verify">
+              <div class="section-card-header">
+                <h2 class="section-title"><i class="bi bi-file-earmark-check-fill"></i> Business Records Verification
+                  Queue</h2>
+                <div class="chart-range">
+                  <button class="range-btn active">All</button>
+                  <button class="range-btn">Tax ID</button>
+                  <button class="range-btn">License</button>
+                  <button class="range-btn">Certificate</button>
+                </div>
+              </div>
+              <div class="section-body" style="padding:0;">
+                <table class="ia-table">
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Document Type</th>
+                      <th>Document ID</th>
+                      <th>Submitted</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>ABC Manufacturing Corp</strong></td>
+                      <td><span class="doc-tag pending" style="padding:4px 10px;font-size:11px;"><i
+                            class="bi bi-file-text-fill"></i> Env. Certificate</span></td>
+                      <td><span style="font-family:'JetBrains Mono';font-size:12px;">ENV-2026-4582</span></td>
+                      <td style="font-size:12px;">Apr 14, 2026</td>
+                      <td><span class="badge-status pending">Under Review</span></td>
+                      <td>
+                        <div class="row-actions">
+                          <button class="row-action-btn approve" title="Approve doc"
+                            onclick="showToast('success','Document approved.')"><i class="bi bi-check-lg"></i></button>
+                          <button class="row-action-btn reject" title="Reject doc"
+                            onclick="showToast('danger','Document rejected.')"><i class="bi bi-x-lg"></i></button>
+                          <button class="row-action-btn view" title="View doc"><i class="bi bi-eye"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Delta Tech Solutions</strong></td>
+                      <td><span class="doc-tag missing" style="padding:4px 10px;font-size:11px;"><i
+                            class="bi bi-file-earmark-x"></i> Business License</span></td>
+                      <td><span style="font-size:12px;color:var(--text-muted);">Not submitted</span></td>
+                      <td style="font-size:12px;color:var(--text-muted);">—</td>
+                      <td><span class="badge-status rejected">Missing</span></td>
+                      <td>
+                        <div class="row-actions">
+                          <button class="row-action-btn" title="Request upload"
+                            onclick="showToast('success','Upload requested via email.')"><i
+                              class="bi bi-envelope-arrow-up"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Pacific Star Chemicals</strong></td>
+                      <td><span class="doc-tag pending" style="padding:4px 10px;font-size:11px;"><i
+                            class="bi bi-file-text-fill"></i> Tax ID Certificate</span></td>
+                      <td><span style="font-family:'JetBrains Mono';font-size:12px;">0321234567</span></td>
+                      <td style="font-size:12px;">Apr 15, 2026</td>
+                      <td><span class="badge-status pending">Verifying</span></td>
+                      <td>
+                        <div class="row-actions">
+                          <button class="row-action-btn approve" title="Approve"
+                            onclick="showToast('success','Tax ID verified.')"><i class="bi bi-check-lg"></i></button>
+                          <button class="row-action-btn reject" title="Reject"
+                            onclick="showToast('danger','Tax ID rejected.')"><i class="bi bi-x-lg"></i></button>
+                          <button class="row-action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Pacific Star Chemicals</strong></td>
+                      <td><span class="doc-tag pending" style="padding:4px 10px;font-size:11px;"><i
+                            class="bi bi-file-text-fill"></i> Business License</span></td>
+                      <td><span style="font-family:'JetBrains Mono';font-size:12px;">GP-2026-0215</span></td>
+                      <td style="font-size:12px;">Apr 15, 2026</td>
+                      <td><span class="badge-status pending">Verifying</span></td>
+                      <td>
+                        <div class="row-actions">
+                          <button class="row-action-btn approve" title="Approve"
+                            onclick="showToast('success','License verified.')"><i class="bi bi-check-lg"></i></button>
+                          <button class="row-action-btn reject" title="Reject"
+                            onclick="showToast('danger','License rejected.')"><i class="bi bi-x-lg"></i></button>
+                          <button class="row-action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Hung Thinh Metals</strong></td>
+                      <td><span class="doc-tag missing" style="padding:4px 10px;font-size:11px;"><i
+                            class="bi bi-file-earmark-x"></i> Business License</span></td>
+                      <td><span style="font-family:'JetBrains Mono';font-size:12px;">GP-2018-0033</span></td>
+                      <td style="font-size:12px;">Expired: Jan 2026</td>
+                      <td><span class="badge-status rejected">Expired</span></td>
+                      <td>
+                        <div class="row-actions">
+                          <button class="row-action-btn" title="Request renewal"
+                            onclick="showToast('success','Renewal reminder sent.')"><i
+                              class="bi bi-arrow-repeat"></i></button>
+                          <button class="row-action-btn view" title="View"><i class="bi bi-eye"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div class="section-body" style="padding:0;">
-              <div style="display:flex;flex-direction:column;">
-                <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
-                  <div style="width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;color:#10b981;font-size:14px;flex-shrink:0;"><i class="bi bi-arrow-down-left"></i></div>
-                  <div style="flex:1;">
-                    <div style="font-size:13px;font-weight:600;color:var(--heading-color);">VietChip → Eco Plastics</div>
-                    <div style="font-size:11px;color:var(--text-muted);">Electronics components · 12m ago</div>
-                  </div>
-                  <div style="font-size:13px;font-weight:700;color:#10b981;">+₫142M</div>
+          </div>
+
+          <div class="col-lg-4">
+            <!-- Verification summary -->
+            <div class="health-card">
+              <div class="health-title"><i class="bi bi-shield-fill-check" style="color:var(--ia-primary);"></i>
+                Verification Summary</div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Tax ID Verified</span>
+                  <span class="health-item-val">62/68</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
-                  <div style="width:36px;height:36px;border-radius:10px;background:rgba(6,182,212,0.12);display:flex;align-items:center;justify-content:center;color:#06b6d4;font-size:14px;flex-shrink:0;"><i class="bi bi-arrow-up-right"></i></div>
-                  <div style="flex:1;">
-                    <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Saigon Precision → Export</div>
-                    <div style="font-size:11px;color:var(--text-muted);">Mechanical parts · 34m ago</div>
-                  </div>
-                  <div style="font-size:13px;font-weight:700;color:#06b6d4;">+₫89M</div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:91%;background:linear-gradient(90deg,#0d9488,#06b6d4);"></div>
                 </div>
-                <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
-                  <div style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;color:#f59e0b;font-size:14px;flex-shrink:0;"><i class="bi bi-arrow-left-right"></i></div>
-                  <div style="flex:1;">
-                    <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Sun Well ↔ Hung Thinh</div>
-                    <div style="font-size:11px;color:var(--text-muted);">Raw materials · 1h ago</div>
-                  </div>
-                  <div style="font-size:13px;font-weight:700;color:#f59e0b;">₫67M</div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Business License Valid</span>
+                  <span class="health-item-val">58/68</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
-                  <div style="width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;color:#10b981;font-size:14px;flex-shrink:0;"><i class="bi bi-arrow-down-left"></i></div>
-                  <div style="flex:1;">
-                    <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Import → VietChip</div>
-                    <div style="font-size:11px;color:var(--text-muted);">Semiconductor wafers · 2h ago</div>
-                  </div>
-                  <div style="font-size:13px;font-weight:700;color:#10b981;">+₫312M</div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:85%;background:linear-gradient(90deg,#10b981,#34d399);"></div>
                 </div>
-                <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;">
-                  <div style="width:36px;height:36px;border-radius:10px;background:rgba(124,58,237,0.12);display:flex;align-items:center;justify-content:center;color:#7c3aed;font-size:14px;flex-shrink:0;"><i class="bi bi-arrow-up-right"></i></div>
-                  <div style="flex:1;">
-                    <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Eco Plastics → Distribution</div>
-                    <div style="font-size:11px;color:var(--text-muted);">Consumer goods · 3h ago</div>
-                  </div>
-                  <div style="font-size:13px;font-weight:700;color:#7c3aed;">+₫54M</div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Env. Certificate</span>
+                  <span class="health-item-val">54/68</span>
+                </div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:79%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div>
+                </div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Fire Safety</span>
+                  <span class="health-item-val">65/68</span>
+                </div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:96%;background:linear-gradient(90deg,#7c3aed,#a78bfa);"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Permissions quick panel -->
+            <div class="health-card" id="permissions">
+              <div class="health-title"><i class="bi bi-shield-fill-gear" style="color:var(--ia-primary);"></i>
+                Permission Matrix</div>
+              <div style="display:grid; grid-template-columns: auto 1fr; gap:10px 14px; font-size:13px;">
+                <span style="font-weight:700;color:var(--heading-color);">Full Operations</span>
+                <div class="perm-tags"><span class="perm-tag">Trading</span><span class="perm-tag">Shipping</span><span
+                    class="perm-tag">Reports</span></div>
+                <span style="font-weight:700;color:var(--heading-color);">Trading Only</span>
+                <div class="perm-tags"><span class="perm-tag">Buy/Sell</span><span class="perm-tag">View Reports</span>
+                </div>
+                <span style="font-weight:700;color:var(--heading-color);">View Only</span>
+                <div class="perm-tags"><span class="perm-tag">Dashboard</span><span class="perm-tag">Reports</span>
                 </div>
               </div>
             </div>
@@ -1821,68 +1225,273 @@
         </div>
       </div>
 
-      <!-- Goods Flow + Industry Pie -->
-      <div class="row g-3 mb-3" id="goods-flow">
-        <div class="col-lg-7">
-          <div class="section-card">
-            <div class="section-card-header">
-              <h2 class="section-title"><i class="bi bi-arrow-left-right"></i> Goods Flow Overview</h2>
-              <span style="font-size:12px;color:var(--text-muted);">Last 6 months</span>
+      <!-- ═══════════════════════════════════
+         PANEL 3: Statistics & Charts
+    ═══════════════════════════════════ -->
+      <div class="main-panel" id="panel-statistics">
+
+        <!-- Transaction KPI Summary Cards -->
+        <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-bottom:20px;">
+          <div class="stat-card teal">
+            <div class="stat-icon teal"><i class="bi bi-cash-stack"></i></div>
+            <div>
+              <div class="stat-value" style="font-size:22px;">₫28.4B</div>
+              <div class="stat-label">Total Revenue (Apr)</div>
+              <div style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-up"></i>
+                +12.6% vs Mar</div>
             </div>
-            <div class="section-body">
-              <div class="flow-stage mb-4">
-                <div class="flow-node">
-                  <div class="flow-node-icon">🏭</div>
-                  <div class="flow-node-name">Production</div>
-                  <div class="flow-node-val">3,218 units</div>
-                </div>
-                <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
-                <div class="flow-node">
-                  <div class="flow-node-icon">📦</div>
-                  <div class="flow-node-name">Warehousing</div>
-                  <div class="flow-node-val">3,012 units</div>
-                </div>
-                <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
-                <div class="flow-node">
-                  <div class="flow-node-icon">🚛</div>
-                  <div class="flow-node-name">Distribution</div>
-                  <div class="flow-node-val">2,948 units</div>
-                </div>
-                <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
-                <div class="flow-node">
-                  <div class="flow-node-icon">✅</div>
-                  <div class="flow-node-name">Delivered</div>
-                  <div class="flow-node-val">2,876 units</div>
-                </div>
-              </div>
-              <canvas id="goods-bar" height="180"></canvas>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-icon success"><i class="bi bi-receipt-cutoff"></i></div>
+            <div>
+              <div class="stat-value" style="font-size:22px;">1,847</div>
+              <div class="stat-label">Total Transactions</div>
+              <div style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-up"></i>
+                +8.3%</div>
+            </div>
+          </div>
+          <div class="stat-card info">
+            <div class="stat-icon info"><i class="bi bi-truck"></i></div>
+            <div>
+              <div class="stat-value" style="font-size:22px;">2,876</div>
+              <div class="stat-label">Shipments Completed</div>
+              <div style="font-size:11px;color:#10b981;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-up"></i>
+                +5.1%</div>
+            </div>
+          </div>
+          <div class="stat-card warning">
+            <div class="stat-icon warning"><i class="bi bi-currency-exchange"></i></div>
+            <div>
+              <div class="stat-value" style="font-size:22px;">₫15.4M</div>
+              <div class="stat-label">Avg Transaction Value</div>
+              <div style="font-size:11px;color:#ef4444;font-weight:700;margin-top:2px;"><i class="bi bi-arrow-down"></i>
+                -2.4%</div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-5">
-          <div class="section-card">
-            <div class="section-card-header">
-              <h2 class="section-title"><i class="bi bi-pie-chart-fill"></i> Industry Revenue Share</h2>
-            </div>
-            <div class="section-body" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-              <div style="position:relative;flex-shrink:0;">
-                <canvas id="industry-pie" width="200" height="200"></canvas>
-                <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
-                  <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:var(--heading-color);">₫28.4B</div>
-                  <div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.3px;">Monthly</div>
+        <!-- Transaction Statistics -->
+        <div class="row g-3 mb-3" id="txn-stats">
+          <div class="col-lg-8">
+            <div class="section-card">
+              <div class="section-card-header">
+                <h2 class="section-title"><i class="bi bi-bar-chart-line-fill"></i> Transaction Statistics</h2>
+                <div class="chart-range">
+                  <button class="range-btn active" onclick="updateTxnChart('monthly')">Monthly</button>
+                  <button class="range-btn" onclick="updateTxnChart('quarterly')">Quarterly</button>
                 </div>
               </div>
-              <div style="flex:1;min-width:160px;">
-                <div id="pie-legend" style="display:flex;flex-direction:column;gap:9px;"></div>
+              <div class="section-body">
+                <canvas id="txn-chart" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4" id="economic-health">
+            <div class="health-card" style="margin-bottom:0;">
+              <div class="health-title"><i class="bi bi-heart-pulse-fill" style="color:var(--ia-primary);"></i> Economic
+                Health Index</div>
+              <div style="text-align:center;margin-bottom:16px;">
+                <div
+                  style="font-family:'Poppins';font-size:48px;font-weight:700;color:var(--ia-primary);line-height:1;">92
+                </div>
+                <div
+                  style="font-size:11px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:0.3px;">
+                  out of 100</div>
+                <div style="font-size:12px;color:#10b981;font-weight:700;margin-top:4px;"><i class="bi bi-arrow-up"></i>
+                  +3.2 from last month</div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Revenue Growth</span>
+                  <span class="health-item-val">94/100</span>
+                </div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:94%;background:linear-gradient(90deg,#0d9488,#06b6d4);"></div>
+                </div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Employment Rate</span>
+                  <span class="health-item-val">91/100</span>
+                </div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:91%;background:linear-gradient(90deg,#10b981,#34d399);"></div>
+                </div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Trade Volume</span>
+                  <span class="health-item-val">89/100</span>
+                </div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:89%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div>
+                </div>
+              </div>
+              <div class="health-item">
+                <div class="health-item-header">
+                  <span class="health-item-name">Occupancy Utilization</span>
+                  <span class="health-item-val">96/100</span>
+                </div>
+                <div class="health-bar">
+                  <div class="health-fill" style="width:96%;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Revenue Trend Line + Recent Transactions -->
+        <div class="row g-3 mb-3">
+          <div class="col-lg-8">
+            <div class="section-card">
+              <div class="section-card-header">
+                <h2 class="section-title"><i class="bi bi-graph-up-arrow"></i> Revenue Trend</h2>
+                <span style="font-size:12px;color:var(--text-muted);">Last 12 months</span>
+              </div>
+              <div class="section-body">
+                <div id="revenue-trend-chart"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="section-card">
+              <div class="section-card-header">
+                <h2 class="section-title"><i class="bi bi-clock-history"></i> Recent Transactions</h2>
+                <a href="#" style="font-size:12px;color:var(--ia-primary);font-weight:600;text-decoration:none;">View
+                  all</a>
+              </div>
+              <div class="section-body" style="padding:0;">
+                <div style="display:flex;flex-direction:column;">
+                  <div
+                    style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
+                    <div
+                      style="width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;color:#10b981;font-size:14px;flex-shrink:0;">
+                      <i class="bi bi-arrow-down-left"></i></div>
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:600;color:var(--heading-color);">VietChip → Eco Plastics
+                      </div>
+                      <div style="font-size:11px;color:var(--text-muted);">Electronics components · 12m ago</div>
+                    </div>
+                    <div style="font-size:13px;font-weight:700;color:#10b981;">+₫142M</div>
+                  </div>
+                  <div
+                    style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
+                    <div
+                      style="width:36px;height:36px;border-radius:10px;background:rgba(6,182,212,0.12);display:flex;align-items:center;justify-content:center;color:#06b6d4;font-size:14px;flex-shrink:0;">
+                      <i class="bi bi-arrow-up-right"></i></div>
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Saigon Precision → Export
+                      </div>
+                      <div style="font-size:11px;color:var(--text-muted);">Mechanical parts · 34m ago</div>
+                    </div>
+                    <div style="font-size:13px;font-weight:700;color:#06b6d4;">+₫89M</div>
+                  </div>
+                  <div
+                    style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
+                    <div
+                      style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;color:#f59e0b;font-size:14px;flex-shrink:0;">
+                      <i class="bi bi-arrow-left-right"></i></div>
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Sun Well ↔ Hung Thinh
+                      </div>
+                      <div style="font-size:11px;color:var(--text-muted);">Raw materials · 1h ago</div>
+                    </div>
+                    <div style="font-size:13px;font-weight:700;color:#f59e0b;">₫67M</div>
+                  </div>
+                  <div
+                    style="display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border-color);">
+                    <div
+                      style="width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;color:#10b981;font-size:14px;flex-shrink:0;">
+                      <i class="bi bi-arrow-down-left"></i></div>
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Import → VietChip</div>
+                      <div style="font-size:11px;color:var(--text-muted);">Semiconductor wafers · 2h ago</div>
+                    </div>
+                    <div style="font-size:13px;font-weight:700;color:#10b981;">+₫312M</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:12px;padding:14px 20px;">
+                    <div
+                      style="width:36px;height:36px;border-radius:10px;background:rgba(124,58,237,0.12);display:flex;align-items:center;justify-content:center;color:#7c3aed;font-size:14px;flex-shrink:0;">
+                      <i class="bi bi-arrow-up-right"></i></div>
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:600;color:var(--heading-color);">Eco Plastics →
+                        Distribution</div>
+                      <div style="font-size:11px;color:var(--text-muted);">Consumer goods · 3h ago</div>
+                    </div>
+                    <div style="font-size:13px;font-weight:700;color:#7c3aed;">+₫54M</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Goods Flow + Industry Pie -->
+        <div class="row g-3 mb-3" id="goods-flow">
+          <div class="col-lg-7">
+            <div class="section-card">
+              <div class="section-card-header">
+                <h2 class="section-title"><i class="bi bi-arrow-left-right"></i> Goods Flow Overview</h2>
+                <span style="font-size:12px;color:var(--text-muted);">Last 6 months</span>
+              </div>
+              <div class="section-body">
+                <div class="flow-stage mb-4">
+                  <div class="flow-node">
+                    <div class="flow-node-icon">🏭</div>
+                    <div class="flow-node-name">Production</div>
+                    <div class="flow-node-val">3,218 units</div>
+                  </div>
+                  <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+                  <div class="flow-node">
+                    <div class="flow-node-icon">📦</div>
+                    <div class="flow-node-name">Warehousing</div>
+                    <div class="flow-node-val">3,012 units</div>
+                  </div>
+                  <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+                  <div class="flow-node">
+                    <div class="flow-node-icon">🚛</div>
+                    <div class="flow-node-name">Distribution</div>
+                    <div class="flow-node-val">2,948 units</div>
+                  </div>
+                  <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+                  <div class="flow-node">
+                    <div class="flow-node-icon">✅</div>
+                    <div class="flow-node-name">Delivered</div>
+                    <div class="flow-node-val">2,876 units</div>
+                  </div>
+                </div>
+                <canvas id="goods-bar" height="180"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="section-card">
+              <div class="section-card-header">
+                <h2 class="section-title"><i class="bi bi-pie-chart-fill"></i> Industry Revenue Share</h2>
+              </div>
+              <div class="section-body" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+                <div style="position:relative;flex-shrink:0;">
+                  <canvas id="industry-pie" width="200" height="200"></canvas>
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+                    <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:var(--heading-color);">₫28.4B
+                    </div>
+                    <div
+                      style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.3px;">
+                      Monthly</div>
+                  </div>
+                </div>
+                <div style="flex:1;min-width:160px;">
+                  <div id="pie-legend" style="display:flex;flex-direction:column;gap:9px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-
     </div>
-
   </main>
 
   <!-- ══════════════════════════════════════
@@ -1893,8 +1502,10 @@
   <div class="ia-modal-overlay" id="verify-modal">
     <div class="ia-modal" role="dialog" aria-modal="true" aria-labelledby="modal-verify-title" style="max-width:640px;">
       <div class="ia-modal-header">
-        <h2 class="ia-modal-title" id="modal-verify-title"><i class="bi bi-file-earmark-check-fill" style="color:var(--ia-primary)"></i> Business Records Verification</h2>
-        <button class="ia-modal-close" onclick="closeModal('verify-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="ia-modal-title" id="modal-verify-title"><i class="bi bi-file-earmark-check-fill"
+            style="color:var(--ia-primary)"></i> Business Records Verification</h2>
+        <button class="ia-modal-close" onclick="closeModal('verify-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
 
       <div class="verify-detail-grid">
@@ -1917,27 +1528,34 @@
       </div>
 
       <div class="verify-doc-section">
-        <div class="verify-doc-title"><i class="bi bi-file-earmark-text" style="color:var(--ia-primary);"></i> Business License</div>
+        <div class="verify-doc-title"><i class="bi bi-file-earmark-text" style="color:var(--ia-primary);"></i> Business
+          License</div>
         <div class="verify-doc-status">
           <span id="v-license-id" style="font-family:'JetBrains Mono';font-weight:600;">GP-2026-0142</span>
           <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Submitted</span>
         </div>
         <div style="margin-top:10px;display:flex;gap:8px;">
-          <button class="btn-approve" onclick="showToast('success','✓ Business license approved.')"><i class="bi bi-check-lg"></i> Approve License</button>
-          <button class="btn-reject" onclick="showToast('danger','✗ Business license rejected.')"><i class="bi bi-x-lg"></i> Reject</button>
-          <button class="btn-ia-outline" style="font-size:12px;padding:5px 12px;" onclick="showToast('success','License document opened.')"><i class="bi bi-eye"></i> View PDF</button>
+          <button class="btn-approve" onclick="showToast('success','✓ Business license approved.')"><i
+              class="bi bi-check-lg"></i> Approve License</button>
+          <button class="btn-reject" onclick="showToast('danger','✗ Business license rejected.')"><i
+              class="bi bi-x-lg"></i> Reject</button>
+          <button class="btn-ia-outline" style="font-size:12px;padding:5px 12px;"
+            onclick="showToast('success','License document opened.')"><i class="bi bi-eye"></i> View PDF</button>
         </div>
       </div>
 
       <div class="verify-doc-section">
-        <div class="verify-doc-title"><i class="bi bi-receipt" style="color:var(--ia-primary);"></i> Tax Registration Certificate</div>
+        <div class="verify-doc-title"><i class="bi bi-receipt" style="color:var(--ia-primary);"></i> Tax Registration
+          Certificate</div>
         <div class="verify-doc-status">
           <span style="font-size:12px;">Issued by: General Dept. of Taxation</span>
           <span class="doc-tag valid"><i class="bi bi-check-circle-fill"></i> Valid</span>
         </div>
         <div style="margin-top:10px;display:flex;gap:8px;">
-          <button class="btn-approve" onclick="showToast('success','✓ Tax certificate verified.')"><i class="bi bi-check-lg"></i> Mark Verified</button>
-          <button class="btn-ia-outline" style="font-size:12px;padding:5px 12px;" onclick="showToast('success','Tax certificate opened.')"><i class="bi bi-eye"></i> View PDF</button>
+          <button class="btn-approve" onclick="showToast('success','✓ Tax certificate verified.')"><i
+              class="bi bi-check-lg"></i> Mark Verified</button>
+          <button class="btn-ia-outline" style="font-size:12px;padding:5px 12px;"
+            onclick="showToast('success','Tax certificate opened.')"><i class="bi bi-eye"></i> View PDF</button>
         </div>
       </div>
 
@@ -1948,8 +1566,12 @@
 
       <div class="ia-modal-footer">
         <button class="btn-ia-outline" onclick="closeModal('verify-modal')">Close</button>
-        <button class="btn-reject" onclick="closeModal('verify-modal');showToast('danger','Company registration rejected.')"><i class="bi bi-x-lg"></i> Reject Company</button>
-        <button class="btn-ia-primary" onclick="closeModal('verify-modal');showToast('success','Company approved & permission granted to operate.')"><i class="bi bi-check-lg"></i> Approve & Grant Permission</button>
+        <button class="btn-reject"
+          onclick="closeModal('verify-modal');showToast('danger','Company registration rejected.')"><i
+            class="bi bi-x-lg"></i> Reject Company</button>
+        <button class="btn-ia-primary"
+          onclick="closeModal('verify-modal');showToast('success','Company approved & permission granted to operate.')"><i
+            class="bi bi-check-lg"></i> Approve & Grant Permission</button>
       </div>
     </div>
   </div>
@@ -1958,8 +1580,10 @@
   <div class="ia-modal-overlay" id="add-company-modal">
     <div class="ia-modal" role="dialog" aria-modal="true" aria-labelledby="modal-company-title">
       <div class="ia-modal-header">
-        <h2 class="ia-modal-title" id="modal-company-title"><i class="bi bi-building-add" style="color:var(--ia-primary)"></i> Register New Company</h2>
-        <button class="ia-modal-close" onclick="closeModal('add-company-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="ia-modal-title" id="modal-company-title"><i class="bi bi-building-add"
+            style="color:var(--ia-primary)"></i> Register New Company</h2>
+        <button class="ia-modal-close" onclick="closeModal('add-company-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Company Name</label>
@@ -2016,7 +1640,9 @@
       </div>
       <div class="ia-modal-footer">
         <button class="btn-ia-outline" onclick="closeModal('add-company-modal')">Cancel</button>
-        <button class="btn-ia-primary" onclick="closeModal('add-company-modal');showToast('success','Company registered & invitation sent to admin.')"><i class="bi bi-check-lg"></i> Register Company</button>
+        <button class="btn-ia-primary"
+          onclick="closeModal('add-company-modal');showToast('success','Company registered & invitation sent to admin.')"><i
+            class="bi bi-check-lg"></i> Register Company</button>
       </div>
     </div>
   </div>
@@ -2025,8 +1651,10 @@
   <div class="ia-modal-overlay" id="perm-modal">
     <div class="ia-modal" role="dialog" style="max-width:460px;">
       <div class="ia-modal-header">
-        <h2 class="ia-modal-title"><i class="bi bi-shield-fill-check" style="color:var(--ia-primary)"></i> Grant Permissions</h2>
-        <button class="ia-modal-close" onclick="closeModal('perm-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="ia-modal-title"><i class="bi bi-shield-fill-check" style="color:var(--ia-primary)"></i> Grant
+          Permissions</h2>
+        <button class="ia-modal-close" onclick="closeModal('perm-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Company</label>
@@ -2036,7 +1664,8 @@
         <label class="form-label-modal">Permissions</label>
         <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
           <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
-            <input type="checkbox" class="ia-checkbox" checked> <strong>Trading Operations</strong> — Buy & sell on marketplace
+            <input type="checkbox" class="ia-checkbox" checked> <strong>Trading Operations</strong> — Buy & sell on
+            marketplace
           </label>
           <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
             <input type="checkbox" class="ia-checkbox" checked> <strong>Shipping & Logistics</strong> — Manage shipments
@@ -2054,7 +1683,9 @@
       </div>
       <div class="ia-modal-footer">
         <button class="btn-ia-outline" onclick="closeModal('perm-modal')">Cancel</button>
-        <button class="btn-ia-primary" onclick="closeModal('perm-modal');showToast('success','Permissions updated successfully.')"><i class="bi bi-check-lg"></i> Save Permissions</button>
+        <button class="btn-ia-primary"
+          onclick="closeModal('perm-modal');showToast('success','Permissions updated successfully.')"><i
+            class="bi bi-check-lg"></i> Save Permissions</button>
       </div>
     </div>
   </div>
@@ -2063,8 +1694,10 @@
   <div class="ia-modal-overlay" id="edit-admin-modal">
     <div class="ia-modal" role="dialog" aria-modal="true" style="max-width:560px;">
       <div class="ia-modal-header">
-        <h2 class="ia-modal-title"><i class="bi bi-person-fill-gear" style="color:var(--ia-primary)"></i> Edit Admin Account</h2>
-        <button class="ia-modal-close" onclick="closeModal('edit-admin-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="ia-modal-title"><i class="bi bi-person-fill-gear" style="color:var(--ia-primary)"></i> Edit Admin
+          Account</h2>
+        <button class="ia-modal-close" onclick="closeModal('edit-admin-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-row">
         <div class="form-group-modal">
@@ -2101,7 +1734,8 @@
         <label class="form-label-modal">Permissions</label>
         <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px;">
           <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
-            <input type="checkbox" class="ia-checkbox" checked> <strong>Trading Operations</strong> — Buy & sell on marketplace
+            <input type="checkbox" class="ia-checkbox" checked> <strong>Trading Operations</strong> — Buy & sell on
+            marketplace
           </label>
           <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
             <input type="checkbox" class="ia-checkbox" checked> <strong>Shipping & Logistics</strong> — Manage shipments
@@ -2123,8 +1757,11 @@
       </div>
       <div class="ia-modal-footer">
         <button class="btn-ia-outline" onclick="closeModal('edit-admin-modal')">Cancel</button>
-        <button class="btn-reject" onclick="closeModal('edit-admin-modal');showToast('danger','Account suspended.')"><i class="bi bi-slash-circle"></i> Suspend</button>
-        <button class="btn-ia-primary" onclick="closeModal('edit-admin-modal');showToast('success','Admin account updated & permissions saved.')"><i class="bi bi-check-lg"></i> Save Changes</button>
+        <button class="btn-reject" onclick="closeModal('edit-admin-modal');showToast('danger','Account suspended.')"><i
+            class="bi bi-slash-circle"></i> Suspend</button>
+        <button class="btn-ia-primary"
+          onclick="closeModal('edit-admin-modal');showToast('success','Admin account updated & permissions saved.')"><i
+            class="bi bi-check-lg"></i> Save Changes</button>
       </div>
     </div>
   </div>
@@ -2133,8 +1770,10 @@
   <div class="ia-modal-overlay" id="add-admin-modal">
     <div class="ia-modal" role="dialog" aria-modal="true" style="max-width:560px;">
       <div class="ia-modal-header">
-        <h2 class="ia-modal-title"><i class="bi bi-person-plus-fill" style="color:var(--ia-primary)"></i> Add Company Admin Account</h2>
-        <button class="ia-modal-close" onclick="closeModal('add-admin-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="ia-modal-title"><i class="bi bi-person-plus-fill" style="color:var(--ia-primary)"></i> Add Company
+          Admin Account</h2>
+        <button class="ia-modal-close" onclick="closeModal('add-admin-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-row">
         <div class="form-group-modal">
@@ -2167,23 +1806,32 @@
       <div class="form-group-modal">
         <label class="form-label-modal">Initial Permissions</label>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;">
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" class="ia-checkbox" checked> Trading Operations</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" class="ia-checkbox" checked> View Reports</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" class="ia-checkbox"> Shipping</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" class="ia-checkbox"> Staff Management</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox" class="ia-checkbox"> Full Operations</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox"
+              class="ia-checkbox" checked> Trading Operations</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox"
+              class="ia-checkbox" checked> View Reports</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox"
+              class="ia-checkbox"> Shipping</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox"
+              class="ia-checkbox"> Staff Management</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="checkbox"
+              class="ia-checkbox"> Full Operations</label>
         </div>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Auto-approve?</label>
         <div style="display:flex;gap:16px;margin-top:4px;">
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio" name="auto-approve" checked style="accent-color:var(--ia-primary);"> Yes, activate immediately</label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio" name="auto-approve" style="accent-color:var(--ia-primary);"> No, require review</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio"
+              name="auto-approve" checked style="accent-color:var(--ia-primary);"> Yes, activate immediately</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;"><input type="radio"
+              name="auto-approve" style="accent-color:var(--ia-primary);"> No, require review</label>
         </div>
       </div>
       <div class="ia-modal-footer">
         <button class="btn-ia-outline" onclick="closeModal('add-admin-modal')">Cancel</button>
-        <button class="btn-ia-primary" onclick="closeModal('add-admin-modal');showToast('success','Company Admin account created & invitation email sent.')"><i class="bi bi-person-plus-fill"></i> Create Admin Account</button>
+        <button class="btn-ia-primary"
+          onclick="closeModal('add-admin-modal');showToast('success','Company Admin account created & invitation email sent.')"><i
+            class="bi bi-person-plus-fill"></i> Create Admin Account</button>
       </div>
     </div>
   </div>
@@ -2214,7 +1862,7 @@
     // ── Close modals ──
     function closeModal(id) { document.getElementById(id).classList.remove('show'); }
     document.querySelectorAll('.ia-modal-overlay').forEach(overlay => {
-      overlay.addEventListener('click', function(e) {
+      overlay.addEventListener('click', function (e) {
         if (e.target === this) this.classList.remove('show');
       });
     });
@@ -2337,22 +1985,22 @@
     // ── Detect dark mode ──
     function isDark() {
       return document.documentElement.getAttribute('data-bs-theme') === 'dark'
-          || document.body.classList.contains('dark-theme')
-          || window.matchMedia('(prefers-color-scheme: dark)').matches;
+        || document.body.classList.contains('dark-theme')
+        || window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
     const gridColor = () => isDark() ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)';
     const textColor = () => isDark() ? '#a0aec0' : '#718096';
 
     // ── Transaction Chart (ApexCharts) ──
     const txnMonthly = {
-      categories: ['Nov','Dec','Jan','Feb','Mar','Apr'],
-      inbound:  [4.2, 4.8, 3.9, 5.1, 4.6, 5.8],
+      categories: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+      inbound: [4.2, 4.8, 3.9, 5.1, 4.6, 5.8],
       outbound: [3.8, 4.4, 3.6, 4.7, 4.2, 5.3],
       internal: [1.2, 1.4, 1.1, 1.5, 1.3, 1.7]
     };
     const txnQuarterly = {
-      categories: ['Q1 2025','Q2 2025','Q3 2025','Q4 2025','Q1 2026','Q2 2026'],
-      inbound:  [12.8, 14.2, 15.6, 13.8, 16.4, 17.8],
+      categories: ['Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026'],
+      inbound: [12.8, 14.2, 15.6, 13.8, 16.4, 17.8],
       outbound: [11.4, 12.8, 14.1, 12.3, 14.9, 16.2],
       internal: [3.4, 3.8, 4.2, 3.7, 4.4, 4.8]
     };
@@ -2373,7 +2021,7 @@
           fontFamily: 'Nunito Sans, sans-serif',
         },
         theme: { mode: isDark() ? 'dark' : 'light' },
-        colors: ['#0d9488','#06b6d4','#f59e0b'],
+        colors: ['#0d9488', '#06b6d4', '#f59e0b'],
         plotOptions: {
           bar: { columnWidth: '55%', borderRadius: 5, borderRadiusApplication: 'end' }
         },
@@ -2410,12 +2058,12 @@
 
     // ── Industry Pie (Chart.js) ──
     const pieData = [
-      { label: 'Electronics',     value: 31.2, color: '#0d9488' },
-      { label: 'Mechanical',      value: 24.5, color: '#06b6d4' },
-      { label: 'Chemicals',       value: 18.4, color: '#f59e0b' },
-      { label: 'Consumer Goods',  value: 14.8, color: '#3b82f6' },
-      { label: 'Logistics',       value: 7.5,  color: '#7c3aed' },
-      { label: 'Other',           value: 3.6,  color: '#9ca3af' }
+      { label: 'Electronics', value: 31.2, color: '#0d9488' },
+      { label: 'Mechanical', value: 24.5, color: '#06b6d4' },
+      { label: 'Chemicals', value: 18.4, color: '#f59e0b' },
+      { label: 'Consumer Goods', value: 14.8, color: '#3b82f6' },
+      { label: 'Logistics', value: 7.5, color: '#7c3aed' },
+      { label: 'Other', value: 3.6, color: '#9ca3af' }
     ];
 
     function initPieChart() {
@@ -2458,7 +2106,7 @@
       new Chart(goodsCtx, {
         type: 'bar',
         data: {
-          labels: ['Electronics','Mechanical','Chemicals','Consumer','Logistics','Other'],
+          labels: ['Electronics', 'Mechanical', 'Chemicals', 'Consumer', 'Logistics', 'Other'],
           datasets: [
             {
               label: 'Inbound',
@@ -2511,7 +2159,7 @@
         stroke: { curve: 'smooth', width: 2.5 },
         dataLabels: { enabled: false },
         xaxis: {
-          categories: ['May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'],
+          categories: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
           labels: { style: { colors: textColor(), fontSize: '11px' } },
           axisBorder: { show: false }, axisTicks: { show: false }
         },

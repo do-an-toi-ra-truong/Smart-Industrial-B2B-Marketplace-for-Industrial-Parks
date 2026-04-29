@@ -15,7 +15,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Nunito+Sans:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="./assets/styles/bootstrap.min.css" rel="stylesheet">
@@ -25,318 +27,7 @@
   <link href="./assets/styles/phosphor-icons.css" rel="stylesheet">
   <link href="./assets/styles/style.css" rel="stylesheet">
   <link href="./assets/styles/main.css" rel="stylesheet">
-  <link href="./assets/styles/superadmin.css" rel="stylesheet">
-  <!-- <style>
-    :root {
-      --sa-primary: #4f46e5;
-      --sa-accent: #7c3aed;
-      --sa-gold: #f59e0b;
-      --sa-success: #10b981;
-      --sa-danger: #ef4444;
-      --sa-warning: #f59e0b;
-      --sa-info: #3b82f6;
-    }
-
-    /* ── Page layout ── */
-    .page-header {
-      display: flex; align-items: flex-start;
-      justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-      margin-bottom: 28px;
-    }
-    .page-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 22px; font-weight: 700;
-      color: var(--heading-color); margin: 0 0 4px;
-    }
-    .page-breadcrumb {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 12px; color: var(--text-muted);
-    }
-    .page-breadcrumb a { color: var(--sa-primary); text-decoration: none; }
-    .page-breadcrumb i { font-size: 10px; }
-
-    /* ── KPI Cards ── */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px; margin-bottom: 28px;
-    }
-    .kpi-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 20px 20px 16px;
-      position: relative; overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .kpi-card::after {
-      content: '';
-      position: absolute;
-      right: -16px; bottom: -16px;
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      opacity: 0.06;
-    }
-    .kpi-card.c1::after { background: #4f46e5; }
-    .kpi-card.c2::after { background: #10b981; }
-    .kpi-card.c3::after { background: #f59e0b; }
-    .kpi-card.c4::after { background: #3b82f6; }
-    .kpi-card.c5::after { background: #7c3aed; }
-    .kpi-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.1); }
-    .kpi-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
-    .kpi-icon {
-      width: 42px; height: 42px;
-      border-radius: 11px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-    }
-    .kpi-trend {
-      display: inline-flex; align-items: center; gap: 3px;
-      font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px;
-    }
-    .kpi-trend.up   { background:rgba(16,185,129,0.12); color:#059669; }
-    .kpi-trend.down { background:rgba(239,68,68,0.1);   color:#dc2626; }
-    .kpi-value { font-family:'Poppins'; font-size:28px; font-weight:700; color:var(--heading-color); line-height:1; margin-bottom:4px; }
-    .kpi-label { font-size:12px; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:0.3px; }
-    .kpi-sub   { font-size:11.5px; color:var(--text-muted); margin-top:6px; }
-
-    /* ── Section card ── */
-    .section-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-    .section-card-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 22px;
-      border-bottom: 1px solid var(--border-color);
-      flex-wrap: wrap; gap: 12px;
-    }
-    .section-title {
-      font-family: 'Poppins'; font-size:15px; font-weight:600;
-      color:var(--heading-color); margin:0;
-      display:flex; align-items:center; gap:8px;
-    }
-    .section-title i { color: var(--sa-primary); }
-    .section-body { padding: 22px; }
-
-    /* Chart containers */
-    .chart-box {
-      width: 100%; height: 300px;
-      position: relative;
-    }
-    .chart-box.tall { height: 360px; }
-
-    /* ── Catalog lists ── */
-    .catalog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 12px;
-    }
-    .catalog-item {
-      display: flex; align-items: center; gap: 13px;
-      padding: 14px 16px;
-      background: var(--hover-bg, rgba(0,0,0,0.025));
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      transition: border-color 0.2s, background 0.15s;
-    }
-    .catalog-item:hover { border-color: var(--sa-primary); background: rgba(79,70,229,0.04); }
-    .catalog-item-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
-    }
-    .catalog-item-info { flex: 1; }
-    .catalog-item-name { font-weight: 700; font-size: 13.5px; color: var(--heading-color); }
-    .catalog-item-sub  { font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
-    .catalog-item-actions { display: flex; gap: 4px; }
-    .catalog-action-btn {
-      width: 28px; height: 28px; border-radius: 7px;
-      border: 1px solid var(--border-color);
-      background: none; cursor: pointer;
-      color: var(--text-muted); font-size: 13px;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.15s;
-    }
-    .catalog-action-btn:hover { border-color: var(--sa-primary); color: var(--sa-primary); }
-    .catalog-action-btn.del:hover { border-color: #ef4444; color: #ef4444; }
-
-    /* Industry tag colours */
-    .ind-tag {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 2px 9px; border-radius: 6px;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.3px;
-      text-transform: uppercase;
-    }
-
-    /* ── Park area table ── */
-    .sa-table { width: 100%; border-collapse: collapse; }
-    .sa-table thead tr { background: var(--table-header-bg, rgba(0,0,0,0.03)); }
-    .sa-table th {
-      padding: 11px 16px; font-size:11px; font-weight:700;
-      color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;
-      text-align:left; white-space:nowrap; border-bottom:1px solid var(--border-color);
-    }
-    .sa-table td {
-      padding: 13px 16px; font-size:13.5px;
-      color:var(--text-color); border-bottom:1px solid var(--border-color);
-      vertical-align: middle;
-    }
-    .sa-table tbody tr:last-child td { border-bottom: none; }
-    .sa-table tbody tr { transition: background 0.15s; }
-    .sa-table tbody tr:hover { background: rgba(79,70,229,0.04); }
-
-    .badge-status { display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11.5px;font-weight:600; }
-    .badge-status::before { content:'';width:6px;height:6px;border-radius:50%; }
-    .badge-status.active    { background:rgba(16,185,129,0.12);color:#059669; }
-    .badge-status.active::before { background:#10b981; }
-    .badge-status.developing { background:rgba(245,158,11,0.12);color:#d97706; }
-    .badge-status.developing::before { background:#f59e0b; animation:pulse 1.5s infinite; }
-    .badge-status.planning  { background:rgba(59,130,246,0.12);color:#2563eb; }
-    .badge-status.planning::before { background:#3b82f6; }
-    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
-
-    /* ── Buttons ── */
-    .btn-sa-primary {
-      display:inline-flex;align-items:center;gap:6px;
-      padding:8px 16px;background:var(--sa-primary);
-      border:none;border-radius:9px;color:#fff;
-      font-size:13px;font-weight:600;cursor:pointer;
-      font-family:inherit;transition:background 0.2s,transform 0.15s;
-    }
-    .btn-sa-primary:hover { background:#3730a3;transform:translateY(-1px); }
-    .btn-sa-outline {
-      display:inline-flex;align-items:center;gap:6px;
-      padding:7px 14px;background:transparent;
-      border:1.5px solid var(--border-color);border-radius:9px;
-      color:var(--text-color);font-size:13px;font-weight:600;
-      cursor:pointer;font-family:inherit;transition:border-color 0.2s,color 0.2s;
-    }
-    .btn-sa-outline:hover { border-color:var(--sa-primary);color:var(--sa-primary); }
-
-    /* ── Tabs ── */
-    .sa-tabs {
-      display:flex;gap:4px;background:var(--card-bg);
-      border:1px solid var(--border-color);border-radius:12px;
-      padding:5px;width:fit-content;margin-bottom:20px;
-    }
-    .sa-tab {
-      padding:8px 18px;border-radius:8px;font-size:13px;
-      font-weight:600;cursor:pointer;color:var(--text-muted);
-      border:none;background:none;transition:all 0.2s;font-family:inherit;
-    }
-    .sa-tab.active { background:var(--sa-primary);color:#fff; }
-    .sa-tab:not(.active):hover { background:rgba(0,0,0,0.04);color:var(--heading-color); }
-
-    .tab-panel { display:none; }
-    .tab-panel.active { display:block; }
-
-    /* Range selector for charts */
-    .chart-range {
-      display:flex;gap:4px;
-    }
-    .range-btn {
-      padding:4px 10px;border-radius:6px;
-      border:1px solid var(--border-color);
-      background:none;font-size:11.5px;font-weight:600;
-      cursor:pointer;color:var(--text-muted);font-family:inherit;
-      transition:all 0.15s;
-    }
-    .range-btn.active { background:var(--sa-primary);border-color:var(--sa-primary);color:#fff; }
-
-    /* Modal */
-    .sa-modal-overlay {
-      position:fixed;inset:0;background:rgba(0,0,0,0.55);
-      backdrop-filter:blur(4px);z-index:9999;
-      display:flex;align-items:center;justify-content:center;
-      opacity:0;pointer-events:none;transition:opacity 0.25s;
-    }
-    .sa-modal-overlay.show { opacity:1;pointer-events:all; }
-    .sa-modal {
-      background:var(--card-bg);border:1px solid var(--border-color);
-      border-radius:20px;width:100%;max-width:480px;padding:32px;
-      transform:scale(0.92) translateY(20px);
-      transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
-      max-height:90vh;overflow-y:auto;
-    }
-    .sa-modal-overlay.show .sa-modal { transform:scale(1) translateY(0); }
-    .sa-modal-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:24px; }
-    .sa-modal-title { font-family:'Poppins';font-size:17px;font-weight:700;color:var(--heading-color);margin:0; }
-    .sa-modal-close { width:32px;height:32px;border-radius:8px;border:1px solid var(--border-color);background:none;cursor:pointer;color:var(--text-muted);display:flex;align-items:center;justify-content:center;font-size:15px;transition:background 0.15s; }
-    .sa-modal-close:hover { background:var(--hover-bg);color:var(--heading-color); }
-    .form-group-modal { margin-bottom:18px; }
-    .form-label-modal { display:block;font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.4px;margin-bottom:7px; }
-    .form-control-modal { width:100%;padding:10px 14px;background:var(--input-bg,rgba(0,0,0,0.04));border:1px solid var(--border-color);border-radius:10px;font-size:13.5px;color:var(--text-color);font-family:inherit;outline:none;transition:border-color 0.2s; }
-    .form-control-modal:focus { border-color:var(--sa-primary); }
-    .sa-modal-footer { display:flex;justify-content:flex-end;gap:10px;margin-top:24px; }
-
-    /* Legend dot */
-    .legend-dot { width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0; }
-
-    /* Health meter */
-    .health-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 20px;
-    }
-    .health-title { font-family:'Poppins';font-size:14px;font-weight:600;color:var(--heading-color);margin:0 0 16px; display:flex;align-items:center;gap:7px; }
-    .health-item { margin-bottom: 14px; }
-    .health-item-header { display:flex;justify-content:space-between;align-items:center;margin-bottom:6px; }
-    .health-item-name { font-size:13px;font-weight:600;color:var(--heading-color); }
-    .health-item-val  { font-size:12px;color:var(--text-muted); }
-    .health-bar { height:7px;border-radius:20px;background:var(--border-color);overflow:hidden; }
-    .health-fill { height:100%;border-radius:20px;transition:width 1s ease; }
-
-    /* Toast */
-    .sa-toast {
-      position:fixed;bottom:28px;right:28px;
-      background:#1a1a2e;border:1px solid rgba(255,255,255,0.12);
-      border-radius:12px;padding:14px 20px;
-      display:flex;align-items:center;gap:12px;
-      font-size:13px;color:#fff;z-index:99999;
-      box-shadow:0 8px 32px rgba(0,0,0,0.4);
-      transform:translateY(80px);opacity:0;
-      transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);max-width:340px;
-    }
-    .sa-toast.show { transform:translateY(0);opacity:1; }
-    .sa-toast-icon { font-size:18px;flex-shrink:0; }
-    .sa-toast.success { border-color:rgba(16,185,129,0.4); }
-    .sa-toast.success .sa-toast-icon { color:#10b981; }
-
-    /* Chart placeholder for lightweight inline rendering */
-    .chart-canvas { width:100%; }
-
-    /* Flow diagram */
-    .flow-stage {
-      display:flex;align-items:center;gap:0;
-    }
-    .flow-node {
-      flex: 1;
-      background: var(--hover-bg, rgba(0,0,0,0.03));
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 14px 12px;
-      text-align: center;
-      transition: border-color 0.2s;
-    }
-    .flow-node:hover { border-color: var(--sa-primary); }
-    .flow-node-icon { font-size: 24px; margin-bottom: 6px; }
-    .flow-node-name { font-size:12px;font-weight:700;color:var(--heading-color); }
-    .flow-node-val  { font-size:13px;font-weight:700;color:var(--sa-primary);margin-top:3px; }
-    .flow-arrow { color:var(--text-muted);font-size:18px;flex-shrink:0;padding:0 4px; }
-
-    /* Responsive */
-    @media (max-width:768px) {
-      .kpi-grid { grid-template-columns: 1fr 1fr; }
-      .flow-stage { flex-direction:column; }
-      .flow-arrow { transform:rotate(90deg); }
-    }
-  </style> -->
+  <link href="./assets/styles/superAdmin.css" rel="stylesheet">
 </head>
 
 <body>
@@ -364,12 +55,15 @@
     <div class="header-right">
       <div class="header-actions-desktop">
         <div class="header-action-wrap dropdown notification-dropdown">
-          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" title="Notifications">
+          <button class="header-action dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+            title="Notifications">
             <i class="bi bi-bell"></i><span class="header-badge">3</span>
           </button>
           <div class="dropdown-menu dropdown-menu-end notification-menu">
             <div class="notification-header">
-              <div><h6>Notifications</h6><span>3 unread</span></div>
+              <div>
+                <h6>Notifications</h6><span>3 unread</span>
+              </div>
               <a href="#" data-notification-action="mark-all-read">Mark all read</a>
             </div>
             <div class="notification-list">
@@ -383,7 +77,8 @@
                 </div>
               </div>
             </div>
-            <div class="notification-footer"><a href="super-admin-accounts.html">Open notification center <i class="bi bi-arrow-right"></i></a></div>
+            <div class="notification-footer"><a href="super-admin-accounts.html">Open notification center <i
+                  class="bi bi-arrow-right"></i></a></div>
           </div>
         </div>
         <button class="header-action theme-toggle" title="Toggle Theme">
@@ -410,7 +105,8 @@
               <a class="user-menu-item" href="#"><i class="bi bi-person"></i><span>My Profile</span></a>
             </div>
             <div class="user-menu-footer">
-              <a class="user-menu-logout" href="super-admin-login.html"><i class="bi bi-box-arrow-right"></i><span>Sign Out</span></a>
+              <a class="user-menu-logout" href="super-admin-login.html"><i class="bi bi-box-arrow-right"></i><span>Sign
+                  Out</span></a>
             </div>
           </div>
         </div>
@@ -452,7 +148,7 @@
         <ul class="nav-menu">
 
           <li class="nav-item">
-            <a class="nav-link active" href="super-admin-catalog.html">
+            <a class="nav-link active" href="super-admin-dashboard.html">
               <span class="nav-icon"><i class="ph-light ph-squares-four"></i></span>
               <span class="nav-text">Dashboard</span>
             </a>
@@ -466,6 +162,22 @@
             </a>
           </li>
 
+          <!-- Industrial Park Clusters -->
+          <li class="nav-item has-submenu">
+            <a class="nav-link" href="#" aria-expanded="false">
+              <span class="nav-icon"><i class="bi bi-building"></i></span>
+              <span class="nav-text">Park Clusters</span>
+              <span class="nav-arrow"><i class="bi bi-chevron-right"></i></span>
+            </a>
+            <ul class="nav-submenu">
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>VSIP Group</a></li>
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>My Phuoc Group</a></li>
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>Amata Group</a></li>
+              <li><a class="nav-link" href="#"><span class="nav-dot"></span>+ Add Cluster</a></li>
+            </ul>
+          </li>
+
+
           <li class="nav-item has-submenu open">
             <a class="nav-link active" href="#" aria-expanded="true">
               <span class="nav-icon"><i class="ph-light ph-stack"></i></span>
@@ -473,7 +185,8 @@
               <span class="nav-arrow"><i class="bi bi-chevron-right"></i></span>
             </a>
             <ul class="nav-submenu show">
-              <li><a class="nav-link active" href="#catalog-industries"><span class="nav-dot"></span>Industry Structure</a></li>
+              <li><a class="nav-link active" href="#catalog-industries"><span class="nav-dot"></span>Industry
+                  Structure</a></li>
               <li><a class="nav-link" href="#catalog-parks"><span class="nav-dot"></span>Industrial Park Areas</a></li>
               <li><a class="nav-link" href="#statistics"><span class="nav-dot"></span>Statistics & Charts</a></li>
               <li><a class="nav-link" href="#goods-flow"><span class="nav-dot"></span>Goods Flow</a></li>
@@ -489,13 +202,15 @@
           <a href="profile.html" class="sidebar-account-main">
             <img src="./assets/images/profile-img.webp" alt="Super Admin" class="sidebar-account-avatar">
             <div class="sidebar-account-meta">
-              <div class="sidebar-account-name">System Admin</div>
-              <div class="sidebar-account-role">Super Administrator</div>
+              <div class="sidebar-account-name">Nguyen Thanh Tung</div>
+              <div class="sidebar-account-role">SIBMIP System Manager</div>
+              <span class="sa-role-chip"><i class="bi bi-shield-fill-check"></i>Super Admin</span>
             </div>
           </a>
           <div class="sidebar-account-actions">
             <a href="#" class="sidebar-account-action" title="Settings"><i class="bi bi-gear"></i></a>
-            <a href="super-admin-login.html" class="sidebar-account-action sidebar-account-logout" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
+            <a href="super-admin-login.html" class="sidebar-account-action sidebar-account-logout" title="Logout"><i
+                class="bi bi-box-arrow-right"></i></a>
           </div>
         </div>
         <div class="sidebar-footer-links">
@@ -511,506 +226,575 @@
        MAIN CONTENT
   ══════════════════════════════════════ -->
   <main class="main">
-
-    <!-- Page Header -->
-    <div class="page-header">
-      <div>
-        <h1 class="page-title">System Catalog & Statistics</h1>
-        <div class="page-breadcrumb">
-          <a href="super-admin-catalog.html">Dashboard</a>
-          <i class="bi bi-chevron-right"></i>
-          <span>System Catalog</span>
+    <div class="main-content">
+      <!-- Page Header -->
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">System Catalog & Statistics</h1>
+          <div class="page-breadcrumb">
+            <a href="super-admin-catalog.html">Dashboard</a>
+            <i class="bi bi-chevron-right"></i>
+            <span>System Catalog</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <div class="chart-range">
+            <button class="range-btn" onclick="setRange(this,'1M')">1M</button>
+            <button class="range-btn" onclick="setRange(this,'3M')">3M</button>
+            <button class="range-btn active" onclick="setRange(this,'6M')">6M</button>
+            <button class="range-btn" onclick="setRange(this,'1Y')">1Y</button>
+          </div>
+          <button class="btn-sa-outline"><i class="bi bi-download"></i> Export Report</button>
         </div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <div class="chart-range">
-          <button class="range-btn" onclick="setRange(this,'1M')">1M</button>
-          <button class="range-btn" onclick="setRange(this,'3M')">3M</button>
-          <button class="range-btn active" onclick="setRange(this,'6M')">6M</button>
-          <button class="range-btn" onclick="setRange(this,'1Y')">1Y</button>
+
+      <!-- KPI Row -->
+      <div class="kpi-grid">
+        <div class="kpi-card c1">
+          <div class="kpi-top">
+            <div class="kpi-icon" style="background:rgba(79,70,229,0.12);color:#4f46e5"><i
+                class="bi bi-graph-up-arrow"></i></div>
+            <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+12.4%</span>
+          </div>
+          <div class="kpi-value">₫84.7B</div>
+          <div class="kpi-label">Total Transactions</div>
+          <div class="kpi-sub">vs ₫75.3B last period</div>
         </div>
-        <button class="btn-sa-outline"><i class="bi bi-download"></i> Export Report</button>
+        <div class="kpi-card c2">
+          <div class="kpi-top">
+            <div class="kpi-icon" style="background:rgba(16,185,129,0.12);color:#10b981"><i
+                class="bi bi-box-seam-fill"></i></div>
+            <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+8.9%</span>
+          </div>
+          <div class="kpi-value">14,208</div>
+          <div class="kpi-label">Goods Shipments</div>
+          <div class="kpi-sub">6 months • 12 active parks</div>
+        </div>
+        <div class="kpi-card c3">
+          <div class="kpi-top">
+            <div class="kpi-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b"><i
+                class="bi bi-building-fill"></i></div>
+            <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+2</span>
+          </div>
+          <div class="kpi-value">12</div>
+          <div class="kpi-label">Active Parks</div>
+          <div class="kpi-sub">3 clusters • 7 provinces</div>
+        </div>
+        <div class="kpi-card c4">
+          <div class="kpi-top">
+            <div class="kpi-icon" style="background:rgba(59,130,246,0.12);color:#3b82f6"><i class="bi bi-gear-fill"></i>
+            </div>
+            <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+3</span>
+          </div>
+          <div class="kpi-value">18</div>
+          <div class="kpi-label">Industry Sectors</div>
+          <div class="kpi-sub">Across all parks</div>
+        </div>
+        <div class="kpi-card c5">
+          <div class="kpi-top">
+            <div class="kpi-icon" style="background:rgba(124,58,237,0.12);color:#7c3aed"><i
+                class="bi bi-heart-pulse-fill"></i></div>
+            <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+2.1</span>
+          </div>
+          <div class="kpi-value">87.4</div>
+          <div class="kpi-label">Economic Health Index</div>
+          <div class="kpi-sub">Composite score / 100</div>
+        </div>
+      </div>
+
+      <!-- ── Row 1: Transaction Chart + Goods Flow ── -->
+      <div class="row g-3 mb-3" id="statistics">
+        <div class="col-lg-8">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-bar-chart-line-fill"></i> Transaction Statistics</h2>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <div class="chart-range">
+                  <button class="range-btn active" onclick="updateTxnChart('monthly')">Monthly</button>
+                  <button class="range-btn" onclick="updateTxnChart('quarterly')">Quarterly</button>
+                </div>
+              </div>
+            </div>
+            <div class="section-body">
+              <canvas id="txn-chart" class="chart-canvas" height="300"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4" id="economic-health">
+          <div class="health-card">
+            <div class="health-title"><i class="bi bi-heart-pulse-fill" style="color:#7c3aed;"></i> Economic Health by
+              Park</div>
+            <div class="health-item">
+              <div class="health-item-header">
+                <span class="health-item-name">VSIP Binh Duong</span>
+                <span class="health-item-val">92/100</span>
+              </div>
+              <div class="health-bar">
+                <div class="health-fill" style="width:92%;background:linear-gradient(90deg,#4f46e5,#7c3aed);"></div>
+              </div>
+            </div>
+            <div class="health-item">
+              <div class="health-item-header">
+                <span class="health-item-name">VSIP Hai Phong</span>
+                <span class="health-item-val">88/100</span>
+              </div>
+              <div class="health-bar">
+                <div class="health-fill" style="width:88%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div>
+              </div>
+            </div>
+            <div class="health-item">
+              <div class="health-item-header">
+                <span class="health-item-name">Amata Bien Hoa</span>
+                <span class="health-item-val">85/100</span>
+              </div>
+              <div class="health-bar">
+                <div class="health-fill" style="width:85%;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div>
+              </div>
+            </div>
+            <div class="health-item">
+              <div class="health-item-header">
+                <span class="health-item-name">My Phuoc 2 & 3</span>
+                <span class="health-item-val">81/100</span>
+              </div>
+              <div class="health-bar">
+                <div class="health-fill" style="width:81%;background:linear-gradient(90deg,#10b981,#34d399);"></div>
+              </div>
+            </div>
+            <div class="health-item">
+              <div class="health-item-header">
+                <span class="health-item-name">My Phuoc 1</span>
+                <span class="health-item-val">79/100</span>
+              </div>
+              <div class="health-bar">
+                <div class="health-fill" style="width:79%;background:linear-gradient(90deg,#10b981,#6ee7b7);"></div>
+              </div>
+            </div>
+            <div class="health-item">
+              <div class="health-item-header">
+                <span class="health-item-name">VSIP Quang Ngai</span>
+                <span class="health-item-val">74/100</span>
+              </div>
+              <div class="health-bar">
+                <div class="health-fill" style="width:74%;background:linear-gradient(90deg,#ef4444,#f87171);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Row 2: Industry Pie + Goods Flow ── -->
+      <div class="row g-3 mb-3" id="goods-flow">
+        <div class="col-lg-5">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-pie-chart-fill"></i> Industry Revenue Share</h2>
+            </div>
+            <div class="section-body" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+              <div style="position:relative;flex-shrink:0;">
+                <canvas id="industry-pie" width="200" height="200"></canvas>
+                <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+                  <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:var(--heading-color);">₫84.7B
+                  </div>
+                  <div
+                    style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.3px;">
+                    Total</div>
+                </div>
+              </div>
+              <div style="flex:1;min-width:160px;">
+                <div id="pie-legend" style="display:flex;flex-direction:column;gap:9px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="section-card">
+            <div class="section-card-header">
+              <h2 class="section-title"><i class="bi bi-arrow-left-right"></i> Goods Flow Overview</h2>
+              <span style="font-size:12px;color:var(--text-muted);">Last 6 months</span>
+            </div>
+            <div class="section-body">
+              <!-- Flow diagram -->
+              <div class="flow-stage mb-4" id="goods-flow">
+                <div class="flow-node">
+                  <div class="flow-node-icon">🏭</div>
+                  <div class="flow-node-name">Production</div>
+                  <div class="flow-node-val">8,420 units</div>
+                </div>
+                <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+                <div class="flow-node">
+                  <div class="flow-node-icon">📦</div>
+                  <div class="flow-node-name">Warehousing</div>
+                  <div class="flow-node-val">7,891 units</div>
+                </div>
+                <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+                <div class="flow-node">
+                  <div class="flow-node-icon">🚛</div>
+                  <div class="flow-node-name">Distribution</div>
+                  <div class="flow-node-val">7,654 units</div>
+                </div>
+                <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
+                <div class="flow-node">
+                  <div class="flow-node-icon">✅</div>
+                  <div class="flow-node-name">Delivered</div>
+                  <div class="flow-node-val">7,208 units</div>
+                </div>
+              </div>
+
+              <!-- Goods flow by industry bar -->
+              <canvas id="goods-bar" class="chart-canvas" height="160"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Catalog: Industries ── -->
+      <div class="section-card" id="catalog-industries">
+        <div class="section-card-header">
+          <h2 class="section-title"><i class="bi bi-gear-wide-connected"></i> Industry Structure Catalog</h2>
+          <button class="btn-sa-primary" onclick="document.getElementById('add-industry-modal').classList.add('show')">
+            <i class="bi bi-plus-lg"></i> Add Industry
+          </button>
+        </div>
+        <div class="section-body">
+          <div class="sa-tabs" role="tablist">
+            <button class="sa-tab active" onclick="switchCatTab(this,'cat-all')">All Sectors <span
+                style="background:rgba(0,0,0,0.07);border-radius:10px;padding:1px 7px;font-size:11px;">18</span></button>
+            <button class="sa-tab" onclick="switchCatTab(this,'cat-manufacturing')">Manufacturing</button>
+            <button class="sa-tab" onclick="switchCatTab(this,'cat-tech')">Technology</button>
+            <button class="sa-tab" onclick="switchCatTab(this,'cat-logistics')">Logistics</button>
+          </div>
+
+          <div class="tab-panel active" id="cat-all">
+            <div class="catalog-grid">
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(59,130,246,0.1);color:#2563eb"><i
+                    class="bi bi-cpu-fill"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Electronics</div>
+                  <div class="catalog-item-sub">4 sub-categories · 42 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(59,130,246,0.1);color:#2563eb;margin-top:4px;">Manufacturing</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit"
+                    onclick="showToast('success','Editing Electronics sector.')"><i class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(16,185,129,0.1);color:#059669"><i
+                    class="bi bi-gear-wide-connected"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Mechanical Engineering</div>
+                  <div class="catalog-item-sub">6 sub-categories · 58 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(16,185,129,0.1);color:#059669;margin-top:4px;">Manufacturing</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit"
+                    onclick="showToast('success','Editing Mechanical Engineering.')"><i
+                      class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(245,158,11,0.1);color:#d97706"><i
+                    class="bi bi-droplet-fill"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Chemicals</div>
+                  <div class="catalog-item-sub">5 sub-categories · 29 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(245,158,11,0.1);color:#d97706;margin-top:4px;">Manufacturing</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Chemicals.')"><i
+                      class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(239,68,68,0.1);color:#dc2626"><i
+                    class="bi bi-basket-fill"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Consumer Goods</div>
+                  <div class="catalog-item-sub">3 sub-categories · 34 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(239,68,68,0.1);color:#dc2626;margin-top:4px;">Manufacturing</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit"
+                    onclick="showToast('success','Editing Consumer Goods.')"><i class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5"><i
+                    class="bi bi-truck"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Logistics & Transport</div>
+                  <div class="catalog-item-sub">4 sub-categories · 22 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(79,70,229,0.1);color:#4f46e5;margin-top:4px;">Logistics</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Logistics.')"><i
+                      class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(124,58,237,0.1);color:#7c3aed"><i
+                    class="bi bi-robot"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Automation & AI</div>
+                  <div class="catalog-item-sub">2 sub-categories · 11 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(124,58,237,0.1);color:#7c3aed;margin-top:4px;">Technology</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit"
+                    onclick="showToast('success','Editing Automation & AI.')"><i class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(20,184,166,0.1);color:#0d9488"><i
+                    class="bi bi-lightning-charge-fill"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Renewable Energy</div>
+                  <div class="catalog-item-sub">3 sub-categories · 9 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(20,184,166,0.1);color:#0d9488;margin-top:4px;">Technology</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit"
+                    onclick="showToast('success','Editing Renewable Energy.')"><i class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+              <div class="catalog-item">
+                <div class="catalog-item-icon" style="background:rgba(249,115,22,0.1);color:#ea580c"><i
+                    class="bi bi-bricks"></i></div>
+                <div class="catalog-item-info">
+                  <div class="catalog-item-name">Construction Materials</div>
+                  <div class="catalog-item-sub">2 sub-categories · 16 enterprises</div>
+                  <span class="ind-tag"
+                    style="background:rgba(249,115,22,0.1);color:#ea580c;margin-top:4px;">Manufacturing</span>
+                </div>
+                <div class="catalog-item-actions">
+                  <button class="catalog-action-btn" title="Edit"
+                    onclick="showToast('success','Editing Construction Materials.')"><i
+                      class="bi bi-pencil"></i></button>
+                  <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="tab-panel" id="cat-manufacturing">
+            <div style="padding:32px;text-align:center;color:var(--text-muted);"><i class="bi bi-gear-wide-connected"
+                style="font-size:40px;opacity:0.3;"></i>
+              <p style="margin-top:12px;">Showing Manufacturing sectors only.</p>
+            </div>
+          </div>
+          <div class="tab-panel" id="cat-tech">
+            <div style="padding:32px;text-align:center;color:var(--text-muted);"><i class="bi bi-robot"
+                style="font-size:40px;opacity:0.3;"></i>
+              <p style="margin-top:12px;">Showing Technology sectors only.</p>
+            </div>
+          </div>
+          <div class="tab-panel" id="cat-logistics">
+            <div style="padding:32px;text-align:center;color:var(--text-muted);"><i class="bi bi-truck"
+                style="font-size:40px;opacity:0.3;"></i>
+              <p style="margin-top:12px;">Showing Logistics sectors only.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Catalog: Industrial Park Areas ── -->
+      <div class="section-card" id="catalog-parks">
+        <div class="section-card-header">
+          <h2 class="section-title"><i class="bi bi-geo-alt-fill"></i> Industrial Park Areas</h2>
+          <button class="btn-sa-primary" onclick="document.getElementById('add-park-modal').classList.add('show')">
+            <i class="bi bi-plus-lg"></i> Add Park
+          </button>
+        </div>
+        <div class="section-body" style="padding:0;">
+          <table class="sa-table">
+            <thead>
+              <tr>
+                <th>Park Name</th>
+                <th>Cluster / Group</th>
+                <th>Province</th>
+                <th>Area (ha)</th>
+                <th>Occupancy</th>
+                <th>Enterprises</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>VSIP Binh Duong I</strong></td>
+                <td>VSIP Group</td>
+                <td>Binh Duong</td>
+                <td>499</td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
+                      <div style="width:96%;height:100%;background:#4f46e5;border-radius:10px;"></div>
+                    </div>
+                    <span
+                      style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">96%</span>
+                  </div>
+                </td>
+                <td>186</td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div style="display:flex;gap:4px;">
+                    <button class="catalog-action-btn" title="Edit"
+                      onclick="showToast('success','Editing VSIP Binh Duong I.')"><i class="bi bi-pencil"></i></button>
+                    <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>VSIP Hai Phong</strong></td>
+                <td>VSIP Group</td>
+                <td>Hai Phong</td>
+                <td>1,600</td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
+                      <div style="width:72%;height:100%;background:#3b82f6;border-radius:10px;"></div>
+                    </div>
+                    <span
+                      style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">72%</span>
+                  </div>
+                </td>
+                <td>143</td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div style="display:flex;gap:4px;">
+                    <button class="catalog-action-btn" title="Edit"
+                      onclick="showToast('success','Editing VSIP Hai Phong.')"><i class="bi bi-pencil"></i></button>
+                    <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>My Phuoc 1</strong></td>
+                <td>My Phuoc Group</td>
+                <td>Binh Duong</td>
+                <td>1,000</td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
+                      <div style="width:88%;height:100%;background:#10b981;border-radius:10px;"></div>
+                    </div>
+                    <span
+                      style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">88%</span>
+                  </div>
+                </td>
+                <td>112</td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div style="display:flex;gap:4px;">
+                    <button class="catalog-action-btn" title="Edit"
+                      onclick="showToast('success','Editing My Phuoc 1.')"><i class="bi bi-pencil"></i></button>
+                    <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>My Phuoc 2</strong></td>
+                <td>My Phuoc Group</td>
+                <td>Binh Duong</td>
+                <td>2,400</td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
+                      <div style="width:79%;height:100%;background:#10b981;border-radius:10px;"></div>
+                    </div>
+                    <span
+                      style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">79%</span>
+                  </div>
+                </td>
+                <td>98</td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div style="display:flex;gap:4px;">
+                    <button class="catalog-action-btn" title="Edit"
+                      onclick="showToast('success','Editing My Phuoc 2.')"><i class="bi bi-pencil"></i></button>
+                    <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Amata City Bien Hoa</strong></td>
+                <td>Amata Group</td>
+                <td>Dong Nai</td>
+                <td>700</td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
+                      <div style="width:84%;height:100%;background:#f59e0b;border-radius:10px;"></div>
+                    </div>
+                    <span
+                      style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">84%</span>
+                  </div>
+                </td>
+                <td>76</td>
+                <td><span class="badge-status active">Active</span></td>
+                <td>
+                  <div style="display:flex;gap:4px;">
+                    <button class="catalog-action-btn" title="Edit"
+                      onclick="showToast('success','Editing Amata City.')"><i class="bi bi-pencil"></i></button>
+                    <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>VSIP Quang Ngai</strong></td>
+                <td>VSIP Group</td>
+                <td>Quang Ngai</td>
+                <td>1,132</td>
+                <td>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
+                      <div style="width:45%;height:100%;background:#ef4444;border-radius:10px;"></div>
+                    </div>
+                    <span
+                      style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">45%</span>
+                  </div>
+                </td>
+                <td>38</td>
+                <td><span class="badge-status developing">Developing</span></td>
+                <td>
+                  <div style="display:flex;gap:4px;">
+                    <button class="catalog-action-btn" title="Edit"
+                      onclick="showToast('success','Editing VSIP Quang Ngai.')"><i class="bi bi-pencil"></i></button>
+                    <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-
-    <!-- KPI Row -->
-    <div class="kpi-grid">
-      <div class="kpi-card c1">
-        <div class="kpi-top">
-          <div class="kpi-icon" style="background:rgba(79,70,229,0.12);color:#4f46e5"><i class="bi bi-graph-up-arrow"></i></div>
-          <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+12.4%</span>
-        </div>
-        <div class="kpi-value">₫84.7B</div>
-        <div class="kpi-label">Total Transactions</div>
-        <div class="kpi-sub">vs ₫75.3B last period</div>
-      </div>
-      <div class="kpi-card c2">
-        <div class="kpi-top">
-          <div class="kpi-icon" style="background:rgba(16,185,129,0.12);color:#10b981"><i class="bi bi-box-seam-fill"></i></div>
-          <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+8.9%</span>
-        </div>
-        <div class="kpi-value">14,208</div>
-        <div class="kpi-label">Goods Shipments</div>
-        <div class="kpi-sub">6 months • 12 active parks</div>
-      </div>
-      <div class="kpi-card c3">
-        <div class="kpi-top">
-          <div class="kpi-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b"><i class="bi bi-building-fill"></i></div>
-          <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+2</span>
-        </div>
-        <div class="kpi-value">12</div>
-        <div class="kpi-label">Active Parks</div>
-        <div class="kpi-sub">3 clusters • 7 provinces</div>
-      </div>
-      <div class="kpi-card c4">
-        <div class="kpi-top">
-          <div class="kpi-icon" style="background:rgba(59,130,246,0.12);color:#3b82f6"><i class="bi bi-gear-fill"></i></div>
-          <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+3</span>
-        </div>
-        <div class="kpi-value">18</div>
-        <div class="kpi-label">Industry Sectors</div>
-        <div class="kpi-sub">Across all parks</div>
-      </div>
-      <div class="kpi-card c5">
-        <div class="kpi-top">
-          <div class="kpi-icon" style="background:rgba(124,58,237,0.12);color:#7c3aed"><i class="bi bi-heart-pulse-fill"></i></div>
-          <span class="kpi-trend up"><i class="bi bi-arrow-up"></i>+2.1</span>
-        </div>
-        <div class="kpi-value">87.4</div>
-        <div class="kpi-label">Economic Health Index</div>
-        <div class="kpi-sub">Composite score / 100</div>
-      </div>
-    </div>
-
-    <!-- ── Row 1: Transaction Chart + Goods Flow ── -->
-    <div class="row g-3 mb-3" id="statistics">
-      <div class="col-lg-8">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-bar-chart-line-fill"></i> Transaction Statistics</h2>
-            <div style="display:flex;gap:8px;align-items:center;">
-              <div class="chart-range">
-                <button class="range-btn active" onclick="updateTxnChart('monthly')">Monthly</button>
-                <button class="range-btn" onclick="updateTxnChart('quarterly')">Quarterly</button>
-              </div>
-            </div>
-          </div>
-          <div class="section-body">
-            <canvas id="txn-chart" class="chart-canvas" height="300"></canvas>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4" id="economic-health">
-        <div class="health-card">
-          <div class="health-title"><i class="bi bi-heart-pulse-fill" style="color:#7c3aed;"></i> Economic Health by Park</div>
-          <div class="health-item">
-            <div class="health-item-header">
-              <span class="health-item-name">VSIP Binh Duong</span>
-              <span class="health-item-val">92/100</span>
-            </div>
-            <div class="health-bar"><div class="health-fill" style="width:92%;background:linear-gradient(90deg,#4f46e5,#7c3aed);"></div></div>
-          </div>
-          <div class="health-item">
-            <div class="health-item-header">
-              <span class="health-item-name">VSIP Hai Phong</span>
-              <span class="health-item-val">88/100</span>
-            </div>
-            <div class="health-bar"><div class="health-fill" style="width:88%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-          </div>
-          <div class="health-item">
-            <div class="health-item-header">
-              <span class="health-item-name">Amata Bien Hoa</span>
-              <span class="health-item-val">85/100</span>
-            </div>
-            <div class="health-bar"><div class="health-fill" style="width:85%;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div></div>
-          </div>
-          <div class="health-item">
-            <div class="health-item-header">
-              <span class="health-item-name">My Phuoc 2 & 3</span>
-              <span class="health-item-val">81/100</span>
-            </div>
-            <div class="health-bar"><div class="health-fill" style="width:81%;background:linear-gradient(90deg,#10b981,#34d399);"></div></div>
-          </div>
-          <div class="health-item">
-            <div class="health-item-header">
-              <span class="health-item-name">My Phuoc 1</span>
-              <span class="health-item-val">79/100</span>
-            </div>
-            <div class="health-bar"><div class="health-fill" style="width:79%;background:linear-gradient(90deg,#10b981,#6ee7b7);"></div></div>
-          </div>
-          <div class="health-item">
-            <div class="health-item-header">
-              <span class="health-item-name">VSIP Quang Ngai</span>
-              <span class="health-item-val">74/100</span>
-            </div>
-            <div class="health-bar"><div class="health-fill" style="width:74%;background:linear-gradient(90deg,#ef4444,#f87171);"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Row 2: Industry Pie + Goods Flow ── -->
-    <div class="row g-3 mb-3" id="goods-flow">
-      <div class="col-lg-5">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-pie-chart-fill"></i> Industry Revenue Share</h2>
-          </div>
-          <div class="section-body" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-            <div style="position:relative;flex-shrink:0;">
-              <canvas id="industry-pie" width="200" height="200"></canvas>
-              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
-                <div style="font-family:'Poppins';font-size:18px;font-weight:700;color:var(--heading-color);">₫84.7B</div>
-                <div style="font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.3px;">Total</div>
-              </div>
-            </div>
-            <div style="flex:1;min-width:160px;">
-              <div id="pie-legend" style="display:flex;flex-direction:column;gap:9px;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-7">
-        <div class="section-card">
-          <div class="section-card-header">
-            <h2 class="section-title"><i class="bi bi-arrow-left-right"></i> Goods Flow Overview</h2>
-            <span style="font-size:12px;color:var(--text-muted);">Last 6 months</span>
-          </div>
-          <div class="section-body">
-            <!-- Flow diagram -->
-            <div class="flow-stage mb-4" id="goods-flow">
-              <div class="flow-node">
-                <div class="flow-node-icon">🏭</div>
-                <div class="flow-node-name">Production</div>
-                <div class="flow-node-val">8,420 units</div>
-              </div>
-              <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
-              <div class="flow-node">
-                <div class="flow-node-icon">📦</div>
-                <div class="flow-node-name">Warehousing</div>
-                <div class="flow-node-val">7,891 units</div>
-              </div>
-              <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
-              <div class="flow-node">
-                <div class="flow-node-icon">🚛</div>
-                <div class="flow-node-name">Distribution</div>
-                <div class="flow-node-val">7,654 units</div>
-              </div>
-              <div class="flow-arrow"><i class="bi bi-arrow-right"></i></div>
-              <div class="flow-node">
-                <div class="flow-node-icon">✅</div>
-                <div class="flow-node-name">Delivered</div>
-                <div class="flow-node-val">7,208 units</div>
-              </div>
-            </div>
-
-            <!-- Goods flow by industry bar -->
-            <canvas id="goods-bar" class="chart-canvas" height="160"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Catalog: Industries ── -->
-    <div class="section-card" id="catalog-industries">
-      <div class="section-card-header">
-        <h2 class="section-title"><i class="bi bi-gear-wide-connected"></i> Industry Structure Catalog</h2>
-        <button class="btn-sa-primary" onclick="document.getElementById('add-industry-modal').classList.add('show')">
-          <i class="bi bi-plus-lg"></i> Add Industry
-        </button>
-      </div>
-      <div class="section-body">
-        <div class="sa-tabs" role="tablist">
-          <button class="sa-tab active" onclick="switchCatTab(this,'cat-all')">All Sectors <span style="background:rgba(0,0,0,0.07);border-radius:10px;padding:1px 7px;font-size:11px;">18</span></button>
-          <button class="sa-tab" onclick="switchCatTab(this,'cat-manufacturing')">Manufacturing</button>
-          <button class="sa-tab" onclick="switchCatTab(this,'cat-tech')">Technology</button>
-          <button class="sa-tab" onclick="switchCatTab(this,'cat-logistics')">Logistics</button>
-        </div>
-
-        <div class="tab-panel active" id="cat-all">
-          <div class="catalog-grid">
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(59,130,246,0.1);color:#2563eb"><i class="bi bi-cpu-fill"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Electronics</div>
-                <div class="catalog-item-sub">4 sub-categories · 42 enterprises</div>
-                <span class="ind-tag" style="background:rgba(59,130,246,0.1);color:#2563eb;margin-top:4px;">Manufacturing</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Electronics sector.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(16,185,129,0.1);color:#059669"><i class="bi bi-gear-wide-connected"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Mechanical Engineering</div>
-                <div class="catalog-item-sub">6 sub-categories · 58 enterprises</div>
-                <span class="ind-tag" style="background:rgba(16,185,129,0.1);color:#059669;margin-top:4px;">Manufacturing</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Mechanical Engineering.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(245,158,11,0.1);color:#d97706"><i class="bi bi-droplet-fill"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Chemicals</div>
-                <div class="catalog-item-sub">5 sub-categories · 29 enterprises</div>
-                <span class="ind-tag" style="background:rgba(245,158,11,0.1);color:#d97706;margin-top:4px;">Manufacturing</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Chemicals.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(239,68,68,0.1);color:#dc2626"><i class="bi bi-basket-fill"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Consumer Goods</div>
-                <div class="catalog-item-sub">3 sub-categories · 34 enterprises</div>
-                <span class="ind-tag" style="background:rgba(239,68,68,0.1);color:#dc2626;margin-top:4px;">Manufacturing</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Consumer Goods.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(79,70,229,0.1);color:#4f46e5"><i class="bi bi-truck"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Logistics & Transport</div>
-                <div class="catalog-item-sub">4 sub-categories · 22 enterprises</div>
-                <span class="ind-tag" style="background:rgba(79,70,229,0.1);color:#4f46e5;margin-top:4px;">Logistics</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Logistics.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(124,58,237,0.1);color:#7c3aed"><i class="bi bi-robot"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Automation & AI</div>
-                <div class="catalog-item-sub">2 sub-categories · 11 enterprises</div>
-                <span class="ind-tag" style="background:rgba(124,58,237,0.1);color:#7c3aed;margin-top:4px;">Technology</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Automation & AI.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(20,184,166,0.1);color:#0d9488"><i class="bi bi-lightning-charge-fill"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Renewable Energy</div>
-                <div class="catalog-item-sub">3 sub-categories · 9 enterprises</div>
-                <span class="ind-tag" style="background:rgba(20,184,166,0.1);color:#0d9488;margin-top:4px;">Technology</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Renewable Energy.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-            <div class="catalog-item">
-              <div class="catalog-item-icon" style="background:rgba(249,115,22,0.1);color:#ea580c"><i class="bi bi-bricks"></i></div>
-              <div class="catalog-item-info">
-                <div class="catalog-item-name">Construction Materials</div>
-                <div class="catalog-item-sub">2 sub-categories · 16 enterprises</div>
-                <span class="ind-tag" style="background:rgba(249,115,22,0.1);color:#ea580c;margin-top:4px;">Manufacturing</span>
-              </div>
-              <div class="catalog-item-actions">
-                <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Construction Materials.')"><i class="bi bi-pencil"></i></button>
-                <button class="catalog-action-btn del" title="Delete"><i class="bi bi-trash"></i></button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="tab-panel" id="cat-manufacturing">
-          <div style="padding:32px;text-align:center;color:var(--text-muted);"><i class="bi bi-gear-wide-connected" style="font-size:40px;opacity:0.3;"></i><p style="margin-top:12px;">Showing Manufacturing sectors only.</p></div>
-        </div>
-        <div class="tab-panel" id="cat-tech">
-          <div style="padding:32px;text-align:center;color:var(--text-muted);"><i class="bi bi-robot" style="font-size:40px;opacity:0.3;"></i><p style="margin-top:12px;">Showing Technology sectors only.</p></div>
-        </div>
-        <div class="tab-panel" id="cat-logistics">
-          <div style="padding:32px;text-align:center;color:var(--text-muted);"><i class="bi bi-truck" style="font-size:40px;opacity:0.3;"></i><p style="margin-top:12px;">Showing Logistics sectors only.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── Catalog: Industrial Park Areas ── -->
-    <div class="section-card" id="catalog-parks">
-      <div class="section-card-header">
-        <h2 class="section-title"><i class="bi bi-geo-alt-fill"></i> Industrial Park Areas</h2>
-        <button class="btn-sa-primary" onclick="document.getElementById('add-park-modal').classList.add('show')">
-          <i class="bi bi-plus-lg"></i> Add Park
-        </button>
-      </div>
-      <div class="section-body" style="padding:0;">
-        <table class="sa-table">
-          <thead>
-            <tr>
-              <th>Park Name</th>
-              <th>Cluster / Group</th>
-              <th>Province</th>
-              <th>Area (ha)</th>
-              <th>Occupancy</th>
-              <th>Enterprises</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>VSIP Binh Duong I</strong></td>
-              <td>VSIP Group</td>
-              <td>Binh Duong</td>
-              <td>499</td>
-              <td>
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
-                    <div style="width:96%;height:100%;background:#4f46e5;border-radius:10px;"></div>
-                  </div>
-                  <span style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">96%</span>
-                </div>
-              </td>
-              <td>186</td>
-              <td><span class="badge-status active">Active</span></td>
-              <td>
-                <div style="display:flex;gap:4px;">
-                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing VSIP Binh Duong I.')"><i class="bi bi-pencil"></i></button>
-                  <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>VSIP Hai Phong</strong></td>
-              <td>VSIP Group</td>
-              <td>Hai Phong</td>
-              <td>1,600</td>
-              <td>
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
-                    <div style="width:72%;height:100%;background:#3b82f6;border-radius:10px;"></div>
-                  </div>
-                  <span style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">72%</span>
-                </div>
-              </td>
-              <td>143</td>
-              <td><span class="badge-status active">Active</span></td>
-              <td>
-                <div style="display:flex;gap:4px;">
-                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing VSIP Hai Phong.')"><i class="bi bi-pencil"></i></button>
-                  <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>My Phuoc 1</strong></td>
-              <td>My Phuoc Group</td>
-              <td>Binh Duong</td>
-              <td>1,000</td>
-              <td>
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
-                    <div style="width:88%;height:100%;background:#10b981;border-radius:10px;"></div>
-                  </div>
-                  <span style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">88%</span>
-                </div>
-              </td>
-              <td>112</td>
-              <td><span class="badge-status active">Active</span></td>
-              <td>
-                <div style="display:flex;gap:4px;">
-                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing My Phuoc 1.')"><i class="bi bi-pencil"></i></button>
-                  <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>My Phuoc 2</strong></td>
-              <td>My Phuoc Group</td>
-              <td>Binh Duong</td>
-              <td>2,400</td>
-              <td>
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
-                    <div style="width:79%;height:100%;background:#10b981;border-radius:10px;"></div>
-                  </div>
-                  <span style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">79%</span>
-                </div>
-              </td>
-              <td>98</td>
-              <td><span class="badge-status active">Active</span></td>
-              <td>
-                <div style="display:flex;gap:4px;">
-                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing My Phuoc 2.')"><i class="bi bi-pencil"></i></button>
-                  <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Amata City Bien Hoa</strong></td>
-              <td>Amata Group</td>
-              <td>Dong Nai</td>
-              <td>700</td>
-              <td>
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
-                    <div style="width:84%;height:100%;background:#f59e0b;border-radius:10px;"></div>
-                  </div>
-                  <span style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">84%</span>
-                </div>
-              </td>
-              <td>76</td>
-              <td><span class="badge-status active">Active</span></td>
-              <td>
-                <div style="display:flex;gap:4px;">
-                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing Amata City.')"><i class="bi bi-pencil"></i></button>
-                  <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><strong>VSIP Quang Ngai</strong></td>
-              <td>VSIP Group</td>
-              <td>Quang Ngai</td>
-              <td>1,132</td>
-              <td>
-                <div style="display:flex;align-items:center;gap:8px;">
-                  <div style="flex:1;height:5px;background:var(--border-color);border-radius:10px;overflow:hidden;">
-                    <div style="width:45%;height:100%;background:#ef4444;border-radius:10px;"></div>
-                  </div>
-                  <span style="font-size:12px;font-weight:600;color:var(--heading-color);white-space:nowrap;">45%</span>
-                </div>
-              </td>
-              <td>38</td>
-              <td><span class="badge-status developing">Developing</span></td>
-              <td>
-                <div style="display:flex;gap:4px;">
-                  <button class="catalog-action-btn" title="Edit" onclick="showToast('success','Editing VSIP Quang Ngai.')"><i class="bi bi-pencil"></i></button>
-                  <button class="catalog-action-btn" title="View"><i class="bi bi-eye"></i></button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
   </main>
 
   <!-- ══════════════════════════════════════
@@ -1021,8 +805,10 @@
   <div class="sa-modal-overlay" id="add-industry-modal">
     <div class="sa-modal" role="dialog" aria-labelledby="modal-ind-title">
       <div class="sa-modal-header">
-        <h2 class="sa-modal-title" id="modal-ind-title"><i class="bi bi-plus-circle-fill" style="color:var(--sa-primary)"></i> Add Industry Sector</h2>
-        <button class="sa-modal-close" onclick="closeModal('add-industry-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="sa-modal-title" id="modal-ind-title"><i class="bi bi-plus-circle-fill"
+            style="color:var(--sa-primary)"></i> Add Industry Sector</h2>
+        <button class="sa-modal-close" onclick="closeModal('add-industry-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Sector Name</label>
@@ -1040,11 +826,14 @@
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Description</label>
-        <textarea class="form-control-modal" rows="3" placeholder="Brief description of this industry sector..."></textarea>
+        <textarea class="form-control-modal" rows="3"
+          placeholder="Brief description of this industry sector..."></textarea>
       </div>
       <div class="sa-modal-footer">
         <button class="btn-sa-outline" onclick="closeModal('add-industry-modal')">Cancel</button>
-        <button class="btn-sa-primary" onclick="closeModal('add-industry-modal');showToast('success','Industry sector added.')"><i class="bi bi-check-lg"></i> Add Sector</button>
+        <button class="btn-sa-primary"
+          onclick="closeModal('add-industry-modal');showToast('success','Industry sector added.')"><i
+            class="bi bi-check-lg"></i> Add Sector</button>
       </div>
     </div>
   </div>
@@ -1053,8 +842,10 @@
   <div class="sa-modal-overlay" id="add-park-modal">
     <div class="sa-modal" role="dialog" aria-labelledby="modal-park-title">
       <div class="sa-modal-header">
-        <h2 class="sa-modal-title" id="modal-park-title"><i class="bi bi-building-add" style="color:var(--sa-primary)"></i> Add Industrial Park Area</h2>
-        <button class="sa-modal-close" onclick="closeModal('add-park-modal')" aria-label="Close"><i class="bi bi-x-lg"></i></button>
+        <h2 class="sa-modal-title" id="modal-park-title"><i class="bi bi-building-add"
+            style="color:var(--sa-primary)"></i> Add Industrial Park Area</h2>
+        <button class="sa-modal-close" onclick="closeModal('add-park-modal')" aria-label="Close"><i
+            class="bi bi-x-lg"></i></button>
       </div>
       <div class="form-group-modal">
         <label class="form-label-modal">Park Name</label>
@@ -1090,7 +881,9 @@
       </div>
       <div class="sa-modal-footer">
         <button class="btn-sa-outline" onclick="closeModal('add-park-modal')">Cancel</button>
-        <button class="btn-sa-primary" onclick="closeModal('add-park-modal');showToast('success','Industrial park area added.')"><i class="bi bi-check-lg"></i> Add Park</button>
+        <button class="btn-sa-primary"
+          onclick="closeModal('add-park-modal');showToast('success','Industrial park area added.')"><i
+            class="bi bi-check-lg"></i> Add Park</button>
       </div>
     </div>
   </div>
@@ -1150,8 +943,8 @@
     // ── Detect dark mode ──
     function isDark() {
       return document.documentElement.getAttribute('data-bs-theme') === 'dark'
-          || document.body.classList.contains('dark-theme')
-          || window.matchMedia('(prefers-color-scheme: dark)').matches;
+        || document.body.classList.contains('dark-theme')
+        || window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
     const gridColor = () => isDark() ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)';
     const textColor = () => isDark() ? '#a0aec0' : '#718096';
@@ -1159,25 +952,25 @@
 
     // ── Transaction Chart (ApexCharts bar) ──
     const txnMonthly = {
-      categories: ['Nov','Dec','Jan','Feb','Mar','Apr'],
-      vsip:    [12.4, 14.1, 11.8, 15.3, 13.9, 17.2],
-      myPhuoc: [8.2,  9.4,  7.6,  10.1, 9.8,  11.4],
-      amata:   [5.1,  6.2,  5.8,  6.9,  6.4,  7.8]
+      categories: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+      vsip: [12.4, 14.1, 11.8, 15.3, 13.9, 17.2],
+      myPhuoc: [8.2, 9.4, 7.6, 10.1, 9.8, 11.4],
+      amata: [5.1, 6.2, 5.8, 6.9, 6.4, 7.8]
     };
     const txnQuarterly = {
-      categories: ['Q1 2025','Q2 2025','Q3 2025','Q4 2025','Q1 2026','Q2 2026'],
-      vsip:    [38.2, 41.5, 44.8, 40.1, 47.3, 50.1],
+      categories: ['Q1 2025', 'Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026'],
+      vsip: [38.2, 41.5, 44.8, 40.1, 47.3, 50.1],
       myPhuoc: [24.1, 26.8, 28.4, 25.9, 30.2, 32.7],
-      amata:   [15.2, 17.4, 18.9, 16.8, 20.1, 21.3]
+      amata: [15.2, 17.4, 18.9, 16.8, 20.1, 21.3]
     };
 
     let txnChartInstance;
     function renderTxnChart(data) {
       const opts = {
         series: [
-          { name: 'VSIP Group',    data: data.vsip },
+          { name: 'VSIP Group', data: data.vsip },
           { name: 'My Phuoc Group', data: data.myPhuoc },
-          { name: 'Amata Group',   data: data.amata }
+          { name: 'Amata Group', data: data.amata }
         ],
         chart: {
           type: 'bar', height: 300,
@@ -1187,7 +980,7 @@
           fontFamily: 'Nunito Sans, sans-serif',
         },
         theme: { mode: isDark() ? 'dark' : 'light' },
-        colors: ['#4f46e5','#10b981','#f59e0b'],
+        colors: ['#4f46e5', '#10b981', '#f59e0b'],
         plotOptions: {
           bar: { columnWidth: '55%', borderRadius: 5, borderRadiusApplication: 'end' }
         },
@@ -1197,7 +990,7 @@
           categories: data.categories,
           labels: { style: { colors: textColor(), fontSize: '12px' } },
           axisBorder: { show: false },
-          axisTicks:  { show: false }
+          axisTicks: { show: false }
         },
         yaxis: {
           labels: {
@@ -1227,12 +1020,12 @@
 
     // ── Industry Pie (Chart.js) ──
     const pieData = [
-      { label: 'Electronics',     value: 28.4, color: '#4f46e5' },
-      { label: 'Mechanical',      value: 22.1, color: '#10b981' },
-      { label: 'Chemicals',       value: 16.8, color: '#f59e0b' },
-      { label: 'Consumer Goods',  value: 14.2, color: '#3b82f6' },
-      { label: 'Logistics',       value: 10.5, color: '#7c3aed' },
-      { label: 'Other',           value: 8.0,  color: '#9ca3af' }
+      { label: 'Electronics', value: 28.4, color: '#4f46e5' },
+      { label: 'Mechanical', value: 22.1, color: '#10b981' },
+      { label: 'Chemicals', value: 16.8, color: '#f59e0b' },
+      { label: 'Consumer Goods', value: 14.2, color: '#3b82f6' },
+      { label: 'Logistics', value: 10.5, color: '#7c3aed' },
+      { label: 'Other', value: 8.0, color: '#9ca3af' }
     ];
 
     const pieCtx = document.getElementById('industry-pie').getContext('2d');
@@ -1272,7 +1065,7 @@
     new Chart(goodsCtx, {
       type: 'bar',
       data: {
-        labels: ['Electronics','Mechanical','Chemicals','Consumer','Logistics','Other'],
+        labels: ['Electronics', 'Mechanical', 'Chemicals', 'Consumer', 'Logistics', 'Other'],
         datasets: [
           {
             label: 'Inbound',

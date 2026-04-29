@@ -3182,6 +3182,7 @@ button {
 .sidebar-account-actions {
   display: flex;
   gap: 4px;
+  flex-direction: column;
 }
 
 .sidebar-account-action {
