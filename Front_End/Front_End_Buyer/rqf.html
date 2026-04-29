@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Request for Quotation - SIBMIP</title>
+  <meta name="description"
+    content="Tạo yêu cầu báo giá chi tiết cho vật tư công nghiệp - Submit RFQ to verified suppliers">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicons -->
+  <link href="assets/images/SIBMIP.png" rel="icon">
+  <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/styles/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/styles/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="assets/styles/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <!-- ======= Header (same as index.html) ======= -->
+  <header id="header" class="header position-relative">
+    <!-- Top Bar -->
+    <div class="top-bar py-2 d-none d-lg-block">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="d-flex align-items-center">
+              <div class="top-bar-item me-4">
+                <i class="bi bi-telephone-fill me-2"></i>
+                <span>Customer Support: </span>
+                <a href="tel:+1234567890">0384235007</a>
+              </div>
+              <div class="top-bar-item">
+                <i class="bi bi-envelope-fill me-2"></i>
+                <a href="#">huy.vuquang.cit22@eiu.edu.vn</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="d-flex justify-content-end">
+              <div class="top-bar-item me-4">
+                <a href="track-order.html">
+                  <i class="bi bi-truck me-2"></i>Track Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.webp" alt=""> -->
+            <h1 class="sitename"><span>SIBMIP</span></h1>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for products...">
+              <button class="btn search-btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+                <span class="action-text d-none d-md-inline-block">Account</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>Welcome to <span class="sitename">SIBMIP</span></h6>
+                  <p class="mb-0">Access account & manage orders</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>My Profile</span>
+                  </a>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">Sign In</a>
+                  <a href="register.html" class="btn btn-outline-primary w-100">Register</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+
+            <!-- Cart -->
+            <div class="dropdown cart-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-cart3"></i>
+                <span class="action-text d-none d-md-inline-block">Cart</span>
+                <span class="badge">3</span>
+              </button>
+              <div class="dropdown-menu cart-dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>Shopping Cart (3)</h6>
+                </div>
+                <div class="dropdown-body">
+                  <div class="cart-items">
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item">
+                      <div class="cart-item-image">
+                        <img src="assets/images/product-1.webp" alt="Product" class="img-fluid">
+                      </div>
+                      <div class="cart-item-content">
+                        <h6 class="cart-item-title">Wireless Headphones</h6>
+                        <div class="cart-item-meta">1 × $89.99</div>
+                      </div>
+                      <button class="cart-item-remove">
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item">
+                      <div class="cart-item-image">
+                        <img src="assets/images/product-2.webp" alt="Product" class="img-fluid">
+                      </div>
+                      <div class="cart-item-content">
+                        <h6 class="cart-item-title">Smart Watch</h6>
+                        <div class="cart-item-meta">1 × $129.99</div>
+                      </div>
+                      <button class="cart-item-remove">
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item">
+                      <div class="cart-item-image">
+                        <img src="assets/images/product-3.webp" alt="Product" class="img-fluid">
+                      </div>
+                      <div class="cart-item-content">
+                        <h6 class="cart-item-title">Bluetooth Speaker</h6>
+                        <div class="cart-item-meta">1 × $59.99</div>
+                      </div>
+                      <button class="cart-item-remove">
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer">
+                  <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="cart-total-price">$279.97</span>
+                  </div>
+                  <div class="cart-actions">
+                    <a href="cart.html" class="btn btn-outline-primary">View Cart</a>
+                    <a href="checkout.html" class="btn btn-primary">Checkout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="megamenu-trigger" id="nav-categories">
+              <a href="#" class="megamenu-toggle">
+                <i class="bi bi-grid-3x3-gap-fill me-1"></i>
+                <span>Category</span>
+                <i class="bi bi-chevron-down ms-1 toggle-dropdown"></i>
+              </a>
+
+              <!-- Mega Panel -->
+              <div class="category-megapanel" id="categoryMegaPanel">
+                <div class="megapanel-inner">
+
+                  <!-- LEFT: Category sidebar -->
+                  <div class="megapanel-sidebar">
+                    <div class="mgs-item active" data-cat="electronics" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-cpu-fill"></i>
+                      <span>Electronics &amp; Components</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="raw-materials" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-layers-fill"></i>
+                      <span>Raw Materials</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="chemicals" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-droplet-fill"></i>
+                      <span>Chemicals</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="machinery" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-gear-wide-connected"></i>
+                      <span>Machinery &amp; Equipment</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="automotive" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-car-front-fill"></i>
+                      <span>Automotive</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="textiles" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-scissors"></i>
+                      <span>Textiles &amp; Fabrics</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="food-agri" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-basket-fill"></i>
+                      <span>Food &amp; Agriculture</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="packaging" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-box-fill"></i>
+                      <span>Packaging &amp; Logistics</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                  </div>
+
+                  <!-- RIGHT: Sub-content panels -->
+                  <div class="megapanel-content">
+
+                    <!-- Electronics Panel -->
+                    <div class="mgc-panel active" data-panel="electronics">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Loại sản phẩm</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-phone"></i> Smartphones &amp;
+                            Tablets</a>
+                          <a href="#"><i class="bi bi-laptop"></i> Laptops &amp; Computers</a>
+                          <a href="#"><i class="bi bi-headphones"></i> Audio &amp;
+                            Wearables</a>
+                          <a href="#"><i class="bi bi-camera"></i> Cameras &amp; Optics</a>
+                          <a href="#"><i class="bi bi-house-gear"></i> Smart Home Devices</a>
+                          <a href="#"><i class="bi bi-plug"></i> Power Supplies &amp; UPS</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Linh kiện điện tử</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-cpu"></i> IC &amp; Microcontrollers</a>
+                          <a href="#"><i class="bi bi-broadcast"></i> Sensors &amp;
+                            Modules</a>
+                          <a href="#"><i class="bi bi-lightning-charge"></i> Capacitors &amp;
+                            Resistors</a>
+                          <a href="#"><i class="bi bi-usb-drive"></i> Connectors &amp;
+                            Cables</a>
+                          <a href="#"><i class="bi bi-motherboard"></i> PCB &amp;
+                            Assemblies</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thương hiệu phổ biến</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Siemens</span>
+                          <span class="brand-tag">ABB</span>
+                          <span class="brand-tag">Schneider</span>
+                          <span class="brand-tag">Mitsubishi</span>
+                          <span class="brand-tag">Omron</span>
+                          <span class="brand-tag">Samsung</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Electronics <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Raw Materials Panel -->
+                    <div class="mgc-panel" data-panel="raw-materials">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Kim loại</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-layers"></i> Thép &amp; Sắt</a>
+                          <a href="#"><i class="bi bi-brightness-high"></i> Nhôm &amp; Hợp
+                            kim</a>
+                          <a href="#"><i class="bi bi-gem"></i> Đồng &amp; Inox</a>
+                          <a href="#"><i class="bi bi-circle-half"></i> Kim loại màu</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Phi kim loại</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-circle-half"></i> Nhựa &amp; Polymer</a>
+                          <a href="#"><i class="bi bi-tree"></i> Gỗ &amp; Giấy</a>
+                          <a href="#"><i class="bi bi-droplet"></i> Cao su &amp; Silicone</a>
+                          <a href="#"><i class="bi bi-gem"></i> Khoáng sản &amp; Quặng</a>
+                          <a href="#"><i class="bi bi-moisture"></i> Sợi Carbon &amp;
+                            Composite</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Tiêu chuẩn phổ biến</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">ASTM A36</span>
+                          <span class="brand-tag">SUS304</span>
+                          <span class="brand-tag">6061-T6</span>
+                          <span class="brand-tag">SS400</span>
+                          <span class="brand-tag">JIS G3101</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Raw Materials <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Chemicals Panel -->
+                    <div class="mgc-panel" data-panel="chemicals">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Hóa chất CN</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-moisture"></i> Hóa chất công nghiệp</a>
+                          <a href="#"><i class="bi bi-cup-hot"></i> Sơn &amp; Keo dán</a>
+                          <a href="#"><i class="bi bi-recycle"></i> Dung môi &amp; Tẩy rửa</a>
+                          <a href="#"><i class="bi bi-shield-check"></i> Hóa chất an toàn</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Chuyên ngành</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-flower1"></i> Nông hóa phẩm</a>
+                          <a href="#"><i class="bi bi-capsule"></i> Hóa chất đặc biệt</a>
+                          <a href="#"><i class="bi bi-droplet-half"></i> Chất xúc tác</a>
+                          <a href="#"><i class="bi bi-thermometer"></i> Chất bôi trơn</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Chứng nhận</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">ISO 9001</span>
+                          <span class="brand-tag">REACH</span>
+                          <span class="brand-tag">FDA</span>
+                          <span class="brand-tag">RoHS</span>
+                          <span class="brand-tag">GHS</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Chemicals <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Machinery Panel -->
+                    <div class="mgc-panel" data-panel="machinery">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Máy gia công</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-gear"></i> Máy CNC</a>
+                          <a href="#"><i class="bi bi-robot"></i> Robot công nghiệp</a>
+                          <a href="#"><i class="bi bi-tools"></i> Thiết bị gia công kim
+                            loại</a>
+                          <a href="#"><i class="bi bi-wrench"></i> Dụng cụ bảo trì</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thiết bị năng lượng</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-lightning-charge"></i> Máy phát điện</a>
+                          <a href="#"><i class="bi bi-wind"></i> Bơm &amp; Máy nén khí</a>
+                          <a href="#"><i class="bi bi-fan"></i> Hệ thống HVAC</a>
+                          <a href="#"><i class="bi bi-water"></i> Máy bơm thủy lực</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thương hiệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Fanuc</span>
+                          <span class="brand-tag">Yaskawa</span>
+                          <span class="brand-tag">KUKA</span>
+                          <span class="brand-tag">Haas</span>
+                          <span class="brand-tag">Grundfos</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Machinery <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Automotive Panel -->
+                    <div class="mgc-panel" data-panel="automotive">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Phụ tùng xe</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-gear-wide"></i> Phụ tùng &amp; Linh
+                            kiện</a>
+                          <a href="#"><i class="bi bi-car-front"></i> Phụ kiện xe hơi</a>
+                          <a href="#"><i class="bi bi-fuel-pump"></i> Động cơ &amp; Hộp số</a>
+                          <a href="#"><i class="bi bi-cone-striped"></i> Lốp &amp; Cao su</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Xe điện (EV)</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-battery-charging"></i> Pin &amp; BMS</a>
+                          <a href="#"><i class="bi bi-lightning"></i> Motor điện</a>
+                          <a href="#"><i class="bi bi-ev-station"></i> Sạc EV</a>
+                          <a href="#"><i class="bi bi-cpu"></i> ECU &amp; điều khiển</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thương hiệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Bosch</span>
+                          <span class="brand-tag">Denso</span>
+                          <span class="brand-tag">Continental</span>
+                          <span class="brand-tag">ZF</span>
+                          <span class="brand-tag">NGK</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Automotive <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Textiles Panel -->
+                    <div class="mgc-panel" data-panel="textiles">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Sợi &amp; Vải</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-threads"></i> Sợi &amp; Chỉ</a>
+                          <a href="#"><i class="bi bi-grid-3x3-gap"></i> Vải dệt &amp; đan</a>
+                          <a href="#"><i class="bi bi-scissors"></i> Quần áo may mặc</a>
+                          <a href="#"><i class="bi bi-bag-fill"></i> Vải kỹ thuật</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Vải chuyên dụng</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-shield"></i> Vải bảo hộ</a>
+                          <a href="#"><i class="bi bi-stars"></i> Vải kỹ thuật cao</a>
+                          <a href="#"><i class="bi bi-water"></i> Vải chống thấm</a>
+                          <a href="#"><i class="bi bi-thermometer-half"></i> Vải chịu
+                            nhiệt</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Nguyên liệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Cotton</span>
+                          <span class="brand-tag">Polyester</span>
+                          <span class="brand-tag">Nylon</span>
+                          <span class="brand-tag">Viscose</span>
+                          <span class="brand-tag">Spandex</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Textiles <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Food & Agri Panel -->
+                    <div class="mgc-panel" data-panel="food-agri">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thực phẩm</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-basket"></i> Lúa gạo &amp; Ngũ cốc</a>
+                          <a href="#"><i class="bi bi-flower2"></i> Rau củ quả tươi</a>
+                          <a href="#"><i class="bi bi-egg-fried"></i> Thực phẩm chế biến</a>
+                          <a href="#"><i class="bi bi-water"></i> Thủy hải sản</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Nông nghiệp</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-bug"></i> Vật tư nông nghiệp</a>
+                          <a href="#"><i class="bi bi-tree"></i> Cây giống &amp; Hạt giống</a>
+                          <a href="#"><i class="bi bi-droplet"></i> Phân bón &amp; Thuốc
+                            BVTV</a>
+                          <a href="#"><i class="bi bi-gear"></i> Máy nông nghiệp</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Chứng nhận</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">HACCP</span>
+                          <span class="brand-tag">VietGAP</span>
+                          <span class="brand-tag">GlobalGAP</span>
+                          <span class="brand-tag">Organic</span>
+                          <span class="brand-tag">Halal</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Food &amp; Agri <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Packaging Panel -->
+                    <div class="mgc-panel" data-panel="packaging">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Bao bì cứng</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-box-seam"></i> Thùng &amp; Hộp
+                            carton</a>
+                          <a href="#"><i class="bi bi-cup"></i> Chai &amp; Lọ nhựa</a>
+                          <a href="#"><i class="bi bi-grid"></i> Pallet &amp; Khung gỗ</a>
+                          <a href="#"><i class="bi bi-shield"></i> Bảo vệ &amp; Chèn lót</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Bao bì mềm</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-bag"></i> Túi &amp; Bao linh hoạt</a>
+                          <a href="#"><i class="bi bi-tag"></i> Nhãn &amp; In ấn</a>
+                          <a href="#"><i class="bi bi-layers"></i> Màng &amp; Cuộn co</a>
+                          <a href="#"><i class="bi bi-recycle"></i> Bao bì thân thiện MT</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Vật liệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">PE/PP</span>
+                          <span class="brand-tag">PET</span>
+                          <span class="brand-tag">Kraft</span>
+                          <span class="brand-tag">Corrugated</span>
+                          <span class="brand-tag">Biodegradable</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Packaging <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                  </div><!-- end megapanel-content -->
+                </div><!-- end megapanel-inner -->
+              </div><!-- end category-megapanel -->
+            </li>
+            <li><a href="product-details.html">Product Details</a></li>
+            <!-- Product type -->
+
+
+            <!-- Products Mega Menu 1 -->
+
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="rqf.html" class="active">Request for Quotation</a></li>
+
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="announcement-slider swiper init-swiper">
+          <script data-cfasync="false" src="assets/libs/js/email-decode.min.js"></script>
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 1,
+              "effect": "slide",
+              "direction": "vertical"
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">🚚 Free shipping on orders over $50</div>
+            <div class="swiper-slide">💰 30 days money back guarantee</div>
+            <div class="swiper-slide">🎁 20% off on your first order - Use code: FIRST20</div>
+            <div class="swiper-slide">⚡ Flash Sale! Up to 70% off on selected items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products...">
+            <button class="btn search-btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+  <!-- End Header -->
+
+  <main class="main">
+
+    <!-- ======= Hero Banner ======= -->
+    <div class="rfq-hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <div class="badge-tag">
+              <i class="bi bi-file-earmark-text"></i>
+              Hệ thống RFQ – Yêu cầu báo giá tự động
+            </div>
+            <h1>Tạo Yêu Cầu <span>Báo Giá</span><br>Nhanh &amp; Chuyên Nghiệp</h1>
+            <p class="sub">Gửi yêu cầu chi tiết đến hàng nghìn nhà cung cấp đã xác minh trong khu công nghiệp.<br>Nhận
+              báo giá trong vòng 24–48 giờ làm việc.</p>
+            <div class="rfq-breadcrumb">
+              <a href="index.html"><i class="bi bi-house-fill me-1"></i>Trang chủ</a>
+              <span class="sep">/</span>
+              <span class="current">Tạo Yêu Cầu Báo Giá (RFQ Creator)</span>
+            </div>
+          </div>
+          <div class="col-lg-4 d-none d-lg-flex justify-content-end">
+            <div
+              style="background:#fff;border:1px solid var(--rfq-border);border-radius:14px;padding:24px 28px;text-align:center;">
+              <i class="bi bi-shield-check"
+                style="font-size:2.2rem;color:#353535;display:block;margin-bottom:12px;"></i>
+              <div style="color:var(--rfq-text);font-weight:700;font-size:0.97rem;margin-bottom:6px;">5,000+ Nhà cung
+                cấp</div>
+              <div style="color:var(--rfq-muted);font-size:0.82rem;">Đã xác minh tại VSIP, Amata &amp; My Phuoc
+              </div>
+              <hr style="border-color:var(--rfq-border);margin:14px 0;">
+              <div style="color:var(--rfq-text);font-weight:700;font-size:1.4rem;">24h</div>
+              <div style="color:var(--rfq-muted);font-size:0.82rem;">Thời gian phản hồi trung bình</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Strip -->
+    <div class="rfq-stats">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-6 col-md-3">
+            <div class="rfq-stat-item">
+              <i class="bi bi-file-earmark-check-fill"></i>
+              <div>
+                <div class="val">12,400+</div>
+                <div class="lbl">RFQ đã xử lý</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="rfq-stat-item">
+              <i class="bi bi-building-fill"></i>
+              <div>
+                <div class="val">5,000+</div>
+                <div class="lbl">Nhà cung cấp</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="rfq-stat-item">
+              <i class="bi bi-clock-history"></i>
+              <div>
+                <div class="val">~24h</div>
+                <div class="lbl">Thời gian phản hồi</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="rfq-stat-item">
+              <i class="bi bi-percent"></i>
+              <div>
+                <div class="val">98%</div>
+                <div class="lbl">Hài lòng khách hàng</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= RFQ Form Section ======= -->
+    <section class="rfq-main">
+      <div class="container">
+        <div class="row g-4">
+
+          <!-- ====== Left: Form ====== -->
+          <div class="col-lg-8">
+
+            <!-- Progress Steps -->
+            <div class="rfq-steps" id="rfqSteps">
+              <div class="rfq-step active" data-step="1" onclick="goToStep(1)">
+                <div class="step-num" id="snum1">1</div>
+                <span class="rfq-step-label">Thông tin cơ bản</span>
+              </div>
+              <div class="rfq-step" data-step="2" onclick="goToStep(2)">
+                <div class="step-num" id="snum2">2</div>
+                <span class="rfq-step-label">Quy cách kỹ thuật</span>
+              </div>
+              <div class="rfq-step" data-step="3" onclick="goToStep(3)">
+                <div class="step-num" id="snum3">3</div>
+                <span class="rfq-step-label">File &amp; Ngày cần</span>
+              </div>
+              <div class="rfq-step" data-step="4" onclick="goToStep(4)">
+                <div class="step-num" id="snum4">4</div>
+                <span class="rfq-step-label">Xem lại &amp; Gửi</span>
+              </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="rfq-card" data-aos="fade-up">
+
+              <!-- ===== STEP 1: Basic Info ===== -->
+              <div class="rfq-section active" id="section1">
+                <div class="rfq-card-header">
+                  <div class="d-flex align-items-center gap-16" style="gap:16px;">
+                    <div class="step-icon"><i class="bi bi-box-seam"></i></div>
+                    <div>
+                      <div class="step-title">Bước 1: Thông tin vật tư &amp; Số lượng</div>
+                      <div class="step-sub">Tên vật tư cần mua, số lượng và loại hàng hóa</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rfq-card-body">
+
+                  <!-- Loại công ty (Category) -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label">
+                      <i class="bi bi-grid-3x3-gap-fill"></i>
+                      Loại vật tư / Ngành hàng
+                      <span class="req">*</span>
+                    </label>
+                    <div class="category-grid" id="categoryGrid">
+                      <div class="cat-btn" data-cat="electronics" onclick="selectCategory(this)">
+                        <i class="bi bi-cpu-fill"></i><span>Điện tử &amp; Linh kiện</span>
+                      </div>
+                      <div class="cat-btn" data-cat="raw-materials" onclick="selectCategory(this)">
+                        <i class="bi bi-layers-fill"></i><span>Nguyên liệu thô</span>
+                      </div>
+                      <div class="cat-btn" data-cat="chemicals" onclick="selectCategory(this)">
+                        <i class="bi bi-droplet-fill"></i><span>Hóa chất công nghiệp</span>
+                      </div>
+                      <div class="cat-btn" data-cat="machinery" onclick="selectCategory(this)">
+                        <i class="bi bi-gear-wide-connected"></i><span>Máy móc &amp; Thiết bị</span>
+                      </div>
+                      <div class="cat-btn" data-cat="automotive" onclick="selectCategory(this)">
+                        <i class="bi bi-car-front-fill"></i><span>Phụ tùng Ô tô</span>
+                      </div>
+                      <div class="cat-btn" data-cat="textiles" onclick="selectCategory(this)">
+                        <i class="bi bi-scissors"></i><span>Dệt may &amp; Vải sợi</span>
+                      </div>
+                      <div class="cat-btn" data-cat="food-agri" onclick="selectCategory(this)">
+                        <i class="bi bi-basket-fill"></i><span>Thực phẩm &amp; Nông nghiệp</span>
+                      </div>
+                      <div class="cat-btn" data-cat="packaging" onclick="selectCategory(this)">
+                        <i class="bi bi-box-fill"></i><span>Bao bì &amp; Đóng gói</span>
+                      </div>
+                    </div>
+                    <input type="hidden" id="selectedCategory" name="category">
+                    <div class="rfq-error-msg" id="cat-error">Vui lòng chọn loại vật tư.</div>
+                  </div>
+
+                  <!-- Tên vật tư -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="materialName">
+                      <i class="bi bi-tag-fill"></i>
+                      Tên vật tư / Mã hàng
+                      <span class="vn">(Material Name / Part No.)</span>
+                      <span class="req">*</span>
+                    </label>
+                    <input type="text" class="rfq-input" id="materialName" name="material_name"
+                      placeholder="Ví dụ: Ống thép không gỉ SUS304, Van bi DN50, Motor servo 750W...">
+                    <div class="rfq-error-msg" id="name-error">Vui lòng nhập tên vật tư.</div>
+                    <div class="rfq-hint">
+                      <i class="bi bi-lightbulb-fill"></i>
+                      <span>Càng chi tiết càng nhận được báo giá chính xác. Nên ghi thêm nhãn hiệu, tiêu chuẩn nếu
+                        biết.</span>
+                    </div>
+                  </div>
+
+                  <!-- Số lượng & Đơn vị -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label">
+                      <i class="bi bi-123"></i>
+                      Số lượng <span class="vn">(Quantity)</span>
+                      <span class="req">*</span>
+                    </label>
+                    <div class="rfq-row">
+                      <div>
+                        <input type="number" class="rfq-input" id="quantity" name="quantity" placeholder="Nhập số lượng"
+                          min="0.01" step="0.01">
+                        <div class="rfq-error-msg" id="qty-error">Vui lòng nhập số lượng hợp lệ.</div>
+                      </div>
+                      <div style="flex: 0 0 160px;">
+                        <select class="rfq-select" id="unit" name="unit">
+                          <option value="">Chọn đơn vị</option>
+                          <optgroup label="Khối lượng">
+                            <option value="kg">Kilogram (kg)</option>
+                            <option value="ton">Tấn (Metric Ton)</option>
+                            <option value="g">Gram (g)</option>
+                            <option value="lb">Pound (lb)</option>
+                          </optgroup>
+                          <optgroup label="Kích thước">
+                            <option value="m">Mét (m)</option>
+                            <option value="cm">Centimét (cm)</option>
+                            <option value="mm">Milimét (mm)</option>
+                            <option value="m2">m² (diện tích)</option>
+                            <option value="m3">m³ (thể tích)</option>
+                          </optgroup>
+                          <optgroup label="Số lượng">
+                            <option value="pcs">Cái / Chiếc (pcs)</option>
+                            <option value="set">Bộ (set)</option>
+                            <option value="box">Hộp (box)</option>
+                            <option value="roll">Cuộn (roll)</option>
+                            <option value="sheet">Tấm (sheet)</option>
+                          </optgroup>
+                          <optgroup label="Thể tích lỏng">
+                            <option value="L">Lít (L)</option>
+                            <option value="mL">Mililit (mL)</option>
+                            <option value="drum">Thùng phuy (drum)</option>
+                          </optgroup>
+                        </select>
+                        <div class="rfq-error-msg" id="unit-error">Chọn đơn vị.</div>
+                      </div>
+                    </div>
+                    <div class="rfq-hint">
+                      <i class="bi bi-info-circle-fill"></i>
+                      <span>Nếu cần nhiều đợt hàng, bạn có thể ghi chú ở phần Quy cách kỹ thuật.</span>
+                    </div>
+                  </div>
+
+                  <!-- Tên công ty -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="companyName">
+                      <i class="bi bi-building"></i>
+                      Tên doanh nghiệp / Người mua
+                      <span class="req">*</span>
+                    </label>
+                    <input type="text" class="rfq-input" id="companyName" name="company_name"
+                      placeholder="Tên công ty hoặc tên cá nhân đặt hàng">
+                    <div class="rfq-error-msg" id="company-error">Vui lòng nhập tên doanh nghiệp.</div>
+                  </div>
+
+                  <!-- Email & SĐT -->
+                  <div class="rfq-row">
+                    <div class="rfq-field-group" style="margin-bottom:0">
+                      <label class="rfq-label" for="contactEmail">
+                        <i class="bi bi-envelope-fill"></i>
+                        Email liên hệ <span class="req">*</span>
+                      </label>
+                      <input type="email" class="rfq-input" id="contactEmail" name="email"
+                        placeholder="email@congty.com">
+                      <div class="rfq-error-msg" id="email-error">Email không hợp lệ.</div>
+                    </div>
+                    <div class="rfq-field-group" style="margin-bottom:0">
+                      <label class="rfq-label" for="contactPhone">
+                        <i class="bi bi-telephone-fill"></i>
+                        Số điện thoại <span class="req">*</span>
+                      </label>
+                      <input type="tel" class="rfq-input" id="contactPhone" name="phone" placeholder="0901 234 567">
+                      <div class="rfq-error-msg" id="phone-error">Vui lòng nhập số điện thoại.</div>
+                    </div>
+                  </div>
+
+                  <div class="rfq-actions">
+                    <div></div>
+                    <button class="btn-rfq-next" onclick="nextStep(1)">
+                      Tiếp theo <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== STEP 2: Technical Specifications ===== -->
+              <div class="rfq-section" id="section2">
+                <div class="rfq-card-header">
+                  <div class="d-flex align-items-center" style="gap:16px;">
+                    <div class="step-icon"><i class="bi bi-wrench-adjustable"></i></div>
+                    <div>
+                      <div class="step-title">Bước 2: Quy cách kỹ thuật</div>
+                      <div class="step-sub">Mô tả chi tiết tiêu chuẩn, thông số, yêu cầu chất lượng</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rfq-card-body">
+
+                  <!-- Mô tả quy cách -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="specifications">
+                      <i class="bi bi-clipboard2-data-fill"></i>
+                      Quy cách kỹ thuật chi tiết
+                      <span class="vn">(Technical Specifications)</span>
+                      <span class="req">*</span>
+                    </label>
+                    <textarea class="rfq-textarea" id="specifications" name="specifications" rows="7" maxlength="2000"
+                      oninput="updateCharCount(this,'spec-count')" placeholder="Mô tả chi tiết yêu cầu kỹ thuật, ví dụ:
+• Vật liệu: Thép không gỉ SUS304
+• Kích thước: φ50mm × dài 1000mm, độ dày 3mm
+• Bề mặt: đánh bóng soi gương (Mirror Polish)
+• Tiêu chuẩn: ASTM A312 / JIS G3459
+• Chứng nhận: ISO 9001, FDA (nếu thực phẩm)
+• Màu sắc / Mác vật liệu:
+• Yêu cầu nhiệt độ / áp suất làm việc:"></textarea>
+                    <div class="char-counter"><span id="spec-count">0</span> / 2000 ký tự</div>
+                    <div class="rfq-error-msg" id="spec-error">Vui lòng nhập quy cách kỹ thuật.</div>
+                  </div>
+
+                  <!-- Tiêu chuẩn áp dụng -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="standards">
+                      <i class="bi bi-award-fill"></i>
+                      Tiêu chuẩn / Chứng nhận yêu cầu
+                      <span class="opt-badge">Tùy chọn</span>
+                    </label>
+                    <input type="text" class="rfq-input" id="standards" name="standards"
+                      placeholder="Ví dụ: ISO 9001, ASTM A36, JIS G3101, CE, RoHS, FDA...">
+                    <div class="rfq-hint">
+                      <i class="bi bi-info-circle-fill"></i>
+                      <span>Ghi các tiêu chuẩn quốc tế hoặc Việt Nam (TCVN) nếu có yêu cầu đặc biệt.</span>
+                    </div>
+                  </div>
+
+                  <!-- Thương hiệu ưu tiên / nhà sản xuất -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="preferredBrand">
+                      <i class="bi bi-star-fill"></i>
+                      Thương hiệu / Nhà sản xuất ưu tiên
+                      <span class="opt-badge">Tùy chọn</span>
+                    </label>
+                    <input type="text" class="rfq-input" id="preferredBrand" name="preferred_brand"
+                      placeholder="Ví dụ: Siemens, ABB, SMC, Schaeffler, hoặc 'bất kỳ' nếu không quan trọng">
+                  </div>
+
+                  <!-- Ghi chú thêm -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="additionalNotes">
+                      <i class="bi bi-chat-left-text-fill"></i>
+                      Ghi chú bổ sung
+                      <span class="opt-badge">Tùy chọn</span>
+                    </label>
+                    <textarea class="rfq-textarea" id="additionalNotes" name="notes" rows="4" maxlength="1000"
+                      oninput="updateCharCount(this,'notes-count')"
+                      placeholder="Thông tin bổ sung: điều kiện bảo quản, đóng gói, yêu cầu giao hàng đặc biệt, số lượng đặt hàng định kỳ..."></textarea>
+                    <div class="char-counter"><span id="notes-count">0</span> / 1000 ký tự</div>
+                  </div>
+
+                  <div class="rfq-actions">
+                    <button class="btn-rfq-prev" onclick="prevStep(2)">
+                      <i class="bi bi-arrow-left"></i> Quay lại
+                    </button>
+                    <button class="btn-rfq-next" onclick="nextStep(2)">
+                      Tiếp theo <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== STEP 3: File Upload & Delivery Date ===== -->
+              <div class="rfq-section" id="section3">
+                <div class="rfq-card-header">
+                  <div class="d-flex align-items-center" style="gap:16px;">
+                    <div class="step-icon"><i class="bi bi-calendar2-week-fill"></i></div>
+                    <div>
+                      <div class="step-title">Bước 3: File đính kèm &amp; Ngày cần hàng</div>
+                      <div class="step-sub">Tải lên bản vẽ, ảnh mẫu và xác định thời gian giao hàng</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rfq-card-body">
+
+                  <!-- File đính kèm -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label">
+                      <i class="bi bi-paperclip"></i>
+                      File đính kèm
+                      <span class="vn">(Attachments)</span>
+                      <span class="opt-badge">Tùy chọn</span>
+                    </label>
+                    <div class="rfq-upload-zone" id="uploadZone" ondragover="handleDragOver(event)"
+                      ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+                      <input type="file" id="fileInput" multiple
+                        accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.bmp,.gif,.zip,.rar,.dwg,.step,.stp,.iges,.igs"
+                        onchange="handleFileSelect(event)">
+                      <div class="upload-icon"><i class="bi bi-cloud-arrow-up-fill"></i></div>
+                      <div class="upload-title">Kéo thả file vào đây hoặc nhấn để chọn file</div>
+                      <div class="upload-sub">
+                        Hỗ trợ: PDF, DOC, XLS, JPG, PNG, DWG, STEP, IGES, ZIP<br>
+                        Tối đa 10MB / file · Tối đa 5 files
+                      </div>
+                    </div>
+                    <div class="rfq-file-list" id="fileList"></div>
+                    <div class="rfq-hint">
+                      <i class="bi bi-lightbulb-fill"></i>
+                      <span>Bản vẽ kỹ thuật (CAD/DWG), ảnh mẫu, tài liệu kỹ thuật sẽ giúp nhà cung cấp báo giá nhanh và
+                        chính xác hơn.</span>
+                    </div>
+                  </div>
+
+                  <!-- Ngày cần hàng -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="dateNeeded">
+                      <i class="bi bi-calendar-event-fill"></i>
+                      Ngày cần hàng
+                      <span class="vn">(Required Delivery Date)</span>
+                      <span class="req">*</span>
+                    </label>
+                    <input type="date" class="rfq-input" id="dateNeeded" name="date_needed" style="cursor:pointer;">
+                    <div class="rfq-error-msg" id="date-error">Vui lòng chọn ngày cần hàng.</div>
+                    <div class="rfq-hint">
+                      <i class="bi bi-info-circle-fill"></i>
+                      <span>Chọn ngày bạn cần nhận hàng. Thời gian tối thiểu là 3 ngày làm việc sau ngày gửi RFQ.</span>
+                    </div>
+                  </div>
+
+                  <!-- Mức độ ưu tiên -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label">
+                      <i class="bi bi-flag-fill"></i>
+                      Mức độ ưu tiên
+                      <span class="vn">(Priority Level)</span>
+                      <span class="req">*</span>
+                    </label>
+                    <div class="priority-opts" id="priorityOpts">
+                      <div class="priority-opt" data-p="low" onclick="selectPriority(this)">
+                        <i class="bi bi-flag"></i> Thấp
+                      </div>
+                      <div class="priority-opt" data-p="medium" onclick="selectPriority(this)">
+                        <i class="bi bi-flag-fill"></i> Trung bình
+                      </div>
+                      <div class="priority-opt" data-p="high" onclick="selectPriority(this)">
+                        <i class="bi bi-exclamation-triangle-fill"></i> Cao
+                      </div>
+                      <div class="priority-opt" data-p="urgent" onclick="selectPriority(this)">
+                        <i class="bi bi-lightning-charge-fill"></i> Khẩn cấp
+                      </div>
+                    </div>
+                    <input type="hidden" id="selectedPriority" name="priority">
+                    <div class="rfq-error-msg" id="priority-error">Vui lòng chọn mức độ ưu tiên.</div>
+                  </div>
+
+                  <!-- Địa chỉ giao hàng -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="deliveryAddress">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      Địa chỉ giao hàng
+                      <span class="req">*</span>
+                    </label>
+                    <textarea class="rfq-textarea" id="deliveryAddress" name="delivery_address" rows="3"
+                      placeholder="Địa chỉ nhận hàng đầy đủ: Số nhà / đường, phường/xã, quận/huyện, tỉnh/thành phố..."></textarea>
+                    <div class="rfq-error-msg" id="addr-error">Vui lòng nhập địa chỉ giao hàng.</div>
+                  </div>
+
+                  <!-- Điều khoản thanh toán -->
+                  <div class="rfq-field-group">
+                    <label class="rfq-label" for="paymentTerms">
+                      <i class="bi bi-credit-card-2-front-fill"></i>
+                      Điều khoản thanh toán mong muốn
+                      <span class="opt-badge">Tùy chọn</span>
+                    </label>
+                    <select class="rfq-select" id="paymentTerms" name="payment_terms">
+                      <option value="">-- Chọn điều khoản thanh toán --</option>
+                      <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+                      <option value="advance100">Ứng trước 100% (Full Advance)</option>
+                      <option value="advance50">Ứng trước 50%, còn lại khi giao hàng</option>
+                      <option value="net30">Net 30 ngày</option>
+                      <option value="net60">Net 60 ngày</option>
+                      <option value="lc">L/C (Thư tín dụng)</option>
+                      <option value="negotiable">Thương lượng</option>
+                    </select>
+                  </div>
+
+                  <!-- Ngân sách dự kiến -->
+                  <div class="rfq-field-group" style="margin-bottom:0">
+                    <label class="rfq-label">
+                      <i class="bi bi-cash-stack"></i>
+                      Ngân sách dự kiến (VNĐ / USD)
+                      <span class="opt-badge">Tùy chọn</span>
+                    </label>
+                    <div class="rfq-row">
+                      <div>
+                        <input type="number" class="rfq-input" id="budgetMin" name="budget_min" placeholder="Tối thiểu"
+                          min="0">
+                      </div>
+                      <div>
+                        <input type="number" class="rfq-input" id="budgetMax" name="budget_max" placeholder="Tối đa"
+                          min="0">
+                      </div>
+                      <div style="flex: 0 0 120px;">
+                        <select class="rfq-select" id="budgetCurrency" name="currency">
+                          <option value="VND">VNĐ</option>
+                          <option value="USD">USD</option>
+                          <option value="EUR">EUR</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="rfq-hint">
+                      <i class="bi bi-info-circle-fill"></i>
+                      <span>Cung cấp ngân sách (nếu muốn) giúp nhà cung cấp đề xuất phương án phù hợp hơn.</span>
+                    </div>
+                  </div>
+
+                  <div class="rfq-actions">
+                    <button class="btn-rfq-prev" onclick="prevStep(3)">
+                      <i class="bi bi-arrow-left"></i> Quay lại
+                    </button>
+                    <button class="btn-rfq-next" onclick="nextStep(3)">
+                      Xem lại &amp; Gửi <i class="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== STEP 4: Review & Submit ===== -->
+              <div class="rfq-section" id="section4">
+                <div class="rfq-card-header">
+                  <div class="d-flex align-items-center" style="gap:16px;">
+                    <div class="step-icon"><i class="bi bi-send-check-fill"></i></div>
+                    <div>
+                      <div class="step-title">Bước 4: Xem lại &amp; Gửi RFQ</div>
+                      <div class="step-sub">Kiểm tra thông tin trước khi gửi đến các nhà cung cấp</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="rfq-card-body">
+                  <table class="review-table" id="reviewTable">
+                    <tbody>
+                      <tr>
+                        <td>Loại vật tư</td>
+                        <td id="rv-cat">—</td>
+                      </tr>
+                      <tr>
+                        <td>Tên vật tư</td>
+                        <td id="rv-name">—</td>
+                      </tr>
+                      <tr>
+                        <td>Số lượng</td>
+                        <td id="rv-qty">—</td>
+                      </tr>
+                      <tr>
+                        <td>Doanh nghiệp</td>
+                        <td id="rv-company">—</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td id="rv-email">—</td>
+                      </tr>
+                      <tr>
+                        <td>Số điện thoại</td>
+                        <td id="rv-phone">—</td>
+                      </tr>
+                      <tr>
+                        <td>Quy cách kỹ thuật</td>
+                        <td id="rv-spec" style="white-space:pre-wrap;">—</td>
+                      </tr>
+                      <tr>
+                        <td>Tiêu chuẩn</td>
+                        <td id="rv-std">—</td>
+                      </tr>
+                      <tr>
+                        <td>Thương hiệu ưu tiên</td>
+                        <td id="rv-brand">—</td>
+                      </tr>
+                      <tr>
+                        <td>File đính kèm</td>
+                        <td id="rv-files">—</td>
+                      </tr>
+                      <tr>
+                        <td>Ngày cần hàng</td>
+                        <td id="rv-date">—</td>
+                      </tr>
+                      <tr>
+                        <td>Mức độ ưu tiên</td>
+                        <td id="rv-priority">—</td>
+                      </tr>
+                      <tr>
+                        <td>Địa chỉ giao hàng</td>
+                        <td id="rv-addr">—</td>
+                      </tr>
+                      <tr>
+                        <td>Điều khoản thanh toán</td>
+                        <td id="rv-payment">—</td>
+                      </tr>
+                      <tr>
+                        <td>Ngân sách</td>
+                        <td id="rv-budget">—</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <!-- Terms checkbox -->
+                  <div
+                    style="margin-top:24px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
+                    <label style="display:flex;gap:12px;align-items:flex-start;cursor:pointer;">
+                      <input type="checkbox" id="agreeTerms"
+                        style="width:18px;height:18px;margin-top:2px;accent-color:#4f46e5;">
+                      <span style="font-size:0.88rem;color:#374151;line-height:1.6;">
+                        Tôi đã kiểm tra và xác nhận thông tin trên là chính xác. Tôi đồng ý với
+                        <a href="tos.html" style="color:#4f46e5;text-decoration:none;font-weight:600;">Điều khoản sử
+                          dụng</a>
+                        và
+                        <a href="privacy.html" style="color:#4f46e5;text-decoration:none;font-weight:600;">Chính sách
+                          bảo mật</a>
+                        của hệ thống.
+                      </span>
+                    </label>
+                    <div class="rfq-error-msg" id="terms-error">Vui lòng đồng ý với điều khoản sử dụng.</div>
+                  </div>
+
+                  <div class="rfq-actions">
+                    <button class="btn-rfq-prev" onclick="prevStep(4)">
+                      <i class="bi bi-arrow-left"></i> Quay lại
+                    </button>
+                    <button class="btn-rfq-submit" onclick="submitRFQ()">
+                      <i class="bi bi-send-fill"></i>
+                      Gửi Yêu Cầu Báo Giá
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ===== SUCCESS SCREEN ===== -->
+              <div class="rfq-success" id="rfqSuccess">
+                <div class="success-icon"><i class="bi bi-check-lg"></i></div>
+                <h2>Gửi RFQ thành công! 🎉</h2>
+                <p>Yêu cầu báo giá của bạn đã được gửi đến các nhà cung cấp phù hợp. Chúng tôi sẽ liên hệ lại trong vòng
+                  <strong>24–48 giờ</strong>.
+                </p>
+                <div class="rfq-id-badge">
+                  <i class="bi bi-hash me-1"></i>
+                  RFQ-<span id="rfqIdDisplay">2026041500001</span>
+                </div>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                  <a href="index.html" class="btn btn-outline-primary px-4 rounded-pill">
+                    <i class="bi bi-house me-2"></i>Về trang chủ
+                  </a>
+                  <a href="rqf.html" class="btn btn-primary px-4 rounded-pill">
+                    <i class="bi bi-plus-circle me-2"></i>Tạo RFQ mới
+                  </a>
+                </div>
+              </div>
+
+            </div><!-- end rfq-card -->
+          </div><!-- end col-lg-8 -->
+
+          <!-- ====== Right: Sidebar ====== -->
+          <div class="col-lg-4">
+
+            <!-- How It Works -->
+            <div class="rfq-sidebar-card" data-aos="fade-left" data-aos-delay="100">
+              <div class="sc-header">
+                <i class="bi bi-question-circle-fill"></i>
+                <h6>Quy trình hoạt động</h6>
+              </div>
+              <div class="sc-body">
+                <div class="rfq-info-row">
+                  <i class="bi bi-1-circle-fill"></i>
+                  <p><strong>Điền thông tin RFQ</strong>Tên vật tư, số lượng, quy cách kỹ thuật, file đính kèm và ngày
+                    cần hàng.</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-2-circle-fill"></i>
+                  <p><strong>Hệ thống phân phối tự động</strong>RFQ của bạn được gửi đến các nhà cung cấp phù hợp trong
+                    vòng vài phút.</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-3-circle-fill"></i>
+                  <p><strong>Nhận báo giá</strong>Các nhà cung cấp gửi báo giá trong 24–48 giờ làm việc qua email &amp;
+                    hệ thống.</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-4-circle-fill"></i>
+                  <p><strong>So sánh &amp; quyết định</strong>So sánh các báo giá, liên hệ trực tiếp và đặt hàng ngay
+                    trên nền tảng.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tips -->
+            <div class="rfq-sidebar-card" data-aos="fade-left" data-aos-delay="150">
+              <div class="sc-header">
+                <i class="bi bi-lightbulb-fill"></i>
+                <h6>Mẹo để nhận báo giá tốt nhất</h6>
+              </div>
+              <div class="sc-body">
+                <div class="rfq-info-row">
+                  <i class="bi bi-check-circle-fill" style="color:#10b981;"></i>
+                  <p>Mô tả <strong>tiêu chuẩn vật liệu</strong> (ISO, ASTM, JIS, TCVN) càng cụ thể càng tốt.</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-check-circle-fill" style="color:#10b981;"></i>
+                  <p><strong>Đính kèm bản vẽ kỹ thuật</strong> (DWG/PDF) để giảm thiểu sai lệch trong báo giá.</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-check-circle-fill" style="color:#10b981;"></i>
+                  <p>Ghi rõ <strong>ngày cần hàng thực tế</strong> để nhà cung cấp cân nhắc khả năng đáp ứng.</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-check-circle-fill" style="color:#10b981;"></i>
+                  <p>Đề cập <strong>số lượng định kỳ</strong> nếu có để nhận giá tốt hơn theo hợp đồng dài hạn.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="rfq-sidebar-card" data-aos="fade-left" data-aos-delay="200">
+              <div class="sc-header">
+                <i class="bi bi-headset"></i>
+                <h6>Cần hỗ trợ?</h6>
+              </div>
+              <div class="sc-body">
+                <div class="rfq-info-row">
+                  <i class="bi bi-telephone-fill"></i>
+                  <p><strong>Hotline hỗ trợ RFQ</strong>1800 1234 (miễn phí, T2–T6: 8h–17h)</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-envelope-fill"></i>
+                  <p><strong>Email</strong>rfq@industrialpark.vn</p>
+                </div>
+                <div class="rfq-info-row">
+                  <i class="bi bi-chat-dots-fill"></i>
+                  <p><strong>Live Chat</strong>Nhấn icon chat ở góc màn hình để được hỗ trợ ngay.</p>
+                </div>
+                <a href="contact.html" class="btn btn-success w-100 rounded-pill mt-2 fw-bold"
+                  style="font-size:0.88rem;">
+                  <i class="bi bi-headset me-2"></i>Liên hệ hỗ trợ
+                </a>
+              </div>
+            </div>
+
+          </div><!-- end col-lg-4 -->
+        </div><!-- end row -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer light-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">SIBMIP</span>
+              </a>
+              <p>B2B industrial marketplace connecting buyers with verified suppliers of machinery, raw materials,
+                chemicals, and more. Powering Vietnam's manufacturing and supply chain ecosystem.</p>
+
+              <div class="social-links mt-4">
+                <h5>Connect With Us</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Categories</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">Electronics &amp; Components</a></li>
+                <li><a href="category.html">Machinery &amp; Equipment</a></li>
+                <li><a href="category.html">Raw Materials</a></li>
+                <li><a href="category.html">Chemicals</a></li>
+                <li><a href="category.html">Packaging &amp; Logistics</a></li>
+                <li><a href="category.html">Food &amp; Agriculture</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Support</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">Help Center</a></li>
+                <li><a href="track-order.html">Track Order</a></li>
+                <li><a href="rqf.html">Request for Quotation</a></li>
+                <li><a href="return-policy.html">Return Policy</a></li>
+                <li><a href="about.html">About SIBMIP</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>Eastern International University, Binh Duong, Vietnam</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span><a href="tel:+84384235007">0384235007</a></span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span><a href="mailto:huy.vuquang.cit22@eiu.edu.vn">huy.vuquang.cit22@eiu.edu.vn</a></span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>Monday–Friday: 8am–5pm<br>Saturday: 8am–12pm<br>Sunday: Closed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="sitename">SIBMIP</strong>. All Rights Reserved.</p>
+            </div>
+            <div class="credits mt-1">
+              Designed by HDP
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-bank" aria-label="Bank Transfer"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tos.html">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS -->
+  <script src="assets/libs/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/js/aos.js"></script>
+  <script src="assets/libs/js/main.js"></script>
+  <script src="assets/libs/js/rqf.js"></script>
+  <script src="assets/libs/js/mainHomePage.js"></script>
+
+
+</body>
+
+</html>

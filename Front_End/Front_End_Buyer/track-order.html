@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Track Order - SIBMIP</title>
+  <meta name="description"
+    content="Track your industrial order shipment in real-time with IndusLink's order tracking system.">
+  <meta name="keywords" content="track order, shipment tracking, B2B order status, industrial order">
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicons -->
+  <link href="assets/images/SIBMIP.png" rel="icon">
+  <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/styles/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/styles/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/styles/aos.css" rel="stylesheet">
+  <link href="assets/styles/glightbox.min.css" rel="stylesheet">
+  <link href="assets/styles/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/styles/main.css" rel="stylesheet">
+</head>
+
+<body class="track-order-page">
+
+  <header id="header" class="header position-relative">
+    <!-- Top Bar -->
+    <div class="top-bar py-2 d-none d-lg-block">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="d-flex align-items-center">
+              <div class="top-bar-item me-4">
+                <i class="bi bi-telephone-fill me-2"></i>
+                <span>Customer Support: </span>
+                <a href="tel:+1234567890">0384235007</a>
+              </div>
+              <div class="top-bar-item">
+                <i class="bi bi-envelope-fill me-2"></i>
+                <a href="#">huy.vuquang.cit22@eiu.edu.vn</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="d-flex justify-content-end">
+              <div class="top-bar-item me-4">
+                <a href="track-order.html">
+                  <i class="bi bi-truck me-2"></i>Track Order
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <!-- Uncomment the line below if you also wish to use an image logo -->
+            <!-- <img src="assets/img/logo.webp" alt=""> -->
+            <h1 class="sitename"><span>SIBMIP</span></h1>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for products...">
+              <button class="btn search-btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+                <span class="action-text d-none d-md-inline-block">Account</span>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>Welcome to <span class="sitename">SIBMIP</span></h6>
+                  <p class="mb-0">Access account & manage orders</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>My Profile</span>
+                  </a>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">Sign In</a>
+                  <a href="register.html" class="btn btn-outline-primary w-100">Register</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+
+            <!-- Cart -->
+            <div class="dropdown cart-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-cart3"></i>
+                <span class="action-text d-none d-md-inline-block">Cart</span>
+                <span class="badge">3</span>
+              </button>
+              <div class="dropdown-menu cart-dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>Shopping Cart (3)</h6>
+                </div>
+                <div class="dropdown-body">
+                  <div class="cart-items">
+                    <!-- Cart Item 1 -->
+                    <div class="cart-item">
+                      <div class="cart-item-image">
+                        <img src="assets/images/product-1.webp" alt="Product" class="img-fluid">
+                      </div>
+                      <div class="cart-item-content">
+                        <h6 class="cart-item-title">Wireless Headphones</h6>
+                        <div class="cart-item-meta">1 × $89.99</div>
+                      </div>
+                      <button class="cart-item-remove">
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="cart-item">
+                      <div class="cart-item-image">
+                        <img src="assets/images/product-2.webp" alt="Product" class="img-fluid">
+                      </div>
+                      <div class="cart-item-content">
+                        <h6 class="cart-item-title">Smart Watch</h6>
+                        <div class="cart-item-meta">1 × $129.99</div>
+                      </div>
+                      <button class="cart-item-remove">
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+
+                    <!-- Cart Item 3 -->
+                    <div class="cart-item">
+                      <div class="cart-item-image">
+                        <img src="assets/images/product-3.webp" alt="Product" class="img-fluid">
+                      </div>
+                      <div class="cart-item-content">
+                        <h6 class="cart-item-title">Bluetooth Speaker</h6>
+                        <div class="cart-item-meta">1 × $59.99</div>
+                      </div>
+                      <button class="cart-item-remove">
+                        <i class="bi bi-x"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-footer">
+                  <div class="cart-total">
+                    <span>Total:</span>
+                    <span class="cart-total-price">$279.97</span>
+                  </div>
+                  <div class="cart-actions">
+                    <a href="cart.html" class="btn btn-outline-primary">View Cart</a>
+                    <a href="checkout.html" class="btn btn-primary">Checkout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="megamenu-trigger" id="nav-categories">
+              <a href="#" class="megamenu-toggle">
+                <i class="bi bi-grid-3x3-gap-fill me-1"></i>
+                <span>Category</span>
+                <i class="bi bi-chevron-down ms-1 toggle-dropdown"></i>
+              </a>
+
+              <!-- Mega Panel -->
+              <div class="category-megapanel" id="categoryMegaPanel">
+                <div class="megapanel-inner">
+
+                  <!-- LEFT: Category sidebar -->
+                  <div class="megapanel-sidebar">
+                    <div class="mgs-item active" data-cat="electronics" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-cpu-fill"></i>
+                      <span>Electronics &amp; Components</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="raw-materials" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-layers-fill"></i>
+                      <span>Raw Materials</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="chemicals" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-droplet-fill"></i>
+                      <span>Chemicals</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="machinery" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-gear-wide-connected"></i>
+                      <span>Machinery &amp; Equipment</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="automotive" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-car-front-fill"></i>
+                      <span>Automotive</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="textiles" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-scissors"></i>
+                      <span>Textiles &amp; Fabrics</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="food-agri" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-basket-fill"></i>
+                      <span>Food &amp; Agriculture</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                    <div class="mgs-item" data-cat="packaging" onmouseenter="switchMegaCat(this)">
+                      <i class="bi bi-box-fill"></i>
+                      <span>Packaging &amp; Logistics</span>
+                      <i class="bi bi-chevron-right ms-auto"></i>
+                    </div>
+                  </div>
+
+                  <!-- RIGHT: Sub-content panels -->
+                  <div class="megapanel-content">
+
+                    <!-- Electronics Panel -->
+                    <div class="mgc-panel active" data-panel="electronics">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Loại sản phẩm</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-phone"></i> Smartphones &amp;
+                            Tablets</a>
+                          <a href="#"><i class="bi bi-laptop"></i> Laptops &amp; Computers</a>
+                          <a href="#"><i class="bi bi-headphones"></i> Audio &amp;
+                            Wearables</a>
+                          <a href="#"><i class="bi bi-camera"></i> Cameras &amp; Optics</a>
+                          <a href="#"><i class="bi bi-house-gear"></i> Smart Home Devices</a>
+                          <a href="#"><i class="bi bi-plug"></i> Power Supplies &amp; UPS</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Linh kiện điện tử</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-cpu"></i> IC &amp; Microcontrollers</a>
+                          <a href="#"><i class="bi bi-broadcast"></i> Sensors &amp;
+                            Modules</a>
+                          <a href="#"><i class="bi bi-lightning-charge"></i> Capacitors &amp;
+                            Resistors</a>
+                          <a href="#"><i class="bi bi-usb-drive"></i> Connectors &amp;
+                            Cables</a>
+                          <a href="#"><i class="bi bi-motherboard"></i> PCB &amp;
+                            Assemblies</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thương hiệu phổ biến</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Siemens</span>
+                          <span class="brand-tag">ABB</span>
+                          <span class="brand-tag">Schneider</span>
+                          <span class="brand-tag">Mitsubishi</span>
+                          <span class="brand-tag">Omron</span>
+                          <span class="brand-tag">Samsung</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Electronics <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Raw Materials Panel -->
+                    <div class="mgc-panel" data-panel="raw-materials">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Kim loại</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-layers"></i> Thép &amp; Sắt</a>
+                          <a href="#"><i class="bi bi-brightness-high"></i> Nhôm &amp; Hợp
+                            kim</a>
+                          <a href="#"><i class="bi bi-gem"></i> Đồng &amp; Inox</a>
+                          <a href="#"><i class="bi bi-circle-half"></i> Kim loại màu</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Phi kim loại</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-circle-half"></i> Nhựa &amp; Polymer</a>
+                          <a href="#"><i class="bi bi-tree"></i> Gỗ &amp; Giấy</a>
+                          <a href="#"><i class="bi bi-droplet"></i> Cao su &amp; Silicone</a>
+                          <a href="#"><i class="bi bi-gem"></i> Khoáng sản &amp; Quặng</a>
+                          <a href="#"><i class="bi bi-moisture"></i> Sợi Carbon &amp;
+                            Composite</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Tiêu chuẩn phổ biến</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">ASTM A36</span>
+                          <span class="brand-tag">SUS304</span>
+                          <span class="brand-tag">6061-T6</span>
+                          <span class="brand-tag">SS400</span>
+                          <span class="brand-tag">JIS G3101</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Raw Materials <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Chemicals Panel -->
+                    <div class="mgc-panel" data-panel="chemicals">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Hóa chất CN</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-moisture"></i> Hóa chất công nghiệp</a>
+                          <a href="#"><i class="bi bi-cup-hot"></i> Sơn &amp; Keo dán</a>
+                          <a href="#"><i class="bi bi-recycle"></i> Dung môi &amp; Tẩy rửa</a>
+                          <a href="#"><i class="bi bi-shield-check"></i> Hóa chất an toàn</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Chuyên ngành</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-flower1"></i> Nông hóa phẩm</a>
+                          <a href="#"><i class="bi bi-capsule"></i> Hóa chất đặc biệt</a>
+                          <a href="#"><i class="bi bi-droplet-half"></i> Chất xúc tác</a>
+                          <a href="#"><i class="bi bi-thermometer"></i> Chất bôi trơn</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Chứng nhận</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">ISO 9001</span>
+                          <span class="brand-tag">REACH</span>
+                          <span class="brand-tag">FDA</span>
+                          <span class="brand-tag">RoHS</span>
+                          <span class="brand-tag">GHS</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Chemicals <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Machinery Panel -->
+                    <div class="mgc-panel" data-panel="machinery">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Máy gia công</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-gear"></i> Máy CNC</a>
+                          <a href="#"><i class="bi bi-robot"></i> Robot công nghiệp</a>
+                          <a href="#"><i class="bi bi-tools"></i> Thiết bị gia công kim
+                            loại</a>
+                          <a href="#"><i class="bi bi-wrench"></i> Dụng cụ bảo trì</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thiết bị năng lượng</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-lightning-charge"></i> Máy phát điện</a>
+                          <a href="#"><i class="bi bi-wind"></i> Bơm &amp; Máy nén khí</a>
+                          <a href="#"><i class="bi bi-fan"></i> Hệ thống HVAC</a>
+                          <a href="#"><i class="bi bi-water"></i> Máy bơm thủy lực</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thương hiệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Fanuc</span>
+                          <span class="brand-tag">Yaskawa</span>
+                          <span class="brand-tag">KUKA</span>
+                          <span class="brand-tag">Haas</span>
+                          <span class="brand-tag">Grundfos</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Machinery <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Automotive Panel -->
+                    <div class="mgc-panel" data-panel="automotive">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Phụ tùng xe</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-gear-wide"></i> Phụ tùng &amp; Linh
+                            kiện</a>
+                          <a href="#"><i class="bi bi-car-front"></i> Phụ kiện xe hơi</a>
+                          <a href="#"><i class="bi bi-fuel-pump"></i> Động cơ &amp; Hộp số</a>
+                          <a href="#"><i class="bi bi-cone-striped"></i> Lốp &amp; Cao su</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Xe điện (EV)</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-battery-charging"></i> Pin &amp; BMS</a>
+                          <a href="#"><i class="bi bi-lightning"></i> Motor điện</a>
+                          <a href="#"><i class="bi bi-ev-station"></i> Sạc EV</a>
+                          <a href="#"><i class="bi bi-cpu"></i> ECU &amp; điều khiển</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thương hiệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Bosch</span>
+                          <span class="brand-tag">Denso</span>
+                          <span class="brand-tag">Continental</span>
+                          <span class="brand-tag">ZF</span>
+                          <span class="brand-tag">NGK</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Automotive <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Textiles Panel -->
+                    <div class="mgc-panel" data-panel="textiles">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Sợi &amp; Vải</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-threads"></i> Sợi &amp; Chỉ</a>
+                          <a href="#"><i class="bi bi-grid-3x3-gap"></i> Vải dệt &amp; đan</a>
+                          <a href="#"><i class="bi bi-scissors"></i> Quần áo may mặc</a>
+                          <a href="#"><i class="bi bi-bag-fill"></i> Vải kỹ thuật</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Vải chuyên dụng</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-shield"></i> Vải bảo hộ</a>
+                          <a href="#"><i class="bi bi-stars"></i> Vải kỹ thuật cao</a>
+                          <a href="#"><i class="bi bi-water"></i> Vải chống thấm</a>
+                          <a href="#"><i class="bi bi-thermometer-half"></i> Vải chịu
+                            nhiệt</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Nguyên liệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">Cotton</span>
+                          <span class="brand-tag">Polyester</span>
+                          <span class="brand-tag">Nylon</span>
+                          <span class="brand-tag">Viscose</span>
+                          <span class="brand-tag">Spandex</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Textiles <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Food & Agri Panel -->
+                    <div class="mgc-panel" data-panel="food-agri">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Thực phẩm</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-basket"></i> Lúa gạo &amp; Ngũ cốc</a>
+                          <a href="#"><i class="bi bi-flower2"></i> Rau củ quả tươi</a>
+                          <a href="#"><i class="bi bi-egg-fried"></i> Thực phẩm chế biến</a>
+                          <a href="#"><i class="bi bi-water"></i> Thủy hải sản</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Nông nghiệp</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-bug"></i> Vật tư nông nghiệp</a>
+                          <a href="#"><i class="bi bi-tree"></i> Cây giống &amp; Hạt giống</a>
+                          <a href="#"><i class="bi bi-droplet"></i> Phân bón &amp; Thuốc
+                            BVTV</a>
+                          <a href="#"><i class="bi bi-gear"></i> Máy nông nghiệp</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Chứng nhận</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">HACCP</span>
+                          <span class="brand-tag">VietGAP</span>
+                          <span class="brand-tag">GlobalGAP</span>
+                          <span class="brand-tag">Organic</span>
+                          <span class="brand-tag">Halal</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Food &amp; Agri <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Packaging Panel -->
+                    <div class="mgc-panel" data-panel="packaging">
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Bao bì cứng</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-box-seam"></i> Thùng &amp; Hộp
+                            carton</a>
+                          <a href="#"><i class="bi bi-cup"></i> Chai &amp; Lọ nhựa</a>
+                          <a href="#"><i class="bi bi-grid"></i> Pallet &amp; Khung gỗ</a>
+                          <a href="#"><i class="bi bi-shield"></i> Bảo vệ &amp; Chèn lót</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Bao bì mềm</div>
+                        <div class="mgc-links">
+                          <a href="#"><i class="bi bi-bag"></i> Túi &amp; Bao linh hoạt</a>
+                          <a href="#"><i class="bi bi-tag"></i> Nhãn &amp; In ấn</a>
+                          <a href="#"><i class="bi bi-layers"></i> Màng &amp; Cuộn co</a>
+                          <a href="#"><i class="bi bi-recycle"></i> Bao bì thân thiện MT</a>
+                        </div>
+                      </div>
+                      <div class="mgc-group">
+                        <div class="mgc-group-title">Vật liệu</div>
+                        <div class="mgc-brands">
+                          <span class="brand-tag">PE/PP</span>
+                          <span class="brand-tag">PET</span>
+                          <span class="brand-tag">Kraft</span>
+                          <span class="brand-tag">Corrugated</span>
+                          <span class="brand-tag">Biodegradable</span>
+                        </div>
+                      </div>
+                      <a href="category.html" class="mgc-view-all">Xem tất cả Packaging <i
+                          class="bi bi-arrow-right"></i></a>
+                    </div>
+
+                  </div><!-- end megapanel-content -->
+                </div><!-- end megapanel-inner -->
+              </div><!-- end category-megapanel -->
+            </li>
+            <li><a href="product-details.html">Product Details</a></li>
+            <!-- Product type -->
+
+
+            <!-- Products Mega Menu 1 -->
+
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="rqf.html">Request for Quotation</a></li>
+
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="announcement-slider swiper init-swiper">
+          <script data-cfasync="false" src="assets/libs/js/email-decode.min.js"></script>
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": 1,
+              "effect": "slide",
+              "direction": "vertical"
+            }
+          </script>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">🚚 Free shipping on orders over $50</div>
+            <div class="swiper-slide">💰 30 days money back guarantee</div>
+            <div class="swiper-slide">🎁 20% off on your first order - Use code: FIRST20</div>
+            <div class="swiper-slide">⚡ Flash Sale! Up to 70% off on selected items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for products...">
+            <button class="btn search-btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Hero -->
+    <section class="to-hero">
+      <div class="container">
+        <div class="to-hero-inner">
+          <div class="to-hero-icon">
+            <i class="bi bi-truck"></i>
+          </div>
+          <h1 class="to-hero-title">Track Your Order</h1>
+          <p class="to-hero-sub">Enter your order ID or tracking number to get real-time shipment updates for your
+            industrial purchase.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="to-breadcrumb">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-fill me-1"></i>Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Track Order</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Track Order Main Content -->
+    <section class="to-section" data-aos="fade-up">
+      <div class="container">
+        <div class="row justify-content-center">
+
+          <!-- Search Card -->
+          <div class="col-lg-8">
+            <div class="to-search-card">
+              <div class="to-search-header">
+                <i class="bi bi-search-heart"></i>
+                <h2>Find Your Shipment</h2>
+                <p>Provide your order details to locate and track your delivery status.</p>
+              </div>
+
+              <form id="trackOrderForm" class="to-form" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-8">
+                    <label for="trackInput" class="to-label">
+                      <i class="bi bi-hash me-1"></i>Order ID / Tracking Number
+                    </label>
+                    <div class="to-input-wrap">
+                      <input type="text" id="trackInput" class="to-input"
+                        placeholder="e.g. IL-2024-001234 or TRACK-XXXXXX" autocomplete="off" spellcheck="false">
+                      <i class="bi bi-barcode to-input-icon"></i>
+                    </div>
+                    <div class="to-input-error" id="trackInputError">Please enter a valid order ID or tracking number.
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="trackEmail" class="to-label">
+                      <i class="bi bi-envelope me-1"></i>Email (optional)
+                    </label>
+                    <div class="to-input-wrap">
+                      <input type="email" id="trackEmail" class="to-input" placeholder="your@email.com"
+                        autocomplete="email">
+                      <i class="bi bi-envelope to-input-icon"></i>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <button type="submit" class="to-btn-track" id="btnTrackOrder">
+                      <span class="to-btn-text">
+                        <i class="bi bi-truck me-2"></i>Track Order
+                      </span>
+                      <span class="to-btn-loading d-none">
+                        <span class="to-spinner"></span>Searching...
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Quick Track Demo Chips -->
+              <div class="to-demo-chips">
+                <span class="to-demo-label">Try a demo:</span>
+                <button class="to-chip" data-demo="IL-2024-001234">IL-2024-001234</button>
+                <button class="to-chip" data-demo="IL-2024-005678">IL-2024-005678</button>
+                <button class="to-chip" data-demo="IL-2024-009999">IL-2024-009999</button>
+              </div>
+            </div>
+
+            <!-- Order Not Found State -->
+            <div class="to-not-found d-none" id="toNotFound">
+              <div class="to-nf-icon"><i class="bi bi-exclamation-circle"></i></div>
+              <h3>Order Not Found</h3>
+              <p>We couldn't find an order matching <strong id="nfOrderId"></strong>. Please double-check your order ID
+                or contact our support team.</p>
+              <a href="contact.html" class="to-btn-support">
+                <i class="bi bi-headset me-2"></i>Contact Support
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== Order Result Panel ===== -->
+        <div class="to-result-wrapper d-none" id="toResult">
+
+          <!-- Order Summary Bar -->
+          <div class="to-summary-bar" data-aos="fade-up">
+            <div class="to-summary-left">
+              <div class="to-summary-order">
+                <span class="to-summary-label">Order ID</span>
+                <span class="to-summary-value fw-bold" id="resOrderId">IL-2024-001234</span>
+              </div>
+              <div class="to-summary-sep"></div>
+              <div class="to-summary-order">
+                <span class="to-summary-label">Placed On</span>
+                <span class="to-summary-value" id="resOrderDate">Jan 15, 2024</span>
+              </div>
+              <div class="to-summary-sep"></div>
+              <div class="to-summary-order">
+                <span class="to-summary-label">Carrier</span>
+                <span class="to-summary-value" id="resCarrier">Viettel Post</span>
+              </div>
+              <div class="to-summary-sep"></div>
+              <div class="to-summary-order">
+                <span class="to-summary-label">Est. Delivery</span>
+                <span class="to-summary-value" id="resEta">Apr 25, 2024</span>
+              </div>
+            </div>
+            <div class="to-summary-right">
+              <span class="to-status-badge" id="resStatusBadge">
+                <i class="bi bi-clock-history me-1" id="resStatusIcon"></i>
+                <span id="resStatusText">In Transit</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="row g-4 mt-1">
+
+            <!-- Tracking Timeline -->
+            <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+              <div class="to-card">
+                <div class="to-card-header">
+                  <i class="bi bi-geo-alt-fill me-2"></i>Shipment Timeline
+                </div>
+                <div class="to-card-body">
+                  <div class="to-timeline" id="toTimeline">
+                    <!-- Injected by JS -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Details & Delivery Info -->
+            <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
+
+              <!-- Items in order -->
+              <div class="to-card mb-4">
+                <div class="to-card-header">
+                  <i class="bi bi-box-seam me-2"></i>Order Items
+                </div>
+                <div class="to-card-body">
+                  <div id="toOrderItems" class="to-items-list">
+                    <!-- Injected by JS -->
+                  </div>
+                  <div class="to-order-total">
+                    <span>Order Total</span>
+                    <span class="fw-bold" id="resTotalPrice">$0.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Delivery Info -->
+              <div class="to-card">
+                <div class="to-card-header">
+                  <i class="bi bi-house-door me-2"></i>Delivery Information
+                </div>
+                <div class="to-card-body">
+                  <div class="to-delivery-info">
+                    <div class="to-di-row">
+                      <i class="bi bi-person-fill"></i>
+                      <div>
+                        <div class="to-di-label">Recipient</div>
+                        <div class="to-di-value" id="resRecipient">—</div>
+                      </div>
+                    </div>
+                    <div class="to-di-row">
+                      <i class="bi bi-geo-alt-fill"></i>
+                      <div>
+                        <div class="to-di-label">Delivery Address</div>
+                        <div class="to-di-value" id="resAddress">—</div>
+                      </div>
+                    </div>
+                    <div class="to-di-row">
+                      <i class="bi bi-telephone-fill"></i>
+                      <div>
+                        <div class="to-di-label">Phone</div>
+                        <div class="to-di-value" id="resPhone">—</div>
+                      </div>
+                    </div>
+                    <div class="to-di-row">
+                      <i class="bi bi-upc-scan"></i>
+                      <div>
+                        <div class="to-di-label">Tracking Number</div>
+                        <div class="to-di-value" id="resTracking">—</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="contact.html" class="to-btn-support mt-3">
+                    <i class="bi bi-headset me-2"></i>Need Help?
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Help Banner -->
+          <div class="to-help-banner" data-aos="fade-up" data-aos-delay="200">
+            <div class="to-help-left">
+              <i class="bi bi-shield-check"></i>
+              <div>
+                <h5>Need assistance with your order?</h5>
+                <p>Our industrial procurement support team is available Monday–Friday, 8am–6pm.</p>
+              </div>
+            </div>
+            <div class="to-help-right">
+              <a href="contact.html" class="to-btn-outline">Contact Us</a>
+              <a href="support.html" class="to-btn-black">Help Center</a>
+            </div>
+          </div>
+
+        </div>
+        <!-- /to-result-wrapper -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">SIBMIP</span>
+              </a>
+              <p>B2B industrial marketplace connecting buyers with verified suppliers of machinery, raw materials,
+                chemicals, and more. Powering Vietnam's manufacturing and supply chain ecosystem.</p>
+
+              <div class="social-links mt-4">
+                <h5>Connect With Us</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Categories</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">Electronics &amp; Components</a></li>
+                <li><a href="category.html">Machinery &amp; Equipment</a></li>
+                <li><a href="category.html">Raw Materials</a></li>
+                <li><a href="category.html">Chemicals</a></li>
+                <li><a href="category.html">Packaging &amp; Logistics</a></li>
+                <li><a href="category.html">Food &amp; Agriculture</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>Support</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">Help Center</a></li>
+                <li><a href="track-order.html">Track Order</a></li>
+                <li><a href="rqf.html">Request for Quotation</a></li>
+                <li><a href="return-policy.html">Return Policy</a></li>
+                <li><a href="about.html">About SIBMIP</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>Contact Information</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span>Eastern International University, Binh Duong, Vietnam</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span><a href="tel:+84384235007">0384235007</a></span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span><a href="mailto:huy.vuquang.cit22@eiu.edu.vn">huy.vuquang.cit22@eiu.edu.vn</a></span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>Monday–Friday: 8am–5pm<br>Saturday: 8am–12pm<br>Sunday: Closed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="sitename">SIBMIP</strong>. All Rights Reserved.</p>
+            </div>
+            <div class="credits mt-1">
+              Designed by HDP
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-bank" aria-label="Bank Transfer"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="tos.html">Cookies</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script data-cfasync="false" src="assets/libs/js/email-decode.min.js"></script>
+  <script src="assets/libs/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/js/swiper-bundle.min.js"></script>
+  <script src="assets/libs/js/aos.js"></script>
+  <script src="assets/libs/js/purecounter_vanilla.js"></script>
+  <script src="assets/libs/js/mainHomePage.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/libs/js/main.js"></script>
+
+  <!-- Track Order JS -->
+  <script src="assets/libs/js/trackOrder.js"></script>
+
+</body>
+
+</html>
